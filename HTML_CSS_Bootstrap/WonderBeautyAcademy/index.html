@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+    <title>Wonder Beauty Academy</title>
+    <link rel="icon" href="images/logo.png">
+    <link rel="stylesheet" href="rozlozenie.css"/>
+    <link rel="stylesheet" href="animation.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Josefin+Sans&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<!--HEADER-->
+
+<header>
+    <img src="images/logo_w.png" class="logo">
+    <h1>Wonder Beauty Academy</h1>
+</header>
+
+<!--NAVBAR-->
+<nav id="top">
+    <div id="menu-toggle" class="arrow material-icons">keyboard_double_arrow_down</div>
+    <div id="menu">
+        <button class="activelink" onclick="location.href='index.html'"><span>Domov</span></button>
+        <div class="category" id="kurzy">
+            <button><span class="submenu-toggle" data-submenu="kurzy">Kurzy</span></button>
+            <div class="submenu">
+                <a>Denné líčenie</a>
+                <a>Večerné líčenie</a>
+                <a>Iné</a>
+            </div>
+        </div>
+        <button><span>Lektori</span></button>
+        <button onclick="location.href='clanky.html'"><span>Články</span></button>
+        <button><span>Kontakt</span></button>
+    </div>
+
+</nav>
+
+<!--MAIN-->
+<main>
+    <div class="hello">
+        <h2>Hello, Beautiful.</h2>
+    </div>
+<!--    <div class="homeimg">-->
+<!--        <img src="images/1.jpg" alt="makeup-photo">-->
+<!--        <img src="images/2.jpg" alt="makeup-photo">-->
+<!--        <img src="images/3.jpg" alt="makeup-photo">-->
+<!--        <img src="images/4.jpg" alt="makeup-photo">-->
+<!--    </div>-->
+    <div class="row">
+        <div class="column">
+            <img src="images/1.jpg" alt="makeup-photo" style="width: 100%">
+        </div>
+        <div class="column">
+            <img id="img2" src="images/2.jpg" alt="makeup-photo" style="width:100%">
+        </div>
+        <div class="column">
+            <img src="images/3.jpg" alt="makeup-photo" style="width:100%">
+        </div>
+        <div class="column">
+            <img src="images/4.jpg" alt="makeup-photo" style="width:100%">
+        </div>
+    </div>
+    <div>
+        <h4 class="quotes"></h4>
+    </div>
+    <!--    <img src="images/pexels-dom-j-310452.jpg" class="left-image"/>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a felis ac est lobortis elementum at ac risus.
+            Nunc orci lorem, tincidunt non malesuada ac, mattis id nisi. Maecenas et auctor mi. Duis commodo risus ut arcu
+            fermentum commodo. Vivamus ut gravida sapien, in mollis felis. Aenean vitae lacus ipsum. Suspendisse tellus est,
+            luctus sed sodales a, lobortis sed dui.
+
+            Mauris ultrices pretium nisl, ut venenatis est semper vel. Aliquam in tempus ipsum. Ut pellentesque sapien in
+            consequat egestas. Donec congue lacus eu lobortis feugiat. Curabitur tempus malesuada dolor, ac cursus augue
+            sollicitudin id. Proin purus tellus, pretium a rutrum at, semper id sapien. Integer semper iaculis nulla, sit
+            amet sollicitudin arcu efficitur viverra. Vestibulum maximus at turpis a faucibus. Fusce quis volutpat turpis,
+            vitae pulvinar ipsum.
+
+            Ut aliquet id urna et pretium. Pellentesque sed erat risus. Fusce in mi efficitur, ullamcorper tellus eu, tempor
+            eros. Nulla vitae diam ante. Suspendisse aliquam ac quam quis sodales. Etiam at mi sodales massa rutrum
+            tincidunt. Praesent consequat hendrerit ex, sed viverra diam fermentum vitae. Phasellus maximus maximus dui et
+            consequat. Sed nec rutrum elit, sed accumsan elit.
+
+            Phasellus consectetur, nulla ut mollis sodales, nulla est porta justo, id efficitur odio massa sed risus.
+            Quisque hendrerit finibus varius. Pellentesque tincidunt, turpis eu cursus hendrerit, nisi ipsum ultrices massa,
+            id vehicula nibh nisi eu risus. Nullam mattis nisl vel orci tincidunt, at egestas augue porta. Nulla eu mauris
+            quis tortor scelerisque maximus nec eu ligula. Donec et ultrices magna. Nam varius, tortor a tempor tristique,
+            erat nisi consectetur nibh, et pharetra nulla urna et nisi. Phasellus non tellus sem. Duis vehicula venenatis
+            gravida. Suspendisse eu nulla dignissim, suscipit risus id, hendrerit augue. Praesent elementum auctor enim non
+            facilisis. Aliquam finibus risus a mi rutrum, non placerat lacus elementum. Duis luctus leo nec metus viverra,
+            ut hendrerit nisl sollicitudin. Nulla eu purus lorem. Proin pellentesque porta varius. Vestibulum mattis eu nisi
+            et interdum.
+
+            Curabitur lacinia nulla erat, at ultrices sem faucibus vitae. Curabitur at elit id quam porta porttitor nec
+            vitae neque. Quisque purus orci, convallis vel enim sit amet, sagittis auctor nunc. Pellentesque consequat vitae
+            dui in posuere. Donec et dui in enim porttitor suscipit a ut sapien. Suspendisse volutpat fermentum augue, a
+            tempus elit egestas eget. Aenean ultricies risus vitae enim auctor rhoncus vel id orci. Pellentesque id
+            consectetur quam. Integer consequat tincidunt neque sollicitudin mollis. Nulla scelerisque est sed eros iaculis,
+            sed pharetra orci eleifend. Quisque id nisi ut erat tincidunt fringilla. Interdum et malesuada fames ac ante
+            ipsum primis in faucibus. Vestibulum pulvinar ipsum in odio pulvinar ullamcorper. Quisque a mi odio.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a felis ac est lobortis elementum at ac risus.
+            Nunc orci lorem, tincidunt non malesuada ac, mattis id nisi. Maecenas et auctor mi. Duis commodo risus ut arcu
+            fermentum commodo. Vivamus ut gravida sapien, in mollis felis. Aenean vitae lacus ipsum. Suspendisse tellus est,
+            luctus sed sodales a, lobortis sed dui.
+
+            Mauris ultrices pretium nisl, ut venenatis est semper vel. Aliquam in tempus ipsum. Ut pellentesque sapien in
+            consequat egestas. Donec congue lacus eu lobortis feugiat. Curabitur tempus malesuada dolor, ac cursus augue
+            sollicitudin id. Proin purus tellus, pretium a rutrum at, semper id sapien. Integer semper iaculis nulla, sit
+            amet sollicitudin arcu efficitur viverra. Vestibulum maximus at turpis a faucibus. Fusce quis volutpat turpis,
+            vitae pulvinar ipsum.
+
+            Ut aliquet id urna et pretium. Pellentesque sed erat risus. Fusce in mi efficitur, ullamcorper tellus eu, tempor
+            eros. Nulla vitae diam ante. Suspendisse aliquam ac quam quis sodales. Etiam at mi sodales massa rutrum
+            tincidunt. Praesent consequat hendrerit ex, sed viverra diam fermentum vitae. Phasellus maximus maximus dui et
+            consequat. Sed nec rutrum elit, sed accumsan elit.
+
+            Phasellus consectetur, nulla ut mollis sodales, nulla est porta justo, id efficitur odio massa sed risus.
+            Quisque hendrerit finibus varius. Pellentesque tincidunt, turpis eu cursus hendrerit, nisi ipsum ultrices massa,
+            id vehicula nibh nisi eu risus. Nullam mattis nisl vel orci tincidunt, at egestas augue porta. Nulla eu mauris
+            quis tortor scelerisque maximus nec eu ligula. Donec et ultrices magna. Nam varius, tortor a tempor tristique,
+            erat nisi consectetur nibh, et pharetra nulla urna et nisi. Phasellus non tellus sem. Duis vehicula venenatis
+            gravida. Suspendisse eu nulla dignissim, suscipit risus id, hendrerit augue. Praesent elementum auctor enim non
+            facilisis. Aliquam finibus risus a mi rutrum, non placerat lacus elementum. Duis luctus leo nec metus viverra,
+            ut hendrerit nisl sollicitudin. Nulla eu purus lorem. Proin pellentesque porta varius. Vestibulum mattis eu nisi
+            et interdum.
+
+            Curabitur lacinia nulla erat, at ultrices sem faucibus vitae. Curabitur at elit id quam porta porttitor nec
+            vitae neque. Quisque purus orci, convallis vel enim sit amet, sagittis auctor nunc. Pellentesque consequat vitae
+            dui in posuere. Donec et dui in enim porttitor suscipit a ut sapien. Suspendisse volutpat fermentum augue, a
+            tempus elit egestas eget. Aenean ultricies risus vitae enim auctor rhoncus vel id orci. Pellentesque id
+            consectetur quam. Integer consequat tincidunt neque sollicitudin mollis. Nulla scelerisque est sed eros iaculis,
+            sed pharetra orci eleifend. Quisque id nisi ut erat tincidunt fringilla. Interdum et malesuada fames ac ante
+            ipsum primis in faucibus. Vestibulum pulvinar ipsum in odio pulvinar ullamcorper. Quisque a mi odio.</p>
+    -->
+</main>
+<!--FOOTER-->
+
+<footer>
+    <a href="https://www.instagram.com/mymakeupoftea_/" target="_blank">
+        <div class="insta">
+            <table>
+                <tr>
+                    <th rowspan="2"><img src="images/insta.png" alt="instagram-logo"></th>
+                    <td class="follow">Follow us on</td>
+                </tr>
+                <tr>
+                    <td class="instagram"> Instagram</td>
+                </tr>
+            </table>
+        </div>
+    </a>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

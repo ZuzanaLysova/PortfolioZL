@@ -1,0 +1,515 @@
+/* --- PAGE --- */
+
+/* all elements */
+
+* {
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("images/a.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    max-width: 1000px; /* prevent too wide texts on large screens */
+    margin: auto;
+}
+
+/* --- GENERAL --- */
+
+
+p {
+    text-align: justify;
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+ul, table {
+    margin-bottom: 1em;
+}
+
+.left-image {
+    width: 30%;
+    float: left;
+}
+
+@media screen and (max-width: 576px) {
+    img.left-image {
+        width: 100%;
+        float: none;
+    }
+}
+
+/* --- NAVIGATION --- */
+
+nav {
+    background: #98E0F5;
+    position: sticky;
+    width: inherit;
+    max-width: inherit;
+    z-index: 2;
+    top: 0;
+}
+
+
+#menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#menu button {
+    font-size: 1.5em;
+    width: 7.9rem;
+    height: 2em;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    margin: 0.6em;
+    outline: none;
+    z-index: 2;
+    line-height: 2em;
+    background: white;
+    border: none;
+    display: block;
+}
+
+#menu button span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#menu button:before,
+#menu button:after {
+    position: absolute;
+    content: "";
+    height: 0%;
+    width: 2px;
+    background: #B6A0F7;
+}
+
+#menu button:before {
+    right: 0;
+    top: 0;
+}
+
+#menu button:after {
+    left: 0;
+    bottom: 0;
+}
+
+#menu button:hover {
+    color: #000;
+    background: #FFF3FA;
+}
+
+#menu button:hover:before {
+    height: 100%;
+}
+
+#menu button:hover:after {
+    height: 100%;
+}
+
+#menu button span:before,
+#menu button span:after {
+    position: absolute;
+    content: "";
+    background: #B6A0F7;
+}
+
+#menu button span:before {
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 2px;
+}
+
+#menu button span:after {
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+}
+
+#menu button span:hover:before {
+    width: 100%;
+}
+
+#menu button span:hover:after {
+    width: 100%;
+}
+
+.activelink {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    color: black;
+}
+
+.activelink:hover {
+    color: #000;
+    background: #FFF3FA;
+}
+
+.category {
+    position: relative;
+}
+
+.category .submenu {
+    background: #B5f2f4;
+    visibility: hidden;
+    position: absolute;
+    min-width: 100%;
+    opacity: 0;
+    width: 4em;
+    padding: 1em;
+}
+
+.category.expanded .submenu {
+    visibility: visible;
+    opacity: 1;
+    text-align: center;
+}
+
+.category.expanded > a {
+    background: mediumpurple;
+}
+
+nav .arrow {
+    display: none;
+    color: white;
+    padding: 0.8em;
+    font-size: 1.5em;
+}
+
+@media screen and (max-width: 784px) {
+    #menu > button, #menu .category {
+        width: 100% !important;
+    }
+
+    #menu button {
+        width: calc(100% - 1.5em);
+    }
+
+    #menu {
+        flex-wrap: wrap;
+        top: 11em;
+        width: 100%;
+        background: #98E0F5;
+        position: sticky;
+    }
+
+
+    nav .arrow {
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    /* Hide the menu on mobiles if it is not expanded manually using the hamburher icon. */
+    #menu:not(.expanded) {
+        display: none;
+    }
+
+    .category .submenu {
+        display: none;
+        position: static;
+        width: 100%;
+    }
+
+    .category .submenu a {
+        font-size: 1em !important;
+        padding: 0 1em 0 1em;
+    }
+
+    .category.expanded .submenu {
+        display: flex;
+        justify-content: center;
+        font-size: inherit;
+    }
+}
+
+
+/*-- CONTENT --*/
+
+main {
+    background: white;
+    position: relative;
+    padding: 5em 8em 2em;
+}
+
+@media screen and (max-width: 576px) {
+    main {
+        padding: 1.5em;
+    }
+}
+
+header {
+    background-color: #F997D7;
+    display: flex;
+    position: relative;
+    top: 0;
+    overflow: hidden;
+}
+
+.logo {
+    width: 10em;
+    height: auto;
+    margin: 1em;
+    justify-content: left;
+    position: relative;
+    display: flex;
+    left: 1em;
+}
+
+
+h1 {
+    margin: 0.5em;
+    font-family: 'Dancing Script', cursive;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    vertical-align: middle;
+    top: 25.5px;
+    font-size: 50px;
+}
+
+
+@media screen and (max-width: 576px) {
+    header {
+        display: table;
+        width: 100%;
+        overflow: auto;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+        width: 50%;
+        text-align: center;
+        float: right;
+        position: relative;
+        top: 1em;
+        left: 0.5em;
+        z-index: 2;
+    }
+
+    header .logo {
+        width: 6em;
+        float: left;
+    }
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+@media screen and (max-width: 600px) {
+    h2 {
+        margin-bottom: 0.5em;
+        font-size: 1.3em;
+    }
+}
+
+.quotes {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+    margin-top: 5em;
+}
+
+@media screen and (max-width: 600px) {
+    .quotes {
+        margin-top: 1em;
+    }
+}
+
+.quotes:after {
+    content: 'Get the look you always wanted.';
+}
+
+.quotes:hover:after {
+    content: 'Beauty can be simple.';
+}
+
+/*@media screen and (max-width: 576px) {*/
+/*    .homeimg{*/
+/*        width: 100%;*/
+/*    }*/
+/*    */
+/*    img.left-image {*/
+/*        width: 100%;*/
+/*        float: none;*/
+/*    }*/
+/*}*/
+
+.column {
+    float: left;
+    width: 25%;
+    padding: 5px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        margin: 0.5em;
+    }
+}
+
+.stranka {
+    background-color: #B6A0F7;
+    padding: 0.5em;
+    display: none;
+}
+
+.article1 {
+    height: 11em;
+}
+
+.article1img {
+    width: 30%;
+    float: right;
+    margin: 0.8em 2em;
+}
+
+.article1 th {
+    text-align: center;
+    margin: 1em 22em 1em 4em;
+    padding-left: 1em;
+    color: #6131F4;
+    font-size: 1.3em;
+}
+
+.article1 tr, .article1 td {
+    text-align: justify-all;
+    margin: 1em 22em 1em 4em;
+    padding: 1em 1em 1em 3em;
+    font-size: 1em;
+}
+
+.article2 {
+    height: 11em;
+}
+
+.article2img {
+    width: 30%;
+    float: left;
+    margin: 0.8em 2em;
+}
+
+.article2 th {
+    text-align: center;
+    margin: 1em 4em 1em 22em;
+    padding-right: 1em;
+    color: #6131F4;
+    font-size: 1.3em;
+}
+
+.article2 tr, .article2 td {
+    text-align: justify-all;
+    margin: 1em 4em 1em 22em;
+    padding: 1em 3em 1em 1em;
+    font-size: 1em;
+}
+
+hr.rounded {
+    border-top: 0.1em solid #B6A0F7;
+    border-radius: 5px;
+    margin: 1em;
+}
+
+h3 {
+    color: #6131F4;
+    font-weight: bold;
+    text-align: center;
+}
+
+@media screen and (max-width: 576px) {
+    .stranka {
+        display: flex;
+    }
+
+    .article1, .article2 {
+        display: block;
+        padding: 0.5em;
+        margin: 0;
+        text-align: center;
+        height: auto;
+    }
+
+    .article1 td, .article2 td, .article1 th, .article2 th {
+        padding: 0.5em;
+        vertical-align: middle;
+    }
+
+    .article1img {
+        width: 90%;
+        float: none;
+        margin: 0 1em 0 1em;
+    }
+
+    .article2img {
+        width: 90%;
+        float: none;
+        margin-left: 1em;
+    }
+}
+
+footer {
+    background-color: #F997D7;
+    display: flex;
+    position: relative;
+    top: 0;
+    overflow: hidden;
+    justify-content: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: #6131F4;
+}
+
+footer a:visited {
+    color: #6131F4;
+}
+
+.insta {
+    margin: 1em;
+    filter: brightness(100%);
+}
+
+
+.insta img {
+    float: left;
+    height: 4em;
+}
+
+.insta table, tr, td {
+    padding: 0.1em 0.5em 0.1em;
+}
+
+.insta .follow {
+    font-size: 1.2em;
+}
+
+.insta .instagram {
+    font-family: 'Dancing Script', serif;
+    font-size: 2em;
+}
+
+
+/*-- ICONS--*/
+
+

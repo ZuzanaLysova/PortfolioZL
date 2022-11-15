@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("images/a.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    max-width: 1000px; /* prevent too wide texts on large screens */
+    margin: auto;
+}
+
+main {
+    background: white;
+    position: relative;
+    padding: 5em 8em 2em;
+}
+
+@media screen and (max-width: 576px) {
+    main {
+        padding: 1.5em;
+    }
+}
+
+h1 {
+    margin: 0.5em;
+    font-family: 'Dancing Script', cursive;
+    font-size: 50px;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+h3 {
+    color: #6131F4;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+p {
+    text-align: justify;
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+ol {
+    background: #F6F4FE;
+    list-style: lower-alpha;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+ul {
+    background: #F6F4FE;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+hr {
+    border-top: 0.1em solid #B6A0F7;
+    border-radius: 5px;
+    margin: 1em;
+}
+
+caption {
+    font-weight: bold;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+table, tr, th, td {
+    margin-bottom: 1em;
+    border: 1px solid #B6A0F7;
+    padding: 0.5em;
+    border-collapse: collapse;
+}
+
+
+th {
+    color: #4004F2;
+    background-color: #FFF3FA;
+}
+
+.mobile-table {
+    width: 100%;
+    display: none;
+    font-size: 0.8em;
+}
+
+.mobile-table th {
+    writing-mode: vertical-rl;
+}
+
+@media screen and (max-width: 576px) {
+    caption{
+        width: 100%;
+    }
+
+    mobile-table, thead, tbody, th, tr, td {
+        padding: 0.2em;
+        margin: 0;
+    }
+
+    .mobile-table {
+        display: table;
+    }
+    .desktop-table {
+        display: none;
+    }
+}
+
+
+a:link {
+    color: #6131F4;
+    font-weight: bold;
+}
+
+a:visited {
+    color: #B6A0F7;
+}
+
+label, input {
+    font-size: 1em;
+}
+
+@media screen and (max-width: 576px) {
+    label, input, textarea {
+        display: flex;
+        width: 100%;
+    }
+
+    input[type=checkbox], input[type=radio] {
+        float: left;
+        width: 25% !important;
+    }
+
+    input[type=submit] {
+        width: 50%;
+    }
+}
+
+input[type=password], input[type=text], textarea, input[type=file], select {
+    border: 1px solid #01BBF0;
+    background-color: #F3FCFE;
+    border-radius: 4px;
+    padding: 0.5em;
+}
+
+input[type=password]:focus, input[type=text]:focus, textarea:focus, input[type=file]:focus, select:focus {
+    background-color: #98E0F5;
+    border-radius: 4px;
+    padding: 0.5em;
+}
+
+option {
+    background-color: white;
+    padding: 1em;
+}
+
+input[type=checkbox]:checked {
+    cursor: pointer;
+    background-color: #F997D7;
+    border-radius: 4px;
+    padding: 0.5em;
+    content: "\2713";
+}
+
+input[type=submit] {
+    cursor: pointer;
+    border: 2px solid #F997D7;
+    background-color: white;
+    border-radius: 4px;
+    padding: 0.5em;
+}
+
+input[type=submit]:hover {
+    background-color: #FFF3FA;
+}

@@ -1,0 +1,50 @@
+/*
+Bootstrap 5 breakpointy:
+X-Small							None	<576px
+Small								sm		≥576px
+Medium							md		≥768px
+Large								lg		≥992px
+Extra large					xl		≥1200px
+Extra extra large		xxl		≥1400px
+
+Barvy
+růžová: #c5308a
+světle šedá: #f0f0f0
+*/
+
+/* --- pod tuto čáru piš svoje CSS --- */
+
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h3{
+    color: #c5308a;
+    font-style: italic;
+}
+
+h2{
+    font-style: italic;
+    font-weight: bold;
+}
+
+.pink-section{
+    background-color: #c5308a;
+}
+
+.galeria{
+    filter: grayscale(100%);
+}
+
+.galeria:hover{
+    filter: none;
+}
+
+.nav-link:hover{
+    background-color: #c5308a;
+}
+
+.resources a, .list-inline-item a{
+    text-decoration: none;
+    color: #c5308a;
+}

@@ -1,0 +1,106 @@
+#menu button {
+    transition: all 0.5s ease;
+}
+
+#menu button:before {
+    transition: all 500ms ease;
+}
+
+#menu button:after {
+    transition: all 500ms ease;
+}
+
+#menu button:hover:before {
+    transition: all 500ms ease;
+}
+
+#menu button:hover:after {
+    transition: all 500ms ease;
+}
+
+#menu button span:before {
+    transition: all 500ms ease;
+}
+
+#menu button span:after {
+    transition: all 500ms ease;
+}
+
+.activelink:hover:before {
+    transition: all 700ms ease;
+}
+
+.activelink:hover:after {
+    transition: all 700ms ease;
+}
+
+.category .submenu {
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.quotes:after {
+    transition: all .4s ease;
+}
+
+.insta {
+    transition: transform 0.2s;
+    transform-origin: center center;
+}
+
+.insta:hover {
+    transform: scale(1.05);
+}
+
+h2{
+    animation-name: hello-beautiful;
+    animation-duration: 2s;
+    animation-iteration-count: 2;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+}
+
+@keyframes hello-beautiful {
+    0%{
+        transform: rotate(1deg);
+    }
+    50%{
+        transform: rotate(-1deg);
+    }
+    100%{
+        transform: rotate(1deg);
+    }
+}
+
+.row{
+    animation-name: images-come;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes images-come {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+
+.row .column img{
+    animation-name: images-rotate;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes images-rotate {
+    0%{
+        transform: rotate(200deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}

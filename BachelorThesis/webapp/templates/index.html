@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+    <main>
+      <form action="{{ url_for( 'get_products') }}">
+      <div class="forms">
+        <div class="search">
+          <input name="name"  placeholder="Vyhľadaj podľa názvu" type="text" />
+          <button type="submit">
+            <span class="material-icons">search</span>
+          </button>
+        </div>
+        <div class="filter">
+          <div class="categories">
+            <select name="category" id="category">
+              <option value="" selected>
+                Vyhľadaj podľa kategórie
+              </option>
+              {% for cat in data['categories'] %}
+              <option value="{{cat}}">{{cat}}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="brands">
+            <select name="brand" id="brand">
+              <option value="" selected>
+                Vyhľadaj podľa značky
+              </option>
+              {% for brand in data['brands'] %}
+              <option value="{{brand}}">{{brand}}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+      </div>
+    </form>
+    </main>
+{% endblock %}
+

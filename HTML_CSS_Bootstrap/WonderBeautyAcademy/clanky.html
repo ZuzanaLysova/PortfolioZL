@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+    <title>Wonder Beauty Academy</title>
+    <link rel="icon" href="images/logo.png">
+    <link rel="stylesheet" href="rozlozenie.css"/>
+    <link rel="stylesheet" href="animation.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Josefin+Sans&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<header>
+    <img src="images/logo_w.png" class="logo">
+    <h1>Wonder Beauty Academy</h1>
+</header>
+
+<!--NAVBAR-->
+<nav id="top">
+    <div id="menu-toggle" class="arrow material-icons">keyboard_double_arrow_down</div>
+    <div id="menu">
+        <button onclick="location.href='index.html'"><span>Domov</span></button>
+        <div class="category" id="kurzy">
+            <button><span class="submenu-toggle" data-submenu="kurzy">Kurzy</span></button>
+            <div class="submenu">
+                <a>Denné líčenie</a>
+                <a>Večerné líčenie</a>
+                <a>Iné</a>
+            </div>
+        </div>
+        <button><span>Lektori</span></button>
+        <button class="activelink" onclick="location.href='clanky.html'"><span>Články</span></button>
+        <button><span>Kontakt</span></button>
+    </div>
+
+</nav>
+
+<main>
+    <hr class="rounded">
+    <!--    <div class="article1">-->
+    <!--        <img src="images/skincare.jpg">-->
+    <!--        <h3>Poznáš typ svojej pleti?</h3>-->
+    <!--        <p>Ak si si odpovedala na túto otázku nie, rozklikni tento článok, ktorý ti tvoje "nie" zmení na-->
+    <!--            "samozrejme!".</p>-->
+
+    <!--    </div>-->
+    <!--    <hr class="rounded">-->
+    <!--    <div class="article2">-->
+    <!--        <img src="images/silvester.jpg">-->
+    <!--        <h3>Tutoriál: Jednoduchý Silvestrovský makeup</h3>-->
+    <!--        <p>Či sa chystáš na silvestrovskú párty alebo si chceš len užiť silvestrovský večer v pohodlí domova, ukážeme-->
+    <!--            ti, ako vyzerať skvelo len v pár jednoduchých krokoch!</p>-->
+
+    <!--    </div>-->
+    <table class="article1">
+        <thead>
+        <th>
+            Poznáš typ svojej pleti?
+        </th>
+        </thead>
+        <tbody>
+        <tr>
+            <a><img class="article1img" src="images/skincare.jpg"></a>
+        </tr>
+        <tr>
+            <td>
+                Ak si si odpovedala na túto otázku nie, rozklikni tento článok, ktorý ti tvoje "nie" zmení na
+                "samozrejme!".
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <hr class="rounded">
+
+    <table class="article2">
+        <thead>
+        <th>
+            Tutoriál: Jednoduchý Silvestrovský makeup
+        </th>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                Či sa chystáš na silvestrovskú párty alebo si chceš len užiť silvestrovský večer v pohodlí domova,
+                ukážeme ti, ako vyzerať skvelo len v pár jednoduchých krokoch!
+            </td>
+        </tr>
+        <tr>
+            <a><img class="article2img" src="images/silvester.jpg"></a>
+        </tr>
+        </tbody>
+    </table>
+    <hr class="rounded">
+</main>
+
+
+<footer>
+    <a href="https://www.instagram.com/mymakeupoftea_/" target="_blank">
+        <div class="insta">
+            <table>
+                <tr>
+                    <th rowspan="2"><img src="images/insta.png" alt="instagram-logo"></th>
+                    <td class="follow">Follow us on</td>
+                </tr>
+                <tr>
+                    <td class="instagram"> Instagram</td>
+                </tr>
+            </table>
+        </div>
+    </a>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

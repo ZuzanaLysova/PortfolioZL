@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="/static/styles.css" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Produkty</title>
+</head>
+
+<body>
+	<header>
+		<h1><a href="{{ url_for('index') }}">Sparkle</a></h1>
+	</header>
+	<main>
+		<div class="newsearch">
+			<a href="{{ url_for( 'index') }}">Nové hľadanie</a>
+		</div>
+		{{ pagination.links|safe }}
+		<div class="grid-container">
+				{% for product in products %}
+				<div class="grid-item">
+					<p class="name">{{ product.Name }}</p>
+					<p class="brand">{{ product.Brand }}</p>
+					<div class="image"><img src="{{ product.Image }}" /></div>
+					<h3 class="price">{{product.Price}}&nbsp;€</h3>
+					<a href="{{product.Url}}" target="blank"><span class="buy">
+						{% if product.Eshop == 'notino' %}
+							<img class="eshop-logo" style="height: 1em;" src="/static/images/notino.png" alt="notinologo">
+						{% elif  product.Eshop == 'makeup' %}
+							<img class="eshop-logo" src="/static/images/makeup.png" alt="makeuplogo">
+						{% elif  product.Eshop == 'pinkpanda' %}
+							<img class="eshop-logo" src="/static/images/pink-panda.svg" alt="pinkpandalogo">
+						{% else %}
+							<img class="eshop-logo" style="height: 1em;" src="/static/images/douglas.svg" alt="douglaslogo">
+						{% endif %}
+					</span></a>
+				</div>
+				{% endfor %}	
+		</div>
+		{{ pagination.links|safe }}
+	</main>
+	<footer>
+		<p>©2022 Zuzana Lysová</p>
+	</footer>
+</body>
+
+</html>

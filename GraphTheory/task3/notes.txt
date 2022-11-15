@@ -1,0 +1,47 @@
+3a
+- ak sú stupne všetkých uzlov sudé - Eulerovský graf
+- Postup:
+    - označím si všetky uzly, ktoré majú lichý stupeň
+    - skontrolujem, či je úplný graf - ak nie, hádžem chybovú hlášku
+    - spravím perfektné párovanie nad tým grafom - ľubovoľný uzol inciduje len s 1 hranou vo výbere (v našom úplnom grafe) a zahŕňa všetky uzly v grafe
+    - vyberiem minimálne perfektné párovanie
+    - zdvojím hrany, z ktorých vzniklo vybrané párovanie => všade budem mať sudý stupeň a môžem vytvoriť Eulerovský graf
+
+3b
+- akékoľvek riešenie, ktoré nájdeme je dobré, ale riešenie nemusí existovať
+- každé potrubie prejsť práve raz
+- všetky stupne uzlov sudé (viem nájsť uzavretý Eulerov ťah - Eulerovský graf) alebo práve 2 stupne liché (viem nájsť otvorený Eulerov ťah)
+- Eulerov ťah
+
+3c
+- najkratšia cesta ku všetkým uzlom
+- výpis kľudne aj takto:
+    ISP -> Pepa: 20m
+    ISP -> Honza: 30m
+    Pepa -> Anna: 30m
+    ...
+- Dijkstrov algoritmus - pamätám si vždy dĺžku a predchodcu
+- skontrolujem, či sú všetky hrany kladné - ak nie, hádžem chybu
+- inicializácia prvého uzlu - (None, 0)
+- inicializácia ostatných uzlov - (None, infinity konštanta v Pythone)
+- dictionary {Uzol: [parent, length]}
+- cyklus 
+    - správna ukončujúca podmienka je: kým neprejdem všetky uzly
+    - vyberám uzol s najmenšou cenou z nenavštívených uzlov a potom mením cenu u všetkých susedov (je jedno či je navštívený alebo nie)
+    - ošetrím aj uzly, ktoré nemajú žiadnych susedov - ostane mi tam nekonečno a susedov mi to nenájde, takže tam dám podmienku nejakú
+- výpis - vytvorím dictionary s priamymi následníkmi ({ISP: [Honza, Pepa], Honza: [], Pepa[Anna, Michal]...}) a rekurzívne prejdem a vypíšem
+
+
+report - napísať, aký algoritmus je najvhodnejší (najviac obmedzený, najjednoduchší) a aké podmienky musia byť splnené
+
+Ukol 4
+4a
+algoritmus zlepšujúceho sa toku
+4b
+barvení grafu
+4c
+- mriežka, ktorá reprezentuje mesto
+- na vybaných súradniciach si dám body (budovy) a počet áut + body (parkovacie domy) a počet áut
+- vypočítam vzdialenosti z B do P a určím, ktoré auto bude parkovať kde
+- cieľom je minimalizovať súčet vzdialeností
+- párovanie grafu
