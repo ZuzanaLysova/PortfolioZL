@@ -1,0 +1,146 @@
+%
+\usemodule[ctx-thesis-v0.991]
+\usemodule[bib.sty-v2.78]
+
+\setupthesis[cs,mendelu,pef,none][ % jazyk,univerzita,fakulta,ústav/katedra/pracoviště ; language,university,faculty,department
+  type={dp},                 % bp,dp,pp,zp,sp,pr,pt aj./etc.
+  authorname={Zuzana},	     % jméno
+  authorsurname={Lysová},        % příjmení
+  authordegree={Bc.},	     % titul před jménem
+  authorgender={F},          % pohlaví (holky mají F)
+  supervisor={RNDr. Zuzana Špendel, Ph.D.},        % vedoucí práce
+  title={Analýza, návrh a implementácia softwarovej platformy pre firmu Asseco Central Europe, a.s.},                           % název práce
+  titleen={Analysis, design and implementation of software platform for Asseco Central Europe, a.s.}, 	           % název práce anglicky
+  keywords={bla,blabla,bla,blabla},    %
+  keywordsen={aa,xxx,vvv,aa,bbb}, %
+%  acknowledgement={Děkuji své babičce, že mi napekla na cestu buchty.},	           % poděkování
+  abstract={},		                           % český abstrakt
+  abstracten={},		                   % anglický abstrakt
+  location={Brno,Brně},	   % místo vydání (za čárkou 6. pád) ; location (second parameter is not necessary for English)
+%  year={2021},		   % rok odevzdání práce (automaticky aktuální rok) ; year, the default is the current year
+%  thesisassignmentform={img/file001.png,img/file002.png},  % seznam souborů se skenem zadání práce; file is thesis assignment
+]
+
+\startthesis
+\startbodymatter
+
+\kap{Úvod}
+
+asdadadf
+\TODO Napsat celou práci.
+
+\kap{Cieľ}
+
+\kap{Súčasný stav}
+
+%\QUES Opravdu musím psát literární rešerši? 
+
+\kap{Metodika}
+
+\pkap{Popis EMMA}
+
+Tady je text.
+
+\pkap{Popis SAMO}
+
+Tady je text.
+
+\pkap{Popis metodiky, analýzy a návrhu}
+
+Tady je text.
+
+\pkap{Charakteristika vybraných služieb verejnej správy}
+
+Tady je text.
+
+\kap{Výsledky}
+
+\pkap{Model požiadaviek}
+
+Tady je text.
+
+\pkap{Use case model}
+
+Tady je text.
+
+\pkap{Sekvenčný diagram}
+
+Tady je text.
+
+\pkap{Konceptuálny dátový model}
+
+Tady je text, který obsahuje odkazy na obrázky~\in{}[o1] a \in{}[o2].
+
+\pkap{Logický dátový model pre SAMO}
+
+Tady je text.
+
+\pkap{Výber služby, ktorá bude implementovaná}
+
+Tady je text.
+
+\pkap{Implementácia vybranej služby}
+
+Tady je text.
+
+\pkap{Návrh testovacích scenárov}
+
+Tady je text.
+
+\pkap{Dokumentácia prevedených testov}
+
+Tady je text.
+
+\obrazek{o1}{Toto je první obrázek.}{img/pomocnyobrazek.jpg}{scale=500}
+
+\obrazek{o2}{Toto je druhý obrázek.}{img/pomocnyobrazek.jpg}{width=4cm}
+
+\kap{Diskusia}
+
+Tady je text.
+
+\kap{Závěr}
+
+Tady je text.
+
+%%%%%%%%%%%%%%%%%%%%%%%%% \def\refname{}
+
+\bbib
+Tady budou citace, nastuduj si styl bib.sty v příslušné verzi.
+\ebib
+
+\stopbodymatter
+
+%%%%%%%%%%%%%%%%%%%%%%%% Varianta, kdy seznamy jsou součástí práce a nejsou uvedeny v přílohách
+
+\setupsectionblock[backmatter][before={\setuplist[kap][before={}]}]
+
+\startbackmatter
+
+\THESIScompletelistof{tables}
+\THESIScompletelistof{figures}
+\THESIScompletelistof{abbreviations}
+\THESIScompletelistof{codes}
+
+\stopbackmatter
+
+%%%%%%%%%%%%%%%%%%%%%%%% Varianta, kdy seznamy nejsou součástí práce, ale jsou zařazeny do příloh.
+%%%%%%%%%%%%%%%%%%%%%%%% Níže uvedeným čtyřem příkazům postačí odstranit znak procenta.
+%%%%%%%%%%%%%%%%%%%%%%%% Naopak před výše uvedené čtyři příkazy je potřeba znak procenta vložit.
+
+\startappendices
+
+\cast{Přílohy}
+%\THESIScompletelistof{tables}
+%\THESIScompletelistof{figures}
+%\THESIScompletelistof{abbreviations}
+%\THESIScompletelistof{codes}
+
+\stopappendices
+
+\stopthesis
+
+\endinput		
+
+%%%% TODO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Tady si můžeš psát poznámky, které se neobjeví ve výstupu.

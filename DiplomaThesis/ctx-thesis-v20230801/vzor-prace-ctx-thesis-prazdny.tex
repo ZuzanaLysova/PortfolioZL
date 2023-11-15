@@ -1,0 +1,102 @@
+%
+\usemodule[ctx-thesis-v0.991]
+\usemodule[bib.sty-v2.78]
+
+\setupthesis[cs,mendelu,pef,none][ % jazyk,univerzita,fakulta,ústav/katedra/pracoviště ; language,university,faculty,department
+  type={bp},                 % bp,dp,pp,zp,sp,pr,pt aj./etc.
+  authorname={xx},	     % jméno
+  authorsurname={yy},        % příjmení
+  authordegree={},	     % titul před jménem
+  authorgender={M},          % pohlaví (holky mají F)
+  supervisor={XX YY},        % vedoucí práce
+  title={Toto je práce},                           % název práce
+  titleen={This is in English}, 	           % název práce anglicky
+  keywords={klíčová slova, oddělujeme, čárkou},    %
+  keywordsen={key TeX words, separated, by comma}, %
+%  acknowledgement={Děkuji své babičce, že mi napekla na cestu buchty.},	           % poděkování
+  abstract={},		                           % český abstrakt
+  abstracten={},		                   % anglický abstrakt
+  location={Brno,Brně},	   % místo vydání (za čárkou 6. pád) ; location (second parameter is not necessary for English)
+%  year={2021},		   % rok odevzdání práce (automaticky aktuální rok) ; year, the default is the current year
+%  thesisassignmentform={img/file001.png,img/file002.png},  % seznam souborů se skenem zadání práce; file is thesis assignment
+]
+
+\startthesis
+\startbodymatter
+
+\kap{Úvod}
+
+asdadadf
+\TODO Napsat celou práci.
+
+\kap{Literární rešerše}
+
+%\QUES Opravdu musím psát literární rešerši? 
+
+\kap{Materiál a metody}
+
+\pkap{Materiál}
+
+Tady je text.
+
+\pkap{Metody}
+
+Tady je text.
+
+\kap{Výsledky}
+
+Tady je text, který obsahuje odkazy na obrázky~\in{}[o1] a \in{}[o2].
+
+\obrazek{o1}{Toto je první obrázek.}{img/pomocnyobrazek.jpg}{scale=500}
+
+\obrazek{o2}{Toto je druhý obrázek.}{img/pomocnyobrazek.jpg}{width=4cm}
+
+\kap{Diskuse}
+
+Tady je text.
+
+\kap{Závěr}
+
+Tady je text.
+
+%%%%%%%%%%%%%%%%%%%%%%%%% \def\refname{}
+
+\bbib
+Tady budou citace, nastuduj si styl bib.sty v příslušné verzi.
+\ebib
+
+\stopbodymatter
+
+%%%%%%%%%%%%%%%%%%%%%%%% Varianta, kdy seznamy jsou součástí práce a nejsou uvedeny v přílohách
+
+\setupsectionblock[backmatter][before={\setuplist[kap][before={}]}]
+
+\startbackmatter
+
+\THESIScompletelistof{tables}
+\THESIScompletelistof{figures}
+\THESIScompletelistof{abbreviations}
+\THESIScompletelistof{codes}
+
+\stopbackmatter
+
+%%%%%%%%%%%%%%%%%%%%%%%% Varianta, kdy seznamy nejsou součástí práce, ale jsou zařazeny do příloh.
+%%%%%%%%%%%%%%%%%%%%%%%% Níže uvedeným čtyřem příkazům postačí odstranit znak procenta.
+%%%%%%%%%%%%%%%%%%%%%%%% Naopak před výše uvedené čtyři příkazy je potřeba znak procenta vložit.
+
+\startappendices
+
+\cast{Přílohy}
+%\THESIScompletelistof{tables}
+%\THESIScompletelistof{figures}
+%\THESIScompletelistof{abbreviations}
+%\THESIScompletelistof{codes}
+
+\stopappendices
+
+\stopthesis
+
+\endinput		
+
+%%%% TODO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Tady si můžeš psát poznámky, které se neobjeví ve výstupu.

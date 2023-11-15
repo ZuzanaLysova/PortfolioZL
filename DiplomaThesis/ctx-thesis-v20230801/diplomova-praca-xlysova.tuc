@@ -1,0 +1,1381 @@
+local utilitydata = { }
+
+utilitydata.comment={
+ ["version"]=0x1.51eb851eb851fp+0,
+}
+
+if not utilitydata.job then utilitydata.job = { } end
+if not utilitydata.job.variables then utilitydata.job.variables = { } end
+
+utilitydata.job.variables.checksums={
+}
+
+if not utilitydata.job then utilitydata.job = { } end
+if not utilitydata.job.variables then utilitydata.job.variables = { } end
+
+utilitydata.job.variables.collected={
+ ["macros"]={},
+ ["randomseed"]=0x1.0ca0000000000p-4,
+ ["sectionblockorder"]={ "frontpart", "bodypart", "backpart", "appendix" },
+}
+
+if not utilitydata.job then utilitydata.job = { } end
+if not utilitydata.job.structure then utilitydata.job.structure = { } end
+
+utilitydata.job.structure.collected={
+ ["branches"]={},
+ ["name"]="",
+ ["type"]="text",
+}
+
+if not utilitydata.job then utilitydata.job = { } end
+if not utilitydata.job.positions then utilitydata.job.positions = { } end
+
+utilitydata.job.positions.collected={
+}
+
+if not utilitydata.job then utilitydata.job = { } end
+if not utilitydata.job.passes then utilitydata.job.passes = { } end
+
+utilitydata.job.passes.collected={
+}
+
+if not utilitydata.job then utilitydata.job = { } end
+if not utilitydata.job.datasets then utilitydata.job.datasets = { } end
+
+utilitydata.job.datasets.collected={
+}
+
+if not utilitydata.job then utilitydata.job = { } end
+if not utilitydata.job.pagestates then utilitydata.job.pagestates = { } end
+
+utilitydata.job.pagestates.collected={
+ ["float"]={ 14, 14 },
+}
+
+if not utilitydata.structures then utilitydata.structures = { } end
+if not utilitydata.structures.specials then utilitydata.structures.specials = { } end
+
+utilitydata.structures.specials.collected={
+}
+
+if not utilitydata.structures then utilitydata.structures = { } end
+if not utilitydata.structures.sections then utilitydata.structures.sections = { } end
+
+utilitydata.structures.sections.collected={
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="cs",
+  ["numbers"]=1,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="cs",
+  ["numbers"]=2,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="cs",
+  ["numbers"]=3,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="cs",
+  ["numbers"]=4,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="cs",
+  ["numbers"]=5,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="cs",
+  ["numbers"]=6,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="cs",
+  ["numbers"]=7,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="cs",
+  ["numbers"]=8,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="cs",
+  ["numbers"]=9,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="cs",
+  ["numbers"]=10,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="cs",
+  ["numbers"]=11,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="cs",
+  ["numbers"]=12,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="cs",
+  ["numbers"]=13,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="cs",
+  ["numbers"]=14,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="cs",
+  ["numbers"]=15,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="cs",
+  ["numbers"]=16,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="cs",
+  ["numbers"]=17,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="cs",
+  ["numbers"]=18,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="cs",
+  ["numbers"]=19,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="cs",
+  ["numbers"]=20,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["hidenumber"]=true,
+  ["language"]="cs",
+  ["numbers"]=21,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="backpart",
+  ["conversionset"]="default",
+  ["hidenumber"]=true,
+  ["language"]="cs",
+  ["numbers"]=1,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="backpart",
+  ["conversionset"]="default",
+  ["hidenumber"]=true,
+  ["language"]="cs",
+  ["numbers"]=2,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="backpart",
+  ["conversionset"]="default",
+  ["hidenumber"]=true,
+  ["language"]="cs",
+  ["numbers"]=3,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="backpart",
+  ["conversionset"]="default",
+  ["hidenumber"]=true,
+  ["language"]="cs",
+  ["numbers"]=4,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="appendix",
+  ["conversionset"]="default",
+  ["hidenumber"]=true,
+  ["language"]="cs",
+  ["numbers"]=22,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+}
+
+if not utilitydata.structures then utilitydata.structures = { } end
+if not utilitydata.structures.counters then utilitydata.structures.counters = { } end
+
+utilitydata.structures.counters.collected={
+ ["chemical"]={
+  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+ },
+ ["combination"]={
+  { 0 },
+ },
+ ["endnote"]={
+  { 0 },
+ },
+ ["figure"]={
+  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+ },
+ ["footnote"]={
+  { 0 },
+ },
+ ["formula"]={
+  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+ },
+ ["graphic"]={
+  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+ },
+ ["intermezzo"]={
+  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+ },
+ ["itemgroup:itemize"]={
+  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+ },
+ ["itemgroup:itemize:note"]={
+  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+ },
+ ["linenote"]={
+  { 0 },
+ },
+ ["paragraph"]={
+  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+ },
+ ["realpage"]={
+  { 22 },
+ },
+ ["subpage"]={
+  { 22 },
+ },
+ ["table"]={
+  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+ },
+ ["textnote:note"]={
+  { 0 },
+ },
+ ["userpage"]={
+  { 22 },
+ },
+}
+
+if not utilitydata.structures then utilitydata.structures = { } end
+if not utilitydata.structures.lists then utilitydata.structures.lists = { } end
+
+utilitydata.structures.lists.collected={
+ {
+  ["metadata"]=23,
+  ["numberdata"]=24,
+  ["references"]={
+   ["block"]="frontpart",
+   ["internal"]=1,
+   ["realpage"]=7,
+   ["reference"]="obsah",
+   ["section"]=0,
+  },
+  ["titledata"]={
+   ["title"]="\\headtext {obsah}",
+  },
+ },
+ {
+  ["metadata"]=25,
+  ["numberdata"]=26,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=2,
+   ["realpage"]=9,
+   ["section"]=1,
+  },
+  ["titledata"]={
+   ["label"]="chapter",
+   ["title"]="Úvod",
+  },
+ },
+ {
+  ["metadata"]=25,
+  ["numberdata"]=27,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=3,
+   ["realpage"]=10,
+   ["section"]=2,
+  },
+  ["titledata"]={
+   ["label"]="chapter",
+   ["title"]="Cieľ",
+  },
+ },
+ {
+  ["metadata"]=25,
+  ["numberdata"]=28,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=4,
+   ["realpage"]=11,
+   ["section"]=3,
+  },
+  ["titledata"]={
+   ["label"]="chapter",
+   ["title"]="Súčasný stav",
+  },
+ },
+ {
+  ["metadata"]=25,
+  ["numberdata"]=29,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=5,
+   ["realpage"]=12,
+   ["section"]=4,
+  },
+  ["titledata"]={
+   ["label"]="chapter",
+   ["title"]="Metodika",
+  },
+ },
+ {
+  ["metadata"]=30,
+  ["numberdata"]=31,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=6,
+   ["realpage"]=12,
+   ["section"]=5,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="Popis EMMA",
+  },
+ },
+ {
+  ["metadata"]=30,
+  ["numberdata"]=32,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=7,
+   ["realpage"]=12,
+   ["section"]=6,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="Popis SAMO",
+  },
+ },
+ {
+  ["metadata"]=30,
+  ["numberdata"]=33,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=8,
+   ["realpage"]=12,
+   ["section"]=7,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="Popis metodiky, analýzy a návrhu",
+  },
+ },
+ {
+  ["metadata"]=30,
+  ["numberdata"]=34,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=9,
+   ["realpage"]=12,
+   ["section"]=8,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="Charakteristika vybraných služieb verejnej správy",
+  },
+ },
+ {
+  ["metadata"]=25,
+  ["numberdata"]=35,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=10,
+   ["realpage"]=13,
+   ["section"]=9,
+  },
+  ["titledata"]={
+   ["label"]="chapter",
+   ["title"]="Výsledky",
+  },
+ },
+ {
+  ["metadata"]=30,
+  ["numberdata"]=36,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=11,
+   ["realpage"]=13,
+   ["section"]=10,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="Model požiadaviek",
+  },
+ },
+ {
+  ["metadata"]=30,
+  ["numberdata"]=37,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=12,
+   ["realpage"]=13,
+   ["section"]=11,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="Use case model",
+  },
+ },
+ {
+  ["metadata"]=30,
+  ["numberdata"]=38,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=13,
+   ["realpage"]=13,
+   ["section"]=12,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="Sekvenčný diagram",
+  },
+ },
+ {
+  ["metadata"]=30,
+  ["numberdata"]=39,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=14,
+   ["realpage"]=13,
+   ["section"]=13,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="Konceptuálny dátový model",
+  },
+ },
+ {
+  ["metadata"]=30,
+  ["numberdata"]=40,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=15,
+   ["realpage"]=13,
+   ["section"]=14,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="Logický dátový model pre SAMO",
+  },
+ },
+ {
+  ["metadata"]=41,
+  ["numberdata"]=43,
+  ["prefixdata"]=44,
+  ["references"]={
+   ["internal"]=20,
+   ["realpage"]=14,
+   ["reference"]="o1",
+   ["section"]=18,
+   ["view"]="fit",
+  },
+  ["titledata"]={
+   ["list"]="Toto je první obrázek.",
+   ["title"]="\\THESISautoreffont {Toto je první obrázek.}",
+  },
+ },
+ {
+  ["metadata"]=41,
+  ["numberdata"]=46,
+  ["prefixdata"]=44,
+  ["references"]={
+   ["internal"]=21,
+   ["realpage"]=14,
+   ["reference"]="o2",
+   ["section"]=18,
+   ["view"]="fit",
+  },
+  ["titledata"]={
+   ["list"]="Toto je druhý obrázek.",
+   ["title"]="\\THESISautoreffont {Toto je druhý obrázek.}",
+  },
+ },
+ {
+  ["metadata"]=30,
+  ["numberdata"]=47,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=16,
+   ["realpage"]=14,
+   ["section"]=15,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="Výber služby, ktorá bude implementovaná",
+  },
+ },
+ {
+  ["metadata"]=30,
+  ["numberdata"]=48,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=17,
+   ["realpage"]=14,
+   ["section"]=16,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="Implementácia vybranej služby",
+  },
+ },
+ {
+  ["metadata"]=30,
+  ["numberdata"]=49,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=18,
+   ["realpage"]=14,
+   ["section"]=17,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="Návrh testovacích scenárov",
+  },
+ },
+ {
+  ["metadata"]=30,
+  ["numberdata"]=50,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=19,
+   ["realpage"]=14,
+   ["section"]=18,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="Dokumentácia prevedených testov",
+  },
+ },
+ {
+  ["metadata"]=25,
+  ["numberdata"]=51,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=22,
+   ["realpage"]=15,
+   ["section"]=19,
+  },
+  ["titledata"]={
+   ["label"]="chapter",
+   ["title"]="Diskusia",
+  },
+ },
+ {
+  ["metadata"]=25,
+  ["numberdata"]=52,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=23,
+   ["realpage"]=16,
+   ["section"]=20,
+  },
+  ["titledata"]={
+   ["label"]="chapter",
+   ["title"]="Závěr",
+  },
+ },
+ {
+  ["metadata"]=53,
+  ["numberdata"]=54,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=24,
+   ["realpage"]=17,
+   ["section"]=21,
+  },
+  ["titledata"]={
+   ["label"]="chapter",
+   ["title"]="\\refname ",
+  },
+ },
+ {
+  ["metadata"]=55,
+  ["references"]={
+   ["internal"]=25,
+   ["realpage"]=17,
+   ["section"]=21,
+  },
+  ["userdata"]={
+   ["second"]="Literatura",
+  },
+ },
+ {
+  ["metadata"]=56,
+  ["references"]={
+   ["internal"]=26,
+   ["realpage"]=18,
+   ["section"]=21,
+  },
+  ["userdata"]={
+   ["command"]="\\blank [big]",
+  },
+ },
+ {
+  ["metadata"]=57,
+  ["references"]={
+   ["internal"]=28,
+   ["realpage"]=18,
+   ["section"]=22,
+  },
+ },
+ {
+  ["metadata"]=25,
+  ["numberdata"]=58,
+  ["references"]={
+   ["block"]="backpart",
+   ["internal"]=27,
+   ["realpage"]=18,
+   ["section"]=22,
+  },
+  ["titledata"]={
+   ["title"]="\\headtext {tables}",
+  },
+ },
+ {
+  ["metadata"]=57,
+  ["references"]={
+   ["internal"]=30,
+   ["realpage"]=19,
+   ["section"]=23,
+  },
+ },
+ {
+  ["metadata"]=25,
+  ["numberdata"]=59,
+  ["references"]={
+   ["block"]="backpart",
+   ["internal"]=29,
+   ["realpage"]=19,
+   ["section"]=23,
+  },
+  ["titledata"]={
+   ["title"]="\\headtext {figures}",
+  },
+ },
+ {
+  ["metadata"]=57,
+  ["references"]={
+   ["internal"]=32,
+   ["realpage"]=20,
+   ["section"]=24,
+  },
+ },
+ {
+  ["metadata"]=25,
+  ["numberdata"]=60,
+  ["references"]={
+   ["block"]="backpart",
+   ["internal"]=31,
+   ["realpage"]=20,
+   ["section"]=24,
+  },
+  ["titledata"]={
+   ["title"]="\\headtext {abbreviations}",
+  },
+ },
+ {
+  ["metadata"]=57,
+  ["references"]={
+   ["internal"]=34,
+   ["realpage"]=21,
+   ["section"]=25,
+  },
+ },
+ {
+  ["metadata"]=25,
+  ["numberdata"]=61,
+  ["references"]={
+   ["block"]="backpart",
+   ["internal"]=33,
+   ["realpage"]=21,
+   ["section"]=25,
+  },
+  ["titledata"]={
+   ["title"]="\\headtext {codes}",
+  },
+ },
+ {
+  ["metadata"]=62,
+  ["numberdata"]=63,
+  ["references"]={
+   ["block"]="appendix",
+   ["internal"]=35,
+   ["realpage"]=22,
+   ["section"]=26,
+  },
+  ["titledata"]={
+   ["label"]="appendix",
+   ["title"]="\\uppercase {Přílohy}",
+  },
+ },
+}
+
+if not utilitydata.structures then utilitydata.structures = { } end
+if not utilitydata.structures.pages then utilitydata.structures.pages = { } end
+
+utilitydata.structures.pages.collected={
+ {
+  ["block"]="frontpart",
+  ["number"]=1,
+  ["numberdata"]=64,
+  ["prefixdata"]=65,
+  ["state"]="start",
+ },
+ {
+  ["block"]="frontpart",
+  ["number"]=2,
+  ["numberdata"]=64,
+  ["prefixdata"]=65,
+  ["state"]="start",
+ },
+ {
+  ["block"]="frontpart",
+  ["number"]=3,
+  ["numberdata"]=64,
+  ["prefixdata"]=65,
+  ["state"]="start",
+ },
+ {
+  ["block"]="frontpart",
+  ["number"]=4,
+  ["numberdata"]=64,
+  ["prefixdata"]=65,
+  ["state"]="start",
+ },
+ {
+  ["block"]="frontpart",
+  ["number"]=5,
+  ["numberdata"]=64,
+  ["prefixdata"]=65,
+  ["state"]="start",
+ },
+ {
+  ["block"]="frontpart",
+  ["number"]=6,
+  ["numberdata"]=64,
+  ["prefixdata"]=65,
+  ["state"]="start",
+ },
+ {
+  ["block"]="frontpart",
+  ["number"]=7,
+  ["numberdata"]=64,
+  ["prefixdata"]=65,
+  ["state"]="start",
+ },
+ {
+  ["block"]="frontpart",
+  ["number"]=8,
+  ["numberdata"]=64,
+  ["prefixdata"]=65,
+  ["state"]="start",
+ },
+ {
+  ["block"]="bodypart",
+  ["number"]=9,
+  ["numberdata"]=64,
+  ["prefixdata"]=65,
+  ["state"]="start",
+ },
+ {
+  ["block"]="bodypart",
+  ["number"]=10,
+  ["numberdata"]=64,
+  ["prefixdata"]=65,
+  ["state"]="start",
+ },
+ {
+  ["block"]="bodypart",
+  ["number"]=11,
+  ["numberdata"]=64,
+  ["prefixdata"]=65,
+  ["state"]="start",
+ },
+ {
+  ["block"]="bodypart",
+  ["number"]=12,
+  ["numberdata"]=64,
+  ["prefixdata"]=65,
+  ["state"]="start",
+ },
+ {
+  ["block"]="bodypart",
+  ["number"]=13,
+  ["numberdata"]=64,
+  ["prefixdata"]=65,
+  ["state"]="start",
+ },
+ {
+  ["block"]="bodypart",
+  ["number"]=14,
+  ["numberdata"]=64,
+  ["prefixdata"]=65,
+  ["state"]="start",
+ },
+ {
+  ["block"]="bodypart",
+  ["number"]=15,
+  ["numberdata"]=64,
+  ["prefixdata"]=65,
+  ["state"]="start",
+ },
+ {
+  ["block"]="bodypart",
+  ["number"]=16,
+  ["numberdata"]=64,
+  ["prefixdata"]=65,
+  ["state"]="start",
+ },
+ {
+  ["block"]="bodypart",
+  ["number"]=17,
+  ["numberdata"]=64,
+  ["prefixdata"]=65,
+  ["state"]="start",
+ },
+ {
+  ["block"]="backpart",
+  ["number"]=18,
+  ["numberdata"]=64,
+  ["prefixdata"]=65,
+  ["state"]="start",
+ },
+ {
+  ["block"]="backpart",
+  ["number"]=19,
+  ["numberdata"]=64,
+  ["prefixdata"]=65,
+  ["state"]="start",
+ },
+ {
+  ["block"]="backpart",
+  ["number"]=20,
+  ["numberdata"]=64,
+  ["prefixdata"]=65,
+  ["state"]="start",
+ },
+ {
+  ["block"]="backpart",
+  ["number"]=21,
+  ["numberdata"]=64,
+  ["prefixdata"]=65,
+  ["state"]="start",
+ },
+ {
+  ["block"]="appendix",
+  ["number"]=22,
+  ["numberdata"]=64,
+  ["prefixdata"]=65,
+  ["state"]="start",
+ },
+}
+
+if not utilitydata.structures then utilitydata.structures = { } end
+if not utilitydata.structures.references then utilitydata.structures.references = { } end
+
+utilitydata.structures.references.collected={
+}
+
+if not utilitydata.structures then utilitydata.structures = { } end
+if not utilitydata.structures.references then utilitydata.structures.references = { } end
+
+utilitydata.structures.references.referred={
+}
+
+if not utilitydata.job then utilitydata.job = { } end
+if not utilitydata.job.objects then utilitydata.job.objects = { } end
+
+utilitydata.job.objects.collected={
+}
+
+if not utilitydata.structures then utilitydata.structures = { } end
+if not utilitydata.structures.synonyms then utilitydata.structures.synonyms = { } end
+
+utilitydata.structures.synonyms.collected={
+}
+
+if not utilitydata.structures then utilitydata.structures = { } end
+if not utilitydata.structures.registers then utilitydata.structures.registers = { } end
+
+utilitydata.structures.registers.collected={
+}
+
+if not utilitydata.structures then utilitydata.structures = { } end
+if not utilitydata.structures.blocks then utilitydata.structures.blocks = { } end
+
+utilitydata.structures.blocks.collected={
+}
+
+if not utilitydata.job then utilitydata.job = { } end
+if not utilitydata.job.files then utilitydata.job.files = { } end
+
+utilitydata.job.files.collected={
+}
+
+if not utilitydata.publications then utilitydata.publications = { } end
+
+utilitydata.publications.collected={
+}
+
+if not utilitydata.job then utilitydata.job = { } end
+if not utilitydata.job.fileobjreferences then utilitydata.job.fileobjreferences = { } end
+
+utilitydata.job.fileobjreferences.collected={
+}
+
+if not utilitydata.job then utilitydata.job = { } end
+if not utilitydata.job.embedded then utilitydata.job.embedded = { } end
+
+utilitydata.job.embedded.collected={
+}
+
+utilitydata.job.packed={
+ ["index"]={
+  { 0, 1 },
+  { 0, 2 },
+  { 0, 3 },
+  { 0, 4 },
+  { 0, 4, 1 },
+  { 0, 4, 2 },
+  { 0, 4, 3 },
+  { 0, 4, 4 },
+  { 0, 5 },
+  { 0, 5, 1 },
+  { 0, 5, 2 },
+  { 0, 5, 3 },
+  { 0, 5, 4 },
+  { 0, 5, 5 },
+  { 0, 5, 6 },
+  { 0, 5, 7 },
+  { 0, 5, 8 },
+  { 0, 5, 9 },
+  { 0, 6 },
+  { 0, 7 },
+  { 0, 8 },
+  { 0, 0 },
+  {
+   ["catcodes"]=8,
+   ["coding"]="tex",
+   ["kind"]="section",
+   ["level"]=2,
+   ["name"]="title",
+   ["nolist"]=true,
+  },
+  {
+   ["block"]="frontpart",
+   ["conversionset"]="default",
+   ["hidenumber"]=true,
+   ["language"]="cs",
+   ["numbers"]=22,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["catcodes"]=8,
+   ["coding"]="tex",
+   ["increment"]="yes",
+   ["kind"]="section",
+   ["level"]=2,
+   ["name"]="kap",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="cs",
+   ["numbers"]=1,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="cs",
+   ["numbers"]=2,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="cs",
+   ["numbers"]=3,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="cs",
+   ["numbers"]=4,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["catcodes"]=8,
+   ["coding"]="tex",
+   ["increment"]="yes",
+   ["kind"]="section",
+   ["level"]=3,
+   ["name"]="pkap",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="cs",
+   ["numbers"]=5,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="cs",
+   ["numbers"]=6,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="cs",
+   ["numbers"]=7,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="cs",
+   ["numbers"]=8,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="cs",
+   ["numbers"]=9,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="cs",
+   ["numbers"]=10,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="cs",
+   ["numbers"]=11,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="cs",
+   ["numbers"]=12,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="cs",
+   ["numbers"]=13,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="cs",
+   ["numbers"]=14,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["catcodes"]=8,
+   ["coding"]="tex",
+   ["kind"]="float",
+   ["level"]=3,
+   ["name"]="figure",
+  },
+  { 1 },
+  {
+   ["conversionset"]="number",
+   ["counter"]="figure",
+   ["numbers"]=42,
+  },
+  {
+   ["connector"]=".",
+   ["prefix"]="yes",
+   ["segments"]="2:2",
+  },
+  { 2 },
+  {
+   ["conversionset"]="number",
+   ["counter"]="figure",
+   ["numbers"]=45,
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="cs",
+   ["numbers"]=15,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="cs",
+   ["numbers"]=16,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="cs",
+   ["numbers"]=17,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="cs",
+   ["numbers"]=18,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="cs",
+   ["numbers"]=19,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="cs",
+   ["numbers"]=20,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["catcodes"]=8,
+   ["coding"]="tex",
+   ["increment"]="yes",
+   ["kind"]="section",
+   ["level"]=2,
+   ["name"]="BIBSTYchapter",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["hidenumber"]=true,
+   ["language"]="cs",
+   ["numbers"]=21,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["catcodes"]=8,
+   ["kind"]="simple",
+   ["level"]=2,
+   ["name"]="chapter",
+  },
+  {
+   ["catcodes"]=8,
+   ["kind"]="command",
+   ["level"]=0,
+   ["name"]="kap",
+  },
+  {
+   ["catcodes"]=8,
+   ["kind"]="command",
+   ["level"]=2,
+   ["name"]="kap",
+  },
+  {
+   ["block"]="backpart",
+   ["conversionset"]="default",
+   ["hidenumber"]=true,
+   ["language"]="cs",
+   ["numbers"]=1,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="backpart",
+   ["conversionset"]="default",
+   ["hidenumber"]=true,
+   ["language"]="cs",
+   ["numbers"]=2,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="backpart",
+   ["conversionset"]="default",
+   ["hidenumber"]=true,
+   ["language"]="cs",
+   ["numbers"]=3,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="backpart",
+   ["conversionset"]="default",
+   ["hidenumber"]=true,
+   ["language"]="cs",
+   ["numbers"]=4,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["catcodes"]=8,
+   ["coding"]="tex",
+   ["kind"]="section",
+   ["level"]=2,
+   ["name"]="partpage",
+  },
+  {
+   ["block"]="appendix",
+   ["conversionset"]="default",
+   ["hidenumber"]=true,
+   ["language"]="cs",
+   ["numbers"]=22,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["conversionset"]="pagenumber",
+  },
+  {
+   ["connector"]="–",
+   ["prefix"]="no",
+   ["set"]="part",
+  },
+ },
+ ["keys"]={
+  ["directives"]=true,
+  ["metadata"]=true,
+  ["numberdata"]=true,
+  ["numbers"]=true,
+  ["ownnumbers"]=true,
+  ["pagedata"]=true,
+  ["prefixdata"]=true,
+  ["processors"]=true,
+  ["sectiondata"]=true,
+  ["specification"]=true,
+ },
+ ["skip"]={
+  ["datasets"]=true,
+  ["positions"]=true,
+  ["userdata"]=true,
+ },
+ ["version"]=0x1.051eb851eb852p+0,
+}
+
+return utilitydata

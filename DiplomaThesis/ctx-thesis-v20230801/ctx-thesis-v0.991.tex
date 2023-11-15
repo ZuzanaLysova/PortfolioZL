@@ -1,0 +1,1904 @@
+% macros=mkvi
+
+%====================================================================%
+% CTX-THESIS ver. 0.991 -- Thesis in ConTeXt                         %
+%--------------------------------------------------------------------%
+% Sazební styl pro ConTeXt -- (c) TH, 2013--2023                     %
+% Typesetting style for ConTeXt                                      %
+%--------------------------------------------------------------------%
+% t. č. ve vývoji / under the development                            %
+%====================================================================%
+% 0.991 20230509 fixing: \zlom; unilist
+% 0.990 20230426 doMyFigure: list= (experimental) 
+% 0.989 20230418 (TK:) US English: fixing bug; thesis->Thesis; 's; degree\,
+% 0.988 20230418 tiny additions, fixing bugs..., hanging abstracts
+% 0.987 20230414 pt added
+% 0.986 20230412 CTX v LMTX differnce with \par in macros
+% 0.985s 20230228 SOČ added
+% 0.985 20221203(?) fi added
+% 0.984 20221129 hy added
+% 0.983 20221121 ca, es, fr added
+% 0.982 20221113 data.label.thesis reconstruction; \setlabel etc. deleted
+% 0.981 20221023 SOČ, gyrec etc.
+% 0.98 20221008 structure of thesis labels --> compatible with CTX + getterm-->get_label*; termlist: del;
+%				tools (set_label, set_labels + cmds) for additions;
+%				warn; \dosetupthesis*;
+%				THESISKW; alternative layouts;
+%				preparesupervisor: types added;
+%				~ del; \,; uncommented parts; assignment form (rev.); lmtx: rep. hyph.
+% 0.971 20220408 ~
+% 0.97 20220408 \swapfrontmatterpages; pt=projekt; degree; \obrazekB; English macronames: \figure*; missing lang. redir. to en ; lot
+% 0.96 20211127 \až, \aŽ; TODO+QUES: \par; 
+% 0.95 20211102 \ORIGmainlanguage; endash; v/v.; hyphexcps: us/uk; userdata-->documentdata; \*obrazek* v list v autocaptionreffont etc.
+%				interaction: def. values; THESISlistof: revision
+% 0.94 20210512 vs; pppkap[x]: vspace 2:1; ppppkap[x]: corr.; THESISlist: charts; mieste; hyph.
+% 0.93 20210419 src: get v type; THESISlists
+% 0.92 20210417 THESISlists+headtext: src; hyph. přespal
+% 0.91 20210416 new itemize system; cz-->cs; floatsrccode, corr: pp, desc, THESISlist
+% 0.90 20210403 hyphenation; trim-->strip; decl:sk; setup ppkap+x, ppppkap+x; pdf2ab; \scr ; corr.: THESISlists, {\\,}; fig: plurals
+%--------------------------------------------------------------------%
+% SOFTWARE CREDITS:
+%   Wolfgang Schuster: settings for repeated hyphen, itemize setting for cs+sk, nested quotation marks.
+%--------------------------------------------------------------------%
+% LANGUAGE CREDITS:
+%   ca --- Javier Gambin Monzo + Samuel Conca Coles (2022)
+%   es --- Javier Gambin Monzo + Samuel Conca Coles (2022)
+%   fr --- Arnaud Pierre Henri De Barbentane + Adrien Patton (2022)
+%   hy --- Kristina Nazarjanová (2022)
+%   pt --- Joanna Sofia Bogas Carneiro et al. (2023)
+%--------------------------------------------------------------------%
+% 
+\ifx\undefined\autoparagraphmode\else\autoparagraphmode=0\fi%
+%
+%----------- Auxillary macros ---------------------------------------%
+
+\def\titnl{\crlf}
+\def\tocnl{\space}
+\def\extrapar{\godown[-14dd]~\par}  %% kvůli chybě u bottom
+\def\dirtypar{\crlf\null\hskip1.25em}
+\let\uv=\quotation
+\def\citat#1{{\it\uv{#1}}}
+\def\,{\kern.2em}
+\def\edots{\sixperemspace\dots}
+\def\sdots{\edots\sixperemspace}
+\def\sDots{\edots\ }
+
+\def\pojem#1{{\bf#1}}
+\def\akol{\unskip\ a~kol.\doifnextcharelse{(}{\ }{}}%\ifx\undefined\BIBSTYversion~\fi}
+\def\etal{\unskip\ et~al.\doifnextcharelse{(}{\ }{}}%ifx\undefined\BIBSTYversion~\fi}
+\ifx\undefined\mycshyphen\def\={\discretionary{-}{-}{-}}\fi
+\def\bye{\stopbodymatter\stopthesis\endinput}
+\defineframedtext[framedtextTODO][frame=on,offset=1cc,backgroundcolor=THESIScolorlightred]
+\defineframedtext[framedtextQUES][frame=on,offset=1cc,backgroundcolor=yellow]
+\tolerant\def\TODO#1\par{\framedtextTODO{#1}\par}
+\tolerant\def\QUES#1\par{\framedtextQUES{#1}\par}
+
+%----------- CSV definitions ------- --------------------------------%
+
+\ifx\undefined\defineseparatedlist\usemodule[database]\fi
+\defineseparatedlist[CSV][before=\bTABLE,after=\eTABLE,first=\bTR,last=\eTR,left=\bTD,right=\eTD,separator=;]
+\defineseparatedlist[LTX][before=\bTABLE,after=\eTABLE,first=\bTR,last=\eTR,left=\bTD,right=\eTD,separator=&]
+
+%----------- Auxillary Lua functions --------------------------------%
+
+\startluacode
+table.getn=function (t) return #t end
+string.mysplit = function (s,sep) if s and s:strip()~="" then t=s:split(sep) else t={} end return t end
+tex2txt = function(s) s=s:gsub("~"," ") s=s:gsub("\\","") return s:strip() end
+\stopluacode
+
+%----------- Languages : hyphenation ----------------------------------%
+
+\definebreakpoints[cscompound]
+\definebreakpoint[cscompound][-][nleft=3,nright=3,type=4]
+
+\startluacode
+fonts.protrusions.classes.cscompound = { 
+    vector = 'cscompound', factor = 1,
+}
+fonts.protrusions.vectors.cscompound = table.merged (
+    fonts.protrusions.vectors.quality,
+    {
+        [0x002D] = { 0.4, 0.7 }, -- hyphen
+    }
+)
+\stopluacode
+
+%----------- Languages : setups, dashes ------------------------------%
+
+\def\THESISdashes{
+  \let\az=\idash
+  \let\aZ=\Idash 
+  \let\až=\az
+  \let\aŽ=\aZ
+  \def\ip{\pdash}
+  \let\vs=\vdash
+  \let\vS=\Vdash
+  \let\VS=\VdAsh
+}
+
+\def\THESISdefaultitems{
+  \setupitemize[1][symbol=1]
+  \setupitemize[2][symbol=2]
+  \setupitemize[3][symbol=3]
+  \setupitemize[4][symbol=4]
+  \setupitemize[5][symbol=5]
+}
+
+\def\THESISczechitems{
+  \setupitemize[1][symbol=2]
+  \setupitemize[2][symbol=5]
+  \setupitemize[3][symbol=4]
+  \setupitemize[4][symbol=1]
+  \setupitemize[5][symbol=3]
+}
+
+\startsetups [ukenglish]
+  \resetbreakpoints
+  \def\idash{\discretionary{\char32to}{}{\endash}}
+  \def\Idash{\discretionary{}{to\char32}{\endash}}
+  \def\pdash{ \endash\ }
+  \def\vdash{\discretionary{\char32versus}{}{\endash}}
+  \def\Vdash{\discretionary{}{versus\char32}{\endash}}
+  \def\vdAsh{\discretionary{\char32v}{}{\endash}}
+  \def\VdAsh{\discretionary{}{v\char32}{\endash}}
+  \def\akol{\etal}
+  \THESISdashes
+  \THESISdefaultitems
+\stopsetups
+
+\startsetups [usenglish]
+  \setuplanguage[en][setups=ukenglish]
+  \def\pdash{\emdash}
+%  \let\ip=\pdash
+  \THESISdashes
+\stopsetups
+
+  \ifcase\contextlmtxmode
+    \setbreakpoints [cscompound]
+  \else
+    \setuplanguage [cs] [explicitrighthyphenchar=45, explicitlefthyphenchar=45]
+    \setuplanguage [sk] [explicitrighthyphenchar=45, explicitlefthyphenchar=45]
+  \fi
+
+\startsetups [czech]
+  \def\idash{\discretionary{\char32až}{}{\endash}}
+  \def\Idash{\discretionary{}{až\char32}{\endash}}
+  \def\pdash{~\endash\ }
+  \def\vdash{\discretionary{\char32versus}{}{\endash}}
+  \def\Vdash{\discretionary{}{versus\char32}{\endash}}
+  \def\vdAsh{\discretionary{}{vs.\char32}{\endash}}
+  \let\VdAsh=\vdAsh
+  \THESISdashes
+  \THESISczechitems
+\stopsetups
+
+\setuplanguage[cs][setups=czech]
+\setuplanguage[sk][setups=czech]
+\setuplanguage[uk][setups=english]
+\setuplanguage[en][setups=usenglish]
+
+\let\ORIGmainlanguage=\mainlanguage
+\def\mainlanguage[#1]{\def\tmplang{#1}
+   \doifinsetelse{\tmplang}{cs,cz,czech,sk,slovak}%
+ 	  {\setuplanguage[cs][setups=czech]
+	  }{%
+   \doifinsetelse{\tmplang}{en-gb,gb,uk,ukenglish}%
+      {\setuplanguage[en-gb][setups=ukenglish]
+	  }{%
+   \doifinsetelse{\tmplang}{en,us,usenglish}%
+      {\setuplanguage[en][setups=usenglish]
+       \def\tmplang{en}
+      }{}}} \ORIGmainlanguage[\tmplang]
+   }
+
+%----------- Languages : hyphenation exceptions ---------------------%
+
+\definefontfeature [default] [default] [protrusion=cscompound]
+
+\mainlanguage[cs]
+\hyphenation{FontForge MetaPost PostScript ConTeXt bold-italic of-fice prvot-ní prvot-ní-mi splněn plněn plně-ní splně-ní plsti-cí plstí-cí Fran-ti-šek pře-spal}
+\mainlanguage[sk]
+\hyphenation{FontForge MetaPost PostScript ConTeXt bold-italic of-fice}
+\mainlanguage[en]
+\hyphenation{FontForge MetaPost PostScript ConTeXt bold-italic of-fice}
+\mainlanguage[uk]
+\hyphenation{FontForge MetaPost PostScript ConTeXt bold-italic of-fice}
+
+%----------- Languages : quotations ---------------------------------%
+
+\setupdelimitedtext[quotation:1][method=font]
+\setupdelimitedtext[quotation:1][left={\symbol[leftquotation]},right={\symbol[rightquotation]}]
+\setupdelimitedtext[quotation:2][left={\symbol[leftquote]},    right={\symbol[rightquote]}]
+
+%----------- Colours ------------------------------------------------%
+
+\definecolor[THESIScolorheadergray][c=0,m=0,y=0,k=.5]
+\definecolor[THESIScolorlightred]  [r=1,g=.7,b=.7]
+
+%----------- Setup Thesis -------------------------------------------%
+
+\def\setupthesis{\dodoubleargument\dosetupthesis}
+\def\dosetupthesis[#1][#2]{\ctxlua{T.setupthesis('#1','#2')}\getparameters[THESIS]['#2']}
+\def\setupthesisdesign{\dodoubleargument\dosetupthesisdesign}
+\def\dosetupthesisdesign[#1][#2]{\ctxlua{T.setupthesisdesign('#1', '#2')}}
+\def\installuni[#1][#2]{\ctxlua{T.installuni('#1', '#2')}}
+
+\startluacode
+local data      = languages.data
+
+data.labels.thesis = {
+  ["bachelorthesis"]={
+   ["labels"]={
+	["cs"]="Bakalářská práce", 
+	["en"]="Bachelor's Thesis",
+	["ca"]="Tesi de licenciatura",
+	["es"]="Tesis de licenciatura",
+	["fi"]="Opinnäytetyö",
+	["fr"]="Mémoire de Bachelor",
+	["hy"]="Դիպլոմային աշխատանք",
+	["pt"]="Tese de Licenciatura",
+	["sk"]="Bakalárska práca",
+	},
+   },
+  ["masterthesis"]={
+   ["labels"]={
+	["cs"]="Diplomová práce",
+	["en"]="Master's Thesis",
+	["ca"]="Tesi de master",
+	["es"]="Tesis de master",
+	["fi"]="Pro gradu tutkielma",
+	["fr"]="Mémoire de Master",
+    ["hy"]="Մագիստրոսական թեզ",
+	["pt"]="Tese de Mestrado",
+	["sk"]="Diplomová práca",
+	},
+   },
+  ["phdthesis"]={
+   ["labels"]={
+    ["cs"]="Doktorská práce",
+    ["en"]="PhD~Thesis",
+	["ca"]="Tesi doctoral",
+	["es"]="Tesis de doctorado",
+	["fi"]="",
+	["fr"]="Thèse de doctorat",
+    ["hy"]="Դոկտորական թեզ",
+	["pt"]="Tese de Douturamento",
+	["sk"]="Doktorská práca",
+	},
+   },
+  ["commentarybachelorthesis"]={
+   ["labels"]={
+    ["cs"]="Komentář k bakalářské práci",
+    ["en"]="Commentary on Bachelor's Thesis",
+	["ca"]="Comentari de tesi de licenciatura",
+	["es"]="Comentario de tesis de licenciatura",
+	["fi"]="Kommentti kandidaatintyöstä",
+	["fr"]="",
+	["hy"]="Դիպլոմային աշխատանքի մեկնաբանություն",
+	["pt"]="Comentario de tese de licenciatura",
+    ["sk"]="Komentár k bakalárskej práci",
+	},
+   },
+  ["commentarymasterthesis"]={
+   ["labels"]={
+    ["cs"]="Komentář k diplomové práci",
+    ["en"]="Commentary on Master's Thesis",
+	["ca"]="Comentari de tesi de master ",
+	["es"]="Comentario de tesis de master ",
+	["fi"]="Kommentti diplomityöstä",
+	["fr"]="",
+	["hy"]="Մագիստրոսական թեզի մեկնաբանություն",
+	["pt"]="Comentario de tese de mestrado",
+    ["sk"]="Komentár k diplomovej práci",
+	},
+   },
+  ["commentaryphdthesis"]={
+   ["labels"]={
+    ["cs"]="Komentář k doktorské práci",
+    ["en"]="Commentary on PhD~Thesis",
+	["ca"]="Comentari de tesis de doctorat ",
+	["es"]="Comentario de tesis de doctorado ",
+	["fi"]="Väitöskirjan kommentit",
+	["fr"]="",
+	["hy"]="Թեկնածուական թեզի մեկնաբանություն",
+	["pt"]="Comentario de tese de douturamento",
+    ["sk"]="Komentár k doktorskej práci",
+	},
+   },
+  ["seminarthesis"]={
+   ["labels"]={
+    ["cs"]="Seminární práce",
+    ["en"]="Seminar Thesis",
+	["ca"]="Tesi de seminari",
+	["es"]="Tesis de seminario",
+	["fi"]="Seminaarin opinnäytetyö",
+	["fr"]="",
+	["hy"]="Սեմինարային աշխատանք",
+	["pt"]="Tese de seminario",
+    ["sk"]="Seminárna práca",
+	},
+   },
+  ["finalthesis"]={
+   ["labels"]={
+    ["cs"]="Závěrečná práce",
+    ["en"]="Final Thesis",
+	["ca"]="Tesi final",
+	["es"]="Tesis final",
+	["fi"]="Seminaarin opinnäytetyö", --?
+	["fr"]="Thèse finale",
+	["hy"]="Վերջնական թեզ",
+	["pt"]="Tese final",
+    ["sk"]="Záverečná práca",
+	},
+   },
+  ["report"]={
+   ["labels"]={
+    ["cs"]="Protokol",
+    ["en"]="Report",
+	["ca"]="Informe",
+	["es"]="Informe",
+	["fi"]="Reportti",
+	["fr"]="Rapport",
+	["hy"]="Զեկույց",
+	["pt"]="Reporte",
+    ["sk"]="Protokol",
+	},
+   },
+  ["project"]={
+   ["labels"]={
+    ["cs"]="Projekt",
+    ["en"]="Project",
+	["ca"]="Projecte",
+	["es"]="Proyecto",
+	["fi"]="Projekti",
+	["fr"]="Projet",
+	["hy"]="Նախագիծ",
+	["pt"]="Projeto",
+    ["sk"]="Projekt",
+	},
+   },
+  ["documentation"]={
+   ["labels"]={
+    ["cs"]="Dokumentace",
+    ["en"]="Documentation",
+	["ca"]="Documentacio",
+	["es"]="Documentacion",
+	["fi"]="Dokumentaatio",
+	["fr"]="Notice d'utilisation",
+	["hy"]="Փաստաթղթավորում",
+	["pt"]="Documentaçao",
+    ["sk"]="Dokumentácia",
+	},
+   },
+  ["studentprofact"]={
+   ["labels"]={
+    ["cs"]="Středoškolská odborná činnost",
+    ["en"]="Students Professional Activities",
+	["ca"]="Activitats professionals de l'estudiant",
+	["es"]="Actividades profesionales del estudiante",
+	["fi"]="Opiskelijoiden ammatillinen toiminta",
+	["fr"]="",
+	["hy"]="Ուսանողների մասնագիտական գործունեություն",
+	["pt"]="Atividades profissionais do estudante",
+    ["sk"]="Stredoškolská odborná činnosť",
+	},
+   },
+  ["supervisor"]={
+   ["labels"]={
+    ["cs"]="Vedoucí práce",
+    ["en"]="Supervisor",
+	["ca"]="Supervisor",
+	["es"]="Supervisor",
+	["fi"]="Valvoja",
+	["fr"]="Superviseur",
+	["hy"]="Ղեկավար",
+	["pt"]="Supervisor",
+    ["sk"]="Vedúci práce",
+	},
+   },
+  ["consultant"]={
+   ["labels"]={
+    ["cs"]="Konzultant",
+    ["en"]="Consultant",
+	["ca"]="",
+	["es"]="",
+	["fi"]="",
+	["fr"]="",
+	["hy"]="",
+	["pt"]="Consultor",
+    ["sk"]="Konzultant",
+	},
+   },
+  ["keywords"]={
+   ["labels"]={
+    ["cs"]="Klíčová slova",
+    ["en"]="Key words",
+	["ca"]="Paraules clau",
+	["es"]="Palabras clave",
+	["fi"]="Avainsanat",
+	["fr"]="Mots-clés",
+	["hy"]="Հիմնաբառեր",
+	["pt"]="Palavra-chave",
+    ["sk"]="Kľúčové slová",
+	},
+   },
+  ["abstract"]={
+   ["labels"]={
+    ["cs"]="Abstrakt",
+    ["en"]="Abstract",
+	["ca"]="Resum",
+	["es"]="Resumen",
+	["fi"]="Tiivistelmä",
+	["fr"]="Abstrait",
+	["hy"]="Աբստրակտ",
+	["pt"]="Abstrato",
+    ["sk"]="Abstrakt",
+	},
+   },
+  ["where"]={
+   ["labels"]={
+    ["cs"]="V",
+    ["en"]="",
+	["ca"]="A",
+	["es"]="En",
+	["fi"]="",
+	["fr"]="à",
+	["hy"]="",
+	["pt"]="á",
+    ["sk"]="V",
+	},
+   },
+  ["declaration"]={
+   ["labels"]={
+    ["cs"]="Čestné prohlášení",
+    ["en"]="Declaration",
+	["ca"]="Declaracio",
+	["es"]="Declaracion",
+	["fi"]="Declaration",
+	["fr"]="Déclaration",
+	["hy"]="Արձանագրություն",
+	["pt"]="Declaraçao",
+    ["sk"]="Čestné prehlásenie",
+	},
+   },
+  ["onday"]={
+   ["labels"]={
+    ["cs"]="dne",
+    ["en"]="",
+	["ca"]="el",
+	["es"]="el",
+	["fi"]="",
+	["fr"]="le",
+	["hy"]="",
+	["pt"]="no dia",
+    ["sk"]="dňa",
+	},
+   },
+  ["signature"]={
+   ["labels"]={
+    ["cs"]="podpis",
+    ["en"]="signature",
+	["ca"]="firma",
+	["es"]="firma",
+	["fi"]="Allekirjoitus",
+	["fr"]="signature",
+	["hy"]="ստորագրություն",
+	["pt"]="assinatura",
+    ["sk"]="podpis",
+	},
+   },
+  ["insteadofassignment"]={
+   ["labels"]={
+    ["cs"]="NA MÍSTĚ TOHOTO LISTU\\par SE NACHÁZÍ ORIGINÁL\\par ZADÁNÍ PRÁCE.\\par",
+    ["en"]="INSTEAD OF THIS SHEET\\par THERE IS THE ORIGINAL OF THE\\par THESIS ASSIGNMENT.\\par",
+	["ca"]="EN COMPTES D'AQUESTA PAGINA\\par AQUESTA ES L'ORIGINAL\\par TAREA DE TESI",
+	["es"]="EN VEZ DE ESTA PAGINA\\par ESTA ES LA ORIGINAL DE\\par TAREA DE TESIS",
+	["fi"]="TÄMÄN SIVUN SIJAAN\\par SIELLÄ ON ALKUPERÄINEN \\par OPINNÄYTTÖTEHTÄVÄ.\\par",
+	["fr"]="A LA PLACE DE CETTE FEUILLE\\par IL Y A L'ORIGINAL\\par ....",
+	["hy"]="ԱՅՍ ԹԵՐԹԻ ՓՈԽԱՐԵՆ\\par ԿԱ ԹԵԶԻ ՕՐԻԳԻՆԱԼ\\par ՀԱՆՁՆԱՐԱՐՈՒԹՅՈՒՆԸ:\\par",
+	["pt"]="EM VEZ DESTE PAGINA\\par EXISTE UMA PAGINA\\par ORIGINAL DESTA TESE.\\par",
+    ["sk"]="NA MIESTE TOHTO LISTU\\par SA NACHÁDZA ORIGINÁL\\par ZADANIA PRÁCE.\\par",
+	},
+   },
+}
+\stopluacode
+
+\startluacode
+ctx = context
+documentdata         = documentdata or {}
+documentdata.THESIS  = documentdata.THESIS or {}
+T                    = documentdata.THESIS
+S                    = documentdata.THESIS.setup
+T.design             = T.design or {}
+local D              = T.design 
+local L              = languages.data
+
+L.labels.thesis      = L.labels.thesis or {}
+Lti, Lth        = L.labels.titles, L.labels.thesis
+
+
+T.supportedlanguages = {cs=1,sk=1,en=1,ca=1,es=1,fi=1,fr=1,hy=1,pt=1}
+T.frontmatter        = T.frontmatter or {}
+
+function T.err(errmsg)
+  inspect("CTX-THESIS ERROR: "..errmsg)
+  ctx.errmessage("CTX-THESIS ERROR: "..errmsg) 
+end
+function T.warn(warnmsg)
+  inspect("CTX-THESIS ERROR: "..warnmsg)
+  ctx.message("CTX-THESIS WARNING: "..warnmsg) 
+end
+
+local err, warn = T.err, T.warn
+
+---------------------- Function / Prepare
+
+function T.preparedate()
+  local y=""
+  if S.date then 
+	S.year="\\date["..S.date.."][year]" 
+	S.date="\\date["..S.date.."]" 
+  elseif 
+    S.year then S.date="\\currentdate[day,{.~},month,{~}]"..S.year  else 
+    S.date="\\currentdate" S.year="\\currentdate[year]"
+  end
+end
+
+function T.preparesupervisor()
+  local types = { bp=1, dp=1, pp=1, kbp=1, kdp=1, kpp=1, soc=1 }
+  local sv    = S.supervisor
+  if       sv and sv~="" then ctx("\\def\\thesisSupervisor{{"..sv.."}}") 
+    elseif types[S.type] then err("Missing supervisor's name...") 
+  end
+end
+
+
+function T.prepareconsultant()
+  local types = { -- bp=1, dp=1, pp=1, kbp=1, kdp=1, kpp=1, 
+	soc=1 }
+  local co    = S.consultant
+  if       co and co~="" then ctx("\\def\\thesisConsultant{{"..co.."}}") 
+    elseif types[S.type] then err("Missing consultant's name...") 
+  end
+end
+
+--\\framed[align=low,frame=off]
+
+---------------------- Function / Get & Set
+
+function T.get_label (hash,lang,name)
+  if not hash then err("Non-existing structure, call the wizard.") os.exit() end
+  if not name or not hash[name] or not hash[name].labels then err("Non-existing named structure ("..name.."), call the wizard.") os.exit() end
+  if not lang or not languages.data.variants[lang] then lang="en" end
+  return hash[name].labels[lang] or hash[name].labels.en or hash[name].labels.cs or hash[name].labels.sk or ""
+end
+
+function T.get_label_thesis (name)
+  return T.get_label (Lth,T.setup.mainlanguage,name)
+end
+
+function T.set_label (hash,lang,name,text)
+  if not hash then err("Non-existing structure, call the wizard.") os.exit() end
+  if not name then err("Missing name, call the wizard.") os.exit() end
+  hash[name]        = hash[name] or {}
+  hash[name].labels = hash[name].labels or {}
+  lang              = lang or "en"
+  if not languages.data.variants[lang] then err("Non-existing language  "..lang..", add the language first.") os.exit() end
+  hash[name].labels[lang] = text or ""
+end
+
+get_label, get_label_thesis, set_label = T.get_label, T.get_label_thesis, T.set_label
+
+---------------------------------- Functions / setupthesis
+
+function T.setupthesis(keywords, keyvals)
+  keyword_options = utilities.parsers.settings_to_array(keywords)
+  T.setup         = utilities.parsers.settings_to_hash (keyvals)
+  S 			  = T.setup
+  S.subtitlesep   = " : "
+  local a         = (keyword_options[1]):split('+')
+  S.mainlanguage, S.auxlanguage = a[1], a[2]
+  local l         = S.mainlanguage
+
+  if l=="cz" then S.mainlanguage="cs" end
+  if l=="en" then l="uk" end
+  ctx("\\gdef\\TMP{LUA/F/setupthesis: "..l.."} \\mainlanguage["..l.."]")  
+  if l=="uk" or l=="us" then S.mainlanguage="en" end
+
+  S.university, S.faculty, S.department = keyword_options[2], keyword_options[3], keyword_options[4]
+  if not T.unilist[S.university] then 
+T.unilist = require "./ctx-thesis-listofuni" 
+end
+  
+  if #keyword_options<2 then err("Missing setup?") end
+  if not S.location then err("Missing location.") else
+    local l = S.location 
+          l = l:split(',') if #l==1 then l[2]=l[1] end 
+          S.location = l  
+  end
+
+  S.typeabbreviations = { 
+	bp = "bachelorthesis", 
+	dp = "masterthesis", 
+	pp = "phdthesis", 
+	phd = "phdthesis", 
+    sp = "seminarthesis",
+    zp = "finalthesis",
+    pt = "project",
+    pr = "report",
+    doc = "documentation",
+	soc = "studentprofact",
+	kbp = "commentarybachelorthesis",
+	kdp = "commentarymasterthesis",
+	kpp = "commentaryphdthesis",
+} 
+   local typeabbr = S.typeabbreviations
+
+  S.type=typeabbr[S.type] or typeabbr[S.type]
+
+  S.declaration=S.declaration or {}
+  if S.type=="studentprofact" 
+	then S.declaration.cs="\\thesisDeclarationCStextSOC"
+	else S.declaration.cs="\\thesisDeclarationCStext"
+  end
+  S.declaration.sk="\\thesisDeclarationSKtext"
+  S.declaration.en="\\thesisDeclarationENtext"
+
+  S.title=string.split(S.title,S.subtitlesep)
+  S.titleen=string.split(S.titleen,S.subtitlesep)
+
+  if not S.auxlanguage then S.auxlanguage="en" end
+  if not S.mainlanguage or not T.supportedlanguages[S.mainlanguage] then S.mainlanguage="en" end
+  if S.mainlanguage=="en" then S.auxlanguage=S.auxlanguage or "cs" end
+  ctx("\\def\\refname{"..get_label(Lti,S.mainlanguage,"pubs").."}") 
+  T.preparedate()
+  T.preparesupervisor()
+  T.prepareconsultant()
+  T.setupthesisdesign("init")
+--  ctx.thesisNoAssignmentForm()
+
+  T.setup = S
+end
+
+---------------------- Design & Layouts
+
+function T.setupthesisdesign(keywords, keyvals)
+  if keywords == "init" then
+    T.design.assignmentalternative = T.design.assignmentalternative or "text"
+    T.design.assignmentposition    = T.design.assignmentposition or ""
+    T.design.assignmentscale       = T.design.assignmentscale or ""
+  else
+    kw            = utilities.parsers.settings_to_array(keywords)
+    named_values  = utilities.parsers.settings_to_hash(keyvals)
+    for i=1,#kw do 
+      if ctx["THESISKW"..kw[i]]
+        then ctx["THESISKW"..kw[i]]() 
+        else warn("Non-existing design keyword ("..kw[i]..".)")
+      end
+    end  
+    
+  end
+end
+
+---------------------- Design / keyword functions
+
+T.design.autoreffont = function(s) 
+  if T.design.useautocaptionreffont then
+    local listco = {"Převzato.z:", "Prevzaté.z:", "Zdroj:", "Zdroje:" }
+    local scxxx  = " \\scr "
+    for i=1,#listco do
+      local co    = listco[i]
+      local n,m   = s:find(co)
+      if n then s = s:sub(1,n+co:len())..scxxx..s:sub(n+co:len()+1) end
+    end
+  end 
+  return s 
+end
+
+------------------------------ Universities
+
+function T.installuni(keywords, keyvals)
+  kw           = utilities.parsers.settings_to_array(keywords) 
+  named_values = utilities.parsers.settings_to_hash(keyvals)
+  local u      = T.unilist
+  local modify = kw[1]=="modify"  if modify then table.remove(kw,1) end
+  if u[kw[1]] 
+    then err("The key "..kw[1].." already exists.") 
+    else u[kw[1]] = named_values
+  end
+  T.unilist = u
+end
+
+T.unilist={
+	mendelu={en="Mendel University in Brno",cs="Mendelova univerzita v~Brně",sk="Mendelova univerzita v~Brně"},
+	gyrec={en="Brno-Řečkovice Secondary School",cs="Gymnázium Brno-Řečkovice",sk="Gymnázium Brno-Řečkovice"},
+--
+ 	af={en="Faculty of Agronomy",cs="Agronomická fakulta",sk="Agronomická fakulta"},
+ 	frrms={en="Faculty of Regional Development and International Studies",cs="Fakulta regionálního rozvoje a~mezinárodních studií",sk="Fakulta regionálního rozvoje a~mezinárodních studií"},
+ 	icv={en="Institute of Lifelong Learning",cs="Institut celoživotního vzdělávání",sk="Institut celoživotního vzdělávání"},
+	ldf={en="Faculty of Forestry and Wood Technology",cs="Lesnická a dřevařská fakulta",sk="Lesnická a dřevařská fakulta"},
+ 	pef={en="Faculty of Business and Economics",cs="Provozně ekonomická fakulta",sk="Provozně ekonomická fakulta"},
+	zf={en="Faculty of Horticulture",cs="Zahradnická fakulta",sk="Zahradnická fakulta"},
+--
+ 	ui={en="Department of Informatics",cs="Ústav informatiky",sk="Ústav informatiky"},
+ 	undb={en="Department of Furniture, Furniture Design and Habitation",cs="Ústav nábytku, designu a bydlení",sk="Ústav nábytku, designu a bydlení"},
+--
+ 	none={en="",cs="",sk=""},
+}
+
+function T.getuniversity(uf,lang)
+  if not lang or lang=="" then lang=T.setup.mainlanguage end
+  local abbr=nil
+  uf=uf or "u"
+  if uf=="u" then abbr=T.setup.university else 
+  if uf=="f" then abbr=T.setup.faculty else
+  if uf=="d" then abbr=T.setup.department or "none" 
+  else err("Undefined university level code.")
+  end end end
+  if not abbr then err("Missing university/faculty name (abbreviation).") end
+  if not T.unilist[abbr] then err("University/faculty abbreviation not defined.") T.unilist[abbr]={} end
+  local lang=lang
+  if not T.unilist[abbr][lang] then if lang=="sk" then lang="cs" else if lang=="cs" then lang="sk" end end end
+  if not T.unilist[abbr][lang] then 
+	--err("University/faculty name not defined for language "..lang..".") 
+	T.unilist[abbr][lang] = T.unilist[abbr][lang] or T.unilist[abbr].en or T.unilist[abbr].cs or T.unilist[abbr].sk
+  end
+  T.errorgetuni=T.errorgetuni or T.unilist[abbr][lang]:sub(1,1)=="?" 
+  return T.unilist[abbr][lang] 
+end
+
+------------------ Functions / get thesis functions
+
+local function join_strings (s1,s2,sep)
+  sep = sep or ""
+  local joined = s1
+  if s2 then joined = joined..sep..s2 end
+  return joined
+end
+
+function T.getthesistitle (sep,insert)
+  sep = sep or T.setup.subtitlesep
+  return join_strings(T.setup.title[1],T.setup.title[2],sep)
+end
+
+function T.getthesistitleen (sep,insert)
+  sep = sep or T.setup.subtitlesep
+  return join_strings(T.setup.titleen[1],T.setup.titleen[2],sep)
+end
+
+function T.getthesistitlemeta (sep, sepu)  -- todo
+  sepu = sepu or " / "
+  return join_strings( T.getthesistitle (sep), join_strings(T.setup.titleen[1],T.setup.titleen[2],sep), sepu)
+end
+
+function T.getthesisauthor (sep, reverse)
+  if reverse then mysep = ", " else mysep = " " end
+  sep = sep or mysep
+  if reverse 
+    then return join_strings(T.setup.authorsurname,T.setup.authorname,sep)
+    else return join_strings(T.setup.authorname,T.setup.authorsurname,sep)
+  end
+end
+
+function T.getthesisauthormeta (sep, sepu)
+  sep  = sep  or " " 
+  sepa = sepa or " : "
+  sepu = sepu or " / "
+  return join_strings(T.getthesisauthor(sep),join_strings(T.getuniversity("u",T.setup.mainlanguage),T.getuniversity("u",T.setup.auxlanguage),sepu),sepa)
+end
+
+function T.getthesistype (main)
+   return get_label(Lth,main or T.setup.mainlanguage,T.setup.type)
+end
+
+function T.getthesistypemeta (sep)
+  sep = sep or " / "
+  return join_strings(T.getthesistype(),T.getthesistype(T.setup.auxlanguage),sep) or ""
+end
+
+function T.getthesiskeywords (sep)
+  sep = sep or " ; "
+  return join_strings(T.setup.keywords,T.setup.keywordsen,sep) 
+end
+
+------------------------- Functions / Frontmatter
+
+function T.displayfrontmatter ()
+  ctx.startfrontmatter()
+  local f = T.frontmatter
+  for p=1,#f do if p>1 then ctx.page() end ctx(f[p]) end
+  ctx.stopfrontmatter()
+end
+
+function T.myswap (t,i,j) i=tonumber(i) j=tonumber(j)
+  t[i], t[j] = t[j], t[i]
+  return(t)
+end
+
+table.removebylist = function(t,list)
+  local a = string.split(list,',') table.sort(a)
+  for i=table.getn(a),1,-1 do table.remove(t,tonumber(a[i])) end
+  return(t)
+end
+
+------------------------- End
+
+\stopluacode
+
+\def\THESISautoreffont#1{\ctxlua{ctx(T.design.autoreffont('#1'))}}
+
+\def\THESISKWautocaptionreffont{\startluacode T.design.useautocaptionreffont=true \stopluacode}
+\def\THESISKWsinglesided{  
+  \setuppagenumbering[alternative=singlesided,state=start]
+  \setuplayout       [location=doublesided]
+  \startluacode T.design.doublesided=false \stopluacode
+}
+\def\THESISKWdoublesided{
+  \setuppagenumbering[alternative=doublesided,state=start]
+  \setuplayout       [location=doublesided]
+  \startluacode T.design.doublesided=true \stopluacode
+}
+\def\THESISKWgreyheader{
+  \setupheader[text][color=THESIScolorheadergray]
+}
+\let\THESISKWgrayheader=\THESISKWgreyheader
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------- Rozměry stránky a zrcadla ------------------------------%
+
+\def\setupThesisUserlayout{}
+
+\def\setupThesislayout{\setuplayout[%
+		width=32cc,
+		height=718dd, % 43*14.4+96 (96=8*12 za footer, header atd.)
+%	textheight=640dd, %  43*14.4  (nefunguje) 
+%		lines=43,  % pův 36
+		grid=yes,
+%%%%%% NEEEE!!!!!! top=0dd, top=10cc,
+		veroffset=-1cc,    % -2cc pro TL2017, pro TL2015 stačilo 0cc
+		horoffset=2.75cc,
+%		leftmargindistance=0cc,
+%		leftmargin=0cc,
+%		rightmargin=3cc,
+		margin=0cc,
+%		leftedge=0cc,
+%		leftedgedistance=0cc,
+		header=1.5cc,
+		footer=1.5cc,
+		headerdistance=3cc,
+		footerdistance=2cc,
+%		location={top,middle,singlesided},
+		marking=off,
+	]\setupThesisUserlayout
+}
+
+
+\ifx\thesisDeclarationWidth\undefined\def\thesisDeclarationWidth{\makeupwidth}\fi
+
+\def\setupTitlelayout{\setuplayout[veroffset=-1cc,horoffset=0.25cc,width=36cc,top=0cc,height=56cc,footer=0em,header=0dd,footerdistance=0cm,headerdistance=0cm]\setupThesisUserlayout}
+\def\setupEmptylayout{\setuplayout[veroffset=-5.4375cc,horoffset=-5.4375cc,width=46.5cc,top=0cc,height=70.5cc,lines=55,footer=0em,header=0dd,footerdistance=0cm,headerdistance=0cm]\setupThesisUserlayout}
+
+\setuppapersize[A4][A4]
+
+%----------- Obecné definice ----------------------------------------%
+
+\setuppositioning[unit=cc]
+
+%\setupframed    [background=color]
+\setupframedtext[background=color]
+\setupbackground[background=color]
+
+\setupcolors[rgb=no, cmyk=yes, spot=yes, state=start, overprint=yes] 
+
+%----------- Fonty --------------------------------------------------%
+
+\unexpanded
+\def\fontthesisUniversity{\tfa}
+\def\fontthesisTitle{\definebodyfontenvironment[17dd][interlinespace=30dd]\switchtobodyfont[2cc]\bf}
+\def\fontthesisSubtitle{\definebodyfontenvironment[17dd][interlinespace=30dd]\switchtobodyfont[2cc]\tf}
+\def\fontthesisAuthor{\tfc}
+\def\fontthesisSupervisor{\tfa}
+\def\fontthesisConsultant{\fontthesisSupervisor}
+\def\fontthesisLocation{\tfa}
+\def\fontthesisTypeName{\bfb}
+\def\fontthesisAbstractText{\bfa}
+\def\fontthesisAbstractTitle{\it}
+\def\fontthesisAbstractAuthor{\sc}
+\def\fontthesisCaptionRefs{\scr}
+
+\starttypescript [libertinusx]
+  \definetypeface [libertinusx] [rm] [serif] [libertinus][default]
+  \definetypeface [libertinusx] [ss] [sans]  [libertinus][default]
+  \definetypeface [libertinusx] [tt] [mono]  [libertinus][none][rscale=0.88]
+  \definetypeface [libertinusx] [mm] [math]  [libertinus][default]
+  \quittypescriptscanning
+\stoptypescript
+
+\starttypescript [libertinuslmtt]
+  \definetypeface [libertinuslmtt] [rm] [serif] [libertinus][default]
+  \definetypeface [libertinuslmtt] [ss] [sans]  [libertinus][default]
+  \definetypeface [libertinuslmtt] [tt] [mono]  [modern][none]%[default] 
+  \definetypeface [libertinuslmtt] [mm] [math]  [libertinus][default]
+  \quittypescriptscanning
+\stoptypescript
+
+%----------- Visící interpunkce -------------------------------------%
+
+\setupalign[hz,hanging]	%normal,%nothz,nohz,
+\setupparagraphs[align={hz,hanging}]
+\setupframedtext[align={hz,hanging}]
+% musí být až tady, jinak se visící interpunkce neuplatní
+\setupbodyfont[libertinusx]
+
+%----------- Matematika----------------------------------------------%
+
+\setupmathematics[autopunctuation=yes]
+
+\let\ORIGunit=\unit
+\def\unit#1{\null\unskip\ORIGunit{#1}}
+
+%----------- Odstavce -----------------------------------------------%
+
+\setupindenting[yes,first,1.25em,always]
+\setupfloat[indentnext=yes]
+
+%----------- Poznámky pod čarou -------------------------------------%
+
+\setupnotation[footnote][alternative=serried,distance=0.25em]
+
+%----------- Paginace -----------------------------------------------%
+
+%\def\MyPgnum#1{\raise1cc\hbox{#1}}
+\setuppagenumbering     [alternative=singlesided,
+                        location={header,right},
+%                        command=\MyPgnum,
+                        way=bytext, partnumber=no]
+
+%----------- Dělení slov, parchanti a vdovy -------------------------%
+
+\startsetups[grid][thesispenalties]
+    \setdefaultpenalties
+    \setpenalties\widowpenalties{2}{10000}
+    \setpenalties\clubpenalties {2}{10000}
+\stopsetups
+
+\setuplayout[grid=yes, setups=thesispenalties]
+
+\brokenpenalty=10000 % nastavuje až se v dokumentu
+\def\zlom{\unskip\penalty-10000\relax}
+
+%----------- Obrázky, tabulky ---------------------------------------%
+
+\setuptables[bodyfont=8.5dd,distance=medium,textwidth=\textwidth]
+
+%----------- Tabulky / NEW ---------------------------------%
+
+\setupTABLE[background=color]%,offset=3dd]
+
+\def\newtab{\dotripleempty\doMyNewTab}
+
+\def\doMyNewTab[#type][#loc][#label]#caption#setup#data#legend{\start#setup%
+% \if #type   %TODO
+  \placetable[#loc][#label]{#caption}{\startalignment[middle]#data\stopalignment\par\startframedtext[frame=off]#legend\stopframedtext}
+\stop}
+
+%----------- Tabulky / OBSOLETE ----------------------------%
+
+\setupcaption[table][align={middle,nothyphenated}]
+\setupfloat[table][location={middle}]
+
+
+\def\TABULKA[#1][#2]#3#4\par{% #1=location #2=label #3=caption #4=table
+%  \placetable[#1][#2]{#3}{\bTABLE#4\eTABLE\par} vs. 
+  \placetable[#1][#2]{#3}{\startalignment[middle]\bTABLE#4\eTABLE\stopalignment\par}
+}
+
+\def\TABDATA[#1][#2]#3#4\par{% #1=location #2=label #3=caption #4=table
+  \placetable[#1][#2]{#3}{#4\par}
+}
+
+\def\TABEMPTY[#1][#2]#3#4{% #1=location #2=label #3=caption #4=table
+  \placetable[#1][#2]{#3}{\startcolor[white]*#4*\stopcolor}  % TODO
+}
+
+\def\tabulka#1#2#3#4{% #1=label #2=caption #3=format #4=table
+  \placetable[][#1]{#2}{\starttable[#3]\HL[3]#4\HL[3]\stoptable}
+}
+
+\def\Tabulka#1#2#3#4#5{% #1=label #2=caption #3=format #4=table #5=legend
+\placetable[][#1]{#2}{{#3\noindentation\startalignment[middle]\bTABLE#4\eTABLE\stopalignment}\par#5}
+%\placetable[#1][#2]{#3}{\bTABLE#4\eTABLE}
+%\placetable[][#1]{#2}{\startcombination[1*2]{#3\bTABLE#4\eTABLE}{}{#5}{}\stopcombination\blank}
+}
+
+\startluacode
+function documentdata.tabCSV(data)
+  local sep,n,m = data:sub(1,1),data:find("%d+",2) 
+  local ny = tonumber(data:sub(n,m))
+  data = string.strip(data:sub(m+1))
+  local t = data:split(sep) if sep~=" " then table.remove(t) end
+  if #t % ny ~= 0 then ctx("\\errmessage{Problém s počtem sloupců v tabCSV...}") end
+
+  ctx.bTABLE()
+  for x=1,#t,ny do ctx.bTR() for y=x,x+ny-1 do ctx.bTD() ctx(t[y]) ctx.eTD() end ctx.eTR() end
+  ctx.eTABLE()
+end
+\stopluacode
+
+\def\tabCSV{\dodoubleempty\doMyTabCSV}
+
+\def\doMyTabCSV[#loc][#label]#caption#setup#data#legend{%
+\startplacetable[location=#loc,reference=#label,title=#caption]#setup\par\indenting[no]\null\hfill
+  \ctxlua{if buffers.exists("#data") then ctx.getbuffer({"#data"}) else documentdata.tabCSV("#data") end}\hfill\null%
+  \startalignment[middle]\par#legend\stopalignment
+\stopplacetable
+}
+
+
+%----------- Obrázky / NEW --------------------------------------------%
+
+\setupframed[offset=0cc]
+
+\def\frameson{\setupfloat[frame=on,framecolor=red]%\setupcaption[align=middle,frame=off,framecolor=blue]
+	\setupframed[frame=on,framecolor=green]\setupexternalfigure[frame=on,framecolor=black]}
+\def\framesoff{\setupfloat[frame=off]\setupcaption[frame=off]\setupframed[frame=off]\setupexternalfigure[frame=off]}
+\framesoff
+
+\definefloat[figurecomb][figurecombs][figure]%[location={middle,none}]
+%\setupfloat[figurecomb][toffset=2cc,topmargin=2cc] %,leftmargin=10cc,leftmargindistance=10cc]
+%\setupcombination[figurecomb][distance=10cc] 
+\setupcombination[distance=10cc] 
+
+\setuplabeltext[cs][figurecomb=Obrázek~,figurecomblt=Obrázek~,figureright=Obrázek~]
+\setuplabeltext[sk][figurecomb=Obrázok~,figurecomblt=Obrázok~,figureright=Obrázok~]
+\setuplabeltext[en][figurecomb=Figure~,figurecomblt=Figure~,figureright=Figure~]
+
+\definefloat[figurecomblt][figurecomblts][figurecomb]%[location={middle,none}]
+\definefloat[figurecombrt][][figure]%[location={middle,none}]
+\definefloat[figurecomblb][][figure]%[location={middle,none}]
+\definefloat[figurecombrb][][figure]%[location={middle,none}]
+\definefloat[figurecombmb][][figure]%[location={middle,none}]
+\definefloat[figurecombmt][][figure]%[location={middle,none}]
+\definefloat[figurepage][figurepages][figure]%[location={middle,none}]
+
+\definefloat[figureright][figurerights][figure]
+%\definefloat[figureright][figureure][margin=60pt,rightmargindistance=30pt]
+
+%\setupfloat[figureright][offset=0ex,indentnext=yes,toffset=-1cc,boffset=-1em,spacebefore=0em,spaceafter=4*line]  %,before={\godown[2em]}] % do v0.57: toffset=0
+%\setupfloat[figureright][loffset=0ex,roffset=0em,location={right,hanging}]
+
+\setupfloat[figurecomblt][boffset=-2ex,bottommargin=2ex,topmargin=2ex]
+\setupfloat[figurecombrt][boffset=-2ex,bottommargin=2ex]
+
+%\def\mycmdfigureright#1{\startalignment[middle]#1\stopalignment}
+%\setupcaption[figureure][offset=0cc,align={middle,nothyphenated}] %?
+%\setupcaption[figureure,figurecomb][align={middle,nothyphenated},textcommand={\crlf},distance=0cc,spaceafter=medium]%,bottomoffset=2cm]
+
+\setupcaption[figure][align={middle,nothyphenated},textcommand=\crlf,headseparator={\kern-1cc}]
+
+%\setupcaption[figureright][location={bottom},%align={middle,nothyphenated},
+%textcommand=\crlf,
+%before={\godown[0em]},
+%\setupcaption[figureright][
+%spaceafter=big,
+%spaceinbettw¨
+%command={\crlf},
+%distance=1em
+%]
+%]
+
+%\setupcaption[figurepage][textcommand=\crlf]
+
+\def\figureBuf{\dodoubleempty\doMyFigureBuf}
+
+\def\doMyFigureBuf[#loc][#label]#caption#setup#data#legend{%
+\startplacefigure[location=#loc,reference=#label,title=#caption]#setup\par\indenting[no]\null\hfill
+  \ctxlua{if buffers.exists("#data") then ctx.getbuffer({"#data"}) else ctx("něco jiného") end}\hfill\null%
+  \startalignment[middle]\par#legend\stopalignment
+\stopplacefigure
+}
+
+%----------- Obrázky ----------------------------------------------------%
+
+\def\obrazek{\doifnextcharelse{[}{\doMyFigure}{\doMyFigure[top]}}
+\def\obrazekB{\doifnextcharelse{[}{\doMyFigure}{\doMyFigure[bottom]}}
+\def\obrazekH{\doifnextcharelse{[}{\doMyFigure}{\doMyFigure[here]}}
+
+\def\obrazekX{\doifnextcharelse{[}{\doMyFigureGeneral}{\doMyFigureGeneral[top]}}
+\def\obrazekW{\doifnextcharelse{[}{\doMyFigureW}{\doMyFigureW[top]}}
+\let\obrazekw=\obrazekW
+%\def\obrazky{\doifnextcharelse{[}{\doMyFigureX}{\doMyFigureX[top]}}
+%\def\obrazky{\doMyFigureX}
+\def\obrazkyvedlesebe{\dodoubleempty\doMyFigures}
+\def\obrazkydvavedlesebe{\doMyFigures[2*1][]}
+\def\obrazkydvavedlesebeH{\doMyFigures[2*1][here]}
+\def\obrazkydvavedlesebeB{\doMyFigures[2*1][bottom]}
+
+%\setupcaption[figure][align={middle,nothyphenated},textcommand=\crlf,headseparator={\kern-1cc}]
+
+\def\doMyFigure[#loc]#label#caption#fname#extfigparams{%
+  \doMyFigureGeneral[#loc]{#label}{#caption}{\externalfigure[#fname][#extfigparams]}
+}
+
+\def\obrazky[#combination][#loc]#label#captions#fnames#extfigparams{%
+  \doMyFigureGeneral[#loc]{#label}{#captions}{\start
+    \setupcombinations[align=middle,distance=1cc,after={\blank[1cc]}]
+    %\setupcaption[spaceafter=10cc]
+   \startcombination[#combination]
+   \ctxlua{
+     local np,p=4,{'#label','#captions','#fnames','#extfigparams'}
+     for i=3,np do p[i]=p[i]:split(';') end
+     for i=1,#combination do
+       for j=3,np do p[j][i]=p[j][i]:strip() end
+       ctx("{\\externalfigure["..p[3][i].."]["..p[4][i].."]}{}") end
+  }\stopcombination\stop
+}}
+
+\def\doMyFigureGeneral[#loc]#label#caption#mycode{%
+  \startplacefigure[location={#loc},reference={#label},
+   title={\THESISautoreffont{#caption}}, list={#caption},
+   ]{#mycode}\stopplacefigure}
+
+\def\doMyFigureW[#loc]#label#caption#fname#extfigparams{%
+  \doMyFigure[#loc]{#label}{#caption}{#fname}{width=\makeupwidth,#extfigparams}}
+
+\def\doMyFigures[#combination][#loc]#labels#captions#fnames#extfigparams{%
+  \startluacode 
+    function getloc() x='#loc' or "" x=x.strip('#loc') if x=="" then x="top" end return x..",none" end
+  \stopluacode
+%\setupfloatcaption[figurecomblt,figurecombrt][width=8cm]
+  \startplacefigure[location={\ctxlua{ctx(getloc())}}]
+%  \setupfloat[boffset=0ex,toffset=2ex]%-0.875cc]%,leftmargin=0cc,rightmargindistance=20cc] %width=fit,loffset=fit,roffset=fit, leftmargindistance=10cc
+%  \setupexternalfigure[loffset=0cc,roffset=0cc] % ???
+  \setupcombination[width=fit,distance=1cc,align=middle]
+  \startfloatcombination[#combination]
+    \setupfloatcaption[align=middle]
+    \doifstringinstringelse{2021.}{\contextversion}{\setupfloatcaption[spacebefore=1cc]}{}
+    \setupcaption[figurecomblt][bottomoffset=1cc]%,distance=100cc, %,topoffset=-2cc,bottomoffset=0cc
+    \startluacode
+    local figtype="lt" 
+    local np,p=4,{'#labels','#captions','#fnames','#extfigparams'}
+    for i=1,np do p[i]=p[i]:split(';') end
+    for i=1,#combination do
+      for j=1,np do p[j][i]=p[j][i]:strip() end
+      local pt=utilities.parsers.settings_to_hash(p[4][i])
+      if pt.captionwidth then ctx("\\setupfloatcaption[figurecomblt][width="..pt.captionwidth.."]") end
+      ctx("\\startplacefigurecomb"..figtype.."[location=middle, reference="..p[1][i]..", title={"..T.design.autoreffont(p[2][i]).."}, list={"..p[2][i].."}, ]")
+      ctx("\\externalfigure["..p[3][i].."]["..p[4][i].."]")
+      ctx("\\stopplacefigurecomb"..figtype) 
+    end
+    \stopluacode
+%title={"..T.design.autoreffont(p[2][i]).."}]")
+%--comb"..figtype)
+%      ctx("\\placefigure[]["..p[1][i].."]{"..T.design.autoreffont(p[2][i]).."}{\\externalfigure["..p[3][i].."]["..p[4][i].."]}")
+%      ctx("\\placefigure[]["..p[1][i].."]{"..p[2][i].."}{\\externalfigure["..p[3][i].."]["..p[4][i].."]}")
+  \stopfloatcombination
+  \stopplacefigure}
+
+%----------- Obrázky / TO BE CHECKED ------------------------------------%
+
+\def\obrazekP#1#2#3#4{% #1=label #2=caption #3=název souboru #4=parametry
+\startalignment[middle]
+  \startplacefigurepage[location=page,reference=#1,title=#2]
+	\externalfigure[#3][#4]
+  \stopplacefigurepage
+\stopalignment}
+\let\obrazekp=\obrazekP
+
+\setupexternalfigures[location=default]
+\setupcaption[figureright][spaceinbetween=none,width=max,align=middle,textcommand=,spaceafter=big,spacebefore=none]
+
+\def\@obrazekF[#1]#2#3#4#5{% #1=label #2=caption #3=název souboru #4=parametry
+  \start\godown[-0.875cc]\blank
+  \startplacefigureright[location={#1,-0*line},title={#3},reference=#2,]
+  \godown[-\lineheight]
+  \externalfigure[#4][#5]
+  \stopplacefigureright
+  \stop}
+
+\def\obrazekR#label#caption#fname#extfigparams{\@obrazekF[right]{#label}{#caption}{#fname}{#extfigparams}}
+\def\obrazekL#label#caption#fname#extfigparams{\@obrazekF[left]{#label}{#caption}{#fname}{#extfigparams}}
+
+\def\obrazekDS#1#2#3#4(#5){% #1=label #2=caption #3=název souboru #4=parametry
+  \placefigure[here,force][#1]{#2}{\startpositioning%
+	\position(#5){\externalfigure[#3][#4]}%
+  \stoppositioning\blank}
+}
+
+%----------- Obrázky : English macro names ------------------------------%
+
+\let\figure=\obrazek
+\let\figureB=\obrazekB
+\let\figureH=\obrazekH
+\let\figureW=\obrazekW
+\let\figureX=\obrazekX
+\let\figureP=\obrazekP
+\let\figureL=\obrazekL
+\let\figureR=\obrazekR
+
+\let\figuresSBS=\obrazkyvedlesebe
+\let\figuresSBStwo=\obrazkydvavedlesebe
+\let\figuresSBStwoH=\obrazkydvavedlesebeH
+\let\figuresSBStwoB=\obrazkydvavedlesebeB
+
+\let\figures=\obrazky
+
+%----------- Grafy --------------------------------------------------%
+
+\setuplabeltext[cs][chart=Graf~]
+\setuplabeltext[sk][chart=Graf~]
+\setuplabeltext[en][chart=Chart~]
+
+
+%----------- Kódy ---------------------------------------------------%
+
+\definecolor[bggray][c=0,m=0,y=0,k=0.07]
+\definecolor[frgray][c=0,m=0,y=0,k=0.15]
+
+\setupstartstop[DefaultSnippet][before=,after=,style=]
+\defineframedtext[MPtyping][background=color,backgroundcolor=bggray,
+   			width=\makeupwidth,
+			offset=2dd,loffset=6dd,roffset=6dd,
+   			frame=on,
+			framecolor=frgray,
+   			]
+
+%\definetextbackground[MPtextbg][background=color,backgroundcolor=bggray,frameoffset=0cc,frame=on,
+%	location=paragraph,leftoffset=0cc,topoffset=0cc,bottomoffset=0cc,]
+\setuptyping[MP][before=\startMPtyping,after=\stopMPtyping,			
+%\setuptyping[MP][before=\startMPtextbg,after=\stopMPtextbg,			
+	indentnext=auto,
+]
+
+
+\definefloat[code][codes][figure]
+\definecombinedlist[codes][code][level=chapter]
+
+\setuplabeltext[cs][code=Zdrojový~kód~]
+\setuplabeltext[sk][code=Zdrojový~kód~]
+\setuplabeltext[en][code=Source code~]
+
+\def\typesourcecode{\dodoubleempty\doTypeSourceCode}
+\def\sourcecode{\dodoubleempty\doSourceCode}
+
+\def\doTypeSourceCode[#loc][#label]#caption#setup#buffer#legend{\start#setup%
+\startplacecode[location=#loc,reference=#label,title=#caption]
+  \typebuffer[#buffer]
+  \startalignment[middle]\par#legend\stopalignment
+\stopplacecode
+\stop}
+
+\def\doSourceCode[#loc][#label]#caption#setup#buffer#legend{\start#setup%
+\startplacecode[location=#loc,reference=#label,title=#caption]
+  \getbuffer[#buffer]
+  \startalignment[middle]\par#legend\stopalignment
+\stopplacecode
+\stop}
+
+%----------- Seznamy ------------------------------------------------%
+
+%\definesymbol[5][--]
+\definesymbol[10][=]
+
+%----
+\setupitemize
+  [each]
+  [placestopper=no,
+       lefttext=,
+      righttext=,
+           left=,
+          right=,
+]
+
+\startluacode
+
+local rightsymbol = {
+    en = { a = ")", n = ")", I = ")", i = ")", A = ")" },
+    cs = { a = ")", n = ".", I = ".", i = ".", A = "."},
+    sk = { a = ")", n = ".", I = ".", i = ".", A = "."},
+}
+local leftsymbol = {
+    en = { a = "(", n = "(", I = "(", A = "(", i = "(" },
+}
+
+leftsymbol["en-gb"] = leftsymbol.en
+leftsymbol["en-us"] = leftsymbol.en
+leftsymbol["uk"] = leftsymbol.en
+rightsymbol["en-gb"] = rightsymbol.en
+rightsymbol["en-us"] = rightsymbol.en
+rightsymbol["uk"] = leftsymbol.en
+
+local righttextsymbol = rightsymbol
+local lefttextsymbol  = leftsymbol
+
+local function itemizeleft(language,symbol)
+    local left = leftsymbol[language] and leftsymbol[language][symbol]
+    context(left or "")
+end
+local function itemizelefttext(language,symbol)
+    local left = lefttextsymbol[language] and lefttextsymbol[language][symbol]
+    context(left or "")
+end
+
+local function itemizeright(language,symbol)
+    local right = rightsymbol[language] and rightsymbol[language][symbol]
+    context(right or ".")
+end
+local function itemizerighttext(language,symbol)
+    local right = righttextsymbol[language] and righttextsymbol[language][symbol]
+    context(right or ".")
+end
+
+interfaces.implement {
+    name      = "ItemizeRight",
+    public    = true,
+    actions   = itemizeright,                                                                                                                                   
+    arguments = "2 strings",
+}
+
+interfaces.implement {
+    name      = "ItemizeLeft",
+    public    = true,
+    actions   = itemizeleft,
+    arguments = "2 strings",
+}
+
+interfaces.implement {
+    name      = "ItemizeRightText",
+    public    = true,
+    actions   = itemizerighttext,
+    arguments = "2 strings",
+}
+
+interfaces.implement {
+    name      = "ItemizeLeftText",
+    public    = true,
+    actions   = itemizelefttext,
+    arguments = "2 strings",
+}
+
+\stopluacode
+
+\setupitemize
+  [each]
+  [packed,joindup,autointro]
+  [symalign=left, 
+   distance=0.5em,
+   stopper=\ItemizeStopper{\currentlanguage}{\currentitemgroupsymbol},
+   left=\ItemizeLeft{\currentlanguage}{\currentitemgroupsymbol},
+   lefttext=\ItemizeLeft{\currentlanguage}{\currentitemgroupsymbol},
+   right=\ItemizeRight{\currentlanguage}{\currentitemgroupsymbol},
+   righttext=\ItemizeRight{\currentlanguage}{\currentitemgroupsymbol},
+   leftmargin=\parindent,
+   width=1.5em,]  
+
+%---
+
+\definedescription[desc][
+   headstyle=\bf, style=normal, 
+   alternative={hanging}, 
+   width=fit,
+   indenting=yes,distance=0.2em,stretch=0.5,shrink=0.9,
+   margin=\parindent,
+   after={\godown[-\lineheight]},
+%.1667em
+]
+
+%----------- Vyznačení autorů v textu -------------------------------%
+
+\let\internalauthoremph=\sc%mallcaps
+\def\scc#1,{{\internalauthoremph #1},}
+\def\scl#1({{\internalauthoremph #1}(}
+\def\scr#1){{\internalauthoremph #1})}
+\def\scx#1|{{\internalauthoremph #1}} 
+\def\podpis#1{\rightaligned{\em#1}}
+
+
+%----------- Titulky ------------------------------------------------%
+
+\definehead[partpage][chapter]
+\definehead[kap][chapter]
+\definehead[singlekap][chapter]
+\definehead[kapx][title]
+\definehead[pkap][section]
+\definehead[ppkap][subsection]
+\definehead[pppkap][subsubsection]
+\definehead[ppppkap][subsubsubsection]
+\definehead[pkapx][subject]
+\definehead[ppkapx][subsubject]
+\definehead[pppkapx][subsubsubject]
+\definehead[ppppkapx][subsubsubsubject]
+\definehead[BIBSTYrefs][kap]%nebo chapter?
+
+%\setupheads[align={right,nothyphentated,nohz},indentnext=yes]
+%\setuphead[kap][align={right,nothyphentated,nohz},indentnext=yes]
+\setuphead[kap,singlekap,pkap,ppkap,pppkap,ppppkap,BIBSTYrefs][align={right,nothyphenated,stretch},indentnext=yes]
+\setuphead[kapx,pkapx,ppkapx,pppkapx,ppppkapx][align={right,nothyphenated,stretch},indentnext=yes]
+
+%\setupheader[emptyheaderwithoutline][frame=off,header=empty]
+%\setupheader[headerwithline][frame=off,bottomframe=on]
+
+\setuphead[partpage][style=\bfc,header=nomarking,incrementnumber=list] %(own)number=no %,command={\writetolist[kapx]{#2}}]
+%beforesection={\godown[12cc]}]
+
+\setuphead[kap,chapter,BIBSTYrefs,kapx][style=\bfc,sectionnumber=yes,header=nomarking,]
+%\setuphead[kap,chapter][numbercommand=\gobbleoneargument]
+\setuphead[pkap,section,pkapx,subject][style=\bfb,before={\blank[8*small]},after={\blank[4*small]}]%,beforesection={\blank[0*small]},aftersection={\blank[0*small]},]
+\setuphead[ppkap,subsection,ppkapx,subsubject][style=\tfa,before={\blank[4*small]},after={\blank[4*small]}]%,beforesection={\blank[0*small]},aftersection={\blank[0*small]},]
+\setuphead[pppkap,subsubsection,pppkapx,subsubsubject][style={\normal},before={\blank[4*small]},after={\blank[4*small]},]%beforesection={\blank[0*small]},aftersection={\blank[0*small]}]
+\setuphead[ppppkap,subsubsubsection,ppppkapx,subsubsubsubjet][style=\it,after={\blank[0*small]}]
+%\setuphead[pppkapx,subsubsubject][before={\blank[2*medium]},after={\blank[1*medium]},style=\it,]
+\setuphead[BIBSTYrefs][number=no]
+
+
+
+\def\thesisheadertextsoff{\setupheadertexts[text][][]}
+\def\thesisheadertextson{\setupheadertexts[text][{\getmarking[chapter]}][pagenumber]}
+
+\def\cast#1{\page{%
+	\thesisheaderlinesoff
+   	\thesisheadertextsoff
+%\setupheadertexts[text][][]
+	%\startframedtext[loffset=6cc,toffset=12cc,location=middle]
+	\startpartpage[title={\uppercase{#1}}]\stoppartpage
+	%\stopframedtext
+	\page}
+	\thesisheaderlineson
+   	\thesisheadertextson
+%\setupheadertexts[text][rrrr][pagenumber]%{\getmarking[chapter]}][pagenumber]
+}
+
+
+%----------- Obsah --------------------------------------------------%
+
+\definecombinedlist[obsah][partpage,chapter,singlekap,kap,kapx,pkap,ppkap,pppkap,ppppkap][level=chapter]
+
+\setuplist[singlekap][headnumber=yes,
+	before={\blank[0*medium]\godown[0dd]},
+	after={\page[no]\blank[0*medium]\godown[0dd]\noindenting\thinrule}
+	]
+
+\setupheadtext[cs][obsah=Obsah]
+\setupheadtext[sk][obsah=Obsah]
+\setupheadtext[en][obsah=Contents]
+
+\setuplist[partpage][headnumber=no,pagenumber=no,margin=0cc,before={\blank[2*big]%\godown[2dd]
+  },after={\godown[-9dd]\noindenting\thinrule\godown[10dd]\pagebreak[no]},
+	style=bold,alternative=b]
+
+%\def\mylistkap#1#2#3{#1/#2/#3}
+%\def\mylistkapt#1{#1//}
+
+\setuplist[BIBSTYrefs,chapter,kap,kapx,title][headnumber=yes,
+	before={\blank[big]}, %\godown[1dd]
+    after={\godown[-9dd]		\noindenting\thinrule\godown[10dd]},
+%    textcommand=\mylistkapt,
+%    command=\mylistkap,
+	style=bold,alternative=b,
+]
+
+\setuplist[BIBSTYrefs]		[headnumber=no]
+\setuplist[pkap,section]
+  [headnumber=yes,style=normal,alternative=c,margin=0.75em,distance=1.375em,before={\godown[1dd]},after={\godown[-0dd]},
+  ]
+\setuplist[ppkap,subsection]
+  [headnumber=yes,style=normal,alternative=c,margin=2em,distance=1.75em,before={\godown[1dd]},after={\godown[0dd]}
+  ]
+\setuplist[pppkap,subsubsection][headnumber=yes,style=normal,alternative=c,margin=3.25em,distance=-1.5em,before={\godown[1dd]},after={\godown[0dd]}]
+\setuplist[ppppkap,subsubsubsection][headnumber=yes,style=slanted,alternative=c,margin=4.5em,distance=-1.875em,before={\godown[1dd]},after={\godown[0dd]}]
+
+\setuplist[pkap][width=1.33cc]
+\setuplist[ppkap][width=2cc]
+
+%----------- Seznamy, zkratky ---------------------------------------%
+
+%\definesynonyms[abbreviation][abbreviations][\infull]
+\setupsynonyms[abbreviation][textstyle=smallcaps]
+\setupheadtext[cs][figures=Seznam obrázků]
+\setupheadtext[sk][figures=Zoznam obrázkov]
+\setupheadtext[en][figures=List of Figures]
+\setupheadtext[cs][charts=Seznam grafů]
+\setupheadtext[sk][charts=Zoznam grafov]
+\setupheadtext[en][charts=List of Charts]
+\setupheadtext[en][tables=List of Tables]
+\setupheadtext[cs][tables=Seznam tabulek]
+\setupheadtext[sk][tables=Zoznam tabuliek]
+\setupheadtext[cs][abbreviations=Seznam použitých zkratek]
+\setupheadtext[sk][abbreviations=Zoznam použitých skratiek]
+\setupheadtext[en][abbreviations=List of Abbreviations]
+\setupheadtext[en][codes=List of Source Codes]
+\setupheadtext[cs][codes=Seznam zdrojových kódů]
+\setupheadtext[sk][codes=Zoznam zdrojových kódov]
+
+
+%\setupcombinedlist[content][list={chapter,section,subsection}]
+\setuplist[table,figure,figurecomb,figurecomblt,figurepage,figureright][state=start,alternative=b,headnumber=yes,criterium=all]
+\setuplist[charts][state=start,list={chart,figurecomb,figurecomblt,figurecombrt,figurepage,figureright}]
+
+\definecombinedlist[tables] [table]	[level=chapter]
+\definecombinedlist[codes]  [code]  [level=chapter]
+\definecombinedlist[figures][figure,figurecomb,figurecomblt,figurecombrt,figurepage,figureright] [level=chapter]
+\definecombinedlist[charts] [chart,figurecomblt,figurecombrt,figurepage,figureright]             [level=chapter]
+
+\setupcaption[table][location=top]
+\setupcaptions[align={nothyphentated}]
+
+\def\THESIScompletelistof#listname{%
+  \kap{\headtext{#listname}}
+  \doifinsetelse{#listname}{figures,charts,codes}
+	{\csname place#listname\endcsname[criterium=all]}
+    {
+	  \doifinsetelse{#listname}{abbreviations}
+	  {\csname placelistof#listname\endcsname}
+	  {\csname placelistof#listname\endcsname}
+	}
+  \writebetweenlist[kap]{}%\godown[-14.4dd]}
+}
+\setupsectionblock[backpart][before={\writebetweenlist[kap]{\blank[big]}}]
+
+%--------- Pohlaví ---------------------------------------------------%
+
+\def\Female#1#2{\if M\thesisAuthorGender#1\else #2\fi}
+
+%--------- Prohlášení ------------------------------------------------%
+
+\def\thesisDeclarationCStext{Prohlašuji, že jsem práci {\it\thesisTitle}
+vypracoval\Female{}{a} samostatně a~veškeré použité prameny a~informace uvádím v~seznamu
+použité literatury. Souhlasím, aby moje práce byla zveřejněna v~souladu s~§\,47b
+zákona č.\,111/1998~Sb., o~vysokých školách, ve znění pozdějších předpisů a~v~souladu s~platnou
+Směrnicí o~zveřejňování vysokoškolských závěrečných prací. 
+Prohlašuji, že tištěná podoba závěrečné práce a elektronická podoba
+závěrečné práce zveřejněná v~aplikaci Závěrečné práce v~Univerzitním
+informačním systému je identická. 
+\par 
+Jsem si vědom\Female{}{a}, že se na moji práci vztahuje zákon č.\,121/2000~Sb., autorský zákon, 
+a~že \ctxlua{ctx(T.getuniversity("u"))} má právo na uzavření
+licenční smlouvy a~užití této práce jako školního díla podle §\,60 odst.\,1 autorského zákona.
+\par 
+Dále se zavazuji, že před sepsáním licenční smlouvy o~využití díla jinou osobou
+(subjektem) si vyžádám písemné stanovisko univerzity, že předmětná licenční smlouva není
+v~rozporu s~oprávněnými zájmy univerzity, a~zavazuji se uhradit případný příspěvek na
+úhradu nákladů spojených se vznikem díla, a~to až do jejich skutečné výše.}
+
+\def\thesisDeclarationSKtext{Prehlasujem, že som prácu {\it\thesisTitle}
+vypracoval\Female{}{a} samostatne a~všetky použité zdroje a~informácie uvádzam v~zozname 
+použitej literatúry. Súhlasím, aby moja práca bola zverejnená v~súlade §\,47b zákona č.\,111/1998~Sb., 
+o~vysokých školách, v~znení neskorších predpisov a~v~súlade s~platnou Směrnicí
+o~zveřejňování vysokoškolských závěrečných prací. Prehlasujem, že tlačená
+podoba záverečnej práce a elektronická podoba záverečnej práce zverejnená 
+v~aplikácii Závěrečné práce
+v~Univerzitním informačním systému je identická.
+\par
+Som si vedom\Female{ý}{á}, že sa na moju prácu vzťahuje zákon č.\,121/2000~Sb., autorský zákon, 
+a~že \ctxlua{ctx(T.getuniversity("u"))} má právo na uzatvorenie licenčnej zmluvy
+a~použitie tejto práce ako školského diela podľa §\,60 odst.\,1 autorského zákona.
+\par
+Ďalej sa zaväzujem, že pred spísaním licenčnej zmluvy o~použití diela inou osobou 
+(subjektom) si vyžiadam písomné stanovisko univerzity, že predmetná licenčná zmluva
+nie je v rozpore s~oprávnenými záujmami univerzity a zaväzujem sa uhradiť prípadný
+príspevok na úhradu nákladov spojených so vznikom diela, a~to až do ich skutočnej výšky.}
+
+\def\thesisDeclarationENtext{I hereby declare that this thesis entitled {\it\thesisTitleEN} 
+was written and completed by me. I also declare that all the sources and
+information used to complete the thesis are included in the list of references. 
+I agree that the thesis could be made public in accordance with Article~47b of Act
+No.~111/1998~Coll., Higher Education Institutions and on Amendments and
+Supplements to Some Other Acts (the Higher Education Act), and in accordance with the
+current Directive on publishing of the final thesis.
+I declare
+that the printed version of the thesis and electronic version of the thesis
+published in the application %of the 
+Final 
+Thesis in the University Information System is identical.
+\par
+I am aware that my thesis is written in accordance to Act No.~121/2000~Coll.
+(the Copyright Act) and therefore
+\ctxlua{ctx(T.getuniversity("u"))} has the right to conclude licence
+agreements on the utilization of the thesis as a school work in accordance
+with Article~60~(1) of the Copyright Act.
+\par
+Before concluding a licence agreement on utilization of the work by another
+person, I will request a written statement from the university that the licence agreement
+is not in contradiction to legitimate interests of the university, and I will also pay a
+prospective fee to cover the cost incurred in creating the work
+to the full amount of such costs.}
+
+\def\thesisDeclarationCStextSOC{Prohlašuji, že jsem soutěžní práci SOČ {\it\thesisTitle}
+vypracoval\Female{}{a} samostatně a~veškeré použité prameny a~informace uvádím v~seznamu
+použité literatury.
+\par
+Prohlašuji, že tištěná verze a~elektronická verze soutěžní práce SOČ jsou shodné.
+\par 
+Nemám závažný důvod proti zpřístupňování této práce v~souladu se zákonem
+č.~121/2000~Sb., o~právu autorském, o~právech souvisejících s~právem autorským
+a~o~změně některých zákonů (autorský zákon) ve znění pozdějších předpisů.
+}
+
+%--------- Typ práce a další texty------------------------------------%
+
+\def\thesisSupervisorText{\ctxlua{ctx(get_label_thesis("supervisor"))}}
+\def\thesisConsultantText{\ctxlua{ctx(get_label_thesis("consultant"))}}
+\def\thesisAbstractText{\ctxlua{ctx(get_label_thesis("abstract"))}}
+\def\thesisKeywordsText{\ctxlua{ctx(get_label_thesis("keywords"))}}
+\def\thesisDeclarationText{\ctxlua{ctx(get_label_thesis("declaration"))}}
+
+\def\thesisKeywordsEN{\ctxlua{ctx(T.setup.keywordsen)}}
+\def\thesisKeywords{\ctxlua{ctx(T.setup.keywords)}}
+\def\thesisAbstractEN{\ctxlua{ctx(T.setup.abstracten)}}
+\def\thesisAbstract{\ctxlua{ctx(T.setup.abstract)}}
+\def\thesisDeclaration{\ctxlua{ctx(T.setup.declaration[T.setup.mainlanguage])}}
+
+\def\thesisLocation{\ctxlua{ctx(T.setup.location[1])}}
+%\def\thesisYear{\currentdate[year]}
+%\def\thesisDate{\currentdate}
+\def\thesisYear{\ctxlua{ctx(T.setup.year)}}
+\def\thesisDate{\ctxlua{ctx(T.setup.date)}}
+
+
+\def\thesis{\currentdate}
+
+\def\thesisTypeName{\ctxlua{ctx(get_label_thesis(T.setup.type))}}
+
+\def\thesisUniversity{\ctxlua{ctx(T.getuniversity("u"))}}
+\def\thesisFaculty{\ctxlua{ctx(T.getuniversity("f"))}}
+\def\thesisDepartment{\ctxlua{ctx(T.getuniversity("d"))}}
+
+\def\thesisTitle{\ctxlua{ctx(T.setup.title[1])    
+   if T.setup.title[2] then ctx(T.setup.subtitlesep..T.setup.title[2]) end}}
+\def\thesisTitleEN{\ctxlua{ctx(T.setup.titleen[1])
+   if T.setup.titleen[2] then ctx(T.setup.subtitlesep..T.setup.titleen[2]) end}}
+
+\def\thesisAcknowledgement{\ctxlua{ctx(T.setup.acknowledgement)}}
+
+% logika: bp+sv=>def  bp=>err  xx+sv=>def  xx=>nic
+\startluacode
+\stopluacode
+%\def\thesisSupervisor{\ctxlua{ctx(T.setup.supervisor)}}
+
+\def\thesisAuthorSurname{\ctxlua{ctx(T.setup.authorsurname)}}
+\def\thesisAuthorName{\ctxlua{ctx(T.setup.authorname)}}
+\def\thesisAuthorDegree{\ctxlua{ctx(T.setup.authordegree)}}
+\def\thesisAuthorGender{\ctxlua{ctx(T.setup.authorgender)}}
+
+%a.a
+
+\def\thesisoddpage{\ctxlua{ctx.page({T.design.page})}}
+
+\def\thesisTitlePage{{\setuplayout[grid=no]\noindentation%
+%\null\par\godown[0cc]
+%if T.mainlanguage=="en" 
+%then 
+%ctx(T.getthesistitle("\\par\\fontthesisSubtitle "))
+%else 
+%ctx(T.getthesistitleen("\\par\\fontthesisSubtitle ")) 
+%end
+\def\thesisTitle{
+\ctxlua{%
+%ctx(":::"..S.mainlanguage) 
+ local f = "\\par\\fontthesisSubtitle "
+ if S.mainlanguage=="en" or S.mainlanguage=="us" 
+  then ctx(T.setup.titleen[1]) ctx(f..(T.setup.titleen[2] or ""))
+  else ctx(T.setup.title[1]) ctx(f..(T.setup.title[2] or ""))
+ end
+}}
+  \def\titnl{\crlf}\fontthesisUniversity\thesisUniversity\par\thesisFaculty\par\if*\else\thesisDepartment\par\fi\par
+  \godown[-4dd]{\black\thinrule}\blank[4*big]\vfill%
+  {\fontthesisTitle\thesisTitle\par}\par\blank[12*medium]
+  {\fontthesisTypeName\thesisTypeName}\vfill\blank[6*big]  
+  {\fontthesisAuthor\doifelse{\thesisAuthorDegree}{}{}{\thesisAuthorDegree\,}\thesisAuthorName~\thesisAuthorSurname}\crlf\blank[12*big]%
+	\ifx\thesisSupervisor\undefined\else{\fontthesisSupervisor\thesisSupervisorText:\crlf\thesisSupervisor}\fi\crlf\blank[3*medium]
+  {\fontthesisLocation\thesisLocation~\thesisYear}
+}}
+
+\def\thesisAcknowledgementPage{\thesisoddpage\null\vfill\null\quad\startframedtext[align=hanging]\thesisAcknowledgement\stopframedtext}
+
+\def\thesisDeclarationPage{\thesisoddpage
+%~\vfill
+~\par\blank[16*big]
+\startframedtext[location=none,align={tolerant,hanging},frame=off,depthcorrection=off,width=\thesisDeclarationWidth]
+\definefontfeature [default] [default] [protrusion=cscompound]
+{\fontthesisAbstractText\thesisDeclarationText}\par\blank\setuplayout[grid=yes]\thesisDeclaration
+\par%crlf
+\blank[2*big]%\noindenting
+\startluacode
+local s=T.setup
+local ml=s.mainlanguage
+if ml=="en" then kde=1 else kde=2 end
+ctx(get_label_thesis("where").."~"..s.location[kde].." "..get_label_thesis("onday").." "..s.date)
+ctx("\\hfill{\\tfxx\\periods[32]}\\crlf\\null\\hfill")
+ctx(get_label_thesis("signature"))
+\stopluacode\hskip3em\null\stopframedtext
+%\godown[-.33cc]
+}
+
+\defineframedtext[framedtextozp][location=middle,align=middle,width=\makeupwidth,frame=on,offset=1cc]
+
+\def\framedtextOZP{\ctxlua{ctx("\\framedtextozp{"..get_label_thesis("insteadofassignment").."}")}}
+
+
+\def\thesisAssignmentForm{\startluacode 
+local t = T.setup.thesisassignmentform
+local d = T.design
+
+ctx.page({d.page}) 
+
+if t and t~="" then 
+  ctx.setupThesislayout()
+  local ts=t:split(',')
+  local width="width=\\textwidth" 
+  local scale=d.assignmentscale:mysplit(',')
+  local pos=d.assignmentposition:mysplit(',')
+
+  for i=1,table.getn(pos),2 do pos[i+1]=pos[i]..","..pos[i+1] end
+
+  for i=1,table.getn(ts) do 
+    ctx.noindenting()
+    if d.assignmentalternative=="page" then ctx("\\setupEmptylayout") end
+    if not scale[i] 
+        then scale[i]=1000 
+        else if d.assignmentalternative~="text" then width="" end
+    end
+    if not pos[i*2] then pos[i*2]="(0,0)" end
+    ctx.startpositioning()
+    ctx("\\position"..pos[i*2].."{\\externalfigure["..ts[i]:strip().."][frame=on,scale="..scale[i]..","..width.."]}")
+    ctx.stoppositioning()
+    ctx.page() 
+  end
+ else 
+  ctx("\\framedtextOZP")
+end
+\stopluacode
+}
+
+\def\thesisAbstracts{\page
+\noindenting
+  \def\pomAbstract##1##2##3##4##5##6##7{
+     \startframedtext[align=hanging]{\noindenting\fontthesisAbstractText##1}\crlf\blank{%
+     \fontthesisAbstractAuthor\noindenting\thesisAuthorSurname,~\thesisAuthorName}. 
+      {\fontthesisAbstractTitle##3}. \ctxlua{if S.type~="xp" then ctx("##2.") end}
+       \thesisLocation%
+       \ctxlua{
+			if not(S.type=="xp" and S.university=="none") then ctx(" : "..T.getuniversity("u",##7)) end
+		},
+       \thesisYear.\par\blank[2*big]##6\par\blank[2*big]{\noindenting\fontthesisAbstractText##4}
+     \par\blank[big]\noindenting##5
+\stopframedtext%
+  }
+  {\startluacode 
+	  pomlang=S.mainlanguage  
+	  S.mainlanguage="en"
+  \stopluacode
+  \pomAbstract{\thesisAbstractText}{\thesisTypeName}{\thesisTitleEN}{\thesisKeywordsText}{\thesisKeywordsEN}{\thesisAbstractEN}{"en"}
+  \startluacode S.mainlanguage=pomlang \stopluacode
+  }
+  {\startluacode 
+	if S.mainlanguage=="en" 
+	  then ctx("\\language["..S.auxlanguage.."]") 
+		S.mainlanguage=S.auxlanguage 
+	end
+   \stopluacode
+%-- 	else ctx(S.mainlanguage) 
+  \par\blank[3*big]\null\quad%
+  \pomAbstract{\thesisAbstractText}{\thesisTypeName}{\thesisTitle}{\thesisKeywordsText}{\thesisKeywords}{\thesisAbstract}{""}
+  \ctxlua{S.mainlanguage="en"}
+  }
+}
+
+\setupframedtext[width=\makeupwidth,align=hanging,location=center,frame=none,offset=0cc,margin=0cc,indenting={yes,first,1.25em}]
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\insertfrontmatterpage{\dosingleempty\doinsertfrontmatterpage}
+\def\insertfrontmatterpagebuffer{\dosingleempty\doinsertfrontmatterpagebuffer}
+\def\removefrontmatterpages[#1]{\ctxlua{T.frontmatter=table.removebylist(T.frontmatter,'#1')}}
+\let\removefrontmatterpage=\removefrontmatterpages
+\def\swapfrontmatterpages[#1,#2]{\ctxlua{T.frontmatter=T.myswap(T.frontmatter,'#1','#2')}}
+\let\swapfrontmatterpage=\swapfrontmatterpages
+\def\doinsertfrontmatterpage[#1]#2{\iffirstargument\ctxlua{table.insert(T.frontmatter,'#1','#2')}\else\ctxlua{table.insert(T.frontmatter,'#2')}\fi}
+\def\doinsertfrontmatterpagebuffer[#1]#2{\iffirstargument\ctxlua{table.insert(T.frontmatter,'#1','\\getbuffer[#2]')}\else\ctxlua{table.insert(T.frontmatter,'\\getbuffer[#2]')}\fi}
+\def\displayfrontmatter{\ctxlua{T.displayfrontmatter()}}
+
+\def\displaythesisTitlePage{{\setupTitlelayout\startalignment[middle]{\thesisTitlePage}\stopalignment}\page}
+
+\def\displaythesisAbstracts{
+   {\setupframedtext[align=hanging,width=\makeupwidth,location=middle,frame=none] %margin=6cc
+   \thesisAbstracts
+}}
+
+\def\thesisContents{\setupThesislayout
+  \setuppagenumbering[state=start]
+  \thesisheaderlineson
+  \thesisheadertextson
+   {\def\titnl{\space}\def\tocnl{\crlf}
+    \setupwhitespace[-1dd]
+    \completeobsah
+   }}
+
+
+\def\thesisheaderlinesoff{\setupbackgrounds[header][text][frame=off,bottomframe=off]}
+\def\thesisheaderlineson{\setupbackgrounds[header][text][frame=off,bottomframe=on]}
+
+\def\thesisBase{%
+  \ctxlua{if T.errorgetuni then ctx("\\errmessage{Problem with university/faculty name.}") end}
+\setupbodyfont[12dd] 
+  \thesisheaderlinesoff 
+  \setuppagenumbering[state=stop]
+  \setupindenting[yes,first,1.25em]
+  \brokenpenalty=10000
+  \startfrontmatter
+    \thesisheaderlinesoff 
+    \displayfrontmatter
+    \setuppagenumbering[state=start]
+    \thesisheaderlineson
+  \stopfrontmatter
+  \setupThesislayout
+  \setuppagenumbering[state=start]
+  \thesisheaderlineson
+%  \setupheadertexs[{\namedheadnumber{chapter}.\kern0.5em\getmarking[chapter]}][\pagenumber]
+  \thesisheadertextson
+%  \setupheadertexts[{\getmarking[chapter]}][\pagenumber]
+}
+
+%--------- Thesis ----------------------------------------------------%
+
+\definestartstop[thesis][before={\thesisPDFAnecessities\thesisBase},commands={},after={}]
+\insertfrontmatterpage{\\showlayout\\displaythesisTitlePage\\setuplayout[grid=yes]}
+\insertfrontmatterpage{\\thesisAssignmentForm}
+\insertfrontmatterpage{\\thesisAcknowledgementPage}
+\insertfrontmatterpage{\\thesisDeclarationPage}
+\insertfrontmatterpage{\\displaythesisAbstracts}
+\insertfrontmatterpage{\\thesisContents}
+
+%---------PDF/A ------------------------------------------------------%
+
+\def\thesisPDFAnecessities{
+  \setupbackend[
+    format={pdf/a-2a:2005}, % or pdf/a-2b:2005
+    profile={default_cmyk.icc,default_rgb.icc,default_gray.icc},
+%    export=yes,
+ ]
+  \setupstructure[state=start,method=auto]
+  \def\comma{‚}
+  \enabledirectives[interaction.identity.preroll]
+  \startluacode function comma2comma(r) return r:gsub(',',"\\comma\\ ") end 
+  \stopluacode
+   \setupinteraction
+    [title={\ctxlua{ctx(tex2txt(T.getthesistitlemeta()))}},
+     subtitle={\ctxlua{ctx(tex2txt(T.getthesistypemeta()))}},
+     author={\ctxlua{ctx(tex2txt(T.getthesisauthormeta()))}},
+     keyword={\ctxlua{ctx(comma2comma(tex2txt(T.getthesiskeywords())))}},
+  ]
+}
+
+%--------- Interaction------------------------------------------------%
+
+\setupinteraction [color=green, style=bold]
+
+%--------- The end ---------------------------------------------------%
+
+\let\startbackmatterorig=\startbackmatter
+\def\startbackmatter{\startbackmatterorig\def\titnl{\space}\def\tocnl{\crlf}}
+
+%--------- Temporary patches------------------------------------------%
+
+% since 0.79 till TL2021 (?): % odstraněno 2021
+%\unprotect
+%\setfalse\c_page_floats_pack_flushed
+%\protect
+% since 0.80 till TL2021 (?):
+\unexpanded\def\resetbreakpoints
+  {\exhyphenchar\hyphenasciicode % 2020.03.05
+   \attribute\breakpointattribute\attributeunsetvalue}
+% since 0.81 till TL2021 (?):
+% comma in PDF/A
+% since 0.91 till ??:
+% \doiftringinstring{2021.}
+\endinput
+
+%====================================================================%
+% Thesis in ConTeXt                                                  %     
+%--------------------------------------------------------------------%
+% Sazební styl pro ConTeXt -- (c) TH, 2013--2023                     %
+%====================================================================%

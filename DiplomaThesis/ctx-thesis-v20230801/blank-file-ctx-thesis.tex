@@ -1,0 +1,101 @@
+%
+\usemodule[ctx-thesis-v0.991]
+\usemodule[bib.sty-v2.78]
+
+\setupthesis[en,mendelu,pef,none][	% language,university,faculty,department  
+  type={bp},                     	% bp=bachelor, dp=diploma, pp=PhD, zp=final thesis,  sp=seminar work,  pr=protocol/report, pt=project, doc=documentation; for more abbreviations, see the Documentation.
+  authorname={xx},	     		    % your name
+  authorsurname={yy},               % your surname
+  authordegree={},	                % your academic degree
+%  authorgender={M},                 % M=male, F=female; not necessary for English 
+  supervisor={Harry Potter, PhD.},  % name, surname and degree of your thesis supervisor
+  titleen={This is in English}, 	               % title in English
+  title={Toto je práce},                           % title in the second language
+  keywordsen={key TeX words, separated, by comma}, %
+  keywords={klíčová slova, oddělujeme, čárkou},    %
+  acknowledgement={I thank my grandmother for baking me buns for the trip.},	           % 
+  abstracten={},		                       % abstract in English
+  abstract={},		                           % abstract in the second language
+  location={Brno},	   					       % location
+%  year={2021},		   % year, the default is the current year
+%  thesisassignmentform={img/file001.png,img/file002.png},  % file(s) with thesis assignment
+]
+
+\startthesis
+\startbodymatter
+
+\kap{Introduction}
+
+\TODO To write the whole thesis, ooops.
+
+\kap{Review}
+
+\QUES Have I really to write a review? 
+
+\kap{Material and Methods}
+
+\pkap{Material}
+
+Some text.
+
+\pkap{Methods}
+
+Some text.
+
+\kap{Results}
+
+Some text referring to \in{Figures}[o1] \in{and}[o2].
+
+\obrazek{o1}{This is the first figure.}{img/somefigure.jpg}{scale=500}
+
+\obrazek{o2}{This is the second figure.}{img/somefigure.jpg}{width=4cm}
+
+\kap{Discussion}
+
+Some text.
+
+\kap{Conclusion}
+
+Some text.
+
+%%%%%%%%%%%%%%%%%%%%%%%%% \def\refname{}
+
+\bbib
+This is the room for references, learn BIB.STY, the style for references.
+\ebib
+
+\stopbodymatter
+
+%%%%%%%%%%%%%%%%%%%%%%%% The variant where lists become as a part of the work and they are not put in Appendices.
+
+\setupsectionblock[backmatter][before={\setuplist[kap][before={}]}]
+
+\startbackmatter
+
+\THESIScompletelistof{tables}
+\THESIScompletelistof{figures}
+\THESIScompletelistof{abbreviations}
+\THESIScompletelistof{codes}
+
+\stopbackmatter
+
+%%%%%%%%%%%%%%%%%%%%%%%% The variant where lists does not become as a part of the work but they are put in Appendices.
+%%%%%%%%%%%%%%%%%%%%%%%% For enabling the _following_ four commands, erase the percent sign.
+%%%%%%%%%%%%%%%%%%%%%%%% Put the percent sign for disabling the _previous_ four commands.
+
+\startappendices
+
+\cast{Appendices}
+%\THESIScompletelistof{tables}
+%\THESIScompletelistof{figures}
+%\THESIScompletelistof{abbreviations}
+%\THESIScompletelistof{codes}
+
+\stopappendices
+
+\stopthesis
+
+\endinput		
+
+%%%% TODO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Here you can write your own comments which will not be included to the output PDF file.
