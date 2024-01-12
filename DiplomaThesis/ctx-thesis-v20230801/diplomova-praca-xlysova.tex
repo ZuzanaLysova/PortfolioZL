@@ -2,7 +2,7 @@
 \usemodule[ctx-thesis-v0.991]
 \usemodule[bib.sty-v2.78]
 
-\setupthesis[cs,mendelu,pef,none][ % jazyk,univerzita,fakulta,ústav/katedra/pracoviště ; language,university,faculty,department
+\setupthesis[sk,mendelu,pef,none][ % jazyk,univerzita,fakulta,ústav/katedra/pracoviště ; language,university,faculty,department
   type={dp},                 % bp,dp,pp,zp,sp,pr,pt aj./etc.
   authorname={Zuzana},	     % jméno
   authorsurname={Lysová},        % příjmení
@@ -16,7 +16,7 @@
 %  acknowledgement={Děkuji své babičce, že mi napekla na cestu buchty.},	           % poděkování
   abstract={},		                           % český abstrakt
   abstracten={},		                   % anglický abstrakt
-  location={Brno,Brně},	   % místo vydání (za čárkou 6. pád) ; location (second parameter is not necessary for English)
+  location={Brno,Brne},	   % místo vydání (za čárkou 6. pád) ; location (second parameter is not necessary for English)
 %  year={2021},		   % rok odevzdání práce (automaticky aktuální rok) ; year, the default is the current year
 %  thesisassignmentform={img/file001.png,img/file002.png},  % seznam souborů se skenem zadání práce; file is thesis assignment
 ]
@@ -26,87 +26,426 @@
 
 \kap{Úvod}
 
-asdadadf
-\TODO Napsat celou práci.
+\TODO
+TODO niekde ku koncu - VÝHODY A NEVÝHODY EMMA - napr. zamestnanci...
 
 \kap{Cieľ}
 
+\abbreviation{G2B2B}{Government to Business to Business}
+
+Digitalizácia je veľmi dôležitá oblasť spojená s rýchlym rozvojom technológií. Či už ide o súkromný alebo verejný sektor, existuje mnoho procesov, ktoré by sa mohli zjednodušiť. Cieľom tejto práce je analýza a návrh vybraných G2B2B (\infull{G2B2B}) služieb EMMA. Po analýze bude vybraná služba implementovaná. Súčasťou bude aj začlenenie vybraných služieb do katalógu služieb EMMA.
+
+
 \kap{Súčasný stav}
+
+V dnešnej dobe je digitalizácia verejnej správy častou témou rôznych diskusií. Digitalizácia sľubuje využívanie efektívnejších, účinnejších a transparentnejších služieb v rôznych sektoroch \scr(Andersson, 2022).
+
+\pkap{Index digitálnej ekonomiky a spoločnosti}
+Európska komisia sleduje pokrok členských štátov v digitálnej oblasti od roku 2014 a každý rok zverejňuje informácie o indexe digitálnej ekonomiky a spoločnosti (DESI). Index DESI zoraďuje štáty podľa úrovne digitalizácie a zároveň analyzuje ich relatívny pokrok za posledných 5 rokov vzhľadom na ich počiatočnú situáciu.
+
+Oblasti, ktoré skúma index DESI sú:
+
+\startitemize
+\item{\start\bf ľudský kapitál\stop - internetové znalosti používateľov, pokročilé znalosti ľudí v IT oblasti}
+\item{\start\bf konektivita\stop - využitie a pokrytie pevného a mobilného pripojenia a ich ceny}
+\item{\start\bf integrácia digitálnych technológií \stop - digitálne technológie pre firmy (cloud, umelá inteligencia...), e-commerce \footnote{e-commerce -- obchodné činnosti prevádzané na internete a pomocou ďalších elektronických prostriedkov}}
+\item{\start\bf digitálne verejné služby \stop - e-government, otvorené dáta \footnote{otvorené data (open data, vládne dáta) -- informácie verejného sektoru, ktoré sú bezplatne dostupné na akékoľvek účely}}
+\stopitemize 
+
+Európska komisia a Rada prejednávajú rozdhodnutie o politickom programe "Cesta k digitálnej dekáde", ktorý určuje ciele na úrovni EÚ, ktoré majú byť splnené do roku 2030. Cieľom je zaistiť to, aby bola digitálna transformácia komplexná a udržateľná a aby prebehla vo všetkých odvetviach hospodárstva. Dosiahnutie cieľa programu závisí na všetkých členských krajinách a na ich spoločnom úsilí \scr(Európska komisia - Metodika, 2022).
+
+Česká republika je podľa výsledkov DESI za rok 2022 na 19. mieste (z 27 členských štátov) (viď \in{obrázok}[obr:DESI]). V porovnaní s rokom 2021 sa Česká republika zlepšila v oblasti digitálnych verejných služieb a konektivite. Zhoršila sa v integrácii digitálnych technológií. Česká vláda má po prvýkrát od roku 2007 osobu zodpovednú za digitalizáciu verejnej správy - miestopredsedu Ivana Bartoša  a pokračuje v prevádzaní stratégie "Digitálne Česko" z roku 2018 (aktualizovanej v roku 2020) \scr(Európska komisia - Česko, 2022).
+\obrazekB{obr:DESI}
+{Index digitálnej ekonomiky a spoločnosti 2022 (Európska komisia - Česko, 2022)}{images/DESI.png}{width=30cc}
+
+\obrazekB{obr:DESI}
+{Index DESI 2022 - relatívne výsledky v jednotlivých oblastiach (Európska komisia - Česko, 2022)}{images/DESI2.png}{width=30cc}
+
+Graf na \in{obrázku}[obr:DESI] ukazuje porovnanie jednotlivých oblastí indexu DESI s priemerom 27 členských štátov EÚ. Taktiež je tam zobrazený aj výsledok krajiny s najvyšším skóre (Fínsko) \scr(Európska komisia - Česko, 2022).
+
+\pkap{Súčasný stav digitálnej verejnej správy v Česku}
+
+Posunom doby sa stále viac vecí spojených s verejnou správou dá riešiť online. Zamestnávatelia sa stretávajú na pravidelnej báze s rôznymi procesmi nutnými k chodu podniku a potrebujú mať všetko v súlade so zákonmi a pravidlami verejnej správy. Aktuálne to musia všetko riešiť buď osobne na úradoch alebo v tom lepšom prípade online na rôznych portáloch verejnej správy.
+
+Procesy, ktoré sa dajú v ČR vyriešiť online sú častokrát dostupné pomocou formulárov na portáloch ministerstiev. Príkladmi takýchto portálov sú portál Ministerstva práce a sociálnych vecí (https://www.mpsv.cz/), portál Českej správy sociálneho zabezpečenia (https://www.cssz.cz/), Portál občana (https://portal.gov.cz/) a podobne. Tieto portály poskytujú rôzne formuláre, ktoré umožnia občanom vybaviť rôzne požiadavky online. Ide pri tom o komunikáciu medzi klientom a orgánom verejnej moci (OVM). Cieľom platformy EMMA od firmy Asseco je, aby tieto služby boli zapojené do interných informačných systémov podnikov. To bude viesť k tomu, že zamestnávatelia všetko vybavia na jednom mieste a nebudú musieť vypĺňať množstvo formulárov na množstve rôznych portálov.
+
+Príkladom EMMA služby je nástup zamestnanca do zamestnania. Povinnosťou zamestnávateľa pri nástupe zamestnanca je oznámiť nástup príslušným úradom a poisťovniam. Existuje viac možností, ako to urobiť, no vždy to zahŕňa viacero oddelených činností. Jednou z možností je, že musí navštíviť ePortal ČSSZ (Česká správa sociálního zabezpečení), Portál zdravotních pojišťoven a v prípade zamestnávania cudzincov aj ePortal MPSV (Ministerstva práce a sociálních věcí). Služba EMMA umožní vyplniť údaje len raz v jednom formulári a spojí sa s atomickými službami úradov. 
+
+Táto služba spolu s ďalšími bude uvedená na trh po ukončení realizácie projektu, čo môže výrazne zjednodušiť biznis procesy podnikov. 
+
+\pkap{Súčasný stav digitálnej verejnej správy v zahraničí}
+\TODO
+TODO
 
 %\QUES Opravdu musím psát literární rešerši? 
 
 \kap{Metodika}
 
+\TODO
+Poznámka: 
+For any type of work to be automated, or indeed digitalised, it must
+at some point be represented visually in a way that is conducive to
+translation into algorithmic instructions for a computer. Hence, the
+digitalisation and automating of work requires a certain textualization
+and abstraction of previously embodied and situated knowledge (Zuboff, 1988, ZDROJ Andersson strana 2 dole).
+
 \pkap{Popis EMMA}
 
-Tady je text.
+EMMA predstavuje jedinečnú G2B2B platformu a nadväzujúce služby, ktoré sú efektívne, rýchle a \uv{zabudovateľné} do každodenných procesov klientov verejnej správy, hlavne podnikov. Tieto služby sú navrhnuté a poskytované tak, aby sa dali čo najjednoduchšie integrovať do ERP systémov podnikov\footnote{ERP (Enterprise Resource Planning) systém -- interný informačný systém podniku slúžiaci na správu rôznych činností podniku (účtovníctvo, zásobovanie, personalistika...)}. Zároveň by mali tieto služby podporovať podnikové procesy a zaisťovať prostredníctvom zakomponovaných služieb možnosť plniť svoje povinnosti a vymáhať si svoje práva vočí verejnej správe \scr(Asseco, 2023) .
+
+Platforma EMMA poskytuje služby VS pomocou štandardizovaného API\footnote{API (Application Programme Interface) -- webové rozhranie, ktoré umožňuje komunikáciu medzi dvomi rôznymi aplikáciami}, ktoré je jednoducho integrovateľné do ERP systémov. Podniky môžu využívaním platformy EMMA dosiahnuť zníženie administrátorskej záťaže podnikov. Príkladom služby EMMA je \uv{oznámenie o nástupu zamestnanca}. Pri tejto životnej situácii je podnik povinný informovať viaceré subjekty VS, konkrétne ČSSZ, zdravotné poisťovne a MPSV (v prípade zahraničného zamestnanca). Podrobnejšie to bude popísané v kapitolách nižšie.
+
+Obsahom platformy EMMA sú:
+
+\startitemize
+\item{interné služby na správu a prevádzku platformy,}
+\item{nástroje na využívanie služby prostredníctvom Rozhrania na volanie služieb VS,}
+\item{nástroje pre interoperabilitu VS ČR v legislativnom rámci Digital Service Act\footnote{Digital Service Act (Akt o digitálnych službách) -- súbor pravidiel platiacich v celej EÚ, ktorých cieľom je vytvoriť bezpečnejší digitálny priestor, v ktorom budú chránené základné práva všetkých užívateľov digitálnych služieb \scr(Európska komisia, 2022)} a Data Governance Act\footnote{Data Governance Act (Akt o správe dát) -- úsilie zvýšiť dôveru v zdieľanie dát a posilnenie mechanizmov pre zvýšenie dostupnosti dát \scr(Európska komisia, 2022)},}
+\item{modul rozhrania pre G2B2B,}
+\item{služby API pre integráciu.}
+\stopitemize 
 
 \pkap{Popis SAMO}
 
-Tady je text.
+Názov SAMO vznikol skrátením slov Strategic Asset Management \& Operations system. Ide o súbor integrovaných softvérových riešení, ktoré sú modulárne zložené do komplexného systému. Platforma SAMO slúži na strategickú správu aktív a činností.
+
+Vývoj jednotlivých modulov začal v roku 1991. Počas posledných vyše 30-tich rokov vývoja sa firme Asseco podarilo do rôznych riešení zapojiť množstvo skúseností a best practices.
+
+Platforma SAMO je založená na koncepte SOA \footnote{SOA -- Servisne orientovaná architektúra (Service Oriented Architecture) -- sada princípov a metodológií, ktorá odporúča stavbu aplikácií zo vzájomne nezávislých komponent}. Považuje sa za platformu určenú na efektívne poskytovanie, nie za produkt samotný.
+
+SAMO používa mikroservice prístup k vývoju softvéru. Každá mikroslužba je zameraná na konkrétnu funkčnosť a môže byť vyvíjaná, nasadená a spravovaná nezávisle od ostatných častí aplikácie. To umožňuje flexibilnejšie škálovanie, rýchlejšie nasadzovanie nových funkcionalít a jednoduchšiu údržbu. SAMO je aplikácia poháňaná metadátami, ktoré obsahujú informácie o vzťahoch medzi časťami  dát, popis užívateľského rozhrania, pravidlá, formuláre a pod. \scr(Asseco, 2023)
+
+\pkap{Architektura eGovernmentu}
+
+eGovernment je pojem popisujúci modernú digitálnu verejnú správu, ktorá využíva k výkonu svojich právomocí digitálnu infraštruktúru. Táto infraštruktúra realizuje sadu služieb informačných technológií (ICT služieb), ktoré sú zdieľané, dôveryhodné, prepojené, bezpečné, automatizované, efektívne a ľahko používateľné pre užívateľov. Služby eGovernmentu sú určené občanom, firmám, podnikateľom i úradníkom. Synonymami pojmu eGovernment sú "digitálny government" alebo "digitálna verejná správa" \scr(Digitální a informační agentura, 2023).
+
+\ppkap{Poslanie a vízia eGovernmentu v Českej republike}
+Digitálna verejná správa používa rôzne poskytnuté a dostupné informácie, ktoré automatizovane spracuváva s cieľom obmedziť, respektíve znížt množstvo podania a objemu infomrácií zo straný užívateľov služieb VS.
+
+Poslaním eGovernmentu je: 
+
+\citat{Poskytovať klientom verejnej správy jednoduché a efektívne služby, ktoré im uľahčia dosiahnutie ich práv a nárokov, ako aj plnenie ich povinností a záväzkov vo vzťahu k verejnej správe.} \scr(Digitální a informační agentura, 2023)
+
+Vízia eGovernmentu v ČR do konca horizontu Informačnej koncepcie ČR (viac popísaná v kapitole 4.3.2 Informační koncepce ČR) je: 
+
+\citat{Česká republika je jednou z popredných krajín v užívateľskej prívetivosti verejnej správy vďaka svojmu klientsky orientovanému prístupu, modernému dizajnu úradných procesov a efektívnemu využívaniu digitálnych a nedigitálnych technológií.} \scr(Digitální a informační agentura, 2023)
+
+\ppkap{Informační koncepce ČR}
+Informační koncepce ČR (ďalej ako IKČR) rozpracováva vyššie spomenutú víziu do rôznych cieľov, ktoré realizujú jednotlivé orgány VS. To, či ciele boli naplnené alebo nie ukazuje stav plnenia zadefinovaných cieľov a pozícia v rebríčku podľa DESI (rozobraté v kapitole 3.1 Index digitálnej ekonomiky a spoločnosti). Všetky povinné subjekty podľa zákona  č. 365/2000 Sb., o informačných systémoch majú povinnosť viesť vlastné informačné koncepcie a vždy ich musia uviesť do súladu s Informačnou koncepciou ČR. Je to prakticky koncepcia rozvoja informačných systémov verejnej správy, ktorú spracováva Ministerstvo vnútra a schvaľuje vláda. Je vypracovaná na základe ustanovenia § 5a, Zákona č. 365/2000 Sb., o informačných systémoch verejnej správy. Jej časti sú najmä:
+
+\startitemize
+\item{architektonické principy eGovernmentu a elektronizácie verejnej správy,}
+\item{efektívny rozvoj digitálnej verejnej správy a informačných systémov verejnej správy (ISVS),}
+\item{zásady riadenia ICT vo verejnej správe,}
+\item{základné koncepčné povinnosti pre budovanie, rozvoj a prevádzku ISVS a ich vzájomné prepojenie a pre budovanie spoločných služieb eGovernmentu.}
+\stopitemize
+
+IKČR je základný dokument, ktorý stanovuje ciele ČR v oblasti ISVS a všeobecné princípy obstarávania, tvorby, správy a prevádzky ISVS v ČR. Obsahuje predovšetkým:
+\startitemize
+\item{ciele a podpora oblasti eGovernmentu (zo strany informačných systémov verejnej správy),}
+\item{zásady riadenia útvarov informatiky a riadenie životného cyklu ISVS,}
+\item{architektonické principy pre návrh a rozvoj ISVS a ich služieb.\scr(Digitální a informační agentura, 2023)}
+\stopitemize
+
+\ppkap{Metódy riadenia ICT verejnej správy ČR}
+Súčasťou a kľúčovým predpokladom naplnenia cieľov IKČR je zavedenie efektívnej centrálnej koordinácie riadenia ICT. Zároveň je to aj podpora transformačných iniciatív, ktoré smerujú k digitalizácii VS a plnému digitálnemu governmentu. \uv{Metódy riadenia ICT verejnej správy ČR} (ďalej ako MRICT) je dokument, ktorý stanovuje pravidlá prevádzkovania ICT kapacít, kompetencií štátnych podnikov, riadenia útvarov informatiky, centrálneho koordinovaného riadenia ICT podpory eGovernmentu a podobne. MRICT nadväzuje na zásady riadenia ICT, ktoré sú súčasťou IKČR \scr(Digitální a informační agentura, 2023).
+
+\pkap{Katalóg služieb verejnej správy}
+Katalóg služieb VS je súčasťou registru práv a povinností (RPP) a obsahuje údaje o službách VS, úkonoch a dostupných kanáloch. Katalóg služieb VS sa dá vnímať z dvoch pohĺadov:
+
+\startitemize[a]
+\item{ako na klientskú aplikáciu, ktorá poskytuje údaje klientom}
+\item{ako na úradnícku aplikáciu, ktorá je určená na zber a úpravu údajov}
+\stopitemize
+
+Funkcie katalógu služieb VS sa dajú rozdeliť do 4 kategórií:
+
+\startitemize
+\item{automatizačné – zber dát potrebných na automatizáciu,}
+\item{informačné – poskytovanie prehľadu o existujícich službách VS a spôsobu ich spracovania,}
+\item{publikačné – poskytovanie informácií, ktoré sú nezbytne potrebné na korektné zobrazovanie služieb VS na portáloch VS (kategórie, radenie...),}
+\item{riadiace – riadenie poskytovania a dodávky služieb VS (tvorba plánu digitalizácie, zodpovednosť za služby...).}
+\stopitemize
+
+Časti katalógu služieb VS nie sú len služby vykonávané z úradnej moci, ale taktiež aj služby, ktoré iniciuje klient (subjekt práva). Na vyplnenie katalógu služieb je nutné urobiť nasledujúce kroky:
+
+\startitemize[n]
+\item{Identifikovať služby VS a popísať ich atribúty v agendách, ktoré ohlasujete.}
+\item{Rozložit služby VS na jednotlivé úkony a popísať ich atribúty.}
+\item{Definovať spôsob, akým dochádza k interakciou medzi OVM a klientom a určit obslužný kanál.}
+\item{Určit, časové rámce a obslužné kanály pre vykovanie digitálneho úkonu a využívanie digitálnych služieb.}
+\stopitemize
+
+Vzhľadom k tomu, že údaje v katalogu služeb VS sú referenčné, je nutné ich udržiavať aktuálne \scr(Digitální a informační agentura, 2023).
+
+V ďalších kapitolách budú objasnené vyššie spomenuté pojmy služba VS a úkon.
+
+\ppkap{Služba VS}
+Služba VS reprezentuje funkciu (činnosť) úradu, ktorá je poskytovaná konkrétnym OVM (úradníkom) konkrétnemu príjemcovi služby podľa príslušného právneho predpisu. Prináša príjemcovi hodnotu - buď vo forme benefitu alebo splnenia zákonnej povinnosti. Ak ide o interakciu medzi OVM a OVM, nepokladá sa to za službu VS. Pri službe VS ide vždy o interakciu medzi OVM a klientom (a opačne). Každá služba sa skladá z minimálne jedného úkonu. \scr(Digitální a informační agentura, 2023).
+
+\ppkap{Úkon}
+Úkon je taktiež interakcia medzi klientom a OVM, no v tomto prípade ide len o jednu interakciu, ktorá vedie k ďalšiemu úkonu (resp. k naplneniu výstupu služby, ak sa jedná o koncový úkon). Úkon sa teda dá definovať ako jeden krok, jedna časť služby VS \scr(Digitální a informační agentura, 2023).
 
 \pkap{Popis metodiky, analýzy a návrhu}
 
-Tady je text.
+\TODO
+TODO
 
 \pkap{Charakteristika vybraných služieb verejnej správy}
+Na to, aby bolo možné vybrať vhodné služby VS k analýze a ďalším úkonom je potreba analyzovať rôzne životné situácie spojené s verejnou správou. V nasledujúcej tabuľke (viď \in{tabuľka}[situacie]) je zobrazený zoznam takýchto situácií spolu so službou a úradom, ktoré do riešenia danej situácie vstupujú.
 
-Tady je text.
+
+  \setupTABLE[column][1][width=12cc]
+  \setupTABLE[column][2][width=8cc]
+  \setupTABLE[column][3][width=16cc]
+  %\setupTABLE[column][4][width=0.25\textwidth]
+  \setupTABLE[r][each][align={middle,lohi}]
+
+  \Tabulka{situacie}{Životné situácie spojené so zamestnávateľmi a verejnou správou}{
+    \bTABLE
+      % Table header
+      \bTR
+        \bTH Životná situácia \eTH
+        \bTH Úrad \eTH
+        \bTH Služba VS \eTH
+        %\bTH Služby v RPP \eTH
+      \eTR
+
+      % Table rows
+	\bTR 
+	    \bTD [nr=3] Nástup zamestnanca \eTD 
+	    \bTD ČSSZ \eTD 
+	    \bTD Oznámenie o nástupe do zamestnania (Přihlášky, odhlášky zamestnancov k nemocenskému poisteniu) \eTD  
+	\eTR
+	\bTR 
+	    \bTD ZP \eTD 
+	    \bTD Hromadné oznámenie zamestnávateľa (HOZ)  \eTD  
+	\eTR
+	\bTR 
+	    \bTD MPSV/ÚP \eTD 
+	    \bTD Informace o nástupe občana cudzinca, ktorý nepotrebuje/potrebuje pracovné oprávnenie do zamestnania  \eTD  
+	\eTR
+	\bTR 
+	    \bTD [nr=4] Zamestnávanie osôb so zdravotným postihnutím\eTD 
+	    \bTD MPSV  \eTD  
+	    \bTD Evidencia náhradného plnenia \eTD 
+	\eTR
+	\bTR 
+	    \bTD MPSV  \eTD  
+	    \bTD Ohlásenie plnenia povinného podielu osôb so zdravotným postihnutím (OZP) \eTD 
+	\eTR
+	\bTR 
+	    \bTD MPSV  \eTD  
+	    \bTD Žiadosť o príspevok na zdriadenie pracovného miesta pre OZP \eTD 
+	\eTR
+	\bTR 
+	    \bTD MPSV  \eTD  
+	    \bTD Žiadosť o príspevok na Nový podnikateľský program\eTD 
+	\eTR
+	\bTR 
+	    \bTD [nr=2] Voľné miesta\eTD 
+	    \bTD MPSV \eTD 
+	    \bTD Oznámenie voľných pracovných miest ÚP ČR \eTD  
+	\eTR
+	\bTR 
+	    \bTD MPSV \eTD 
+	    \bTD Oznámenie popisu pracovnej pozície pre Jobmatch do evidencie ÚP ČR neregistrovaným uživateľom  \eTD  
+	\eTR
+	\bTR 
+	    \bTD Row 1, Col 1 \eTD 
+	    \bTD Row 1, Col 2 \eTD 
+	    \bTD Row 1, Col 3 \eTD  
+	\eTR
+    \eTABLE
+  }
+
+
+
+
+\TODO
+TODO
 
 \kap{Výsledky}
 
 \pkap{Model požiadaviek}
 
-Tady je text.
+\TODO
+TODO
 
 \pkap{Use case model}
 
-Tady je text.
+\TODO
+TODO
 
 \pkap{Sekvenčný diagram}
 
-Tady je text.
+\TODO
+TODO
 
 \pkap{Konceptuálny dátový model}
 
-Tady je text, který obsahuje odkazy na obrázky~\in{}[o1] a \in{}[o2].
+\TODO
+TODO
 
 \pkap{Logický dátový model pre SAMO}
 
-Tady je text.
+\TODO
+TODO
 
 \pkap{Výber služby, ktorá bude implementovaná}
 
-Tady je text.
+\TODO
+TODO
 
 \pkap{Implementácia vybranej služby}
 
-Tady je text.
+\TODO
+TODO
 
 \pkap{Návrh testovacích scenárov}
 
-Tady je text.
+\TODO
+TODO
 
 \pkap{Dokumentácia prevedených testov}
 
-Tady je text.
+\TODO
+TODO
 
-\obrazek{o1}{Toto je první obrázek.}{img/pomocnyobrazek.jpg}{scale=500}
-
-\obrazek{o2}{Toto je druhý obrázek.}{img/pomocnyobrazek.jpg}{width=4cm}
 
 \kap{Diskusia}
 
-Tady je text.
+\TODO
+TODO
 
 \kap{Závěr}
 
-Tady je text.
+\TODO
+TODO
 
 %%%%%%%%%%%%%%%%%%%%%%%%% \def\refname{}
 
 \bbib
-Tady budou citace, nastuduj si styl bib.sty v příslušné verzi.
+
+\publE{
+\autor{Anderrsson, C.} \autor{Hallin, A.} \autor{Ivory, C.}
+\nazev{Unpacking the digitalisation of public services: Configuring work during automation in local government}
+\rok{2022}
+\issn{0740624X}
+\doi{10.1016/j.giq.2021.101662}
+\www{https://www.sciencedirect.com/science/article/pii/S0740624X21000988}
+\online{2023-11-19}
+\nazevdok{Government Information Quarterly}
+\cast{roč. \,39}
+}
+
+\publX{
+\autorkorp{Asseco Central Europe, a.s.}
+\online{2023-11-27}
+\www{interný SharePoint}
+\nazev{SAMO conceptual application architecture}
+\rok{2023}
+}
+
+\publX{
+\autorkorp{Asseco Central Europe, a.s.}
+\online{2023-11-26}
+\www{interný dokument}
+\nazev{Závěrečná zpráva o realizaci výsledků výzkumu a vývoje: VaV softwarové platformy embedded government (EMMA)}
+\rok{2023}
+}
+
+\publE{
+\autor{Barone, L. a kol.}
+\nazev{State-of-play report on digital public administration and interoperability}
+\rok{2023}
+\isbn{978-92-68-08101-3}
+\doi{10.2799/686251}
+\www{https://op.europa.eu/en/publication-detail/-/publication/e2cf65a7-6719-11ee-9220-01aa75ed71a1/language-en}
+\online{2024-1-12}
+\nazevdok{Directorate-General for Informatics}
+\cast{NO-04-23-973-EN-N}
+}
+
+\publW{
+\autorkorp{Digitální a informační agentura}
+\nazev{Architektura eGovernmentu ČR}
+\rok{2023}
+\www{https://archi.gov.cz/start}
+\online{2023-11-26}
+\nazevdok{Národní architektonický plán}
+\podnazev{Informační koncepce ČR}
+}
+
+\publW{
+\autorkorp{Digitální a informační agentura}
+\nazev{Architektura eGovernmentu ČR}
+\rok{2023}
+\www{https://archi.gov.cz/start}
+\online{2023-11-26}
+\nazevdok{Národní architektonický plán}
+\podnazev{Katalog služeb veřejné správy}
+}
+
+\publW{
+\autorkorp{Digitální a informační agentura}
+\nazev{Architektura eGovernmentu ČR}
+\rok{2023}
+\www{https://archi.gov.cz/start}
+\online{2023-11-26}
+\nazevdok{Národní architektonický plán}
+\podnazev{Slovník pojmů eGovernmentu}
+}
+
+\publW{
+ \online{2023-11-19}
+ \autorkorp{Evropská komise.}
+ \nazev{Balíček aktu o digitálních službách}
+%\podnazev{Metodika}
+ \www{https://digital-strategy.ec.europa.eu/cs/policies/digital-services-act-package}
+ \nazevdok{Shaping Europe’s digital future}
+ \rok{2022}
+}
+
+\publW{
+ \online{2023-11-19}
+ \autorkorp{Evropská komise.}
+ \nazev{Index digitální ekonomiky a společnosti (DESI) 2022}
+\podnazev{Česko}
+ \www{https://digital-strategy.ec.europa.eu/cs/policies/desi}
+ \nazevdok{Shaping Europe’s digital future}
+ \rok{2022}
+}
+
+\publW{
+ \online{2023-11-19}
+ \autorkorp{Evropská komise.}
+ \nazev{Index digitální ekonomiky a společnosti (DESI) 2022}
+\podnazev{Metodika}
+ \www{https://digital-strategy.ec.europa.eu/cs/policies/desi}
+ \nazevdok{Shaping Europe’s digital future}
+ \rok{2022}
+}
+
+%\publA{
+%\autor{OECD}
+%\nazev{ Government at a Glance}
+%\nakl{OECD Publishing}
+%\vyd{2023}
+%\rok{2023}
+%\isbn{978-92-64-85180-1}
+%\rozsah{60}
+%}
+\publA{
+ \autor{OECD}
+ \nazev{Government at a Glance}
+ \nakl{Paris}{OECD Publishing}
+ %\vyd{2023}
+ \rok{2023}
+ \isbn{978-92-64-85180-1}
+ \rozsah{234\stran}
+}
+
 \ebib
 
 \stopbodymatter
@@ -120,7 +459,7 @@ Tady budou citace, nastuduj si styl bib.sty v příslušné verzi.
 \THESIScompletelistof{tables}
 \THESIScompletelistof{figures}
 \THESIScompletelistof{abbreviations}
-\THESIScompletelistof{codes}
+%\THESIScompletelistof{codes}
 
 \stopbackmatter
 

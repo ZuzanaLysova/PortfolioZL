@@ -1,35 +1,38 @@
-open source     > level 1, order 1, name 'C:/texlive/2022/texmf-dist/tex/context/base/mkiv/cont-yes.mkiv'
 system          > 
-system          > ConTeXt  ver: 2021.03.05 19:11 MKIV  fmt: 2022.4.5  int: english/english
+system          > ConTeXt  ver: 2023.05.05 18:36 LMTX  fmt: 2023.11.12  int: english/english
 system          > 
-system          > 'cont-new.mkiv' loaded
-open source     > level 2, order 2, name 'C:/texlive/2022/texmf-dist/tex/context/base/mkiv/cont-new.mkiv'
+system          > 'cont-new.mkxl' loaded
+open source     > level 1, order 1, name 'C:/texlive/2023/texmf-dist/tex/context/base/mkxl/cont-new.mkxl'
 system          > beware: some patches loaded from cont-new.mkiv
-close source    > level 2, order 2, name 'C:/texlive/2022/texmf-dist/tex/context/base/mkiv/cont-new.mkiv'
-system          > files > jobname 'diplomova-praca-xlysova', input './diplomova-praca-xlysova', result 'diplomova-praca-xlysova'
+close source    > level 1, order 1, name 'C:/texlive/2023/texmf-dist/tex/context/base/mkxl/cont-new.mkxl'
+system          > 'cont-sys.mkxl' loaded
+open source     > level 1, order 2, name 'C:/texlive/2023/texmf-dist/tex/context/texlive/cont-sys.mkxl'
+close source    > level 1, order 2, name 'C:/texlive/2023/texmf-dist/tex/context/texlive/cont-sys.mkxl'
+system          > files > jobname './diplomova-praca-xlysova', input './diplomova-praca-xlysova.tex', result './diplomova-praca-xlysova'
 fonts           > latin modern fonts are not preloaded
 languages       > language 'en' is active
 system          > synctex functionality is enabled, expect 5-10 pct runtime overhead!
-open source     > level 2, order 3, name 'C:/Users/suzie/OneDrive/Počítač/Diplomka/ctx-thesis-v20230801/diplomova-praca-xlysova.tex'
+open source     > level 1, order 3, name './diplomova-praca-xlysova.tex'
 modules         > using user prefixed file 'ctx-thesis-v0.991'
 modules         > 'ctx-thesis-v0.991' is loaded
 interface       > macros > processed mkvi file 'ctx-thesis-v0.991.tex', delta 748
 interface       > macros > processed mkvi file 'ctx-thesis-v0.991.tex', delta 0
-open source     > level 3, order 4, name 'ctx-thesis-v0.991.tex'
+open source     > level 2, order 4, name 'ctx-thesis-v0.991.tex'
 modules         > 'database' is loaded
-open source     > level 4, order 5, name 'C:/texlive/2022/texmf-dist/tex/context/modules/mkiv/m-database.mkiv'
-resolvers       > lua > loading file 'C:/texlive/2022/texmf-dist/tex/context/modules/mkiv/m-database.lua' succeeded
-close source    > level 4, order 5, name 'C:/texlive/2022/texmf-dist/tex/context/modules/mkiv/m-database.mkiv'
+open source     > level 3, order 5, name 'C:/texlive/2023/texmf-dist/tex/context/modules/mkiv/m-database.mkiv'
+resolvers       > lua > loading file 'C:/texlive/2023/texmf-dist/tex/context/modules/mkiv/m-database.lua' succeeded
+close source    > level 3, order 5, name 'C:/texlive/2023/texmf-dist/tex/context/modules/mkiv/m-database.mkiv'
 colors          > 'cmyk' color space is supported
-open source     > level 4, order 6, name 'C:/texlive/2022/texmf-dist/tex/context/fonts/mkiv/type-imp-libertinus.mkiv'
-close source    > level 4, order 6, name 'C:/texlive/2022/texmf-dist/tex/context/fonts/mkiv/type-imp-libertinus.mkiv'
-close source    > level 3, order 6, name 'ctx-thesis-v0.991.tex'
+open source     > level 3, order 6, name 'C:/texlive/2023/texmf-dist/tex/context/fonts/mkiv/type-imp-libertinus.mkiv'
+close source    > level 3, order 6, name 'C:/texlive/2023/texmf-dist/tex/context/fonts/mkiv/type-imp-libertinus.mkiv'
+mathematics     > tweak > 'LibertinusMath-Regular', size 7, math size 3, version 'Version 7.040;RELEASE' found, version 'Version 7.040' expected
+close source    > level 2, order 6, name 'ctx-thesis-v0.991.tex'
 modules         > using user prefixed file 'bib.sty-v2.78'
 modules         > 'bib.sty-v2.78' is loaded
-open source     > level 3, order 7, name 'bib.sty-v2.78.tex'
-setup           > error in line 1101, namespace 'head', key 'BIBSTYchapter'
-close source    > level 3, order 7, name 'bib.sty-v2.78.tex'
-check           > missing or ungrouped '=' after ''' in line '22 (THESIS)'
+open source     > level 2, order 7, name 'bib.sty-v2.78.tex'
+setup           > error in line 1101, namespace '8D>:', key 'BIBSTYchapter,'
+close source    > level 2, order 7, name 'bib.sty-v2.78.tex'
+check           > missing or ungrouped '=' after ''' in line ''
 backend         > profiles > error, format 'pdf/a-2a:2005' is not supported
 fonts           > bodyfont '12dd' is defined (can better be done global)
 fonts           > bodyfont '15.41pt' is defined (can better be done global)
@@ -37,10 +40,12 @@ fonts           > bodyfont '10.27pt' is defined (can better be done global)
 fonts           > bodyfont '12.84pt' is defined (can better be done global)
 structures      > begin of sectionblock 'frontpart'
 structures      > begin of sectionblock 'frontpart'
-open source     > level 3, order 8, name 'C:/texlive/2022/texmf-dist/tex/context/base/mkiv/page-run.mkiv'
+modules         > using user prefixed file 's-layout-show'
+modules         > 's-layout-show' is loaded
+open source     > level 2, order 8, name 'C:/texlive/2023/texmf-dist/tex/context/modules/mkxl/s-layout-show.mkxl'
 loading         > ConTeXt Page Macros / Runtime Macros
-resolvers       > lua > loading file 'C:/texlive/2022/texmf-dist/tex/context/base/mkiv/page-run.lua' succeeded
-close source    > level 3, order 8, name 'C:/texlive/2022/texmf-dist/tex/context/base/mkiv/page-run.mkiv'
+resolvers       > lua > loading file 'C:/texlive/2023/texmf-dist/tex/context/base/mkiv/page-run.lua' succeeded
+close source    > level 2, order 8, name 'C:/texlive/2023/texmf-dist/tex/context/modules/mkxl/s-layout-show.mkxl'
 interface       > initialization > loading interface definitions from 'mult-def.lua'
 interface       > initialization > loading interface messages from 'mult-mes.lua'
 layout          > paperheight                  845.0468pt      29.7000cm
@@ -76,7 +81,7 @@ fonts           > bodyfont '30.82pt' is defined (can better be done global)
 fonts           > bodyfont '20.54pt' is defined (can better be done global)
 fonts           > bodyfont '25.68pt' is defined (can better be done global)
 layouts         > gridmode, noflines: 39, textheight: 597.51323pt, textovershoot: 3.65544pt (maybe set number of lines instead)
-backend         > xmp > using file 'C:/texlive/2022/texmf-dist/tex/context/base/mkiv/lpdf-pdx.xml'
+backend         > xmp > using file 'C:/texlive/2023/texmf-dist/tex/context/base/mkiv/lpdf-pdx.xml'
 pages           > flushing realpage 1, userpage 1, subpage 1
 pages           > flushing realpage 2, userpage 2, subpage 2
 pages           > flushing realpage 3, userpage 3, subpage 3
@@ -90,33 +95,42 @@ pages           > flushing realpage 8, userpage 8, subpage 8
 structures      > end of sectionblock 'frontpart'
 structures      > begin of sectionblock 'bodypart'
 structure       > sectioning > kap @ level 2 : 0.1 -> Úvod
-
-Overfull \hbox (64.23593pt too wide) in paragraph at lines 29--31
-[]<5: libertinusserif-regular @ 12.84pt> asda-dadf [] 
-
-\hbox(37.5787+0.16682)x410.88332, glue set - 1.0, direction TLT
-.\localpar
-..\localinterlinepenalty=0
-..\localbrokenpenalty=0
-..\localleftbox=null
-..\localrightbox=null
-.\hbox(0.0+0.0)x16.0408, direction TLT
-.<5: libertinusserif-regular @ 12.84pt> a
-.<5: libertinusserif-regular @ 12.84pt> s
-.<5: libertinusserif-regular @ 12.84pt> d
-.etc.
-
 pages           > flushing realpage 9, userpage 9, subpage 9
 structure       > sectioning > kap @ level 2 : 0.2 -> Cieľ
 pages           > flushing realpage 10, userpage 10, subpage 10
 structure       > sectioning > kap @ level 2 : 0.3 -> Súčasný stav
+structure       > sectioning > pkap @ level 3 : 0.3.1 -> Index digitálnej ekonomiky a spoločnosti
 pages           > flushing realpage 11, userpage 11, subpage 11
+floatblocks     > '1' placed (bottom)
+floatblocks     > '2' placed (bottom)
+structure       > sectioning > pkap @ level 3 : 0.3.2 -> Súčasný stav digitálnej verejnej správy v Česku
+pack quality    > overfull hbox at line 70 - 71 in file './diplomova-praca-xlysova.tex': správy sociálneho zabezpečenia (https://www.cssz.cz/), Portál občana (https://por- (10.63562pt)
+pages           > flushing realpage 12, userpage 12, subpage 12
+structure       > sectioning > pkap @ level 3 : 0.3.3 -> Súčasný stav digitálnej verejnej správy v zahraničí
+pages           > flushing realpage 13, userpage 13, subpage 13
 structure       > sectioning > kap @ level 2 : 0.4 -> Metodika
 structure       > sectioning > pkap @ level 3 : 0.4.1 -> Popis EMMA
+pages           > flushing realpage 14, userpage 14, subpage 14
 structure       > sectioning > pkap @ level 3 : 0.4.2 -> Popis SAMO
-structure       > sectioning > pkap @ level 3 : 0.4.3 -> Popis metodiky, analýzy a návrhu
-structure       > sectioning > pkap @ level 3 : 0.4.4 -> Charakteristika vybraných služieb verejnej správy
-pages           > flushing realpage 12, userpage 12, subpage 12
+pack quality    > overfull hbox at line 112 - 113 in file './diplomova-praca-xlysova.tex':  Vývoj jednotlivých modulov začal v roku 1991. Počas posledných vyše 30-tich (2.41335pt)
+structure       > sectioning > pkap @ level 3 : 0.4.3 -> Architektura eGovernmentu
+pages           > flushing realpage 15, userpage 15, subpage 15
+structure       > sectioning > ppkap @ level 4 : 0.4.3.1 -> Poslanie a vízia eGovernmentu v Českej republike
+structure       > sectioning > ppkap @ level 4 : 0.4.3.2 -> Informační koncepce ČR
+pack quality    > overfull hbox at line 137 - 138 in file './diplomova-praca-xlysova.tex':  [[[[–] ]]]architektonické principy eGovernmentu a elektronizácie verejnej správy, (4.13718pt)
+pages           > flushing realpage 16, userpage 16, subpage 16
+structure       > sectioning > ppkap @ level 4 : 0.4.3.3 -> Metódy riadenia ICT verejnej správy ČR
+structure       > sectioning > pkap @ level 3 : 0.4.4 -> Katalóg služieb verejnej správy
+pages           > flushing realpage 17, userpage 17, subpage 17
+structure       > sectioning > ppkap @ level 4 : 0.4.4.1 -> Služba VS
+structure       > sectioning > ppkap @ level 4 : 0.4.4.2 -> Úkon
+structure       > sectioning > pkap @ level 3 : 0.4.5 -> Popis metodiky, analýzy a návrhu
+pages           > flushing realpage 18, userpage 18, subpage 18
+structure       > sectioning > pkap @ level 3 : 0.4.6 -> Charakteristika vybraných služieb verejnej správy
+floatblocks     > 1 saved
+floatblocks     > 1 moved
+pages           > flushing realpage 19, userpage 19, subpage 19
+pages           > flushing realpage 20, userpage 20, subpage 20
 structure       > sectioning > kap @ level 2 : 0.5 -> Výsledky
 structure       > sectioning > pkap @ level 3 : 0.5.1 -> Model požiadaviek
 structure       > sectioning > pkap @ level 3 : 0.5.2 -> Use case model
@@ -124,132 +138,164 @@ structure       > sectioning > pkap @ level 3 : 0.5.3 -> Sekvenčný diagram
 structure       > sectioning > pkap @ level 3 : 0.5.4 -> Konceptuálny dátový model
 structure       > sectioning > pkap @ level 3 : 0.5.5 -> Logický dátový model pre SAMO
 structure       > sectioning > pkap @ level 3 : 0.5.6 -> Výber služby, ktorá bude implementovaná
+pages           > flushing realpage 21, userpage 21, subpage 21
 structure       > sectioning > pkap @ level 3 : 0.5.7 -> Implementácia vybranej služby
-pages           > flushing realpage 13, userpage 13, subpage 13
 structure       > sectioning > pkap @ level 3 : 0.5.8 -> Návrh testovacích scenárov
 structure       > sectioning > pkap @ level 3 : 0.5.9 -> Dokumentácia prevedených testov
-floatblocks     > '1' placed (top)
-floatblocks     > '2' placed (top)
-pages           > flushing realpage 14, userpage 14, subpage 14
+pages           > flushing realpage 22, userpage 22, subpage 22
 structure       > sectioning > kap @ level 2 : 0.6 -> Diskusia
-pages           > flushing realpage 15, userpage 15, subpage 15
+pages           > flushing realpage 23, userpage 23, subpage 23
 structure       > sectioning > kap @ level 2 : 0.7 -> Závěr
-pages           > flushing realpage 16, userpage 16, subpage 16
+pages           > flushing realpage 24, userpage 24, subpage 24
 structure       > sectioning > BIBSTYchapter @ level 2 : 0.8 -> \refname 
+pack quality    > overfull hbox at line 340 - 341 in file './diplomova-praca-xlysova.tex':  vernment Information Quarterly [on-line!], 2022, roč. 39 [cit. 2023-11-19]. (4.72401pt)
+Není uvedeno číslo ISSN./Missing ISSN.
+pack quality    > overfull hbox at line 418 - 419 in file './diplomova-praca-xlysova.tex':  E󰁈󰁄󰁁󰁂󰁅󰀳󰁎 󰀳󰁁󰀿󰀼󰁅󰀸.. Index digitální ekonomiky a společnosti (DESI) 2022 : Česko. (1.64659pt)
+pack quality    > overfull hbox at line 447 - 448 in file './diplomova-praca-xlysova.tex':  OECD Government at a Glance. Paris : OECD Publishing, 2023. 234 s. [ISBN 978-92-64-85180-1.] (70.40813pt)
 structures      > end of sectionblock 'bodypart'
-pages           > flushing realpage 17, userpage 17, subpage 17
+pages           > flushing realpage 25, userpage 25, subpage 25
 structures      > begin of sectionblock 'backpart'
 structure       > sectioning > kap @ level 2 : 0.1 -> \headtext {tables}
-pages           > flushing realpage 18, userpage 18, subpage 18
+pages           > flushing realpage 26, userpage 26, subpage 26
 structure       > sectioning > kap @ level 2 : 0.2 -> \headtext {figures}
-pages           > flushing realpage 19, userpage 19, subpage 19
+pages           > flushing realpage 27, userpage 27, subpage 27
 structure       > sectioning > kap @ level 2 : 0.3 -> \headtext {abbreviations}
-pages           > flushing realpage 20, userpage 20, subpage 20
-structure       > sectioning > kap @ level 2 : 0.4 -> \headtext {codes}
 structures      > end of sectionblock 'backpart'
-pages           > flushing realpage 21, userpage 21, subpage 21
+pages           > flushing realpage 28, userpage 28, subpage 28
 structures      > begin of sectionblock 'appendix'
 structure       > sectioning > partpage @ level 2 : 0.0 -> \uppercase {Přílohy}
-pages           > flushing realpage 22, userpage 22, subpage 22
+pages           > flushing realpage 29, userpage 29, subpage 29
 structures      > end of sectionblock 'appendix'
-close source    > level 2, order 8, name 'C:/Users/suzie/OneDrive/Počítač/Diplomka/ctx-thesis-v20230801/diplomova-praca-xlysova.tex'
+close source    > level 1, order 8, name './diplomova-praca-xlysova.tex'
 system          > invalid \starttext ... \stoptext structure
-close source    > level 1, order 8, name 'C:/texlive/2022/texmf-dist/tex/context/base/mkiv/cont-yes.mkiv'
-
 system          > start used files
-
 system          > text: diplomova-praca-xlysova
-
 system          > stop used files
-
-
 system          > start used files
-
-system          >    1: filename=char-prv.lua filetype=tex format=tex foundname=C:/texlive/2022/texmf-dist/tex/context/base/mkiv/char-prv.lua fullname=C:/texlive/2022/texmf-dist/tex/context/base/mkiv/char-prv.lua usedmethod=database
-system          >    2: filename=cont-yes.mkiv filetype=tex foundname=C:/texlive/2022/texmf-dist/tex/context/base/mkiv/cont-yes.mkiv fullname=C:/texlive/2022/texmf-dist/tex/context/base/mkiv/cont-yes.mkiv usedmethod=database
-system          >    3: filename=publ-imp-default.lua filetype=lua foundname=C:/texlive/2022/texmf-dist/tex/context/base/mkiv/publ-imp-default.lua fullname=C:/texlive/2022/texmf-dist/tex/context/base/mkiv/publ-imp-default.lua usedmethod=database
-system          >    4: filename=cont-new.mkiv filetype=tex foundname=C:/texlive/2022/texmf-dist/tex/context/base/mkiv/cont-new.mkiv fullname=C:/texlive/2022/texmf-dist/tex/context/base/mkiv/cont-new.mkiv usedmethod=database
-system          >    5: filename=lang-exc.lua filetype=lua foundname=C:/texlive/2022/texmf-dist/tex/context/base/mkiv/lang-exc.lua fullname=C:/texlive/2022/texmf-dist/tex/context/base/mkiv/lang-exc.lua usedmethod=database
-system          >    6: filename=lang-us.lua filetype=lua foundname=C:/texlive/2022/texmf-dist/tex/context/patterns/mkiv/lang-us.lua fullname=C:/texlive/2022/texmf-dist/tex/context/patterns/mkiv/lang-us.lua usedmethod=database
-system          >    7: filename=C:\Users\suzie\OneDrive\Počítač\Diplomka\ctx-thesis-v20230801/diplomova-praca-xlysova.tex foundname=C:/Users/suzie/OneDrive/Počítač/Diplomka/ctx-thesis-v20230801/diplomova-praca-xlysova.tex fullname=C:/Users/suzie/OneDrive/Počítač/Diplomka/ctx-thesis-v20230801/diplomova-praca-xlysova.tex usedmethod=direct
-system          >    8: filename=ctx-thesis-v0.991 filetype=tex foundname=ctx-thesis-v0.991.tex fullname=C:/Users/suzie/OneDrive/Počítač/Diplomka/ctx-thesis-v20230801/ctx-thesis-v0.991.tex usedmethod=filesystem
-system          >    9: filename=m-database.mkiv filetype=tex foundname=C:/texlive/2022/texmf-dist/tex/context/modules/mkiv/m-database.mkiv fullname=C:/texlive/2022/texmf-dist/tex/context/modules/mkiv/m-database.mkiv usedmethod=database
-system          >   10: filename=m-database.lua filetype=tex format=tex foundname=C:/texlive/2022/texmf-dist/tex/context/modules/mkiv/m-database.lua fullname=C:/texlive/2022/texmf-dist/tex/context/modules/mkiv/m-database.lua usedmethod=database
-system          >   11: filename=lang-cs.lua filetype=lua foundname=C:/texlive/2022/texmf-dist/tex/context/patterns/mkiv/lang-cs.lua fullname=C:/texlive/2022/texmf-dist/tex/context/patterns/mkiv/lang-cs.lua usedmethod=database
-system          >   12: filename=lang-sk.lua filetype=lua foundname=C:/texlive/2022/texmf-dist/tex/context/patterns/mkiv/lang-sk.lua fullname=C:/texlive/2022/texmf-dist/tex/context/patterns/mkiv/lang-sk.lua usedmethod=database
-system          >   13: filename=lang-gb.lua filetype=lua foundname=C:/texlive/2022/texmf-dist/tex/context/patterns/mkiv/lang-gb.lua fullname=C:/texlive/2022/texmf-dist/tex/context/patterns/mkiv/lang-gb.lua usedmethod=database
-system          >   14: filename=type-imp-libertinus.mkiv filetype=tex foundname=C:/texlive/2022/texmf-dist/tex/context/fonts/mkiv/type-imp-libertinus.mkiv fullname=C:/texlive/2022/texmf-dist/tex/context/fonts/mkiv/type-imp-libertinus.mkiv usedmethod=database
-system          >   15: filename=libertinusserif-regular filetype=otf format=otf foundname=C:/texlive/2022/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Regular.otf fullname=C:/texlive/2022/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Regular.otf usedmethod=database
-system          >   16: filename=libertinusmath-regular.otf filetype=otf format=otf foundname=C:/texlive/2022/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf fullname=C:/texlive/2022/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf usedmethod=database
-system          >   17: filename=bib.sty-v2.78 filetype=tex foundname=bib.sty-v2.78.tex fullname=C:/Users/suzie/OneDrive/Počítač/Diplomka/ctx-thesis-v20230801/bib.sty-v2.78.tex usedmethod=filesystem
-system          >   18: filename=page-run.mkiv filetype=tex foundname=C:/texlive/2022/texmf-dist/tex/context/base/mkiv/page-run.mkiv fullname=C:/texlive/2022/texmf-dist/tex/context/base/mkiv/page-run.mkiv usedmethod=database
-system          >   19: filename=page-run.lua filetype=tex format=tex foundname=C:/texlive/2022/texmf-dist/tex/context/base/mkiv/page-run.lua fullname=C:/texlive/2022/texmf-dist/tex/context/base/mkiv/page-run.lua usedmethod=database
-system          >   20: filename=mult-def.lua filetype=lua foundname=C:/texlive/2022/texmf-dist/tex/context/base/mkiv/mult-def.lua fullname=C:/texlive/2022/texmf-dist/tex/context/base/mkiv/mult-def.lua usedmethod=database
-system          >   21: filename=mult-mes.lua filetype=lua foundname=C:/texlive/2022/texmf-dist/tex/context/base/mkiv/mult-mes.lua fullname=C:/texlive/2022/texmf-dist/tex/context/base/mkiv/mult-mes.lua usedmethod=database
-system          >   22: filename=libertinusserif-bold filetype=otf format=otf foundname=C:/texlive/2022/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Bold.otf fullname=C:/texlive/2022/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Bold.otf usedmethod=database
-system          >   23: filename=pdftex.map filetype=map format=map foundname=C:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map fullname=C:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map usedmethod=database
-system          >   24: filename=lpdf-pdx.xml filetype=tex foundname=C:/texlive/2022/texmf-dist/tex/context/base/mkiv/lpdf-pdx.xml fullname=C:/texlive/2022/texmf-dist/tex/context/base/mkiv/lpdf-pdx.xml usedmethod=database
-system          >   25: filename=libertinusserif-italic filetype=otf format=otf foundname=C:/texlive/2022/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Italic.otf fullname=C:/texlive/2022/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Italic.otf usedmethod=database
-system          >   26: filename=libertinusmono-regular filetype=otf format=otf foundname=C:/texlive/2022/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMono-Regular.otf fullname=C:/texlive/2022/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMono-Regular.otf usedmethod=database
-
+system          >    1: filename=publ-imp-default.lua filetype=scripts foundname=C:/texlive/2023/texmf-dist/tex/context/base/mkiv/publ-imp-default.lua fullname=C:/texlive/2023/texmf-dist/tex/context/base/mkiv/publ-imp-default.lua usedmethod=database
+system          >    2: filename=cont-new.mkxl filetype=tex foundname=C:/texlive/2023/texmf-dist/tex/context/base/mkxl/cont-new.mkxl fullname=C:/texlive/2023/texmf-dist/tex/context/base/mkxl/cont-new.mkxl usedmethod=database
+system          >    3: filename=cont-sys.mkxl filetype=tex foundname=C:/texlive/2023/texmf-dist/tex/context/texlive/cont-sys.mkxl fullname=C:/texlive/2023/texmf-dist/tex/context/texlive/cont-sys.mkxl usedmethod=database
+system          >    4: filename=lang-exc.lua filetype=scripts foundname=C:/texlive/2023/texmf-dist/tex/context/base/mkiv/lang-exc.lua fullname=C:/texlive/2023/texmf-dist/tex/context/base/mkiv/lang-exc.lua usedmethod=database
+system          >    5: filename=lang-us.lua filetype=scripts foundname=C:/texlive/2023/texmf-dist/tex/context/patterns/mkiv/lang-us.lua fullname=C:/texlive/2023/texmf-dist/tex/context/patterns/mkiv/lang-us.lua usedmethod=database
+system          >    6: filename=C:\Users\zuzana.lysova\OneDrive - Asseco Central Europe, a.s\Desktop\EMMA\MyWork\DiplomaThesis\ctx-thesis-v20230801/diplomova-praca-xlysova.tex format=tex foundname=C:/Users/zuzana.lysova/OneDrive - Asseco Central Europe, a.s/Desktop/EMMA/MyWork/DiplomaThesis/ctx-thesis-v20230801/diplomova-praca-xlysova.tex fullname=C:/Users/zuzana.lysova/OneDrive - Asseco Central Europe, a.s/Desktop/EMMA/MyWork/DiplomaThesis/ctx-thesis-v20230801/diplomova-praca-xlysova.tex usedmethod=direct
+system          >    7: filename=ctx-thesis-v0.991 filetype=tex foundname=ctx-thesis-v0.991.tex fullname=C:/Users/zuzana.lysova/OneDrive - Asseco Central Europe, a.s/Desktop/EMMA/MyWork/DiplomaThesis/ctx-thesis-v20230801/ctx-thesis-v0.991.tex usedmethod=filesystem
+system          >    8: filename=m-database.mkiv filetype=tex foundname=C:/texlive/2023/texmf-dist/tex/context/modules/mkiv/m-database.mkiv fullname=C:/texlive/2023/texmf-dist/tex/context/modules/mkiv/m-database.mkiv usedmethod=database
+system          >    9: filename=m-database.lua filetype=tex format=tex foundname=C:/texlive/2023/texmf-dist/tex/context/modules/mkiv/m-database.lua fullname=C:/texlive/2023/texmf-dist/tex/context/modules/mkiv/m-database.lua usedmethod=database
+system          >   10: filename=lang-cs.lua filetype=scripts foundname=C:/texlive/2023/texmf-dist/tex/context/patterns/mkiv/lang-cs.lua fullname=C:/texlive/2023/texmf-dist/tex/context/patterns/mkiv/lang-cs.lua usedmethod=database
+system          >   11: filename=lang-sk.lua filetype=scripts foundname=C:/texlive/2023/texmf-dist/tex/context/patterns/mkiv/lang-sk.lua fullname=C:/texlive/2023/texmf-dist/tex/context/patterns/mkiv/lang-sk.lua usedmethod=database
+system          >   12: filename=lang-gb.lua filetype=scripts foundname=C:/texlive/2023/texmf-dist/tex/context/patterns/mkiv/lang-gb.lua fullname=C:/texlive/2023/texmf-dist/tex/context/patterns/mkiv/lang-gb.lua usedmethod=database
+system          >   13: filename=type-imp-libertinus.mkiv filetype=tex foundname=C:/texlive/2023/texmf-dist/tex/context/fonts/mkiv/type-imp-libertinus.mkiv fullname=C:/texlive/2023/texmf-dist/tex/context/fonts/mkiv/type-imp-libertinus.mkiv usedmethod=database
+system          >   14: filename=libertinus-math.lfg filetype=tex foundname=C:/texlive/2023/texmf-dist/tex/context/fonts/mkiv/libertinus-math.lfg fullname=C:/texlive/2023/texmf-dist/tex/context/fonts/mkiv/libertinus-math.lfg usedmethod=database
+system          >   15: filename=common-math.lfg filetype=tex foundname=C:/texlive/2023/texmf-dist/tex/context/fonts/mkiv/common-math.lfg fullname=C:/texlive/2023/texmf-dist/tex/context/fonts/mkiv/common-math.lfg usedmethod=database
+system          >   16: filename=libertinusserif-regular filetype=otf format=otf foundname=C:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Regular.otf fullname=C:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Regular.otf usedmethod=database
+system          >   17: filename=libertinus-text.lfg filetype=tex foundname=C:/texlive/2023/texmf-dist/tex/context/fonts/mkiv/libertinus-text.lfg fullname=C:/texlive/2023/texmf-dist/tex/context/fonts/mkiv/libertinus-text.lfg usedmethod=database
+system          >   18: filename=libertinusmath-regular.otf filetype=otf format=otf foundname=C:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf fullname=C:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf usedmethod=database
+system          >   19: filename=bib.sty-v2.78 filetype=tex foundname=bib.sty-v2.78.tex fullname=C:/Users/zuzana.lysova/OneDrive - Asseco Central Europe, a.s/Desktop/EMMA/MyWork/DiplomaThesis/ctx-thesis-v20230801/bib.sty-v2.78.tex usedmethod=filesystem
+system          >   20: filename=s-layout-show.mkxl filetype=tex foundname=C:/texlive/2023/texmf-dist/tex/context/modules/mkxl/s-layout-show.mkxl fullname=C:/texlive/2023/texmf-dist/tex/context/modules/mkxl/s-layout-show.mkxl usedmethod=database
+system          >   21: filename=page-run.lua filetype=tex format=tex foundname=C:/texlive/2023/texmf-dist/tex/context/base/mkiv/page-run.lua fullname=C:/texlive/2023/texmf-dist/tex/context/base/mkiv/page-run.lua usedmethod=database
+system          >   22: filename=mult-def.lua filetype=scripts foundname=C:/texlive/2023/texmf-dist/tex/context/base/mkiv/mult-def.lua fullname=C:/texlive/2023/texmf-dist/tex/context/base/mkiv/mult-def.lua usedmethod=database
+system          >   23: filename=mult-mes.lua filetype=scripts foundname=C:/texlive/2023/texmf-dist/tex/context/base/mkiv/mult-mes.lua fullname=C:/texlive/2023/texmf-dist/tex/context/base/mkiv/mult-mes.lua usedmethod=database
+system          >   24: filename=libertinusserif-bold filetype=otf format=otf foundname=C:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Bold.otf fullname=C:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Bold.otf usedmethod=database
+system          >   25: filename=lpdf-pdx.xml filetype=tex foundname=C:/texlive/2023/texmf-dist/tex/context/base/mkiv/lpdf-pdx.xml fullname=C:/texlive/2023/texmf-dist/tex/context/base/mkiv/lpdf-pdx.xml usedmethod=database
+system          >   26: filename=libertinusserif-italic filetype=otf format=otf foundname=C:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Italic.otf fullname=C:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Italic.otf usedmethod=database
+system          >   27: filename=images/DESI.png foundname=images/DESI.png fullname=C:/Users/zuzana.lysova/OneDrive - Asseco Central Europe, a.s/Desktop/EMMA/MyWork/DiplomaThesis/ctx-thesis-v20230801/images/DESI.png usedmethod=direct
+system          >   28: filename=images/DESI2.png foundname=images/DESI2.png fullname=C:/Users/zuzana.lysova/OneDrive - Asseco Central Europe, a.s/Desktop/EMMA/MyWork/DiplomaThesis/ctx-thesis-v20230801/images/DESI2.png usedmethod=direct
 system          > stop used files
-
-
 system          > start commandline options
-
-system          > currentrun="2"
+system          > currentrun="1"
 system          > fulljobname="./diplomova-praca-xlysova.tex"
 system          > input="./diplomova-praca-xlysova.tex"
-system          > kindofrun="2"
+system          > kindofrun="1"
 system          > maxnofruns="9"
 system          > synctex="true"
-system          > texmfbinpath="C:/texlive/2022/bin/win32"
-
+system          > texmfbinpath="C:/texlive/2023/bin/windows"
 system          > stop commandline options
-
-
 system          > start commandline files
-
 system          >    1: ./diplomova-praca-xlysova.tex
-
 system          > stop commandline files
-
-
 modules         > start used modules
-
 modules         > loaded : *-bib.sty-v2.78
 modules         > loaded : *-ctx-thesis-v0.991
 modules         > loaded : *-database
-
+modules         > loaded : *-s-layout-show
 modules         > stop used modules
-
-
-mkiv lua stats  > used config file: selfautoparent:/texmfcnf.lua;selfautoparent:/texmf-dist/web2c/texmfcnf.lua
-mkiv lua stats  > used cache path: C:/texlive/2022/texmf-var/luatex-cache/context/a86c089b384a3076dc514ba966a1fac9
-mkiv lua stats  > resource resolver: loadtime 0.188 seconds, 1 scans with scantime 0.003 seconds, 0 shared scans, 26 found files, scanned paths: C:/Users/suzie/.texlive2022/texmf-config
-mkiv lua stats  > stored bytecode data: 454 modules (0.445 sec), 96 tables (0.019 sec), 550 chunks (0.464 sec)
-mkiv lua stats  > traced context: maxstack: 1424, freed: 0, unreachable: 1424
-mkiv lua stats  > cleaned up reserved nodes: 61 nodes, 10 lists of 442
-mkiv lua stats  > node memory usage: 82 attribute, 19 attribute_list, 6 dir, 5 glue, 55 glue_spec, 3 kern, 5 penalty, 2 shape, 2 temp, 2 user_defined
-mkiv lua stats  > node list callback tasks: 8 unique task lists, 8 instances (re)created, 1933 calls
-mkiv lua stats  > h-node processing time: 0.023 seconds including kernel
-mkiv lua stats  > synctex tracing: 4 referenced files, 7 files ignored, 407 objects flushed, logfile: diplomova-praca-xlysova.synctex
-mkiv lua stats  > driver time: 0.135 seconds 
-mkiv lua stats  > used backend: pdf (backend for directly generating pdf output)
-mkiv lua stats  > jobdata time: 0.010 seconds saving, 0.002 seconds loading
-mkiv lua stats  > callbacks: internal: 4376, file: 3661, direct: 89, late: 395, function 2224, total: 10745 (488 per page)
-mkiv lua stats  > randomizer: resumed with value 0.065582275390625
-mkiv lua stats  > loaded tex modules: 3 requested, all found (*-bib.sty-v2.78 *-ctx-thesis-v0.991 *-database)
-mkiv lua stats  > result saved in file: diplomova-praca-xlysova.pdf, compresslevel 3, objectcompresslevel 1
+system          > 
+system          > status after finishing run
+system          > 
+system          >   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+system          >           string       pool       hash     lookup       node      token     buffer      input       file       nest  parameter       save       font   language       mark     insert
+system          >   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+system          >   max    2097152  100000000    2097152    2097152  100000000   10000000  100000000     100000       2000      10000     100000     500000     100000      10000      10000        500
+system          >   min     150000   10000000     150000     150000    2000000    1000000    1000000      10000        500       1000      20000     100000        250        250         50         10
+system          >   set     500000   10000000     250000     250000   50000000   10000000   10000000     100000       2000      10000     100000     500000     100000        250        250        250
+system          >   stp     100000    1000000     100000     100000     500000     250000    1000000      10000        250       1000      10000      10000        250        250         50         25
+system          > 
+system          >   mem     150000    1028898     150000               2000000    1000000    1000000      10000        500       1000      20000      10000   25731248        240       1200        320
+system          >   all    2400000    1028898    2400000              18000000    8000000    1000000     320000      16000      72000      80000     160000   25731248        240      28800      10240
+system          > 
+system          >   ini    2145557     916743          0      48389          0     530775                                                                                       0                      
+system          >   ptr      53595                 11230      53579                678010          0          0          0          0          0          3         41          0         28          7
+system          >   top      53596                806391     131074      61197     628543       1642         45          8         19         52       1338        250        250         50         10
+system          >   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+system          > 
+system          >   current input type    : initial
+system          > 
+system          >   approximate memory    : 64826514 (61 MB)
+system          > 
+system          >   expansion depth       : min: 10000, max: 1000000, set: 10000, top: 10
+system          > 
+system          >   luabytecode registers : 1010
+system          >   luabytecode bytes     : 16176 (0 MB)
+system          >   luastate bytes now    : 130546212 (124 MB)
+system          >   luastate bytes max    : 147464226 (140 MB)
+system          > 
+system          >   file callbacks        : 4068
+system          >   saved callbacks       : 12981
+system          >   direct callbacks      : 87
+system          >   function callbacks    : 5945
+system          >   value callbacks       : 31
+system          >   message callbacks     : 0
+system          >   bytecode callbacks    : 615
+system          > 
+system          >   mp instances          : 0
+system          >   mp estimated memory   : 0 (0 MB)
+system          >   mp file callbacks     : 0
+system          >   mp text callbacks     : 0
+system          >   mp script callbacks   : 0
+system          >   mp log callbacks      : 0
+system          > 
+system          >   total callbacks       : 23727
+system          >   mp total callbacks    : 0
+system          >   backend callbacks     : 0
+system          > 
+mkiv lua stats  > used config file: selfautoparent:/texmf-dist/web2c/texmfcnf.lua
+mkiv lua stats  > used cache path: C:/texlive/2023/texmf-var/luametatex-cache/context/1b4da46d1f340757f9984eae810b1464
+mkiv lua stats  > resource resolver: loadtime 0.076 seconds, 1 scans with scantime 0.001 seconds, 0 shared scans, 28 found files, scanned paths: C:/Users/zuzana.lysova/.texlive2023/texmf-config
+mkiv lua stats  > stored bytecode data: 510 modules (0.184 sec), 105 tables (0.007 sec), 615 chunks (0.191 sec)
+mkiv lua stats  > traced context: maxstack: 1705, freed: 0, unreachable: 1705
+mkiv lua stats  > cleaned up reserved nodes: 76 nodes, 8 lists of 437
+mkiv lua stats  > node memory usage: 60 attribute, 21 dir, 34 glue, 178 gluespec, 3 kern, 643 mathspec, 5 penalty, 10 specification, 2 temp
+mkiv lua stats  > node list callback tasks: 16 unique task lists, 12 instances (re)created, 5371 calls
+mkiv lua stats  > h-node processing time: 0.051 seconds including kernel
+mkiv lua stats  > synctex tracing: 3 referenced files, 5 files ignored, 914 objects flushed, logfile: diplomova-praca-xlysova.synctex
+mkiv lua stats  > driver time: 0.035 seconds 
+mkiv lua stats  > used backend: pdf
+mkiv lua stats  > jobdata time: 0.003 seconds saving, 0.001 seconds loading
+mkiv lua stats  > callbacks: file: 4068, saved: 12981, direct: 87, function: 5945, value: 31, message: 0, bytecode: 615, late 0, total: 23727 (818 per page)
+mkiv lua stats  > randomizer: resumed with value 0.028708613377815
+mkiv lua stats  > loaded tex modules: 4 requested, all found (*-bib.sty-v2.78 *-ctx-thesis-v0.991 *-database *-s-layout-show)
 mkiv lua stats  > loaded patterns: cs::16 en::1 en-gb:en:13 sk::17, load time: 0.000
-mkiv lua stats  > interactive elements: 0 references, 1 destinations
-mkiv lua stats  > loaded fonts: 5 files: libertinusmath-regular.otf, libertinusmono-regular.otf, libertinusserif-bold.otf, libertinusserif-italic.otf, libertinusserif-regular.otf
-mkiv lua stats  > font engine: otf 3.113, afm 1.513, tfm 1.000, 24 instances, 18 shared in backend, 2 common vectors, 16 common hashes, load time 0.306 seconds 
+mkiv lua stats  > interactive elements: 0 references, 8 destinations
+mkiv lua stats  > loaded fonts: 4 files: libertinusmath-regular.otf, libertinusserif-bold.otf, libertinusserif-italic.otf, libertinusserif-regular.otf
+mkiv lua stats  > font engine: otf 3.133, afm 1.513, tfm 1.000, 41 instances, 36 shared in backend, 5 common vectors, 31 common hashes, load time 0.345 seconds 
 mkiv lua stats  > body font sizes: defined: 10pt 11pt 12pt 14.4pt 17.3pt 18.19pt 20.7pt 4pt 5pt 6pt 7pt 8pt 9pt, undefined: 10.27pt 12.84pt 12dd 15.41pt 20.54pt 25.68pt 2cc 30.82pt
-mkiv lua stats  > graphics processing time: 0.011 seconds including tex, 2 processed images, 1 unique asked, 0 bad names
-mkiv lua stats  > used platform: mswin, type: windows, binary subtree: bin
-mkiv lua stats  > used engine: luatex version: 1.15, functionality level: 7509, banner: this is luatex, version 1.15.0 (tex live 2022)
-mkiv lua stats  > used hash slots: 49793 of 65536 + 200000
-mkiv lua stats  > lua properties: engine: lua 5.3, used memory: 144 MB, ctx: 143 MB, max: unknown MB, hash chars: min(32,40), symbol mask: utf (τεχ)
-mkiv lua stats  > runtime: 1.319 seconds, 22 processed pages, 22 shipped pages, 16.679 pages/second
-
+mkiv lua stats  > math tweaking time: 0.125 seconds, 48 math goodie tables
+mkiv lua stats  > graphics processing time: 0.043 seconds including tex, 2 processed images, 2 unique asked, 2 bad names
+mkiv lua stats  > font embedding time: 0.005 seconds, 3 fonts
+mkiv lua stats  > result saved in file: diplomova-praca-xlysova.pdf, compresslevel 1, objectcompresslevel 3
+mkiv lua stats  > positions: 4 collected, 0 deltas, 0 shared partials, 0 partial entries
+mkiv lua stats  > used platform: win64, type: windows, binary subtree: bin
+mkiv lua stats  > used engine: luametatex version: 2.1008, functionality level: 20230426, format id: 689, compiler: msvc
+mkiv lua stats  > tex properties: 806391 hash slots used of 2097152, 53579 control sequences, approximate memory usage: 61 MB
+mkiv lua stats  > lua properties: engine: lua 5.4, used memory: 129 MB, ctx: 124 MB, max: 140 MB, symbol mask: utf (τεχ)
+mkiv lua stats  > runtime: 0.917 seconds, 29 processed pages, 29 shipped pages, 31.638 pages/second
