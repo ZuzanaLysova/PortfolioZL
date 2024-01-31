@@ -40,10 +40,12 @@ Digitalizácia je veľmi dôležitá oblasť spojená s rýchlym rozvojom techno
 
 V dnešnej dobe je digitalizácia verejnej správy častou témou rôznych diskusií. Digitalizácia sľubuje využívanie efektívnejších, účinnejších a transparentnejších služieb v rôznych sektoroch \scr(Andersson, 2022).
 
-\pkap{Index digitálnej ekonomiky a spoločnosti}
-Európska komisia sleduje pokrok členských štátov v digitálnej oblasti od roku 2014 a každý rok zverejňuje informácie o indexe digitálnej ekonomiky a spoločnosti (DESI). Index DESI zoraďuje štáty podľa úrovne digitalizácie a zároveň analyzuje ich relatívny pokrok za posledných 5 rokov vzhľadom na ich počiatočnú situáciu.
+Existuje viacero spôsobov "merania" úrovne rozvinutosti krajín v oblasti digitalizácie a e-governmentu. Patrí medzi ne napríklad Index digitálnej ekonomiky a spoločnosti, Index rozvoja e-Governmentu, E-Government Benchmark a iné.
 
-Oblasti, ktoré skúma index DESI sú:
+\pkap{Index digitálnej ekonomiky a spoločnosti}
+Európska komisia sleduje pokrok členských štátov v digitálnej oblasti od roku 2014 a každý rok zverejňuje informácie o indexe digitálnej ekonomiky a spoločnosti (Digital Economy and Society Index, DESI). DESI zoraďuje štáty podľa úrovne digitalizácie a zároveň analyzuje ich relatívny pokrok za posledných 5 rokov vzhľadom na ich počiatočnú situáciu.
+
+Oblasti, ktoré skúma DESI sú:
 
 \startitemize
 \item{\start\bf ľudský kapitál\stop - internetové znalosti používateľov, pokročilé znalosti ľudí v IT oblasti}
@@ -61,10 +63,86 @@ Európska komisia a Rada prejednávajú rozdhodnutie o politickom programe "Cest
 \obrazekB{obr:DESI}
 {Index DESI 2022 - relatívne výsledky v jednotlivých oblastiach (Európska komisia - Česko, 2022)}{images/DESI2.png}{width=30cc}
 
-Graf na \in{obrázku}[obr:DESI] ukazuje porovnanie jednotlivých oblastí indexu DESI s priemerom 27 členských štátov EÚ. Taktiež je tam zobrazený aj výsledok krajiny s najvyšším skóre (Fínsko) \scr(Európska komisia - Česko, 2022).
+Graf na \in{obrázku}[obr:DESI] ukazuje porovnanie jednotlivých oblastí indexu DESI s priemerom 27 členských štátov EÚ. Taktiež je tam zobrazený aj výsledok krajín s najvyšším skóre (Fínsko a v tesnom závese Dánsko) \scr(Európska komisia - Česko, 2022).
 
-\pkap[dizajn-system]{Jednotným dizajn manuálom elektronických služieb}
-haha
+\pkap{Index rozvoja e-governmentu}
+Prieskum Organizácie Spojených Národov slúži na hodnotie e-governmentu naprieč všetkými 193 členskými štátmi. Tento prieskum hodnotí krajiny na základe Indexu rozvoja e-governmentu (E-Government Development Index, EGDI), ktorý je kombináciou primárnych dát (zbieraných a vlastnených OSN) a sekundárnych dát (od iných agentúr) \scr(United Nations, 2024)
+
+EGDI sa získava váženým priemerom troch indexov z nasledovných oblastí:
+
+\startitemize
+\item{\start\bf online služby \stop \footnote{Online Services Index (OSI)} - hodnotenie verejných portálov na základe 5 kritérií (inštitucionálny rámec, poskytovanie služieb, poskytovanie obsahu, technológie a digitálna účasť občanov)}
+\item{\start\bf telekomunikačná infraštruktúra  \stop \footnote{Telecommunications Infrastructure Index (TII)} - hodnotí úroveň rozvoja infraštruktúry nevyhnutnej pre e-vládu, vrátane pripojenia na internet, infraštruktúry širokopásmového prístupu a mobilných sietí}
+\item{\start\bf ľudský kapitál \stop \footnote{Human Capital Index (HCI)} - hodnotí vzdelanie a úroveň zručností obyvateľstva krajiny, s dôrazom na faktory ako miera gramotnosti, zapojenie do vzdelávania a dostupnosť kvalifikovaných odborníkov v oblasti informačných a komunikačných technológií}
+\stopitemize 
+
+Podľa výšky indexov sa dokážu krajiny rozdeliť do 4 skupín - krajiny s veľmi vysokým, vysokým, stredným a nízkym EGDI. Podľa prieskumu z roku 2022 patrí do veľmi vysokého indexu 60 krajín (31~\%) , do vysokého 73 (38~\%), do stredného 53 (27,5~\%) a 7 krajín (3,5~\%) má nízky index rozvoja e-governmentu.
+
+\obrazekB{obr:EGDI-mapa}
+{Geografické rozloženie štyroch EGDI kategórií (United Nations, 2022)}{images/EGDI-mapa.png}{width=30cc}
+
+Medzi najviac rozvinuté krajiny podľa EGDI patria ako aj pri DESI Dánsko a Fínsko. Česko sa nachádza na 45. mieste, no stále má index v kategórii veľmi vysoký. Porovnanie jednotlivých hodnôt je v \in{tabuľke}[EGDI]
+
+\setupTABLE[frame=on]
+\setupTABLE[row][first][background=color, backgroundcolor=gray, style=bold]
+\setupTABLE[column][1][width=10cc]
+\setupTABLE[column][2][width=6cc]
+\setupTABLE[column][3][width=4cc]
+\setupTABLE[column][4][width=4cc]
+\setupTABLE[column][5][width=4cc]
+\setupTABLE[column][6][width=4cc]
+\setupTABLE[r][each][align={middle,lohi}]
+
+\Tabulka{EGDI}{Porovnanie EGDI najrozvinutejších krajín s ČR (United Nations, 2022)}{
+\bTABLE
+  \bTR
+    \bTH Krajina \eTH
+    \bTH EGDI poradie\eTH
+    \bTH OSI \eTH
+    \bTH HCI \eTH
+    \bTH TII \eTH
+    \bTH EGDI \eTH
+  \eTR
+  \bTR
+    \bTD Dánsko \eTD
+    \bTD 1 \eTD
+    \bTD 0.9797 \eTD
+    \bTD 0.9559 \eTD
+    \bTD 0.9725 \eTD
+    \bTD 0.9753 \eTD
+  \eTR
+  \bTR
+    \bTD Fínsko \eTD
+    \bTD 2 \eTD
+    \bTD 0.9833 \eTD
+    \bTD 0.9640 \eTD
+    \bTD 0.9172 \eTD
+    \bTD 0.9533 \eTD
+  \eTR
+  \bTR
+    \bTD ... \eTD
+    \bTD ... \eTD
+    \bTD ... \eTD
+    \bTD ... \eTD
+    \bTD ... \eTD
+    \bTD ... \eTD
+  \eTR
+  \bTR
+    \bTD Česká republika \eTD
+    \bTD 45 \eTD
+    \bTD 0.6693 \eTD
+    \bTD 0.9114 \eTD
+    \bTD 0.8456 \eTD
+    \bTD 0.8221 \eTD
+  \eTR
+\eTABLE
+}
+
+
+\pkap{ E-Government Benchmark}
+tu bude nejaky odstavec ban
+
+bsjabdjsb
 
 \pkap{Súčasný stav digitálnej verejnej správy v Česku}
 
@@ -77,12 +155,22 @@ Príkladom EMMA služby je nástup zamestnanca do zamestnania. Povinnosťou zame
 Táto služba spolu s ďalšími bude uvedená na trh po ukončení realizácie projektu, čo môže výrazne zjednodušiť biznis procesy podnikov. 
 
 \pkap{Súčasný stav digitálnej verejnej správy v zahraničí}
+
+\TODO {na základe tých indexov, aj zahranicie aj cesko}
+
 V tejto kapitole a jej podkapitolách je zanalyzovaná a popísaná situácia v krajinách, ktoré sú buď blízko Českej republike (polohou, kultúrou, rozvinutosťou...) alebo krajiny, o ktorých je známe, že nejakým spôsobom v oblasti digitálnych služieb vynikajú.
 
 \ppkap{Slovensko}
-Začnem Slovenskom, ako najbližším susedom Českej republiky. Na Slovensku existuje množstvo elektronických služieb verejnej správy, ktoré sú dostupné prostredníctvom Ústredného portálu verejnej správy (ÚPVS). Tento portál umožňuje centrálne vykonávať elektronickú úradnú komunikáciu s rôznymi orgánmi verejnej moci a pristupovať k spoločným modulom. %Jeho dizajn je ale pomerne zastaralý a neprehľadný (viď \in{obrázok}[obr:portal\_sk]).
+Prvou analyzovanou krajinou je Slovensko, ako najbližší sused Českej republiky. Na Slovensku existuje množstvo elektronických služieb verejnej správy, ktoré sú dostupné prostredníctvom Ústredného portálu verejnej správy (ÚPVS). Tento portál umožňuje centrálne vykonávať elektronickú úradnú komunikáciu s rôznymi orgánmi verejnej moci a pristupovať k spoločným modulom. %Jeho dizajn je ale pomerne zastaralý a neprehľadný (viď \in{obrázok}[obr:portal\_sk]).
 
 Na základe analýzy tohto portálu je možné tvrdiť, že Slovenská republika sa zatiaľ špecializuje viac na vzťah občan-štát, ako na vzťah občan-zamestnávateľ-štát. V popredí je oblasť e-financovania, hlavne situácie týkajúce sa daní. Ministerstvo financií Slovenskej republiky v spolupráci s daňovými úradmi zaviedlo štandardizovaný proces pre elektronické prenosy faktúr a to prostredníctvom Informačného systému elektronickej fakturácie (IS EFA), ktorý umožňuje odosielanie štruktúrovaných elektronických fakturačných údajov do slovenskej daňovej správy. Používanie tohto IS bude časom povinné pre inštitúcie štátnej správy, verejnej správy a taktiež pre podnikateľov, ktorí im dodávajú tovary a služby. Tento systém je v princípe podobný systému e-kasa, ktorý prepája všetky slovenské registračné pokladnice s online portálom slovenskej daňovej správy \scr(Kilinger, 2023; MFSR, 2024). Portály eKasa a eFaktúry už podliehajú Jednotným dizajn manuálom elektronických služieb (viac informácií v \in{kapitole}[dizajn-system]).
+
+\ppkap{Poľsko}
+
+
+\ppkap{Dánsko a Estónsko}
+Denmark’s outstanding performance in e-government is the UN’s \#1 ranking in the E-Government Development Index in 2018, 2020, and 2022, as well as the highest number of citizens using e-government services in the entire European Union, with 93\% of Danish internet users using digital public services in 2021. Meanwhile, according to the 2022 Digital Economy and Society Index by European Commission, Estonia is the best performing country in the sector of digital public services, and it is recognized as a leader in e-government, outperforming Central and Eastern European countries.
+The two countries have carefully and precisely defined their digitalization goals and have pursued them. To develop a wide range of efficient and well-integrated digital public services, they have supported digital innovation, enacted laws to promote the adoption of digital services, educated the public, and engaged in public-private partnerships. These developments have resulted in significant infrastructural solutions that benefit all citizens and businesses in their daily lives when interacting with the government. In the same way that Denmark has borger.dk, Estonia has eesti.ee as an integrated public service portal, both of which are available 24/7 and protected against high demand. This robust government service delivers a superior citizen experience by meeting the four core tenets of user needs by Aarron Walters: functional, reliable, usable, and pleasurable (Queue IT, 2023).
 
 %\obrazekB{obr:portal\_sk}
 %{Ústredný portál verejnej správy SR (Slovensko.sk, 2024)}{images/portal_sk.png}{width=30cc}
@@ -195,6 +283,9 @@ Služba VS reprezentuje funkciu (činnosť) úradu, ktorá je poskytovaná konkr
 
 \ppkap{Úkon}
 Úkon je taktiež interakcia medzi klientom a OVM, no v tomto prípade ide len o jednu interakciu, ktorá vedie k ďalšiemu úkonu (resp. k naplneniu výstupu služby, ak sa jedná o koncový úkon). Úkon sa teda dá definovať ako jeden krok, jedna časť služby VS \scr(Digitální a informační agentura, 2023).
+
+\pkap[dizajn-system]{Jednotným dizajn manuálom elektronických služieb}
+haha
 
 \pkap{Popis metodiky, analýzy a návrhu}
 
@@ -349,6 +440,16 @@ TODO
 \cast{roč. \,39}
 }
 
+\publW{
+\autor{Ardhaninggar, N.}
+\nazev{E-Government Success Stories: Learning from Denmark and Estonia}
+\rok{2023}
+\www{https://moderndiplomacy.eu/author/nurulardhaninggar/}
+\online{2024-01-31}
+\nazevdok{moderndiplomacy.eu}
+%\podnazev{Informační koncepce ČR}
+}
+
 \publX{
 \autorkorp{Asseco Central Europe, a.s.}
 \online{2023-11-27}
@@ -446,15 +547,17 @@ TODO
 %\isbn{978-92-64-85180-1}
 %\rozsah{60}
 %}
-\publA{
- \autor{OECD}
- \nazev{Government at a Glance}
- \nakl{Paris}{OECD Publishing}
- %\vyd{2023}
- \rok{2023}
- \isbn{978-92-64-85180-1}
- \rozsah{234\stran}
-}
+
+%\publE{
+% \autor{Karunia, L. a kol.}
+% \nazev{Analysis of the Factors that Affect the Implementation of EGovernment in Indonesia}
+% \nazevdok{International Journal of Membrane Science and Technology}
+% \cast{Vol.\,10, No.\,3}
+% \rok{2023}
+% \umist{46}{54}
+% %\issn{0896-3207}
+%\doi{https://doi.org/10.1063/5.0118820}
+%}
 
 \publW{
 \autor{Kilinger, A.}
@@ -475,6 +578,16 @@ TODO
  \rok{©~2024}
 }
 
+\publA{
+ \autor{OECD}
+ \nazev{Government at a Glance}
+ \nakl{Paris}{OECD Publishing}
+ %\vyd{2023}
+ \rok{2023}
+ \xisbn{978-92-64-85180-1}
+ \rozsah{234\stran}
+}
+
 \publW{
  \autorkorp{Slovensko.sk}
  \nazev{Ústredný portál verejnej správy}
@@ -483,6 +596,19 @@ TODO
  \nazevdok{Slovensko.sk}
  \rok{©~2024}
 }
+
+\publD{%
+ \autorkorp{United Nations}
+ \nazev{E-Government Survey 2022}
+ \nazevdok{The Future of Digital Government}
+\nakl{UN}{New York}
+\rok{2022}
+\isbn{978-92-1-123213-4}
+ \umist{32}{51}
+}
+
+
+
 
 \ebib
 
