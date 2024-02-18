@@ -51,7 +51,7 @@ if not utilitydata.job then utilitydata.job = { } end
 if not utilitydata.job.pagestates then utilitydata.job.pagestates = { } end
 
 utilitydata.job.pagestates.collected={
- ["float"]={ 12, 12, 14, 14, 24 },
+ ["float"]={ 12, 12, 14, 14, 15, 16, 25 },
 }
 
 if not utilitydata.structures then utilitydata.structures = { } end
@@ -355,9 +355,17 @@ utilitydata.structures.sections.collected={
  {
   ["block"]="bodypart",
   ["conversionset"]="default",
-  ["hidenumber"]=true,
   ["language"]="sk",
   ["numbers"]=37,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["hidenumber"]=true,
+  ["language"]="sk",
+  ["numbers"]=38,
   ["separatorset"]="default",
   ["set"]="all",
  },
@@ -393,7 +401,7 @@ utilitydata.structures.sections.collected={
   ["conversionset"]="default",
   ["hidenumber"]=true,
   ["language"]="sk",
-  ["numbers"]=38,
+  ["numbers"]=39,
   ["separatorset"]="default",
   ["set"]="all",
  },
@@ -404,7 +412,7 @@ if not utilitydata.structures.counters then utilitydata.structures.counters = { 
 
 utilitydata.structures.counters.collected={
  ["chemical"]={
-  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
  },
  ["combination"]={
   { 0 },
@@ -413,49 +421,49 @@ utilitydata.structures.counters.collected={
   { 0 },
  },
  ["figure"]={
-  { 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+  { 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
  },
  ["float"]={
-  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
  },
  ["footnote"]={
   { 10 },
  },
  ["formula"]={
-  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
  },
  ["graphic"]={
-  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
  },
  ["intermezzo"]={
-  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
  },
  ["itemgroup:itemize"]={
-  { 0, 0, 0, 0, 0, 4, 3, 0, 5, 4, 3, 2, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+  { 0, 0, 0, 0, 0, 4, 3, 4, 0, 5, 4, 3, 2, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
  },
  ["itemgroup:itemize:note"]={
-  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
  },
  ["linenote"]={
   { 0 },
  },
  ["paragraph"]={
-  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
  },
  ["realpage"]={
-  { 34 },
+  { 36 },
  },
  ["subpage"]={
-  { 34 },
+  { 36 },
  },
  ["table"]={
-  { 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+  { 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
  },
  ["textnote:note"]={
   { 0 },
  },
  ["userpage"]={
-  { 34 },
+  { 36 },
  },
 }
 
@@ -464,8 +472,8 @@ if not utilitydata.structures.lists then utilitydata.structures.lists = { } end
 
 utilitydata.structures.lists.collected={
  {
-  ["metadata"]=39,
-  ["numberdata"]=40,
+  ["metadata"]=40,
+  ["numberdata"]=41,
   ["references"]={
    ["internal"]=1,
    ["realpage"]=7,
@@ -477,8 +485,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=41,
-  ["numberdata"]=42,
+  ["metadata"]=42,
+  ["numberdata"]=43,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=2,
@@ -491,8 +499,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=41,
-  ["numberdata"]=43,
+  ["metadata"]=42,
+  ["numberdata"]=44,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=3,
@@ -505,8 +513,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=41,
-  ["numberdata"]=44,
+  ["metadata"]=42,
+  ["numberdata"]=45,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=4,
@@ -519,8 +527,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=45,
-  ["numberdata"]=46,
+  ["metadata"]=46,
+  ["numberdata"]=47,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=5,
@@ -533,9 +541,9 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=47,
-  ["numberdata"]=49,
-  ["prefixdata"]=50,
+  ["metadata"]=48,
+  ["numberdata"]=50,
+  ["prefixdata"]=51,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=6,
@@ -548,9 +556,9 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=47,
-  ["numberdata"]=52,
-  ["prefixdata"]=50,
+  ["metadata"]=48,
+  ["numberdata"]=53,
+  ["prefixdata"]=51,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=7,
@@ -563,9 +571,9 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=53,
-  ["numberdata"]=54,
-  ["prefixdata"]=55,
+  ["metadata"]=54,
+  ["numberdata"]=55,
+  ["prefixdata"]=56,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=8,
@@ -580,9 +588,9 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=53,
-  ["numberdata"]=56,
-  ["prefixdata"]=55,
+  ["metadata"]=54,
+  ["numberdata"]=57,
+  ["prefixdata"]=56,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=9,
@@ -597,8 +605,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=45,
-  ["numberdata"]=57,
+  ["metadata"]=46,
+  ["numberdata"]=58,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=10,
@@ -611,9 +619,9 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=47,
-  ["numberdata"]=59,
-  ["prefixdata"]=50,
+  ["metadata"]=48,
+  ["numberdata"]=60,
+  ["prefixdata"]=51,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=11,
@@ -626,9 +634,9 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=47,
-  ["numberdata"]=61,
-  ["prefixdata"]=50,
+  ["metadata"]=48,
+  ["numberdata"]=62,
+  ["prefixdata"]=51,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=12,
@@ -641,9 +649,9 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=47,
-  ["numberdata"]=63,
-  ["prefixdata"]=50,
+  ["metadata"]=48,
+  ["numberdata"]=64,
+  ["prefixdata"]=51,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=13,
@@ -656,9 +664,9 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=53,
-  ["numberdata"]=64,
-  ["prefixdata"]=55,
+  ["metadata"]=54,
+  ["numberdata"]=65,
+  ["prefixdata"]=56,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=14,
@@ -673,9 +681,9 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=65,
-  ["numberdata"]=66,
-  ["prefixdata"]=55,
+  ["metadata"]=66,
+  ["numberdata"]=67,
+  ["prefixdata"]=56,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=15,
@@ -689,8 +697,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=45,
-  ["numberdata"]=67,
+  ["metadata"]=46,
+  ["numberdata"]=68,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=16,
@@ -699,16 +707,49 @@ utilitydata.structures.lists.collected={
   },
   ["titledata"]={
    ["label"]="section",
-   ["title"]=" E-Government Benchmark",
+   ["title"]=" eGovernment Benchmark",
   },
  },
  {
-  ["metadata"]=45,
-  ["numberdata"]=68,
+  ["metadata"]=54,
+  ["numberdata"]=69,
+  ["prefixdata"]=56,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=17,
    ["realpage"]=15,
+   ["reference"]="obr:benchmark-mapa",
+   ["section"]=6,
+   ["view"]="fit",
+  },
+  ["titledata"]={
+   ["list"]="Geografické rozloženie eGovernment vyspelosti podĺa prieskumu eGovernment Benchmark (van der Linden, 2022)",
+   ["title"]="\\THESISautoreffont {Geografické rozloženie eGovernment vyspelosti podĺa prieskumu eGovernment Benchmark (van der Linden, 2022)}",
+  },
+ },
+ {
+  ["metadata"]=66,
+  ["numberdata"]=70,
+  ["prefixdata"]=56,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=18,
+   ["realpage"]=16,
+   ["reference"]="benchmark",
+   ["section"]=6,
+   ["view"]="fit",
+  },
+  ["titledata"]={
+   ["title"]="Porovnanie skóre eGovernment Benchmark najrozvinutejších krajín s ČR (van der Linden, 2022)",
+  },
+ },
+ {
+  ["metadata"]=46,
+  ["numberdata"]=71,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=19,
+   ["realpage"]=16,
    ["section"]=7,
   },
   ["titledata"]={
@@ -717,12 +758,12 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=45,
-  ["numberdata"]=69,
+  ["metadata"]=46,
+  ["numberdata"]=72,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=18,
-   ["realpage"]=15,
+   ["internal"]=20,
+   ["realpage"]=17,
    ["section"]=8,
   },
   ["titledata"]={
@@ -731,12 +772,12 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=70,
-  ["numberdata"]=71,
+  ["metadata"]=73,
+  ["numberdata"]=74,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=19,
-   ["realpage"]=16,
+   ["internal"]=21,
+   ["realpage"]=17,
    ["section"]=9,
   },
   ["titledata"]={
@@ -745,12 +786,12 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=70,
-  ["numberdata"]=72,
+  ["metadata"]=73,
+  ["numberdata"]=75,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=20,
-   ["realpage"]=16,
+   ["internal"]=22,
+   ["realpage"]=18,
    ["section"]=10,
   },
   ["titledata"]={
@@ -759,12 +800,12 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=70,
-  ["numberdata"]=73,
+  ["metadata"]=73,
+  ["numberdata"]=76,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=21,
-   ["realpage"]=16,
+   ["internal"]=23,
+   ["realpage"]=18,
    ["section"]=11,
   },
   ["titledata"]={
@@ -773,12 +814,12 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=41,
-  ["numberdata"]=74,
+  ["metadata"]=42,
+  ["numberdata"]=77,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=22,
-   ["realpage"]=18,
+   ["internal"]=24,
+   ["realpage"]=19,
    ["section"]=12,
   },
   ["titledata"]={
@@ -787,12 +828,12 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=45,
-  ["numberdata"]=75,
+  ["metadata"]=46,
+  ["numberdata"]=78,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=23,
-   ["realpage"]=18,
+   ["internal"]=25,
+   ["realpage"]=19,
    ["section"]=13,
   },
   ["titledata"]={
@@ -801,14 +842,14 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=47,
-  ["numberdata"]=77,
-  ["prefixdata"]=50,
+  ["metadata"]=48,
+  ["numberdata"]=80,
+  ["prefixdata"]=51,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=24,
+   ["internal"]=26,
    ["order"]=6,
-   ["realpage"]=18,
+   ["realpage"]=19,
    ["section"]=13,
   },
   ["titledata"]={
@@ -816,14 +857,14 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=47,
-  ["numberdata"]=79,
-  ["prefixdata"]=50,
+  ["metadata"]=48,
+  ["numberdata"]=82,
+  ["prefixdata"]=51,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=25,
+   ["internal"]=27,
    ["order"]=7,
-   ["realpage"]=18,
+   ["realpage"]=19,
    ["section"]=13,
   },
   ["titledata"]={
@@ -831,12 +872,12 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=45,
-  ["numberdata"]=80,
+  ["metadata"]=46,
+  ["numberdata"]=83,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=28,
-   ["realpage"]=19,
+   ["internal"]=30,
+   ["realpage"]=20,
    ["section"]=14,
   },
   ["titledata"]={
@@ -845,12 +886,57 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=45,
-  ["numberdata"]=81,
+  ["metadata"]=48,
+  ["numberdata"]=85,
+  ["prefixdata"]=51,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=30,
-   ["realpage"]=19,
+   ["internal"]=28,
+   ["order"]=8,
+   ["realpage"]=20,
+   ["section"]=13,
+  },
+  ["titledata"]={
+   ["title"]="Digital Service Act (Akt o digitálnych službách) -- súbor pravidiel platiacich v celej EÚ, ktorých cieľom je vytvoriť bezpečnejší digitálny priestor, v ktorom budú chránené základné práva všetkých užívateľov digitálnych služieb \\scr (Európska komisia, 2022)",
+  },
+ },
+ {
+  ["metadata"]=48,
+  ["numberdata"]=87,
+  ["prefixdata"]=51,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=29,
+   ["order"]=9,
+   ["realpage"]=20,
+   ["section"]=13,
+  },
+  ["titledata"]={
+   ["title"]="Data Governance Act (Akt o správe dát) -- úsilie zvýšiť dôveru v zdieľanie dát a posilnenie mechanizmov pre zvýšenie dostupnosti dát \\scr (Európska komisia, 2022)",
+  },
+ },
+ {
+  ["metadata"]=48,
+  ["numberdata"]=89,
+  ["prefixdata"]=51,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=31,
+   ["order"]=10,
+   ["realpage"]=20,
+   ["section"]=14,
+  },
+  ["titledata"]={
+   ["title"]="SOA -- Servisne orientovaná architektúra (Service Oriented Architecture) -- sada princípov a metodológií, ktorá odporúča stavbu aplikácií zo vzájomne nezávislých komponent",
+  },
+ },
+ {
+  ["metadata"]=46,
+  ["numberdata"]=90,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=32,
+   ["realpage"]=21,
    ["section"]=15,
   },
   ["titledata"]={
@@ -859,57 +945,12 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=47,
-  ["numberdata"]=83,
-  ["prefixdata"]=50,
+  ["metadata"]=73,
+  ["numberdata"]=91,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=26,
-   ["order"]=8,
-   ["realpage"]=19,
-   ["section"]=13,
-  },
-  ["titledata"]={
-   ["title"]="Digital Service Act (Akt o digitálnych službách) -- súbor pravidiel platiacich v celej EÚ, ktorých cieľom je vytvoriť bezpečnejší digitálny priestor, v ktorom budú chránené základné práva všetkých užívateľov digitálnych služieb \\scr (Európska komisia, 2022)",
-  },
- },
- {
-  ["metadata"]=47,
-  ["numberdata"]=85,
-  ["prefixdata"]=50,
-  ["references"]={
-   ["block"]="bodypart",
-   ["internal"]=27,
-   ["order"]=9,
-   ["realpage"]=19,
-   ["section"]=13,
-  },
-  ["titledata"]={
-   ["title"]="Data Governance Act (Akt o správe dát) -- úsilie zvýšiť dôveru v zdieľanie dát a posilnenie mechanizmov pre zvýšenie dostupnosti dát \\scr (Európska komisia, 2022)",
-  },
- },
- {
-  ["metadata"]=47,
-  ["numberdata"]=87,
-  ["prefixdata"]=50,
-  ["references"]={
-   ["block"]="bodypart",
-   ["internal"]=29,
-   ["order"]=10,
-   ["realpage"]=19,
-   ["section"]=14,
-  },
-  ["titledata"]={
-   ["title"]="SOA -- Servisne orientovaná architektúra (Service Oriented Architecture) -- sada princípov a metodológií, ktorá odporúča stavbu aplikácií zo vzájomne nezávislých komponent",
-  },
- },
- {
-  ["metadata"]=70,
-  ["numberdata"]=88,
-  ["references"]={
-   ["block"]="bodypart",
-   ["internal"]=31,
-   ["realpage"]=20,
+   ["internal"]=33,
+   ["realpage"]=21,
    ["section"]=16,
   },
   ["titledata"]={
@@ -918,12 +959,12 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=70,
-  ["numberdata"]=89,
+  ["metadata"]=73,
+  ["numberdata"]=92,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=32,
-   ["realpage"]=20,
+   ["internal"]=34,
+   ["realpage"]=21,
    ["section"]=17,
   },
   ["titledata"]={
@@ -932,12 +973,12 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=70,
-  ["numberdata"]=90,
+  ["metadata"]=73,
+  ["numberdata"]=93,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=33,
-   ["realpage"]=21,
+   ["internal"]=35,
+   ["realpage"]=22,
    ["section"]=18,
   },
   ["titledata"]={
@@ -946,12 +987,12 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=45,
-  ["numberdata"]=91,
+  ["metadata"]=46,
+  ["numberdata"]=94,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=34,
-   ["realpage"]=21,
+   ["internal"]=36,
+   ["realpage"]=23,
    ["section"]=19,
   },
   ["titledata"]={
@@ -960,12 +1001,12 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=70,
-  ["numberdata"]=92,
+  ["metadata"]=73,
+  ["numberdata"]=95,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=35,
-   ["realpage"]=22,
+   ["internal"]=37,
+   ["realpage"]=24,
    ["section"]=20,
   },
   ["titledata"]={
@@ -974,12 +1015,12 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=70,
-  ["numberdata"]=93,
+  ["metadata"]=73,
+  ["numberdata"]=96,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=36,
-   ["realpage"]=23,
+   ["internal"]=38,
+   ["realpage"]=24,
    ["section"]=21,
   },
   ["titledata"]={
@@ -988,12 +1029,12 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=45,
-  ["numberdata"]=94,
+  ["metadata"]=46,
+  ["numberdata"]=97,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=37,
-   ["realpage"]=23,
+   ["internal"]=39,
+   ["realpage"]=24,
    ["reference"]="dizajn-system",
    ["section"]=22,
   },
@@ -1003,12 +1044,12 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=45,
-  ["numberdata"]=95,
+  ["metadata"]=46,
+  ["numberdata"]=98,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=38,
-   ["realpage"]=23,
+   ["internal"]=40,
+   ["realpage"]=24,
    ["section"]=23,
   },
   ["titledata"]={
@@ -1017,12 +1058,12 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=45,
-  ["numberdata"]=96,
+  ["metadata"]=46,
+  ["numberdata"]=99,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=39,
-   ["realpage"]=23,
+   ["internal"]=41,
+   ["realpage"]=25,
    ["section"]=24,
   },
   ["titledata"]={
@@ -1031,13 +1072,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=65,
-  ["numberdata"]=66,
-  ["prefixdata"]=55,
+  ["metadata"]=66,
+  ["numberdata"]=67,
+  ["prefixdata"]=56,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=40,
-   ["realpage"]=24,
+   ["internal"]=42,
+   ["realpage"]=25,
    ["reference"]="situacie",
    ["section"]=24,
    ["view"]="fit",
@@ -1047,13 +1088,27 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=41,
-  ["numberdata"]=97,
+  ["metadata"]=42,
+  ["numberdata"]=100,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=41,
-   ["realpage"]=25,
+   ["internal"]=43,
+   ["realpage"]=26,
    ["section"]=25,
+  },
+  ["titledata"]={
+   ["label"]="chapter",
+   ["title"]="Poznámky z konzultácie",
+  },
+ },
+ {
+  ["metadata"]=42,
+  ["numberdata"]=101,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=44,
+   ["realpage"]=27,
+   ["section"]=26,
   },
   ["titledata"]={
    ["label"]="chapter",
@@ -1061,13 +1116,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=45,
-  ["numberdata"]=98,
+  ["metadata"]=46,
+  ["numberdata"]=102,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=42,
-   ["realpage"]=25,
-   ["section"]=26,
+   ["internal"]=45,
+   ["realpage"]=27,
+   ["section"]=27,
   },
   ["titledata"]={
    ["label"]="section",
@@ -1075,13 +1130,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=45,
-  ["numberdata"]=99,
+  ["metadata"]=46,
+  ["numberdata"]=103,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=43,
-   ["realpage"]=25,
-   ["section"]=27,
+   ["internal"]=46,
+   ["realpage"]=27,
+   ["section"]=28,
   },
   ["titledata"]={
    ["label"]="section",
@@ -1089,13 +1144,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=45,
-  ["numberdata"]=100,
+  ["metadata"]=46,
+  ["numberdata"]=104,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=44,
-   ["realpage"]=25,
-   ["section"]=28,
+   ["internal"]=47,
+   ["realpage"]=27,
+   ["section"]=29,
   },
   ["titledata"]={
    ["label"]="section",
@@ -1103,13 +1158,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=45,
-  ["numberdata"]=101,
+  ["metadata"]=46,
+  ["numberdata"]=105,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=45,
-   ["realpage"]=25,
-   ["section"]=29,
+   ["internal"]=48,
+   ["realpage"]=27,
+   ["section"]=30,
   },
   ["titledata"]={
    ["label"]="section",
@@ -1117,13 +1172,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=45,
-  ["numberdata"]=102,
+  ["metadata"]=46,
+  ["numberdata"]=106,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=46,
-   ["realpage"]=26,
-   ["section"]=30,
+   ["internal"]=49,
+   ["realpage"]=28,
+   ["section"]=31,
   },
   ["titledata"]={
    ["label"]="section",
@@ -1131,13 +1186,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=45,
-  ["numberdata"]=103,
+  ["metadata"]=46,
+  ["numberdata"]=107,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=47,
-   ["realpage"]=26,
-   ["section"]=31,
+   ["internal"]=50,
+   ["realpage"]=28,
+   ["section"]=32,
   },
   ["titledata"]={
    ["label"]="section",
@@ -1145,13 +1200,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=45,
-  ["numberdata"]=104,
+  ["metadata"]=46,
+  ["numberdata"]=108,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=48,
-   ["realpage"]=26,
-   ["section"]=32,
+   ["internal"]=51,
+   ["realpage"]=28,
+   ["section"]=33,
   },
   ["titledata"]={
    ["label"]="section",
@@ -1159,13 +1214,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=45,
-  ["numberdata"]=105,
+  ["metadata"]=46,
+  ["numberdata"]=109,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=49,
-   ["realpage"]=26,
-   ["section"]=33,
+   ["internal"]=52,
+   ["realpage"]=28,
+   ["section"]=34,
   },
   ["titledata"]={
    ["label"]="section",
@@ -1173,13 +1228,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=45,
-  ["numberdata"]=106,
+  ["metadata"]=46,
+  ["numberdata"]=110,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=50,
-   ["realpage"]=26,
-   ["section"]=34,
+   ["internal"]=53,
+   ["realpage"]=28,
+   ["section"]=35,
   },
   ["titledata"]={
    ["label"]="section",
@@ -1187,13 +1242,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=41,
-  ["numberdata"]=107,
+  ["metadata"]=42,
+  ["numberdata"]=111,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=51,
-   ["realpage"]=27,
-   ["section"]=35,
+   ["internal"]=54,
+   ["realpage"]=29,
+   ["section"]=36,
   },
   ["titledata"]={
    ["label"]="chapter",
@@ -1201,13 +1256,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=41,
-  ["numberdata"]=108,
+  ["metadata"]=42,
+  ["numberdata"]=112,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=52,
-   ["realpage"]=28,
-   ["section"]=36,
+   ["internal"]=55,
+   ["realpage"]=30,
+   ["section"]=37,
   },
   ["titledata"]={
    ["label"]="chapter",
@@ -1215,13 +1270,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=109,
-  ["numberdata"]=110,
+  ["metadata"]=113,
+  ["numberdata"]=114,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=53,
-   ["realpage"]=29,
-   ["section"]=37,
+   ["internal"]=56,
+   ["realpage"]=31,
+   ["section"]=38,
   },
   ["titledata"]={
    ["label"]="chapter",
@@ -1229,103 +1284,103 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=111,
+  ["metadata"]=115,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=54,
-   ["realpage"]=29,
-   ["section"]=37,
+   ["internal"]=57,
+   ["realpage"]=31,
+   ["section"]=38,
   },
   ["userdata"]={
    ["second"]="Literatúra",
   },
  },
  {
-  ["metadata"]=112,
+  ["metadata"]=116,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=55,
-   ["realpage"]=31,
-   ["section"]=37,
+   ["internal"]=58,
+   ["realpage"]=33,
+   ["section"]=38,
   },
   ["userdata"]={
    ["command"]="\\blank [big]",
   },
  },
  {
-  ["metadata"]=113,
+  ["metadata"]=117,
   ["references"]={
    ["block"]="backpart",
-   ["internal"]=57,
-   ["realpage"]=31,
-   ["section"]=38,
+   ["internal"]=60,
+   ["realpage"]=33,
+   ["section"]=39,
   },
  },
  {
-  ["metadata"]=41,
-  ["numberdata"]=114,
+  ["metadata"]=42,
+  ["numberdata"]=118,
   ["references"]={
    ["block"]="backpart",
-   ["internal"]=56,
-   ["realpage"]=31,
-   ["section"]=38,
+   ["internal"]=59,
+   ["realpage"]=33,
+   ["section"]=39,
   },
   ["titledata"]={
    ["title"]="\\headtext {tables}",
   },
  },
  {
-  ["metadata"]=113,
+  ["metadata"]=117,
   ["references"]={
    ["block"]="backpart",
-   ["internal"]=59,
-   ["realpage"]=32,
-   ["section"]=39,
+   ["internal"]=62,
+   ["realpage"]=34,
+   ["section"]=40,
   },
  },
  {
-  ["metadata"]=41,
-  ["numberdata"]=115,
+  ["metadata"]=42,
+  ["numberdata"]=119,
   ["references"]={
    ["block"]="backpart",
-   ["internal"]=58,
-   ["realpage"]=32,
-   ["section"]=39,
+   ["internal"]=61,
+   ["realpage"]=34,
+   ["section"]=40,
   },
   ["titledata"]={
    ["title"]="\\headtext {figures}",
   },
  },
  {
-  ["metadata"]=113,
+  ["metadata"]=117,
   ["references"]={
    ["block"]="backpart",
-   ["internal"]=61,
-   ["realpage"]=33,
-   ["section"]=40,
+   ["internal"]=64,
+   ["realpage"]=35,
+   ["section"]=41,
   },
  },
  {
-  ["metadata"]=41,
-  ["numberdata"]=116,
+  ["metadata"]=42,
+  ["numberdata"]=120,
   ["references"]={
    ["block"]="backpart",
-   ["internal"]=60,
-   ["realpage"]=33,
-   ["section"]=40,
+   ["internal"]=63,
+   ["realpage"]=35,
+   ["section"]=41,
   },
   ["titledata"]={
    ["title"]="\\headtext {abbreviations}",
   },
  },
  {
-  ["metadata"]=117,
-  ["numberdata"]=118,
+  ["metadata"]=121,
+  ["numberdata"]=122,
   ["references"]={
    ["block"]="appendix",
-   ["internal"]=62,
-   ["realpage"]=34,
-   ["section"]=41,
+   ["internal"]=65,
+   ["realpage"]=36,
+   ["section"]=42,
   },
   ["titledata"]={
    ["label"]="appendix",
@@ -1341,239 +1396,253 @@ utilitydata.structures.pages.collected={
  {
   ["block"]="frontpart",
   ["number"]=1,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="frontpart",
   ["number"]=2,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="frontpart",
   ["number"]=3,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="frontpart",
   ["number"]=4,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="frontpart",
   ["number"]=5,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="frontpart",
   ["number"]=6,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="frontpart",
   ["number"]=7,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="frontpart",
   ["number"]=8,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=9,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=10,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=11,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=12,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=13,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=14,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=15,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=16,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=17,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=18,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=19,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=20,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=21,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=22,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=23,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=24,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=25,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=26,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=27,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=28,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=29,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=30,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
-  ["block"]="backpart",
+  ["block"]="bodypart",
   ["number"]=31,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
-  ["block"]="backpart",
+  ["block"]="bodypart",
   ["number"]=32,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="backpart",
   ["number"]=33,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
+  ["state"]="start",
+ },
+ {
+  ["block"]="backpart",
+  ["number"]=34,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
+  ["state"]="start",
+ },
+ {
+  ["block"]="backpart",
+  ["number"]=35,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
  {
   ["block"]="appendix",
-  ["number"]=34,
-  ["numberdata"]=119,
-  ["prefixdata"]=120,
+  ["number"]=36,
+  ["numberdata"]=123,
+  ["prefixdata"]=124,
   ["state"]="start",
  },
 }
@@ -1614,6 +1683,9 @@ utilitydata.structures.itemgroups.collected={
    { 3, 0 },
   },
   {
+   { 4, 0 },
+  },
+  {
    { 5, 0 },
   },
   {
@@ -1649,10 +1721,10 @@ utilitydata.structures.synonyms.collected={
      ["synonym"]="G2B2B",
      ["tag"]="G2B2B",
     },
-    ["metadata"]=121,
+    ["metadata"]=125,
    },
   },
-  ["metadata"]=122,
+  ["metadata"]=126,
  },
 }
 
@@ -1724,18 +1796,19 @@ utilitydata.job.packed={
   { 0, 4, 6 },
   { 0, 4, 7 },
   { 0, 5 },
-  { 0, 5, 1 },
-  { 0, 5, 2 },
-  { 0, 5, 3 },
-  { 0, 5, 4 },
-  { 0, 5, 5 },
-  { 0, 5, 6 },
-  { 0, 5, 7 },
-  { 0, 5, 8 },
-  { 0, 5, 9 },
   { 0, 6 },
+  { 0, 6, 1 },
+  { 0, 6, 2 },
+  { 0, 6, 3 },
+  { 0, 6, 4 },
+  { 0, 6, 5 },
+  { 0, 6, 6 },
+  { 0, 6, 7 },
+  { 0, 6, 8 },
+  { 0, 6, 9 },
   { 0, 7 },
   { 0, 8 },
+  { 0, 9 },
   { 0, 0 },
   {
    ["catcodes"]=9,
@@ -1750,7 +1823,7 @@ utilitydata.job.packed={
    ["conversionset"]="default",
    ["hidenumber"]=true,
    ["language"]="sk",
-   ["numbers"]=38,
+   ["numbers"]=39,
    ["separatorset"]="default",
    ["set"]="all",
   },
@@ -1811,7 +1884,7 @@ utilitydata.job.packed={
   { 1 },
   {
    ["conversionset"]="number",
-   ["numbers"]=48,
+   ["numbers"]=49,
   },
   {
    ["connector"]=".",
@@ -1821,7 +1894,7 @@ utilitydata.job.packed={
   { 2 },
   {
    ["conversionset"]="number",
-   ["numbers"]=51,
+   ["numbers"]=52,
   },
   {
    ["catcodes"]=9,
@@ -1834,7 +1907,7 @@ utilitydata.job.packed={
    ["conversionset"]="subfloats",
    ["counter"]="figure",
    ["level"]=1,
-   ["numbers"]=48,
+   ["numbers"]=49,
   },
   {
    ["connector"]=".",
@@ -1845,7 +1918,7 @@ utilitydata.job.packed={
    ["conversionset"]="subfloats",
    ["counter"]="figure",
    ["level"]=1,
-   ["numbers"]=51,
+   ["numbers"]=52,
   },
   {
    ["block"]="bodypart",
@@ -1858,23 +1931,23 @@ utilitydata.job.packed={
   { 3 },
   {
    ["conversionset"]="number",
-   ["numbers"]=58,
+   ["numbers"]=59,
   },
   { 4 },
   {
    ["conversionset"]="number",
-   ["numbers"]=60,
+   ["numbers"]=61,
   },
   { 5 },
   {
    ["conversionset"]="number",
-   ["numbers"]=62,
+   ["numbers"]=63,
   },
   {
    ["conversionset"]="subfloats",
    ["counter"]="figure",
    ["level"]=1,
-   ["numbers"]=58,
+   ["numbers"]=59,
   },
   {
    ["catcodes"]=9,
@@ -1887,7 +1960,7 @@ utilitydata.job.packed={
    ["conversionset"]="subfloats",
    ["counter"]="table",
    ["level"]=1,
-   ["numbers"]=48,
+   ["numbers"]=49,
   },
   {
    ["block"]="bodypart",
@@ -1896,6 +1969,18 @@ utilitydata.job.packed={
    ["numbers"]=6,
    ["separatorset"]="default",
    ["set"]="all",
+  },
+  {
+   ["conversionset"]="subfloats",
+   ["counter"]="figure",
+   ["level"]=1,
+   ["numbers"]=61,
+  },
+  {
+   ["conversionset"]="subfloats",
+   ["counter"]="table",
+   ["level"]=1,
+   ["numbers"]=52,
   },
   {
    ["block"]="bodypart",
@@ -1964,12 +2049,12 @@ utilitydata.job.packed={
   { 6 },
   {
    ["conversionset"]="number",
-   ["numbers"]=76,
+   ["numbers"]=79,
   },
   { 7 },
   {
    ["conversionset"]="number",
-   ["numbers"]=78,
+   ["numbers"]=81,
   },
   {
    ["block"]="bodypart",
@@ -1979,6 +2064,21 @@ utilitydata.job.packed={
    ["separatorset"]="default",
    ["set"]="all",
   },
+  { 8 },
+  {
+   ["conversionset"]="number",
+   ["numbers"]=84,
+  },
+  { 9 },
+  {
+   ["conversionset"]="number",
+   ["numbers"]=86,
+  },
+  { 10 },
+  {
+   ["conversionset"]="number",
+   ["numbers"]=88,
+  },
   {
    ["block"]="bodypart",
    ["conversionset"]="default",
@@ -1986,21 +2086,6 @@ utilitydata.job.packed={
    ["numbers"]=15,
    ["separatorset"]="default",
    ["set"]="all",
-  },
-  { 8 },
-  {
-   ["conversionset"]="number",
-   ["numbers"]=82,
-  },
-  { 9 },
-  {
-   ["conversionset"]="number",
-   ["numbers"]=84,
-  },
-  { 10 },
-  {
-   ["conversionset"]="number",
-   ["numbers"]=86,
   },
   {
    ["block"]="bodypart",
@@ -2171,6 +2256,14 @@ utilitydata.job.packed={
    ["set"]="all",
   },
   {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="sk",
+   ["numbers"]=37,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
    ["catcodes"]=9,
    ["coding"]="tex",
    ["increment"]="yes",
@@ -2183,7 +2276,7 @@ utilitydata.job.packed={
    ["conversionset"]="default",
    ["hidenumber"]=true,
    ["language"]="sk",
-   ["numbers"]=37,
+   ["numbers"]=38,
    ["separatorset"]="default",
    ["set"]="all",
   },
@@ -2244,7 +2337,7 @@ utilitydata.job.packed={
    ["conversionset"]="default",
    ["hidenumber"]=true,
    ["language"]="sk",
-   ["numbers"]=38,
+   ["numbers"]=39,
    ["separatorset"]="default",
    ["set"]="all",
   },

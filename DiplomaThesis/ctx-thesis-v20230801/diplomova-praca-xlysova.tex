@@ -135,14 +135,104 @@ Medzi najviac rozvinuté krajiny podľa EGDI patria ako aj pri DESI Dánsko a F�
     \bTD 0.8456 \eTD
     \bTD 0.8221 \eTD
   \eTR
+  \bTR
+    \bTD Ukrajina \eTD
+    \bTD 46 \eTD
+    \bTD 0.8148 \eTD
+    \bTD 0.8669 \eTD
+    \bTD 0.7270 \eTD
+    \bTD 0.8029 \eTD
+  \eTR
+  \bTR
+    \bTD Slovenská republika \eTD
+    \bTD 47 \eTD
+    \bTD 0.7260 \eTD
+    \bTD 0.8436 \eTD
+    \bTD 0.8328 \eTD
+    \bTD 0.8008 \eTD
+  \eTR
 \eTABLE
 }
 
 
-\pkap{ E-Government Benchmark}
-tu bude nejaky odstavec ban
+\pkap{ eGovernment Benchmark}
+eGovernment Benchmark monitoruje digitalizáciu verejných služieb 35 európskych krajín (tzv. EU27+, ktoré pozostávajú z 27 členov Európskej únie + Island, Nórsko, Švajčiarsko, Albánsko, Čierna hora, Severné Macedónsko, Srbsko a Turecko) \scr(van der Linden, 2022).
 
-bsjabdjsb
+Prieskum eGovernment Benchmark skúma tieto 4 oblasti:
+
+\startitemize
+\item{\start\bf orientácia na užívateľa \stop - miera poskytovania online služieb, mobile-friendly služby, online podpora a spätná väzba}
+\item{\start\bf transparentnosť  \stop - informácie o tom, ako sú poskytované služby VS, spracovaní osobných údajov a pod.}
+\item{\start\bf kľúčové faktory \stop - dostupnosť technologických faktorov v súvislosti so službami VS}
+\item{\start\bf cezhraničné služby \stop - jednoduchosť používania služieb VS pre občanov zo zahraničia a mechanizmy podpory a spätnej väzby pre takýchto občanov}
+\stopitemize 
+
+\obrazekB{obr:benchmark-mapa}
+{Geografické rozloženie eGovernment vyspelosti podĺa prieskumu eGovernment Benchmark (van der Linden, 2022)}{images/benchmark-mapa.png}{width=30cc}
+
+Na základe týchto 4  oblastí získavajú krajiny tzv. "skóre eGovernment vyspelosti", ktorého škála je od 0 do 100. Vedúcimi krajinami boli podľa najnovšieho prieskumu (z roku 2022) Malta a Estónsko. Česká republika získala je na 22. mieste \scr(van der Linden, 2022). 
+
+\setupTABLE[frame=on]
+\setupTABLE[row][first][background=color, backgroundcolor=lightgray, style=bold]
+\setupTABLE[column][1][width=12cc]
+\setupTABLE[column][2][width=6cc]
+\setupTABLE[column][3][width=14cc]
+\setupTABLE[r][each][align={middle,lohi}]
+\Tabulka{benchmark}{Porovnanie skóre eGovernment Benchmark najrozvinutejších krajín s ČR (van der Linden, 2022)}{
+\bTABLE
+  \bTR
+    \bTH Krajina \eTH
+    \bTH poradie\eTH
+    \bTH eGovernment maturity score \eTH
+  \eTR
+  \bTR
+    \bTD Malta \eTD
+    \bTD 1 \eTD
+    \bTD 96 \eTD
+  \eTR
+  \bTR
+    \bTD Estónsko \eTD
+    \bTD 2 \eTD
+    \bTD 90 \eTD
+  \eTR
+  \bTR
+    \bTD ... \eTD
+    \bTD ... \eTD
+    \bTD ... \eTD
+  \eTR
+  \bTR
+    \bTD Česká republika \eTD
+    \bTD 22 \eTD
+    \bTD 63 \eTD
+  \eTR
+  \bTR
+    \bTD Bulharsko \eTD
+    \bTD 23 \eTD
+    \bTD 61 \eTD
+  \eTR
+  \bTR
+    \bTD Bulharsko \eTD
+    \bTD 23 \eTD
+    \bTD 61 \eTD
+  \eTR
+  \bTR
+    \bTD Taliansko \eTD
+    \bTD 24 \eTD
+    \bTD 61 \eTD
+  \eTR
+  \bTR
+    \bTD Chorvátsko \eTD
+    \bTD 25 \eTD
+    \bTD 61 \eTD
+  \eTR
+  \bTR
+    \bTD Slovenská republika \eTD
+    \bTD 26 \eTD
+    \bTD 60 \eTD
+  \eTR
+\eTABLE
+}
+
 
 \pkap{Súčasný stav digitálnej verejnej správy v Česku}
 
@@ -202,6 +292,8 @@ Obsahom platformy EMMA sú:
 \item{modul rozhrania pre G2B2B,}
 \item{služby API pre integráciu.}
 \stopitemize 
+
+\TODO EBSI (https://ec.europa.eu/digital-building-blocks/sites/display/EBSI/Home) (https://assecoce.sharepoint.com/:w:/r/teams/EMMAPEGOV-Analza/Shared%20Documents/Anal%C3%BDza/80%20-%20V%C3%BDstupy/Etapa1%20-%20N%C3%A1vrh%20%C5%99e%C5%A1en%C3%AD/E1.4%20Enterprise%20architektura/EMMA_E1_Enterprise_architektura.docx?d=wa8731ee84cc84c9b9e26b2ac55ed06bf&csf=1&web=1&e=DRJrfT)
 
 \pkap{Popis SAMO}
 
@@ -366,6 +458,22 @@ Na to, aby bolo možné vybrať vhodné služby VS k analýze a ďalším úkono
 \TODO
 TODO
 
+\kap{Poznámky z konzultácie}
+- kompetenčný model agendy VS
+
+- centrálne zdielane služby
+
+- porovnanie voči svetu - u nás (v čr) sú prenesená pusobnost a spravna pusobnost obcí
+stavebné řízení - obec povoluje schvalovanie stavieb, ale obec môže byť dotknutá riadením (takže je vlastne schvalovatel aj účastník řízení)
+
+- informačný koncepce, národný arch plán a rámec
+
+- pôvodný zámer EMMA (vize a tak)
+
+- právo na digitálne služby -> malo by priniest zlepšienie egov
+
+- Jirka ohladom SAMO
+
 \kap{Výsledky}
 
 \pkap{Model požiadaviek}
@@ -523,7 +631,7 @@ TODO
  \autorkorp{Evropská komise.}
  \nazev{Index digitální ekonomiky a společnosti (DESI) 2022}
 \podnazev{Česko}
- \www{https://digital-strategy.ec.europa.eu/cs/policies/desi}
+ \www{https://digital-strategy.ec.europa.eu/en/policies/desi-czech-republic}
  \nazevdok{Shaping Europe’s digital future}
  \rok{2022}
 }
@@ -588,15 +696,6 @@ TODO
  \rozsah{234\stran}
 }
 
-\publW{
- \autorkorp{Slovensko.sk}
- \nazev{Ústredný portál verejnej správy}
- \online{2024-01-29}
- \www{https://www.slovensko.sk/sk/titulna-stranka}
- \nazevdok{Slovensko.sk}
- \rok{©~2024}
-}
-
 \publD{%
  \autorkorp{United Nations}
  \nazev{E-Government Survey 2022}
@@ -607,6 +706,40 @@ TODO
  \umist{32}{51}
 }
 
+%https://desapublications.un.org/sites/default/files/publications/2022-09/Web%20version%20E-Government%202022.pdf
+
+\publW{
+ \autorkorp{Slovensko.sk}
+ \nazev{Ústredný portál verejnej správy}
+ \online{2024-01-29}
+ \www{https://www.slovensko.sk/sk/titulna-stranka}
+ \nazevdok{Slovensko.sk}
+ \rok{©~2024}
+}
+
+%\publE{
+%\autor{van der Linden, N. a kol.}
+%\nazev{eGovernment Benchmark 2023: Insight Report}
+%\rok{2023}
+%\isbn{978-92-68-05653-0}
+%\doi{10.2759/474056}
+%\www{https://espanadigital.gob.es/sites/espanadigital/files/2023-10/1_eGovernment_Benchmark_2023__Insight_Report_tmnnsE9rmVDxpAZ8IJECpnUZGLA_98708.pdf}
+%\online{2024-2-7}
+%\nazevdok{Connecting Digital Governments}
+%\cast{KK-BH-23-001-EN-N}
+%}
+
+\publE{
+\autor{van der Linden, N. a kol.}
+\nazev{eGovernment Benchmark 2022: Insight Report}
+\rok{2022}
+\isbn{ 978-92-76-49793-6}
+\doi{10.2759/488218}
+\www{https://prod.ucwe.capgemini.com/wp-content/uploads/2022/07/eGovernment-Benchmark-2022-1.-Insight-Report.pdf}
+\online{2024-2-7}
+\nazevdok{Connecting Digital Governments}
+\cast{KK-08-22-084-EN-N}
+}
 
 
 
