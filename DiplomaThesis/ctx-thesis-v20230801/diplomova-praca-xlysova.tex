@@ -305,6 +305,25 @@ Platforma SAMO je založená na koncepte SOA \footnote{SOA -- Servisne orientova
 
 SAMO používa mikroservice prístup k vývoju softvéru. Každá mikroslužba je zameraná na konkrétnu funkčnosť a môže byť vyvíjaná, nasadená a spravovaná nezávisle od ostatných častí aplikácie. To umožňuje flexibilnejšie škálovanie, rýchlejšie nasadzovanie nových funkcionalít a jednoduchšiu údržbu. SAMO je aplikácia poháňaná metadátami, ktoré obsahujú informácie o vzťahoch medzi časťami  dát, popis užívateľského rozhrania, pravidlá, formuláre a pod. \scr(Asseco, 2023)
 
+\pkap{LIDS}
+
+\TODO čo je vlastne LIDS atd (LIDS je metadátový systém, na ktorom je postavené SAMO.)
+
+LIDS je systém kontrolovaný metadátami, s ktorými pracujú jednotlivé časti systému. Hlavnou časťou LIDS metadát sú tzv. feature types. Ide v podstate o nejaký typ objektu reálneho sveta (napr. ft\_osoba, ft\_adresa, ft\_zamestnanec...). Feature type definuje atribúty objektu, môže definovať aj geometriu, symboliku a iné vlastnosti. Tzv. feature je inštanciou feature typu, a teda je to reprezentácia objektu reálneho sveta. Feature nesie informácie o tom, aký je to feature type, sémantické atribúty (id, name, type), jeho miesto v databáze (tzv. databázový kontajner), poprípade symboliku a typ geometrie.
+
+Tieto metadáta sú uložené, prenášané a spravované vo forme nasledujúcich XML dokumentov:
+
+\startitemize
+\item{\start \bf model.xml \stop - hlavný metadátový súbor, v ktorom sú uložené informácie o tzv. feature types (entita SAMO systému), ich atribútoch, číselníkoch a pod.}
+\item{\start \bf presentation.xml \stop - definuje predvolenú symboliku projektu a pod.}
+\item{\start \bf thematization.xml \stop - definuje dynamickú symboliku prvkov (na základe štandardu OpenGIS Symbology Encoding)}
+\item{\start \bf tool.xml \stop - definuje panely nástrojov špecifických pre projekt}
+\item{\start \bf resource.xml \stop - definuje napr. štýly čiar, symboly, fonty, ikony a pod.}
+\item{\start \bf option.xml \stop - definuje voliteľné funkcie systému ako napr. kopírovanie prvkov, derivovanie atribútov, zobraziteľné atribúty...}
+\stopitemize 
+
+Okrem týchto hlavných XML súborov existuje aj množstvo ďalších. Všetky spomínané súbory majú pevne danú štruktúru popísanú v súboroch typu XSD (XML Schema Definiton). 
+
 \pkap{Architektura eGovernmentu}
 
 eGovernment je pojem popisujúci modernú digitálnu verejnú správu, ktorá využíva k výkonu svojich právomocí digitálnu infraštruktúru. Táto infraštruktúra realizuje sadu služieb informačných technológií (ICT služieb), ktoré sú zdieľané, dôveryhodné, prepojené, bezpečné, automatizované, efektívne a ľahko používateľné pre užívateľov. Služby eGovernmentu sú určené občanom, firmám, podnikateľom i úradníkom. Synonymami pojmu eGovernment sú "digitálny government" alebo "digitálna verejná správa" \scr(Digitální a informační agentura, 2023).
@@ -564,6 +583,14 @@ TODO
 \www{interný SharePoint}
 \nazev{SAMO conceptual application architecture}
 \rok{2023}
+}
+
+\publX{
+\autorkorp{Asseco Central Europe, a.s.}
+\online{2024-02-09}
+\www{interný dokument}
+\nazev{SAMO Implementation Guide Version 9.4}
+\rok{2024}
 }
 
 \publX{
