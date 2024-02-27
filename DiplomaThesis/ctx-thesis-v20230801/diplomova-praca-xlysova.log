@@ -101,18 +101,14 @@ pages           > flushing realpage 10, userpage 10, subpage 10
 structure       > sectioning > kap @ level 2 : 0.3 -> Súčasný stav
 structure       > sectioning > pkap @ level 3 : 0.3.1 -> Index digitálnej ekonomiky a spoločnosti
 pages           > flushing realpage 11, userpage 11, subpage 11
-floatblocks     > '1' placed (bottom)
-floatblocks     > '2' placed (bottom)
+floatblocks     > '1' placed (top)
+floatblocks     > '2' placed (top)
 structure       > sectioning > pkap @ level 3 : 0.3.2 -> Index rozvoja e-governmentu
 pages           > flushing realpage 12, userpage 12, subpage 12
-pack quality    > overfull hbox at line 69 - 70 in file './diplomova-praca-xlysova.tex': klade Indexu rozvoja e-governmentu (E-Government Development Index, EGDI), (3.72226pt)
-pack quality    > overfull hbox at line 74 - 75 in file './diplomova-praca-xlysova.tex':  (inštitucionálny rámec, poskytovanie služieb, poskytovanie obsahu, tech- (4.28474pt)
-pack quality    > overfull hbox at line 75 - 76 in file './diplomova-praca-xlysova.tex':  [[[[–] ]]]telekomunikačná infraštruktúra[[[4]]] - hodnotí úroveň rozvoja infraštruk- (8.14893pt)
-pack quality    > overfull hbox at line 75 - 76 in file './diplomova-praca-xlysova.tex':  túry nevyhnutnej pre e-vládu, vrátane pripojenia na internet, infraštruk- (0.20697pt)
+pack quality    > overfull hbox at line 70 - 71 in file './diplomova-praca-xlysova.tex':  Ďalším prieskumom je Prieskum Organizácie Spojených Národov, ktorý slúži (0.80498pt)
 floatblocks     > 1 saved
 floatblocks     > 2 saved
 structure       > sectioning > pkap @ level 3 : 0.3.3 ->  eGovernment Benchmark
-pack quality    > overfull hbox at line 159 - 160 in file './diplomova-praca-xlysova.tex':  eGovernment Benchmark monitoruje digitalizáciu verejných služieb 35 európ- (5.39563pt)
 pages           > flushing realpage 13, userpage 13, subpage 13
 floatblocks     > 1 moved
 floatblocks     > '3' moved
@@ -120,49 +116,41 @@ floatblocks     > 2 moved
 floatblocks     > '4' moved
 pages           > flushing realpage 14, userpage 14, subpage 14
 floatblocks     > '5' placed (bottom)
-floatblocks     > 3 saved
-structure       > sectioning > pkap @ level 3 : 0.3.4 -> Súčasný stav digitálnej verejnej správy v Česku
-pack quality    > overfull hbox at line 241 - 242 in file './diplomova-praca-xlysova.tex': správy sociálneho zabezpečenia (https://www.cssz.cz/), Portál občana (https://por- (10.63562pt)
 pages           > flushing realpage 15, userpage 15, subpage 15
-floatblocks     > 3 moved
-floatblocks     > '6' moved
-pages           > flushing realpage 16, userpage 16, subpage 16
+floatblocks     > '6' placed (here)
+structure       > sectioning > pkap @ level 3 : 0.3.4 -> Súčasný stav digitálnej verejnej správy v Česku
 structure       > sectioning > pkap @ level 3 : 0.3.5 -> Súčasný stav digitálnej verejnej správy v zahraničí
-structure       > sectioning > ppkap @ level 4 : 0.3.5.1 -> Slovensko
-structure       > sectioning > ppkap @ level 4 : 0.3.5.2 -> Poľsko
-structure       > sectioning > ppkap @ level 4 : 0.3.5.3 -> Dánsko a Estónsko
-pages           > flushing realpage 17, userpage 17, subpage 17
-pages           > flushing realpage 18, userpage 18, subpage 18
+pages           > flushing realpage 16, userpage 16, subpage 16
 structure       > sectioning > kap @ level 2 : 0.4 -> Metodika
 structure       > sectioning > pkap @ level 3 : 0.4.1 -> Popis EMMA
-pages           > flushing realpage 19, userpage 19, subpage 19
-pack quality    > overfull hbox at line 297 in file './diplomova-praca-xlysova.tex': EBSI (https://ec.europa.eu/digital-building-blocks/sites/display/EBSI/Home) (10.27354pt)
-pack quality    > overfull hbox at line 297 in file './diplomova-praca-xlysova.tex': (https://assecoce.sharepoint.com/:w:/r/teams/EMMAPEGOV-Analza/Shared (11.7803pt)
+pages           > flushing realpage 17, userpage 17, subpage 17
+pack quality    > overfull hbox at line 303 in file './diplomova-praca-xlysova.tex': EBSI (https://ec.europa.eu/digital-building-blocks/sites/display/EBSI/Home) (10.27354pt)
+pack quality    > overfull hbox at line 303 in file './diplomova-praca-xlysova.tex': (https://assecoce.sharepoint.com/:w:/r/teams/EMMAPEGOV-Analza/Shared (11.7803pt)
 structure       > sectioning > pkap @ level 3 : 0.4.2 -> Popis SAMO
-pack quality    > overfull hbox at line 302 - 303 in file './diplomova-praca-xlysova.tex':  Vývoj jednotlivých modulov začal v roku 1991. Počas posledných vyše 30-tich (2.41335pt)
+pack quality    > overfull hbox at line 310 - 311 in file './diplomova-praca-xlysova.tex':  Vývoj jednotlivých modulov začal v roku 1991. Počas posledných vyše 30-tich (2.41335pt)
+pages           > flushing realpage 18, userpage 18, subpage 18
 structure       > sectioning > pkap @ level 3 : 0.4.3 -> LIDS
-pages           > flushing realpage 20, userpage 20, subpage 20
-structure       > sectioning > pkap @ level 3 : 0.4.4 -> Architektura eGovernmentu
-pages           > flushing realpage 21, userpage 21, subpage 21
+structure       > sectioning > pkap @ level 3 : 0.4.4 -> Architektura eGovernmentu - toto neviem, kde zapojiť
+pages           > flushing realpage 19, userpage 19, subpage 19
 structure       > sectioning > ppkap @ level 4 : 0.4.4.1 -> Poslanie a vízia eGovernmentu v Českej republike
 structure       > sectioning > ppkap @ level 4 : 0.4.4.2 -> Informační koncepce ČR
-pack quality    > overfull hbox at line 346 - 347 in file './diplomova-praca-xlysova.tex':  [[[[–] ]]]architektonické principy eGovernmentu a elektronizácie verejnej správy, (4.13718pt)
-pages           > flushing realpage 22, userpage 22, subpage 22
+pack quality    > overfull hbox at line 354 - 355 in file './diplomova-praca-xlysova.tex':  [[[[–] ]]]architektonické principy eGovernmentu a elektronizácie verejnej správy, (4.13718pt)
+pages           > flushing realpage 20, userpage 20, subpage 20
 structure       > sectioning > ppkap @ level 4 : 0.4.4.3 -> Metódy riadenia ICT verejnej správy ČR
 structure       > sectioning > pkap @ level 3 : 0.4.5 -> Katalóg služieb verejnej správy
-pages           > flushing realpage 23, userpage 23, subpage 23
-structure       > sectioning > ppkap @ level 4 : 0.4.5.1 -> Služba VS
+pages           > flushing realpage 21, userpage 21, subpage 21
+pack quality    > overfull hbox at line 393 - 394 in file './diplomova-praca-xlysova.tex':  [[[[4.] ]]]Určiť časové rámce a obslužné kanály pre vykonávanie digitálneho úkonu (8.57729pt)
+structure       > sectioning > ppkap @ level 4 : 0.4.5.1 -> Služba verejnej správy
+pages           > flushing realpage 22, userpage 22, subpage 22
 structure       > sectioning > ppkap @ level 4 : 0.4.5.2 -> Úkon
 structure       > sectioning > pkap @ level 3 : 0.4.6 -> Jednotným dizajn manuálom elektronických služieb
-pages           > flushing realpage 24, userpage 24, subpage 24
 structure       > sectioning > pkap @ level 3 : 0.4.7 -> Popis metodiky, analýzy a návrhu
 structure       > sectioning > pkap @ level 3 : 0.4.8 -> Charakteristika vybraných služieb verejnej správy
-floatblocks     > 4 saved
-floatblocks     > 4 moved
-pages           > flushing realpage 25, userpage 25, subpage 25
-pages           > flushing realpage 26, userpage 26, subpage 26
+pages           > flushing realpage 23, userpage 23, subpage 23
+floatblocks     > '7' placed (here)
+pages           > flushing realpage 24, userpage 24, subpage 24
 structure       > sectioning > kap @ level 2 : 0.5 -> Poznámky z konzultácie
-pages           > flushing realpage 27, userpage 27, subpage 27
+pages           > flushing realpage 25, userpage 25, subpage 25
 structure       > sectioning > kap @ level 2 : 0.6 -> Výsledky
 structure       > sectioning > pkap @ level 3 : 0.6.1 -> Model požiadaviek
 structure       > sectioning > pkap @ level 3 : 0.6.2 -> Use case model
@@ -170,37 +158,37 @@ structure       > sectioning > pkap @ level 3 : 0.6.3 -> Sekvenčný diagram
 structure       > sectioning > pkap @ level 3 : 0.6.4 -> Konceptuálny dátový model
 structure       > sectioning > pkap @ level 3 : 0.6.5 -> Logický dátový model pre SAMO
 structure       > sectioning > pkap @ level 3 : 0.6.6 -> Výber služby, ktorá bude implementovaná
-pages           > flushing realpage 28, userpage 28, subpage 28
+pages           > flushing realpage 26, userpage 26, subpage 26
 structure       > sectioning > pkap @ level 3 : 0.6.7 -> Implementácia vybranej služby
 structure       > sectioning > pkap @ level 3 : 0.6.8 -> Návrh testovacích scenárov
 structure       > sectioning > pkap @ level 3 : 0.6.9 -> Dokumentácia prevedených testov
-pages           > flushing realpage 29, userpage 29, subpage 29
+pages           > flushing realpage 27, userpage 27, subpage 27
 structure       > sectioning > kap @ level 2 : 0.7 -> Diskusia
-pages           > flushing realpage 30, userpage 30, subpage 30
+pages           > flushing realpage 28, userpage 28, subpage 28
 structure       > sectioning > kap @ level 2 : 0.8 -> Závěr
-pages           > flushing realpage 31, userpage 31, subpage 31
+pages           > flushing realpage 29, userpage 29, subpage 29
 structure       > sectioning > BIBSTYchapter @ level 2 : 0.9 -> \refname 
-pack quality    > overfull hbox at line 568 - 569 in file './diplomova-praca-xlysova.tex':  vernment Information Quarterly [on-line!], 2022, roč. 39 [cit. 2023-11-19]. (4.72401pt)
+pack quality    > overfull hbox at line 576 - 577 in file './diplomova-praca-xlysova.tex':  vernment Information Quarterly [on-line!], 2022, roč. 39 [cit. 2023-11-19]. (4.72401pt)
 Není uvedeno číslo ISSN./Missing ISSN.
-pack quality    > overfull hbox at line 664 - 665 in file './diplomova-praca-xlysova.tex':  E󰁈󰁄󰁁󰁂󰁅󰀳󰁎 󰀳󰁁󰀿󰀼󰁅󰀸.. Index digitální ekonomiky a společnosti (DESI) 2022 : Česko. (1.64659pt)
-pack quality    > overfull hbox at line 705 - 706 in file './diplomova-praca-xlysova.tex':  B2G and B2B E-Invoice. In SEEBURGER [on-line!]. 2023 [cit. 2024-01-29]. (1.88828pt)
-pages           > flushing realpage 32, userpage 32, subpage 32
-pack quality    > overfull hbox at line 714 - 715 in file './diplomova-praca-xlysova.tex':  nickej fakturácie - BETA. In e-Faktúra [on-line!]. © 2024 [cit. 2024-01-29]. (5.1082pt)
-pack quality    > overfull hbox at line 745 - 746 in file './diplomova-praca-xlysova.tex':  S󰀾󰁁󰁈󰀸󰁀󰁅󰀳󰁁.󰁅󰀳. Ústredný portál verejnej správy. In Slovensko.sk [on-line!]. © 2024 (7.51645pt)
+pack quality    > overfull hbox at line 672 - 673 in file './diplomova-praca-xlysova.tex':  E󰁈󰁄󰁁󰁂󰁅󰀳󰁎 󰀳󰁁󰀿󰀼󰁅󰀸.. Index digitální ekonomiky a společnosti (DESI) 2022 : Česko. (1.64659pt)
+pack quality    > overfull hbox at line 713 - 714 in file './diplomova-praca-xlysova.tex':  B2G and B2B E-Invoice. In SEEBURGER [on-line!]. 2023 [cit. 2024-01-29]. (1.88828pt)
+pages           > flushing realpage 30, userpage 30, subpage 30
+pack quality    > overfull hbox at line 722 - 723 in file './diplomova-praca-xlysova.tex':  nickej fakturácie - BETA. In e-Faktúra [on-line!]. © 2024 [cit. 2024-01-29]. (5.1082pt)
+pack quality    > overfull hbox at line 753 - 754 in file './diplomova-praca-xlysova.tex':  S󰀾󰁁󰁈󰀸󰁀󰁅󰀳󰁁.󰁅󰀳. Ústredný portál verejnej správy. In Slovensko.sk [on-line!]. © 2024 (7.51645pt)
 Není uvedeno číslo ISSN./Missing ISSN.
 structures      > end of sectionblock 'bodypart'
-pages           > flushing realpage 33, userpage 33, subpage 33
+pages           > flushing realpage 31, userpage 31, subpage 31
 structures      > begin of sectionblock 'backpart'
 structure       > sectioning > kap @ level 2 : 0.1 -> \headtext {tables}
-pages           > flushing realpage 34, userpage 34, subpage 34
+pages           > flushing realpage 32, userpage 32, subpage 32
 structure       > sectioning > kap @ level 2 : 0.2 -> \headtext {figures}
-pages           > flushing realpage 35, userpage 35, subpage 35
+pages           > flushing realpage 33, userpage 33, subpage 33
 structure       > sectioning > kap @ level 2 : 0.3 -> \headtext {abbreviations}
 structures      > end of sectionblock 'backpart'
-pages           > flushing realpage 36, userpage 36, subpage 36
+pages           > flushing realpage 34, userpage 34, subpage 34
 structures      > begin of sectionblock 'appendix'
 structure       > sectioning > partpage @ level 2 : 0.0 -> \uppercase {Přílohy}
-pages           > flushing realpage 37, userpage 37, subpage 37
+pages           > flushing realpage 35, userpage 35, subpage 35
 structures      > end of sectionblock 'appendix'
 close source    > level 1, order 8, name './diplomova-praca-xlysova.tex'
 system          > invalid \starttext ... \stoptext structure
@@ -240,10 +228,10 @@ system          >   29: filename=images/EGDI-mapa.png foundname=images/EGDI-mapa
 system          >   30: filename=images/benchmark-mapa.png foundname=images/benchmark-mapa.png fullname=C:/Users/zuzana.lysova/OneDrive - Asseco Central Europe, a.s/Desktop/EMMA/MyWork/DiplomaThesis/ctx-thesis-v20230801/images/benchmark-mapa.png usedmethod=direct
 system          > stop used files
 system          > start commandline options
-system          > currentrun="1"
+system          > currentrun="2"
 system          > fulljobname="./diplomova-praca-xlysova.tex"
 system          > input="./diplomova-praca-xlysova.tex"
-system          > kindofrun="1"
+system          > kindofrun="2"
 system          > maxnofruns="9"
 system          > synctex="true"
 system          > texmfbinpath="C:/texlive/2023/bin/windows"
@@ -268,30 +256,30 @@ system          >   min     150000   10000000     150000     150000    2000000  
 system          >   set     500000   10000000     250000     250000   50000000   10000000   10000000     100000       2000      10000     100000     500000     100000        250        250        250
 system          >   stp     100000    1000000     100000     100000     500000     250000    1000000      10000        250       1000      10000      10000        250        250         50         25
 system          > 
-system          >   mem     150000    1030331     150000               2000000    1000000    1000000      10000        500       1000      20000      10000   25731152        240       1200        320
-system          >   all    2400000    1030331    2400000              18000000    8000000    1000000     320000      16000      72000      80000     160000   25731152        240      28800      10240
+system          >   mem     150000    1030320     150000               2000000    1000000    1000000      10000        500       1000      20000      10000   25730960        240       1200        320
+system          >   all    2400000    1030320    2400000              18000000    8000000    1000000     320000      16000      72000      80000     160000   25730960        240      28800      10240
 system          > 
 system          >   ini    2145557     916743          0      48389          0     530775                                                                                       0                      
-system          >   ptr      53757                 11349      53741                709640          0          0          0          0          0          3         41          0         28          7
-system          >   top      53758                806391     131074      80392     628543       1686         45          8         19         52       1338        250        250         50         10
+system          >   ptr      53756                 11348      53740                707880          0          0          0          0          0          3         41          0         28          7
+system          >   top      53757                806391     131074      80706     628543       1686         45          8         19         52       1338        250        250         50         10
 system          >   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 system          > 
 system          >   current input type    : initial
 system          > 
-system          >   approximate memory    : 64827851 (61 MB)
+system          >   approximate memory    : 64827648 (61 MB)
 system          > 
 system          >   expansion depth       : min: 10000, max: 1000000, set: 10000, top: 10
 system          > 
 system          >   luabytecode registers : 1010
 system          >   luabytecode bytes     : 16176 (0 MB)
-system          >   luastate bytes now    : 141024828 (134 MB)
-system          >   luastate bytes max    : 147613716 (140 MB)
+system          >   luastate bytes now    : 140742214 (134 MB)
+system          >   luastate bytes max    : 147573075 (140 MB)
 system          > 
-system          >   file callbacks        : 4392
-system          >   saved callbacks       : 20733
+system          >   file callbacks        : 4400
+system          >   saved callbacks       : 20240
 system          >   direct callbacks      : 95
-system          >   function callbacks    : 7557
-system          >   value callbacks       : 39
+system          >   function callbacks    : 7451
+system          >   value callbacks       : 37
 system          >   message callbacks     : 0
 system          >   bytecode callbacks    : 615
 system          > 
@@ -302,40 +290,38 @@ system          >   mp text callbacks     : 0
 system          >   mp script callbacks   : 0
 system          >   mp log callbacks      : 0
 system          > 
-system          >   total callbacks       : 33431
+system          >   total callbacks       : 32838
 system          >   mp total callbacks    : 0
 system          >   backend callbacks     : 0
 system          > 
 mkiv lua stats  > used config file: selfautoparent:/texmf-dist/web2c/texmfcnf.lua
 mkiv lua stats  > used cache path: C:/texlive/2023/texmf-var/luametatex-cache/context/1b4da46d1f340757f9984eae810b1464
-mkiv lua stats  > resource resolver: loadtime 0.085 seconds, 1 scans with scantime 0.001 seconds, 0 shared scans, 30 found files, scanned paths: C:/Users/zuzana.lysova/.texlive2023/texmf-config
-mkiv lua stats  > stored bytecode data: 510 modules (0.224 sec), 105 tables (0.009 sec), 615 chunks (0.233 sec)
+mkiv lua stats  > resource resolver: loadtime 0.081 seconds, 1 scans with scantime 0.000 seconds, 0 shared scans, 30 found files, scanned paths: C:/Users/zuzana.lysova/.texlive2023/texmf-config
+mkiv lua stats  > stored bytecode data: 510 modules (0.189 sec), 105 tables (0.008 sec), 615 chunks (0.197 sec)
 mkiv lua stats  > traced context: maxstack: 1705, freed: 0, unreachable: 1705
 mkiv lua stats  > cleaned up reserved nodes: 78 nodes, 8 lists of 441
-mkiv lua stats  > node memory usage: 75 attribute, 23 dir, 43 glue, 207 gluespec, 3 kern, 643 mathspec, 5 penalty, 10 specification, 2 temp
-mkiv lua stats  > node list callback tasks: 16 unique task lists, 12 instances (re)created, 8635 calls
-mkiv lua stats  > h-node processing time: 0.119 seconds including kernel
-mkiv lua stats  > synctex tracing: 3 referenced files, 5 files ignored, 1347 objects flushed, logfile: diplomova-praca-xlysova.synctex
-mkiv lua stats  > attribute processing time: 0.010 seconds front- and backend
-mkiv lua stats  > driver time: 0.078 seconds 
+mkiv lua stats  > node memory usage: 72 attribute, 27 dir, 46 glue, 207 gluespec, 3 kern, 643 mathspec, 5 penalty, 10 specification, 2 temp
+mkiv lua stats  > node list callback tasks: 16 unique task lists, 12 instances (re)created, 8368 calls
+mkiv lua stats  > h-node processing time: 0.060 seconds including kernel
+mkiv lua stats  > synctex tracing: 3 referenced files, 5 files ignored, 1251 objects flushed, logfile: diplomova-praca-xlysova.synctex
+mkiv lua stats  > driver time: 0.038 seconds 
 mkiv lua stats  > used backend: pdf
-mkiv lua stats  > jobdata time: 0.011 seconds saving, 0.002 seconds loading
-mkiv lua stats  > callbacks: file: 4392, saved: 20733, direct: 95, function: 7557, value: 39, message: 0, bytecode: 615, late 0, total: 33431 (904 per page)
+mkiv lua stats  > jobdata time: 0.004 seconds saving, 0.001 seconds loading
+mkiv lua stats  > callbacks: file: 4400, saved: 20240, direct: 95, function: 7451, value: 37, message: 0, bytecode: 615, late 0, total: 32838 (938 per page)
 mkiv lua stats  > randomizer: resumed with value 0.028708613377815
-mkiv lua stats  > v-node processing time: 0.014 seconds 
 mkiv lua stats  > loaded tex modules: 4 requested, all found (*-bib.sty-v2.78 *-ctx-thesis-v0.991 *-database *-s-layout-show)
 mkiv lua stats  > loaded patterns: cs::16 en::1 en-gb:en:13 sk::17, load time: 0.000
 mkiv lua stats  > interactive elements: 0 references, 11 destinations
 mkiv lua stats  > loaded fonts: 4 files: libertinusmath-regular.otf, libertinusserif-bold.otf, libertinusserif-italic.otf, libertinusserif-regular.otf
-mkiv lua stats  > font engine: otf 3.133, afm 1.513, tfm 1.000, 41 instances, 36 shared in backend, 5 common vectors, 31 common hashes, load time 0.416 seconds 
+mkiv lua stats  > font engine: otf 3.133, afm 1.513, tfm 1.000, 41 instances, 36 shared in backend, 5 common vectors, 31 common hashes, load time 0.305 seconds 
 mkiv lua stats  > body font sizes: defined: 10pt 11pt 12pt 14.4pt 17.3pt 18.19pt 20.7pt 4pt 5pt 6pt 7pt 8pt 9pt, undefined: 10.27pt 12.84pt 12dd 15.41pt 20.54pt 25.68pt 2cc 30.82pt
-mkiv lua stats  > math tweaking time: 0.154 seconds, 48 math goodie tables
-mkiv lua stats  > graphics processing time: 0.093 seconds including tex, 4 processed images, 4 unique asked, 3 bad names
-mkiv lua stats  > font embedding time: 0.007 seconds, 3 fonts
+mkiv lua stats  > math tweaking time: 0.110 seconds, 48 math goodie tables
+mkiv lua stats  > graphics processing time: 0.064 seconds including tex, 4 processed images, 4 unique asked, 3 bad names
+mkiv lua stats  > font embedding time: 0.005 seconds, 3 fonts
 mkiv lua stats  > result saved in file: diplomova-praca-xlysova.pdf, compresslevel 1, objectcompresslevel 3
 mkiv lua stats  > positions: 4 collected, 0 deltas, 0 shared partials, 0 partial entries
 mkiv lua stats  > used platform: win64, type: windows, binary subtree: bin
 mkiv lua stats  > used engine: luametatex version: 2.1008, functionality level: 20230426, format id: 689, compiler: msvc
-mkiv lua stats  > tex properties: 806391 hash slots used of 2097152, 53741 control sequences, approximate memory usage: 61 MB
+mkiv lua stats  > tex properties: 806391 hash slots used of 2097152, 53740 control sequences, approximate memory usage: 61 MB
 mkiv lua stats  > lua properties: engine: lua 5.4, used memory: 139 MB, ctx: 134 MB, max: 140 MB, symbol mask: utf (τεχ)
-mkiv lua stats  > runtime: 1.430 seconds, 37 processed pages, 37 shipped pages, 25.865 pages/second
+mkiv lua stats  > runtime: 0.941 seconds, 35 processed pages, 35 shipped pages, 37.187 pages/second
