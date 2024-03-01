@@ -51,7 +51,7 @@ if not utilitydata.job then utilitydata.job = { } end
 if not utilitydata.job.pagestates then utilitydata.job.pagestates = { } end
 
 utilitydata.job.pagestates.collected={
- ["float"]={ 12, 12, 14, 14, 15, 16, 24 },
+ ["float"]={ 12, 12, 14, 14, 15, 16, 29 },
 }
 
 if not utilitydata.structures then utilitydata.structures = { } end
@@ -423,7 +423,7 @@ utilitydata.structures.counters.collected={
   { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
  },
  ["itemgroup:itemize"]={
-  { 0, 0, 0, 0, 0, 4, 3, 4, 0, 5, 6, 4, 3, 2, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+  { 0, 0, 0, 0, 0, 4, 3, 4, 4, 3, 2, 4, 4, 3, 5, 0, 0, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
  },
  ["itemgroup:itemize:note"]={
   { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -435,19 +435,19 @@ utilitydata.structures.counters.collected={
   { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
  },
  ["realpage"]={
-  { 35 },
+  { 38 },
  },
  ["subpage"]={
-  { 35 },
+  { 38 },
  },
  ["table"]={
-  { 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+  { 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
  },
  ["textnote:note"]={
   { 0 },
  },
  ["userpage"]={
-  { 35 },
+  { 38 },
  },
 }
 
@@ -738,7 +738,7 @@ utilitydata.structures.lists.collected={
   },
   ["titledata"]={
    ["label"]="section",
-   ["title"]="Súčasný stav digitálnej verejnej správy v Česku",
+   ["title"]="Zhrnutie výsledkov prieskumov",
   },
  },
  {
@@ -747,17 +747,17 @@ utilitydata.structures.lists.collected={
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=20,
-   ["realpage"]=16,
+   ["realpage"]=17,
    ["section"]=8,
   },
   ["titledata"]={
    ["label"]="section",
-   ["title"]="Súčasný stav digitálnej verejnej správy v zahraničí",
+   ["title"]="Architektura eGovernmentu ČR",
   },
  },
  {
-  ["metadata"]=40,
-  ["numberdata"]=71,
+  ["metadata"]=71,
+  ["numberdata"]=72,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=21,
@@ -765,13 +765,13 @@ utilitydata.structures.lists.collected={
    ["section"]=9,
   },
   ["titledata"]={
-   ["label"]="chapter",
-   ["title"]="Metodika",
+   ["label"]="subsection",
+   ["title"]="Poslanie a vízia eGovernmentu v Českej republike",
   },
  },
  {
   ["metadata"]=44,
-  ["numberdata"]=72,
+  ["numberdata"]=73,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=22,
@@ -780,162 +780,17 @@ utilitydata.structures.lists.collected={
   },
   ["titledata"]={
    ["label"]="section",
-   ["title"]="Popis EMMA",
-  },
- },
- {
-  ["metadata"]=46,
-  ["numberdata"]=74,
-  ["prefixdata"]=49,
-  ["references"]={
-   ["block"]="bodypart",
-   ["internal"]=23,
-   ["order"]=6,
-   ["realpage"]=17,
-   ["section"]=10,
-  },
-  ["titledata"]={
-   ["title"]="ERP (Enterprise Resource Planning) systém -- interný informačný systém podniku slúžiaci na správu rôznych činností podniku (účtovníctvo, zásobovanie, personalistika...)",
-  },
- },
- {
-  ["metadata"]=46,
-  ["numberdata"]=76,
-  ["prefixdata"]=49,
-  ["references"]={
-   ["block"]="bodypart",
-   ["internal"]=24,
-   ["order"]=7,
-   ["realpage"]=17,
-   ["section"]=10,
-  },
-  ["titledata"]={
-   ["title"]="API (Application Programme Interface) -- webové rozhranie, ktoré umožňuje komunikáciu medzi dvomi rôznymi aplikáciami",
-  },
- },
- {
-  ["metadata"]=44,
-  ["numberdata"]=77,
-  ["references"]={
-   ["block"]="bodypart",
-   ["internal"]=27,
-   ["realpage"]=18,
-   ["section"]=11,
-  },
-  ["titledata"]={
-   ["label"]="section",
-   ["title"]="Popis SAMO",
-  },
- },
- {
-  ["metadata"]=46,
-  ["numberdata"]=79,
-  ["prefixdata"]=49,
-  ["references"]={
-   ["block"]="bodypart",
-   ["internal"]=25,
-   ["order"]=8,
-   ["realpage"]=18,
-   ["section"]=10,
-  },
-  ["titledata"]={
-   ["title"]="Digital Service Act (Akt o digitálnych službách) -- súbor pravidiel platiacich v celej EÚ, ktorých cieľom je vytvoriť bezpečnejší digitálny priestor, v ktorom budú chránené základné práva všetkých užívateľov digitálnych služieb \\scr (Európska komisia, 2022)",
-  },
- },
- {
-  ["metadata"]=46,
-  ["numberdata"]=81,
-  ["prefixdata"]=49,
-  ["references"]={
-   ["block"]="bodypart",
-   ["internal"]=26,
-   ["order"]=9,
-   ["realpage"]=18,
-   ["section"]=10,
-  },
-  ["titledata"]={
-   ["title"]="Data Governance Act (Akt o správe dát) -- úsilie zvýšiť dôveru v zdieľanie dát a posilnenie mechanizmov pre zvýšenie dostupnosti dát \\scr (Európska komisia, 2022)",
-  },
- },
- {
-  ["metadata"]=46,
-  ["numberdata"]=83,
-  ["prefixdata"]=49,
-  ["references"]={
-   ["block"]="bodypart",
-   ["internal"]=28,
-   ["order"]=10,
-   ["realpage"]=18,
-   ["section"]=11,
-  },
-  ["titledata"]={
-   ["title"]="SOA -- Servisne orientovaná architektúra (Service Oriented Architecture) -- sada princípov a metodológií, ktorá odporúča stavbu aplikácií zo vzájomne nezávislých komponent",
-  },
- },
- {
-  ["metadata"]=44,
-  ["numberdata"]=84,
-  ["references"]={
-   ["block"]="bodypart",
-   ["internal"]=29,
-   ["realpage"]=19,
-   ["section"]=12,
-  },
-  ["titledata"]={
-   ["label"]="section",
-   ["title"]="LIDS",
-  },
- },
- {
-  ["metadata"]=44,
-  ["numberdata"]=85,
-  ["references"]={
-   ["block"]="bodypart",
-   ["internal"]=30,
-   ["realpage"]=20,
-   ["section"]=13,
-  },
-  ["titledata"]={
-   ["label"]="section",
-   ["title"]="Architektura eGovernmentu - toto neviem, kde zapojiť",
-  },
- },
- {
-  ["metadata"]=86,
-  ["numberdata"]=87,
-  ["references"]={
-   ["block"]="bodypart",
-   ["internal"]=31,
-   ["realpage"]=20,
-   ["section"]=14,
-  },
-  ["titledata"]={
-   ["label"]="subsection",
-   ["title"]="Poslanie a vízia eGovernmentu v Českej republike",
-  },
- },
- {
-  ["metadata"]=86,
-  ["numberdata"]=88,
-  ["references"]={
-   ["block"]="bodypart",
-   ["internal"]=32,
-   ["realpage"]=20,
-   ["section"]=15,
-  },
-  ["titledata"]={
-   ["label"]="subsection",
    ["title"]="Informační koncepce ČR",
   },
  },
  {
-  ["metadata"]=86,
-  ["numberdata"]=89,
+  ["metadata"]=71,
+  ["numberdata"]=74,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=33,
-   ["realpage"]=21,
-   ["section"]=16,
+   ["internal"]=23,
+   ["realpage"]=18,
+   ["section"]=11,
   },
   ["titledata"]={
    ["label"]="subsection",
@@ -944,12 +799,12 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=44,
-  ["numberdata"]=90,
+  ["numberdata"]=75,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=34,
-   ["realpage"]=22,
-   ["section"]=17,
+   ["internal"]=24,
+   ["realpage"]=19,
+   ["section"]=12,
   },
   ["titledata"]={
    ["label"]="section",
@@ -957,13 +812,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=86,
-  ["numberdata"]=91,
+  ["metadata"]=71,
+  ["numberdata"]=76,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=35,
-   ["realpage"]=23,
-   ["section"]=18,
+   ["internal"]=25,
+   ["realpage"]=20,
+   ["section"]=13,
   },
   ["titledata"]={
    ["label"]="subsection",
@@ -971,13 +826,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=86,
-  ["numberdata"]=92,
+  ["metadata"]=71,
+  ["numberdata"]=77,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=36,
-   ["realpage"]=23,
-   ["section"]=19,
+   ["internal"]=26,
+   ["realpage"]=20,
+   ["section"]=14,
   },
   ["titledata"]={
    ["label"]="subsection",
@@ -986,17 +841,161 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=44,
+  ["numberdata"]=78,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=27,
+   ["realpage"]=20,
+   ["section"]=15,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="Digitální Česko",
+  },
+ },
+ {
+  ["metadata"]=44,
+  ["numberdata"]=79,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=28,
+   ["realpage"]=21,
+   ["section"]=16,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="Projekt EMMA",
+  },
+ },
+ {
+  ["metadata"]=46,
+  ["numberdata"]=81,
+  ["prefixdata"]=49,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=29,
+   ["order"]=6,
+   ["realpage"]=21,
+   ["section"]=16,
+  },
+  ["titledata"]={
+   ["title"]="ERP (Enterprise Resource Planning) systém -- interný informačný systém podniku slúžiaci na správu rôznych činností podniku (účtovníctvo, zásobovanie, personalistika...)",
+  },
+ },
+ {
+  ["metadata"]=40,
+  ["numberdata"]=82,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=30,
+   ["realpage"]=23,
+   ["section"]=17,
+  },
+  ["titledata"]={
+   ["label"]="chapter",
+   ["title"]="Metodika",
+  },
+ },
+ {
+  ["metadata"]=44,
+  ["numberdata"]=83,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=31,
+   ["realpage"]=23,
+   ["section"]=18,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="Popis EMMA",
+  },
+ },
+ {
+  ["metadata"]=46,
+  ["numberdata"]=85,
+  ["prefixdata"]=49,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=32,
+   ["order"]=7,
+   ["realpage"]=23,
+   ["section"]=18,
+  },
+  ["titledata"]={
+   ["title"]="API (Application Programme Interface) -- webové rozhranie, ktoré umožňuje komunikáciu medzi dvomi rôznymi aplikáciami",
+  },
+ },
+ {
+  ["metadata"]=44,
+  ["numberdata"]=86,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=35,
+   ["realpage"]=24,
+   ["section"]=19,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="Popis SAMO",
+  },
+ },
+ {
+  ["metadata"]=46,
+  ["numberdata"]=88,
+  ["prefixdata"]=49,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=33,
+   ["order"]=8,
+   ["realpage"]=24,
+   ["section"]=18,
+  },
+  ["titledata"]={
+   ["title"]="Digital Service Act (Akt o digitálnych službách) -- súbor pravidiel platiacich v celej EÚ, ktorých cieľom je vytvoriť bezpečnejší digitálny priestor, v ktorom budú chránené základné práva všetkých užívateľov digitálnych služieb \\scr (Európska komisia, 2022)",
+  },
+ },
+ {
+  ["metadata"]=46,
+  ["numberdata"]=90,
+  ["prefixdata"]=49,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=34,
+   ["order"]=9,
+   ["realpage"]=24,
+   ["section"]=18,
+  },
+  ["titledata"]={
+   ["title"]="Data Governance Act (Akt o správe dát) -- úsilie zvýšiť dôveru v zdieľanie dát a posilnenie mechanizmov pre zvýšenie dostupnosti dát \\scr (Európska komisia, 2022)",
+  },
+ },
+ {
+  ["metadata"]=46,
+  ["numberdata"]=92,
+  ["prefixdata"]=49,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=36,
+   ["order"]=10,
+   ["realpage"]=24,
+   ["section"]=19,
+  },
+  ["titledata"]={
+   ["title"]="SOA -- Servisne orientovaná architektúra (Service Oriented Architecture) -- sada princípov a metodológií, ktorá odporúča stavbu aplikácií zo vzájomne nezávislých komponent",
+  },
+ },
+ {
+  ["metadata"]=44,
   ["numberdata"]=93,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=37,
-   ["realpage"]=23,
-   ["reference"]="dizajn-system",
+   ["realpage"]=25,
    ["section"]=20,
   },
   ["titledata"]={
    ["label"]="section",
-   ["title"]="Jednotným dizajn manuálom elektronických služieb",
+   ["title"]="LIDS",
   },
  },
  {
@@ -1005,7 +1004,7 @@ utilitydata.structures.lists.collected={
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=38,
-   ["realpage"]=23,
+   ["realpage"]=25,
    ["section"]=21,
   },
   ["titledata"]={
@@ -1014,43 +1013,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=44,
+  ["metadata"]=40,
   ["numberdata"]=95,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=39,
-   ["realpage"]=24,
+   ["realpage"]=26,
    ["section"]=22,
-  },
-  ["titledata"]={
-   ["label"]="section",
-   ["title"]="Charakteristika vybraných služieb verejnej správy",
-  },
- },
- {
-  ["metadata"]=64,
-  ["numberdata"]=65,
-  ["prefixdata"]=54,
-  ["references"]={
-   ["block"]="bodypart",
-   ["internal"]=40,
-   ["realpage"]=24,
-   ["reference"]="situacie",
-   ["section"]=22,
-   ["view"]="fit",
-  },
-  ["titledata"]={
-   ["title"]="Životné situácie spojené so zamestnávateľmi a verejnou správou",
-  },
- },
- {
-  ["metadata"]=40,
-  ["numberdata"]=96,
-  ["references"]={
-   ["block"]="bodypart",
-   ["internal"]=41,
-   ["realpage"]=25,
-   ["section"]=23,
   },
   ["titledata"]={
    ["label"]="chapter",
@@ -1059,12 +1028,12 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=40,
-  ["numberdata"]=97,
+  ["numberdata"]=96,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=42,
-   ["realpage"]=26,
-   ["section"]=24,
+   ["internal"]=40,
+   ["realpage"]=27,
+   ["section"]=23,
   },
   ["titledata"]={
    ["label"]="chapter",
@@ -1073,12 +1042,12 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=44,
-  ["numberdata"]=98,
+  ["numberdata"]=97,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=43,
-   ["realpage"]=26,
-   ["section"]=25,
+   ["internal"]=41,
+   ["realpage"]=27,
+   ["section"]=24,
   },
   ["titledata"]={
    ["label"]="section",
@@ -1087,12 +1056,12 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=44,
-  ["numberdata"]=99,
+  ["numberdata"]=98,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=44,
-   ["realpage"]=26,
-   ["section"]=26,
+   ["internal"]=42,
+   ["realpage"]=27,
+   ["section"]=25,
   },
   ["titledata"]={
    ["label"]="section",
@@ -1101,12 +1070,12 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=44,
-  ["numberdata"]=100,
+  ["numberdata"]=99,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=45,
-   ["realpage"]=26,
-   ["section"]=27,
+   ["internal"]=43,
+   ["realpage"]=27,
+   ["section"]=26,
   },
   ["titledata"]={
    ["label"]="section",
@@ -1115,12 +1084,12 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=44,
-  ["numberdata"]=101,
+  ["numberdata"]=100,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=46,
-   ["realpage"]=26,
-   ["section"]=28,
+   ["internal"]=44,
+   ["realpage"]=27,
+   ["section"]=27,
   },
   ["titledata"]={
    ["label"]="section",
@@ -1129,12 +1098,12 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=44,
-  ["numberdata"]=102,
+  ["numberdata"]=101,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=47,
-   ["realpage"]=27,
-   ["section"]=29,
+   ["internal"]=45,
+   ["realpage"]=28,
+   ["section"]=28,
   },
   ["titledata"]={
    ["label"]="section",
@@ -1143,12 +1112,12 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=44,
-  ["numberdata"]=103,
+  ["numberdata"]=102,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=48,
-   ["realpage"]=27,
-   ["section"]=30,
+   ["internal"]=46,
+   ["realpage"]=28,
+   ["section"]=29,
   },
   ["titledata"]={
    ["label"]="section",
@@ -1157,11 +1126,25 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=44,
+  ["numberdata"]=103,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=47,
+   ["realpage"]=28,
+   ["section"]=30,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="Charakteristika vybraných služieb verejnej správy",
+  },
+ },
+ {
+  ["metadata"]=44,
   ["numberdata"]=104,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=49,
-   ["realpage"]=27,
+   ["realpage"]=28,
    ["section"]=31,
   },
   ["titledata"]={
@@ -1170,12 +1153,28 @@ utilitydata.structures.lists.collected={
   },
  },
  {
+  ["metadata"]=64,
+  ["numberdata"]=65,
+  ["prefixdata"]=54,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=48,
+   ["realpage"]=29,
+   ["reference"]="situacie",
+   ["section"]=30,
+   ["view"]="fit",
+  },
+  ["titledata"]={
+   ["title"]="Životné situácie spojené so zamestnávateľmi a verejnou správou",
+  },
+ },
+ {
   ["metadata"]=44,
   ["numberdata"]=105,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=50,
-   ["realpage"]=27,
+   ["realpage"]=29,
    ["section"]=32,
   },
   ["titledata"]={
@@ -1189,7 +1188,7 @@ utilitydata.structures.lists.collected={
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=51,
-   ["realpage"]=27,
+   ["realpage"]=30,
    ["section"]=33,
   },
   ["titledata"]={
@@ -1203,7 +1202,7 @@ utilitydata.structures.lists.collected={
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=52,
-   ["realpage"]=28,
+   ["realpage"]=31,
    ["section"]=34,
   },
   ["titledata"]={
@@ -1217,7 +1216,7 @@ utilitydata.structures.lists.collected={
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=53,
-   ["realpage"]=29,
+   ["realpage"]=32,
    ["section"]=35,
   },
   ["titledata"]={
@@ -1231,7 +1230,7 @@ utilitydata.structures.lists.collected={
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=54,
-   ["realpage"]=30,
+   ["realpage"]=33,
    ["section"]=36,
   },
   ["titledata"]={
@@ -1244,7 +1243,7 @@ utilitydata.structures.lists.collected={
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=55,
-   ["realpage"]=30,
+   ["realpage"]=33,
    ["section"]=36,
   },
   ["userdata"]={
@@ -1256,7 +1255,7 @@ utilitydata.structures.lists.collected={
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=56,
-   ["realpage"]=32,
+   ["realpage"]=35,
    ["section"]=36,
   },
   ["userdata"]={
@@ -1268,7 +1267,7 @@ utilitydata.structures.lists.collected={
   ["references"]={
    ["block"]="backpart",
    ["internal"]=58,
-   ["realpage"]=32,
+   ["realpage"]=35,
    ["section"]=37,
   },
  },
@@ -1278,7 +1277,7 @@ utilitydata.structures.lists.collected={
   ["references"]={
    ["block"]="backpart",
    ["internal"]=57,
-   ["realpage"]=32,
+   ["realpage"]=35,
    ["section"]=37,
   },
   ["titledata"]={
@@ -1290,7 +1289,7 @@ utilitydata.structures.lists.collected={
   ["references"]={
    ["block"]="backpart",
    ["internal"]=60,
-   ["realpage"]=33,
+   ["realpage"]=36,
    ["section"]=38,
   },
  },
@@ -1300,7 +1299,7 @@ utilitydata.structures.lists.collected={
   ["references"]={
    ["block"]="backpart",
    ["internal"]=59,
-   ["realpage"]=33,
+   ["realpage"]=36,
    ["section"]=38,
   },
   ["titledata"]={
@@ -1312,7 +1311,7 @@ utilitydata.structures.lists.collected={
   ["references"]={
    ["block"]="backpart",
    ["internal"]=62,
-   ["realpage"]=34,
+   ["realpage"]=37,
    ["section"]=39,
   },
  },
@@ -1322,7 +1321,7 @@ utilitydata.structures.lists.collected={
   ["references"]={
    ["block"]="backpart",
    ["internal"]=61,
-   ["realpage"]=34,
+   ["realpage"]=37,
    ["section"]=39,
   },
   ["titledata"]={
@@ -1335,7 +1334,7 @@ utilitydata.structures.lists.collected={
   ["references"]={
    ["block"]="appendix",
    ["internal"]=63,
-   ["realpage"]=35,
+   ["realpage"]=38,
    ["section"]=40,
   },
   ["titledata"]={
@@ -1567,29 +1566,50 @@ utilitydata.structures.pages.collected={
   ["state"]="start",
  },
  {
-  ["block"]="backpart",
+  ["block"]="bodypart",
   ["number"]=32,
   ["numberdata"]=119,
   ["prefixdata"]=120,
   ["state"]="start",
  },
  {
-  ["block"]="backpart",
+  ["block"]="bodypart",
   ["number"]=33,
   ["numberdata"]=119,
   ["prefixdata"]=120,
   ["state"]="start",
  },
  {
-  ["block"]="backpart",
+  ["block"]="bodypart",
   ["number"]=34,
   ["numberdata"]=119,
   ["prefixdata"]=120,
   ["state"]="start",
  },
  {
-  ["block"]="appendix",
+  ["block"]="backpart",
   ["number"]=35,
+  ["numberdata"]=119,
+  ["prefixdata"]=120,
+  ["state"]="start",
+ },
+ {
+  ["block"]="backpart",
+  ["number"]=36,
+  ["numberdata"]=119,
+  ["prefixdata"]=120,
+  ["state"]="start",
+ },
+ {
+  ["block"]="backpart",
+  ["number"]=37,
+  ["numberdata"]=119,
+  ["prefixdata"]=120,
+  ["state"]="start",
+ },
+ {
+  ["block"]="appendix",
+  ["number"]=38,
   ["numberdata"]=119,
   ["prefixdata"]=120,
   ["state"]="start",
@@ -1635,12 +1655,6 @@ utilitydata.structures.itemgroups.collected={
    { 4, 0 },
   },
   {
-   { 5, 0 },
-  },
-  {
-   { 6, 0 },
-  },
-  {
    { 4, 0 },
   },
   {
@@ -1654,6 +1668,18 @@ utilitydata.structures.itemgroups.collected={
   },
   {
    { 4, 0 },
+  },
+  {
+   { 3, 0 },
+  },
+  {
+   { 5, 0 },
+  },
+  {
+   { 5, 0 },
+  },
+  {
+   { 6, 0 },
   },
  },
 }
@@ -1731,20 +1757,19 @@ utilitydata.job.packed={
   { 0, 3, 3 },
   { 0, 3, 4 },
   { 0, 3, 5 },
+  { 0, 3, 5, 1 },
+  { 0, 3, 6 },
+  { 0, 3, 6, 1 },
+  { 0, 3, 7 },
+  { 0, 3, 7, 1 },
+  { 0, 3, 7, 2 },
+  { 0, 3, 8 },
+  { 0, 3, 9 },
   { 0, 4 },
   { 0, 4, 1 },
   { 0, 4, 2 },
   { 0, 4, 3 },
   { 0, 4, 4 },
-  { 0, 4, 4, 1 },
-  { 0, 4, 4, 2 },
-  { 0, 4, 4, 3 },
-  { 0, 4, 5 },
-  { 0, 4, 5, 1 },
-  { 0, 4, 5, 2 },
-  { 0, 4, 6 },
-  { 0, 4, 7 },
-  { 0, 4, 8 },
   { 0, 5 },
   { 0, 6 },
   { 0, 6, 1 },
@@ -1756,6 +1781,7 @@ utilitydata.job.packed={
   { 0, 6, 7 },
   { 0, 6, 8 },
   { 0, 6, 9 },
+  { 0, 6, 10 },
   { 0, 7 },
   { 0, 8 },
   { 0, 9 },
@@ -1949,6 +1975,14 @@ utilitydata.job.packed={
    ["set"]="all",
   },
   {
+   ["catcodes"]=9,
+   ["coding"]="tex",
+   ["increment"]="yes",
+   ["kind"]="section",
+   ["level"]=4,
+   ["name"]="ppkap",
+  },
+  {
    ["block"]="bodypart",
    ["conversionset"]="default",
    ["language"]="sk",
@@ -1964,16 +1998,6 @@ utilitydata.job.packed={
    ["separatorset"]="default",
    ["set"]="all",
   },
-  { 6 },
-  {
-   ["conversionset"]="number",
-   ["numbers"]=73,
-  },
-  { 7 },
-  {
-   ["conversionset"]="number",
-   ["numbers"]=75,
-  },
   {
    ["block"]="bodypart",
    ["conversionset"]="default",
@@ -1981,21 +2005,6 @@ utilitydata.job.packed={
    ["numbers"]=11,
    ["separatorset"]="default",
    ["set"]="all",
-  },
-  { 8 },
-  {
-   ["conversionset"]="number",
-   ["numbers"]=78,
-  },
-  { 9 },
-  {
-   ["conversionset"]="number",
-   ["numbers"]=80,
-  },
-  { 10 },
-  {
-   ["conversionset"]="number",
-   ["numbers"]=82,
   },
   {
    ["block"]="bodypart",
@@ -2012,14 +2021,6 @@ utilitydata.job.packed={
    ["numbers"]=13,
    ["separatorset"]="default",
    ["set"]="all",
-  },
-  {
-   ["catcodes"]=9,
-   ["coding"]="tex",
-   ["increment"]="yes",
-   ["kind"]="section",
-   ["level"]=4,
-   ["name"]="ppkap",
   },
   {
    ["block"]="bodypart",
@@ -2045,6 +2046,11 @@ utilitydata.job.packed={
    ["separatorset"]="default",
    ["set"]="all",
   },
+  { 6 },
+  {
+   ["conversionset"]="number",
+   ["numbers"]=80,
+  },
   {
    ["block"]="bodypart",
    ["conversionset"]="default",
@@ -2061,6 +2067,11 @@ utilitydata.job.packed={
    ["separatorset"]="default",
    ["set"]="all",
   },
+  { 7 },
+  {
+   ["conversionset"]="number",
+   ["numbers"]=84,
+  },
   {
    ["block"]="bodypart",
    ["conversionset"]="default",
@@ -2068,6 +2079,21 @@ utilitydata.job.packed={
    ["numbers"]=19,
    ["separatorset"]="default",
    ["set"]="all",
+  },
+  { 8 },
+  {
+   ["conversionset"]="number",
+   ["numbers"]=87,
+  },
+  { 9 },
+  {
+   ["conversionset"]="number",
+   ["numbers"]=89,
+  },
+  { 10 },
+  {
+   ["conversionset"]="number",
+   ["numbers"]=91,
   },
   {
    ["block"]="bodypart",
