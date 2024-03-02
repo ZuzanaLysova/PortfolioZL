@@ -380,7 +380,17 @@ Okrem tohto princípu sa EMMA riadi aj ďalšími procesnými zásadami ustanove
 Projekt EMMA môže okrem ekonomických prínosov priniesť aj neekonomické a to ako pre klientov, tak i pre ČR a EÚ. Dajú sa identifikovať napr. reputačný prínos ČR, prínos k riešeniu spoločenských výziev EÚ, rozvoj ľudského potenciálu a pod. Zámer projektu zároveň prispieva k naplneniu cieľov Národnej inovačnej stratégie.
 
 \pkap{Platforma SAMO}
+Názov SAMO vznikol skrátením slov Strategic Asset Management \& Operations system (strategická správa majetku). Vývoj jednotlivých modulov začal v roku 1991. Počas posledných vyše 30-tich rokov vývoja sa firme Asseco podarilo do rôznych riešení zapojiť množstvo skúseností a best practices. Systém SAMO vznikol pôvodne na platforme, ktorá bola primárne určená na geografické informačné systémy. Hlavne to bolo zmýšľané pre spoločnosti prevádzkujúce mestské infraštruktúry, rozvody plynu, vody elektriny, sietí a inej infraštruktúry. Dá sa rozdeliť na 2 zložky - evidenčná a priestorová. Čo sa evidenčnej časti týka, tak umožňuje evidenciu rôznych majetkov spojených s touto infraštruktúrou (napr. trubky) a evidenciu ich popisu, poslednej kontroly, opravy a pod. Okrem tejto časti tam je aj časť priestorová, takže nejaká geometria, mapové informácie a pod. Časom sa tieto 2 zložky rozšírili o ďalšiu - procesnú zložku (napr. hlásenie udalostí, plánovanie údržby a pod.). Vznikajú tak agendy na správu majetku, ktoré sa skladajú zo zoznamu, editačných formulárov, detailov, stavových diagramov a podobne. Keďže každý zákazník má iné požiadavky, SAMO nie je finálny produkt, ale len platforma zložená z rôznych komponent, ktoré sa skladajú podľa požiadavkov zákazníka rýchlo a efektívne. 
 
+Konkurenčná výhoda SAMO vo verejnej správe je to, že SAMO je platforma pre efektívne delivery, nie produkt. Vhodné sú unikátne agendy evidenčného charakteru, ktoré majú nejakú GIS zložku. SAMO umožňuje agilný, iteratívny spôsob delivery projektov. Metadáta a už vyvinuté komponenty sú znovupoužiteľné. Je teda nutné meniť hlavne business zložku jednotlivých systémov (logiku akcií a procesov).
+
+Platforma SAMO má 3 produkty:
+
+\startitemize
+\item \start\bf SAMO EAM \stop (Enterprise Asset Management) --  meranie výkonnosti a kvality, princípy merateľnosti a spätnej väzby, pravidelné audity
+\item \start\bf SAMO AIS \stop (Agendový IS) -- každý proces a služba musí mať svojho vlastníka a garanta
+\item  \start\bf SAMO  \stop IT podpora riadená katalógom ICT služieb pre interné a externé procesy
+\stopitemize
 
 \kap{Metodika}
 
@@ -412,22 +422,21 @@ Obsahom platformy EMMA sú:
 \TODO EBSI (https://ec.europa.eu/digital-building-blocks/sites/display/EBSI/Home) (https://assecoce.sharepoint.com/:w:/r/teams/EMMAPEGOV-Analza/Shared%20Documents/Anal%C3%BDza/80%20-%20V%C3%BDstupy/Etapa1%20-%20N%C3%A1vrh%20%C5%99e%C5%A1en%C3%AD/E1.4%20Enterprise%20architektura/EMMA_E1_Enterprise_architektura.docx?d=wa8731ee84cc84c9b9e26b2ac55ed06bf&csf=1&web=1&e=DRJrfT)
 
 \pkap{Popis SAMO}
+Ide o súbor integrovaných softvérových riešení, ktoré sú modulárne zložené do komplexného systému. Platforma SAMO slúži na strategickú správu aktív a činností. Platforma SAMO je založená na koncepte SOA \footnote{SOA -- Servisne orientovaná architektúra (Service Oriented Architecture) -- sada princípov a metodológií, ktorá odporúča stavbu aplikácií zo vzájomne nezávislých komponent}. %Považuje sa za platformu určenú na efektívne poskytovanie, nie za produkt samotný.
+Viditeľná čast SAMO aplikácie sa nazýva SAMO Dynamic Application - klient, ktorý beží v prehliadači (ľahký klient, html5, js aplikácia) a komunikuje so serverovými komponentami. Medzi ne patrí SAMO Gateway (3 úlohy - web. server (poskytuje metadáta), session+auth, proxy), LIDS Application Server (core komponenta, ktorá obsahuje dátové modely, pôvodne GIS AS), Security Server (vnútorný identity management a správa oprávnení), User Service (drží profil prihláseného užívateľa), SAMO Liferay (Content Management System) (viď obrázok). Okrem komponent samotnej SAMO platformy sú do celkovej SAMO aplikácie zapojené aj ďalšie sw - Docker, ElasticSearch (objektová db pre rýchle fulltextové vyhľadávanie), Docker-compose/Kubernetes, databáza (PostgreSQL (+PostGIS), Oracle (+Oracle Spatial)), NGINX (proxy, SSL). Všetko to sú v Jave napísané aplikácia bežiace na serveri, ktoré sú ale púšťané pomocou Dockeru.
+
+Dynamic app sa skladá z niekoľkých hlavných modulov - cockpit (úvodná obrazovka, ktorá zobrazuje úvodní rozcestník), tzv. pages, ktoré obsahujú browse (zoznam), po rozkliknutí sa zobrazí detail (ktorý môže obsahovať okrem hlavičkových dát aj sekcie obsahujúce ďalšie naviazané entity) a po kliku na editačnú tužku sa zobrazí editačný detail (na modifikovanie hlavičkových informácií o entite, avšak nie dát v spomínaných sekciách).
 
 \TODO prepojenie SAMO a LIDS atd
-
-Názov SAMO vznikol skrátením slov Strategic Asset Management \& Operations system. Ide o súbor integrovaných softvérových riešení, ktoré sú modulárne zložené do komplexného systému. Platforma SAMO slúži na strategickú správu aktív a činností.
-
-Vývoj jednotlivých modulov začal v roku 1991. Počas posledných vyše 30-tich rokov vývoja sa firme Asseco podarilo do rôznych riešení zapojiť množstvo skúseností a best practices.
-
-Platforma SAMO je založená na koncepte SOA \footnote{SOA -- Servisne orientovaná architektúra (Service Oriented Architecture) -- sada princípov a metodológií, ktorá odporúča stavbu aplikácií zo vzájomne nezávislých komponent}. Považuje sa za platformu určenú na efektívne poskytovanie, nie za produkt samotný.
 
 SAMO používa mikroservice prístup k vývoju softvéru. Každá mikroslužba je zameraná na konkrétnu funkčnosť a môže byť vyvíjaná, nasadená a spravovaná nezávisle od ostatných častí aplikácie. To umožňuje flexibilnejšie škálovanie, rýchlejšie nasadzovanie nových funkcionalít a jednoduchšiu údržbu. SAMO je aplikácia poháňaná metadátami, ktoré obsahujú informácie o vzťahoch medzi časťami  dát, popis užívateľského rozhrania, pravidlá, formuláre a pod. \scr(Asseco, 2023)
 
 \pkap{LIDS}
 
 \TODO čo je vlastne LIDS atd (LIDS je metadátový systém, na ktorom je postavené SAMO.)
+LIDS časť systému SAMO je oveľa väčšia ako SAMO Gateway. Riadi veškerú logiku systému - správa dát, riadi prístupy k aplikačnej logike a dátam, security, REST API a pod. SAMO Gateway slúži primárne na to, aby poskytovala metadáta pre Dynamic App. Preto je LIDS popísaný detailnejšie v samostatnej kapitole.
 
-LIDS je systém kontrolovaný metadátami, s ktorými pracujú jednotlivé časti systému. Hlavnou časťou LIDS metadát sú tzv. feature types. Ide v podstate o nejaký typ objektu reálneho sveta (napr. ft\_osoba, ft\_adresa, ft\_zamestnanec...). Feature type definuje atribúty objektu, môže definovať aj geometriu, symboliku a iné vlastnosti. Tzv. feature je inštanciou feature typu, a teda je to reprezentácia objektu reálneho sveta. Feature nesie informácie o tom, aký je to feature type, sémantické atribúty (id, name, type), jeho miesto v databáze (tzv. databázový kontajner), poprípade symboliku a typ geometrie.
+LIDS AS je kontrolovaný metadátami, s ktorými pracujú jednotlivé časti systému. Hlavnou časťou LIDS metadát sú tzv. feature types. Ide v podstate o nejaký typ objektu reálneho sveta (napr. ft\_osoba, ft\_adresa, ft\_zamestnanec...). Feature type definuje atribúty objektu, môže definovať aj geometriu, symboliku a iné vlastnosti. Tzv. feature je inštanciou feature typu, a teda je to reprezentácia objektu reálneho sveta. Feature nesie informácie o tom, aký je to feature type, sémantické atribúty (id, name, type), jeho miesto v databáze (tzv. databázový kontajner), poprípade symboliku a typ geometrie.
 
 Tieto metadáta sú uložené, prenášané a spravované vo forme nasledujúcich XML dokumentov:
 
@@ -441,6 +450,22 @@ Tieto metadáta sú uložené, prenášané a spravované vo forme nasledujúcic
 \stopitemize 
 
 Okrem týchto hlavných XML súborov existuje aj množstvo ďalších. Všetky spomínané súbory majú pevne danú štruktúru popísanú v súboroch typu XSD (XML Schema Definiton). 
+
+Základom pre budovanie aplikácie je vytvorenie dátového modelu, na ktorom sa celá aplikácia stavia a logika sa zapája až potom. Je to z toho dôvodu, že bez modelu sa nie je od čoho odpichnúť. LIDS dokáže ale aj na základe model.xml databázu modifikovať (vytvárať nové tabuľky, atribúty, meniť dátové typy a pod.). Spúšta sa to v administrátorskej konzole, kde sa porovnáva existujúca databáza s xml modelom a vygeneruje sa SQL skript s potrebnými príkazmi a po potvrdení sa to do db pustí. V administrátorskej konzoli existuje aj GUI, ktoré prehľadne zobrazuje všetky feature types, názov kontajneru (db tabuľky) daného ft, atribúty, väzby, stavový diagram (workflow, ak existuje), akcie (operácie, metódie, funkcie) a podobne. 
+
+Okrem dátovej časti (model.xml) obsahuje LIDSová časť aj aplikačnú logiku - niekoľko javascript a json súborov definujúcich stavy, akcie nad entitov a celková potrebná logika správania danej entity.
+
+Poslednou vrstvou je security vrstva, ktorá určuje prístupy k feature typom, atribútom, akciám alebo k riadkom browsu (napr. na základne lokality). Buď je to na základe security číselníku alebo druhá možnosť je nastavenie ownershipu (vlastníctva) na vybrané záznamy (napr. pri žiadostiach na základe funkcí a pod.). 
+
+Vývoj prebieha na nainštalovanom lokálnom prostredí, pričom databáza je ale serverová. Na lokále bežia 2 veci - GTW a LIDS konzola (metadáta) a pripojí sa to na databázu, elastic search a user service na server. Po úpravách sa zmeny commitujú a pushujú a na gite beží CI/CD (na server sa to dostane až keď je CI/CD ok, bez failu). Významný nástroj, ktorý je dôležitý na rozbehnutie localu je utility localtron. 
+
+Súborová štruktúra je rozdelená na 2 veľké celky - configuration a project. V časti project sú uložené rôzne parametre ako verzia, prístup do databáze, informácia o aktuálnom prostredí (vývojové, testovacie, produkčné a pod.). 
+
+Správa uživateľov a skupín. Užívatelia zvyčajne prichádzajú pomocou LDAP od zákazníka. Skupiny určujú práva na feature types (zvyčajne ide o skupinu read, edit a admin, napr. ZAMESTNANCI-read, ZAMESTNANCI-edit, ZAMESTNANCI-admin, no je možné vytvárať aj špeciálne skupiny). Sú určené na to, aby boli užívatelia zaradení do skupiny oprávnení. Okrem toho existuje aj security rola, ktorá určuje napr. práva na dlaždice, tlačítka a pod. (pomocou hasAnyRole). Tieto role sa priradia vybraným skupinám a do skupín sa priradia užívatelia. To zabezpečí, že prihlásený užívateľ má umožnené v aplikácii vidieť a robiť len to, na čo má oprávnenie.
+
+\pkap{EA2LIDS}
+
+\pkap{AMK}
 
 \pkap{Popis metodiky, analýzy a návrhu}
 
