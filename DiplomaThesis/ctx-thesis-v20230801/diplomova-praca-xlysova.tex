@@ -25,40 +25,38 @@
 \startbodymatter
 
 \kap{Úvod}
+V súčasnosti je množstvo zamestnancov zahltených rutinnými administratívnymi úkonmi. Firma Asseco Central Europe, a.s. prišla s nápadom vytvoriť integračnú platformu s pracovným názvom EMMA, ktorá by mala tieto úkony minimalizovať. Projekt je v štádiu riešenia a aktuálne existuje zjednodušená implementácia služby "nástup zamestnanca do zamestnania", ktorá je v katalógu služieb. Tento katalóg služieb verejnej správy ČR obsahuje v dnešnej dobe takmer 8 tisíc služieb a vyše 34 tisíc úkonov.  Tieto služby a úkony sa týkajú bezmála 400 agend a ohlasuje ich približne 30 rôznych ohlasovateľov (ministerstvá, úrady a pod.). Väčšinu týchto úkonov je možné previesť online, prostredníctvom dátovej schránky. 
+
+Projekt EMMA je riešením, ktoré umožni integráciu služieb VS do informačných systémov firiem a spojenie viacerých služieb verejnej správy. Už spomínaný príklad nástupu zamestnanca do zamestnania umožňuje pomocou jedného formuláru (poprípade tlačítka) nahlásiť túto udalosť príslušným úradom - Českej správe sociálneho zabezpečenia a zdravotnej poisťovni. Prvotným zámerom je integrácia služieb VS, no do budúcna sa plánuje rozšíriť to aj o služby komerčnej sféry, napr. poistenie auta. 
 
 \TODO
 TODO niekde ku koncu - VÝHODY A NEVÝHODY EMMA - napr. zamestnanci...
 
 \kap{Cieľ}
-
-\abbreviation{G2B2B}{Government to Business to Business}
-
-Digitalizácia je veľmi dôležitá oblasť spojená s rýchlym rozvojom technológií. Či už ide o súkromný alebo verejný sektor, existuje mnoho procesov, ktoré by sa mohli zjednodušiť. Cieľom tejto práce je analýza a návrh vybraných G2B2B (\infull{G2B2B}) služieb EMMA. Po analýze bude vybraná služba implementovaná. Súčasťou bude aj začlenenie vybraných služieb do katalógu služieb EMMA.
-
+Cieľom tejto diplomovej práce je analýza súčasných procesov verejnej správy a úrovne digitalizácie v Českej republike. Práca sa zameriava na rozbor existujúceho stavu projektu EMMA, ktorý zahŕňa služby verejnej správy, a identifikovať potenciálne oblasti na jeho rozšírenie. Kľúčovým prvkom je analyzovať a~následne rozšíriť stávajúce rozhranie projektu, vyvinuté na platforme SAMO, o~nový modul zamestnancov. 
 
 \kap{Súčasný stav}
+V dnešnej dobe sa digitalizácia verejnej správy stala častou témou rôznych diskusií. Je to najmä preto, že predstavuje cestu k efektívnejšiemu, účinnejšiemu a transparentnejšiemu poskytovaniu služieb naprieč rozličnými odvetviami. \zlom V~tomto dynamickom kontexte sľubuje digitalizácia transformáciu tradičných modelov služieb na modely, ktoré sú viac prispôsobené súčasným potrebám občanov a~inštitúcií. \scr(Andersson, 2022)
 
-V dnešnej dobe je digitalizácia verejnej správy častou témou rôznych diskusií. Digitalizácia sľubuje využívanie efektívnejších, účinnejších a transparentnejších služieb v rôznych sektoroch \scr(Andersson, 2022).
-
-Existuje viacero spôsobov "merania" úrovne rozvinutosti krajín v oblasti digitalizácie a eGovernmentu. Patrí medzi ne napríklad Index digitálnej ekonomiky a spoločnosti, Index rozvoja e-Governmentu, E-Government Benchmark a iné. V nasledujúcich kapitolách sú v skratke popísané spomínané 3 prieskumy a ich posledné výsledky.
+Existuje viacero spôsobov hodnotenia a merania úrovne rozvinutosti krajín v oblasti digitalizácie a rozvoja eGovernmentu. Patrí medzi ne napríklad \start \it Index digitálnej ekonomiky a spoločnosti, Index rozvoja eGovernmentu, eGovernment Benchmark \stop a iné. Tieto nástroje umožňujú detailnejšie pochopenie postupov, ktoré krajiny implementujú na podporu eGovernmentu a identifikáciu oblastí, v~ktorých je potrebné zlepšenie. V nasledujúcich kapitolách sú v~skratke popísané spomínané 3 prieskumy a ich posledné výsledky. Analýza výsledkov umožní lepšie porozumieť súčasný stav na národnej aj medzinárodnej úrovni.
 
 \pkap{Index digitálnej ekonomiky a spoločnosti}
-Európska komisia sleduje pokrok členských štátov v digitálnej oblasti od roku 2014 a každý rok zverejňuje informácie o indexe digitálnej ekonomiky a spoločnosti (Digital Economy and Society Index, DESI). DESI zoraďuje štáty podľa úrovne digitalizácie a zároveň analyzuje ich relatívny pokrok za posledných 5 rokov vzhľadom na ich počiatočnú situáciu.
+Európska komisia sleduje a monitoruje pokrok členských štátov v digitálnej oblasti od roku 2014 a každý rok zverejňuje informácie o indexe digitálnej ekonomiky a spoločnosti (Digital Economy and Society Index, DESI). Tento index zoraďuje štáty podľa úrovne digitalizácie a zároveň posudzuje ich relatívny pokrok za uplynulých päť rokov vzhľadom na ich počiatočnú situáciu.
 
 Oblasti, ktoré skúma DESI sú:
 
 \startitemize
 \item{\start\bf ľudský kapitál\stop -- internetové znalosti používateľov, pokročilé znalosti ľudí v IT oblasti}
-\item{\start\bf konektivita\stop -- využitie a pokrytie pevného a mobilného pripojenia a ich ceny}
+\item{\start\bf konektivita\stop -- využitie a pokrytie pevného a mobilného pripojenia a~ich ceny}
 \item{\start\bf integrácia digitálnych technológií \stop -- digitálne technológie pre firmy (cloud, umelá inteligencia...), e-commerce \footnote{e-commerce -- obchodné činnosti prevádzané na internete a pomocou ďalších elektronických prostriedkov}}
 \item{\start\bf digitálne verejné služby \stop -- e-government, otvorené dáta \footnote{otvorené data (open data, vládne dáta) -- informácie verejného sektoru, ktoré sú bezplatne dostupné na akékoľvek účely}}
 \stopitemize 
 
-Európska komisia a Rada prejednávajú rozhodnutie o politickom programe "Cesta k digitálnej dekáde", ktorý určuje ciele na úrovni EÚ, ktoré majú byť splnené do roku 2030. Cieľom je zaistiť to, aby bola digitálna transformácia komplexná a udržateľná a aby prebehla vo všetkých odvetviach hospodárstva. Dosiahnutie cieľa programu závisí na všetkých členských krajinách a na ich spoločnom úsilí \scr(Európska komisia - Metodika, 2022).
+Európska komisia spolu s Radou prejednávajú rozhodnutie o politickom programe "Cesta k digitálnej dekáde", ktorý stanovuje ciele na úrovni Európskej únie, dosiahnuteľné do roku 2030. Cieľom je zaistiť to, aby bola digitálna transformácia komplexná a udržateľná a aby prebehla vo všetkých odvetviach hospodárstva. Dosiahnutie cieľa programu závisí na všetkých členských krajinách a na ich spoločnom úsilí \scr(Európska komisia - Metodika, 2022).
 
-Česká republika je podľa výsledkov DESI za rok 2022 na 19. mieste (z 27 členských štátov) (viď \in{obrázok}[obr:DESI]). V porovnaní s rokom 2021 sa Česká republika zlepšila v oblasti digitálnych verejných služieb a konektivite. Zhoršila sa v integrácii digitálnych technológií. Česká vláda má po prvýkrát od roku 2007 osobu zodpovednú za digitalizáciu verejnej správy - miestopredsedu Ivana Bartoša  a pokračuje v prevádzaní stratégie "Digitálne Česko" z roku 2018 (aktualizovanej v roku 2020) \scr(Európska komisia - Česko, 2022).
+Česká republika je podľa výsledkov DESI za rok 2022 na 19. mieste (z 27 členských štátov) (viď \in{obrázok}[obr:DESI]). V porovnaní s rokom 2021 sa Česká republika zlepšila v oblasti digitálnych verejných služieb a konektivite. Zhoršila sa v integrácii digitálnych technológií. Možným pozitívom a príležitosťou je, že za digitalizáciu verejnej správy v Českej republike je od roku 2007 prvýkrát zodpovedná konkrétna osoba - miestopredseda Ivan Bartoš. ČR pokračuje v implementácii stratégie "Digitálne Česko" z roku 2018 (aktualizovanej v roku 2020) \scr(Európska komisia - Česko, 2022).
 
-\obrazek{obr:DESI}
+\obrazekB{obr:DESI}
 {Index digitálnej ekonomiky a spoločnosti 2022 (Európska komisia - Česko, 2022)}{images/DESI.png}{width=26cc}
 
 \obrazek{obr:DESI}
@@ -66,10 +64,10 @@ Európska komisia a Rada prejednávajú rozhodnutie o politickom programe "Cesta
 
 Graf na \in{obrázku}[obr:DESI] ukazuje porovnanie jednotlivých oblastí indexu DESI s priemerom 27 členských štátov EÚ. Taktiež tam možno vidieť aj výsledok krajín s najvyšším skóre (Fínsko a v tesnom závese Dánsko) \scr(Európska komisia - Česko, 2022).
 
-\pkap{Index rozvoja e-governmentu}
-Ďalším prieskumom je Prieskum Organizácie Spojených Národov, ktorý slúži na hodnotie e-governmentu naprieč všetkými 193 členskými štátmi. Tento prieskum hodnotí krajiny na základe Indexu rozvoja e-governmentu (E-Government Development Index, EGDI), ktorý je kombináciou primárnych dát (zbieraných a vlastnených OSN) a sekundárnych dát (od iných agentúr) \scr(United Nations, 2024).
+\pkap{Index rozvoja eGovernmentu}
+Ďalším významným prieskumom je hodnotenie eGovernmentu vykonávané Organizáciou Spojených Národov, ktoré poskytuje hodnotenie eGovernmentu  naprieč všetkými 193 členskými štátmi. Tento prieskum hodnotí krajiny na základe Indexu rozvoja e-governmentu (E-Government Development Index, EGDI), ktorý je kombináciou primárnych dát (zbieraných a vlastnených OSN) a sekundárnych dát (získaných od iných agentúr) \scr(United Nations, 2024).
 
-EGDI sa získava váženým priemerom troch indexov z nasledovných oblastí:
+EGDI sa získava váženým priemerom troch indexov, ktoré sa týkajú týchto oblastí:
 
 \startitemize
 \item{\start\bf online služby \stop \footnote{Online Services Index (OSI)} -- hodnotenie verejných portálov na základe 5 kritérií (inštitucionálny rámec, poskytovanie služieb, poskytovanie obsahu, technológie a digitálna účasť občanov)}
@@ -77,12 +75,12 @@ EGDI sa získava váženým priemerom troch indexov z nasledovných oblastí:
 \item{\start\bf ľudský kapitál \stop \footnote{Human Capital Index (HCI)} -- hodnotí vzdelanie a úroveň zručností obyvateľstva krajiny, s dôrazom na faktory ako miera gramotnosti, zapojenie do vzdelávania a dostupnosť kvalifikovaných odborníkov v oblasti informačných a komunikačných technológií}
 \stopitemize 
 
-Podľa výšky indexov sa dokážu krajiny rozdeliť do 4 skupín - krajiny s veľmi vysokým, vysokým, stredným a nízkym EGDI. Podľa prieskumu z roku 2022 patrí do veľmi vysokého indexu 60 krajín (31~\%), do vysokého 73 (38~\%), do stredného 53 (27,5~\%) a 7 krajín (3,5~\%) má nízky index rozvoja e-governmentu.
+Na základe hodnôt indexov EGDI je možné členské štáty OSN rozčleniť do štyroch kategórií: krajiny s veľmi vysokým indexom, krajiny s vysokým indexom, krajiny so stredným indexom a krajiny s nízkym indexom. Podľa najnovšieho prieskumu z roku 2022 spadá do veľmi vysokého indexu 60 krajín (31~\%), do vysokého 73 (38~\%), do stredného 53 (27,5~\%) a 7 krajín (3,5~\%) má nízky index rozvoja eGovernmentu.
 
 \obrazekB{obr:EGDI-mapa}
 {Geografické rozloženie štyroch EGDI kategórií (United Nations, 2022)}{images/EGDI-mapa.png}{width=30cc}
 
-Medzi najviac rozvinuté krajiny podľa EGDI patria ako aj pri DESI Dánsko a Fínsko. Česko sa nachádza na 45. mieste, no stále má index v kategórii veľmi vysoký. Porovnanie jednotlivých hodnôt je v \in{tabuľke}[EGDI]. Na \in{obrázku}[obr:EGDI-mapa] je zobrazené geografické rozloženie jednotlivých krajín a ich úrovní EGDI.
+Medzi najvyspelejšie krajiny v oblasti elektronického vládnutia podľa Indexu rozvoja e-governmentu (EGDI) sa, podobne ako v prípade DESI, radia Dánsko a Fínsko. Česká republika sa umiestňuje na 45. pozícii, avšak stále patrí do kategórie krajín s veľmi vysokým indexom EGDI. Porovnanie jednotlivých hodnôt je v \in{tabuľke}[EGDI]. Na \in{obrázku}[obr:EGDI-mapa] je zobrazené geografické rozloženie jednotlivých krajín a ich úrovní EGDI.
 
 \setupTABLE[frame=on]
 \setupTABLE[row][first][background=color, backgroundcolor=gray, style=bold]
@@ -157,9 +155,9 @@ Medzi najviac rozvinuté krajiny podľa EGDI patria ako aj pri DESI Dánsko a F�
 
 
 \pkap{ eGovernment Benchmark}
-Posledným prieskumom, ktorému sa táto kapitola venuje je eGovernment Benchmark. eGovernment Benchmark monitoruje digitalizáciu verejných služieb 35 európskych krajín (tzv. EU27+, ktoré pozostávajú z 27 členov Európskej únie + Island, Nórsko, Švajčiarsko, Albánsko, Čierna hora, Severné Macedónsko, Srbsko a Turecko) \scr(van der Linden, 2022).
+Posledným zo spomínaných prieskumov je eGovernment Benchmark. eGovernment Benchmark monitoruje pokrok v digitalizácii verejných služieb 35-tich európskych krajín, známych ako EU27+ (27 členských štátov Európskej únie spolu s Islandom, Nórskom, Švajčiarskom, Albánskom, Čiernou horou, Severným Macedónskom, Srbskom a Tureckom) \scr(van der Linden, 2022).
 
-Prieskum eGovernment Benchmark skúma tieto 4 oblasti:
+Prieskum eGovernment Benchmark sa zameriava na tieto štyri kľúčové oblasti:
 
 \startitemize
 \item{\start\bf orientácia na užívateľa \stop -- miera poskytovania online služieb, mobile-friendly služby, online podpora a spätná väzba}
@@ -171,7 +169,7 @@ Prieskum eGovernment Benchmark skúma tieto 4 oblasti:
 \obrazekB{obr:benchmark-mapa}
 {Geografické rozloženie eGovernment vyspelosti podĺa prieskumu eGovernment Benchmark (van der Linden, 2022)}{images/benchmark-mapa.png}{width=30cc}
 
-Na základe týchto 4  oblastí získavajú krajiny tzv. "skóre eGovernment vyspelosti", ktorého škála je od 0 do 100. Vedúcimi krajinami boli podľa najnovšieho prieskumu (z roku 2022) Malta a Estónsko. Česká republika získala je na 22. mieste \scr(van der Linden, 2022). Porovnanie jednotlivých hodnôt je v \in{tabuľke}[benchmark]. Na \in{obrázku}[obr:benchmark-mapa] je zobrazené geografické rozloženie jednotlivých krajín a ich skóre eGovernment vyspelosti.
+Na základe týchto štyroch oblastí získavajú krajiny tzv. "skóre eGovernment vyspelosti", ktorého škála sa pohybuje na stupnici od 0 do 100. Vedúcimi krajinami boli podľa posledného prieskumu z roku 2022 Malta a Estónsko. Česká republika dosiahla 22. miesto \scr(van der Linden, 2022). Porovnanie jednotlivých indexov vybraných krajín je v \in{tabuľke}[benchmark]. \in{Obrázok}[obr:benchmark-mapa] ilustruje geografické rozloženie krajín a ich príslušné skóre eGovernment vyspelosti.
 
 \setupTABLE[frame=on]
 \setupTABLE[row][first][background=color, backgroundcolor=lightgray, style=bold]
@@ -237,9 +235,9 @@ Na základe týchto 4  oblastí získavajú krajiny tzv. "skóre eGovernment vys
 
 \pkap{Zhrnutie výsledkov prieskumov}
 
-Analýza Indexu digitálnej ekonomiky a spoločnosti (DESI), Indexu rozvoja e-governmentu (EGDI) a eGovernment Benchmarku ukazuje, že Česká republika dosahuje pokrok v digitalizácii verejnej správy, no v porovnaní s medzinárodným kontextom, najmä so severskými krajinami a lídrami v EÚ, čelí výzvam v~konektivite, integrácii digitálnych technológií a poskytovaní digitálnych verejných služieb. Čo sa ale týka susedných krajín, ČR si vedie dobre. Severské krajiny a vyspelé členské štáty EÚ vynikajú v inováciách a ponúkaní efektívnych, užívateľsky prívetivých digitálnych služieb, ktoré ČR môže použiť ako model pre zlepšovanie svojich digitálnych služieb. Významná je tiež potreba zamerania sa na cezhraničné digitálne služby, kde ČR môže opäť čerpať z príkladov zo zahraničia.
+Analýza Indexu digitálnej ekonomiky a spoločnosti (DESI), Indexu rozvoja eGovernmentu (EGDI) a eGovernment Benchmarku ukazuje, že Česká republika dosahuje pokrok v digitalizácii verejnej správy, no v porovnaní s medzinárodným kontextom, najmä so severskými krajinami a lídrami v EÚ, čelí výzvam v~konektivite, integrácii digitálnych technológií a poskytovaní digitálnych verejných služieb. Čo sa ale týka susedných krajín, ČR si vedie dobre. Severské krajiny a vyspelé členské štáty EÚ vynikajú v inováciách a ponúkaní efektívnych, užívateľsky prívetivých digitálnych služieb, ktoré ČR môže použiť ako model pre zlepšovanie svojich digitálnych služieb. Významná je tiež potreba zamerania sa na cezhraničné digitálne služby, kde ČR môže opäť čerpať z príkladov zo zahraničia.
 
-V súčasnej dobe sa ČR nachádza približne v strede rebríčkov, ktoré hodnotia digitalizáciu, ale iniciatíva "Digitálne Česko" (viac popísaná nižšie) má potenciál posunúť ČR na prednejšie pozície v týchto prieskumoch. Predstavuje sľubný krok smerom k zlepšeniu výkonnosti Českej republiky v digitálnom prostredí, zvýšeniu jej konkurencieschopnosti a zlepšeniu poskytovania digitálnych služieb občanom.
+V súčasnej dobe sa ČR nachádza v strednej časti hodnotiacich rebríčkov digitalizácie, avšak iniciatíva "Digitálne Česko" (viac popísaná nižšie) má potenciál posunúť ČR na prednejšie pozície v týchto prieskumoch. Predstavuje sľubný krok smerom k zlepšeniu výkonnosti Českej republiky v digitálnom prostredí, zvýšeniu jej konkurencieschopnosti a zlepšeniu poskytovania digitálnych služieb občanom.
 
 
 %Posunom doby sa stále viac vecí spojených s verejnou správou dá riešiť online. Zamestnávatelia sa stretávajú na pravidelnej báze s rôznymi procesmi nutnými k chodu podniku a potrebujú mať všetko v súlade so zákonmi a pravidlami verejnej správy. Aktuálne to musia všetko riešiť buď osobne na úradoch alebo v tom lepšom prípade online na rôznych portáloch verejnej správy.
@@ -274,32 +272,32 @@ V súčasnej dobe sa ČR nachádza približne v strede rebríčkov, ktoré hodno
 %\QUES Opravdu musím psát literární rešerši? 
 
 \pkap{Architektura eGovernmentu ČR}
-Pojem eGovernment bol už v tejto práci viackrát zmieňovaný. Dá sa povedať, že ide o pojem popisujúci modernú digitálnu verejnú správu, ktorá využíva k výkonu svojich právomocí digitálnu infraštruktúru. Táto infraštruktúra realizuje sadu služieb informačných technológií (ICT služieb), ktoré sú zdieľané, dôveryhodné, prepojené, bezpečné, automatizované, efektívne a ľahko používateľné pre užívateľov. Služby eGovernmentu sú určené občanom, firmám, podnikateľom i úradníkom. Synonymami pojmu eGovernment sú "digitálny government" alebo "digitálna verejná správa" \scr(Digitální a informační agentura, 2023).
+Pojem eGovernment bol už v tejto práci viackrát zmieňovaný. Ide o pojem popisujúci modernú digitálnu verejnú správu, ktorá využíva k výkonu svojich právomocí digitálnu infraštruktúru. Táto infraštruktúra realizuje sadu služieb informačných technológií (ICT služieb), ktoré sú zdieľané, dôveryhodné, prepojené, bezpečné, automatizované, efektívne a ľahko používateľné pre užívateľov. Služby eGovernmentu sú určené občanom, firmám, podnikateľom i úradníkom. Synonymami pojmu eGovernment sú "digitálny government" alebo "digitálna verejná správa" \scr(Digitální a informační agentura, 2023).
 
 \ppkap{Poslanie a vízia eGovernmentu v Českej republike}
 Digitálna verejná správa používa rôzne poskytnuté a dostupné informácie, ktoré automatizovane spracuváva s cieľom obmedziť, respektíve znížt množstvo podania a objemu informácií zo straný užívateľov služieb VS.
 
-Poslaním eGovernmentu je: 
+Hlavným poslaním eGovernmentu je: 
 
 \citat{Poskytovať klientom verejnej správy jednoduché a efektívne služby, ktoré im uľahčia dosiahnutie ich práv a nárokov, ako aj plnenie ich povinností a záväzkov vo vzťahu k verejnej správe.} \scr(Digitální a informační agentura, 2023)
 
-Vízia eGovernmentu v ČR do konca horizontu Informačnej koncepcie ČR (viac popísaná v kapitole 4.3.2 Informační koncepce ČR) je: 
+Vízia eGovernmentu v ČR do konca horizontu Informačnej koncepcie ČR (viac popísaná v kapitole 3.6 Informační koncepce ČR) je: 
 
 \citat{Česká republika je jednou z popredných krajín v užívateľskej prívetivosti verejnej správy vďaka svojmu klientsky orientovanému prístupu, modernému dizajnu úradných procesov a efektívnemu využívaniu digitálnych a nedigitálnych technológií.} \scr(Digitální a informační agentura, 2023)
 
 \pkap{Informační koncepce ČR}
-Informační koncepce ČR (ďalej ako IKČR) rozpracováva vyššie spomenutú víziu do rôznych cieľov, ktoré realizujú jednotlivé orgány VS. To, či ciele boli naplnené alebo nie ukazuje stav plnenia zadefinovaných cieľov a pozícia v rebríčku podľa DESI (rozobraté v kapitole 3.1 Index digitálnej ekonomiky a spoločnosti). Všetky povinné subjekty podľa zákona  č. 365/2000 Sb., o informačných systémoch majú povinnosť viesť vlastné informačné koncepcie a vždy ich musia uviesť do súladu s Informačnou koncepciou ČR. Je to prakticky koncepcia rozvoja informačných systémov verejnej správy, ktorú spracováva Ministerstvo vnútra a schvaľuje vláda. Je vypracovaná na základe ustanovenia § 5a, Zákona č. 365/2000 Sb., o informačných systémoch verejnej správy. 
+Informační koncepce ČR (ďalej ako IKČR) rozpracováva vyššie spomenutú víziu do rôznych cieľov, ktoré realizujú jednotlivé orgány VS. Predstavuje komplexný plán na rozvoj informačných systémov verejnej správy, ktorý je prispôsobený potrebám a cieľom štátu. To, či ciele boli naplnené alebo nie ukazuje stav plnenia zadefinovaných cieľov a pozícia v rebríčkoch ako je napríklad DESI (rozobraté v kapitole 3.1 Index digitálnej ekonomiky a spoločnosti). Všetky povinné subjekty podľa zákona  č. 365/2000 Sb., o informačných systémoch, majú povinnosť viesť vlastné informačné koncepcie a vždy ich musia uviesť do súladu s Informačnou koncepciou ČR. Je to prakticky koncepcia rozvoja informačných systémov verejnej správy, ktorú spracováva Ministerstvo vnútra a schvaľuje vláda. Je vypracovaná na základe ustanovenia § 5a, Zákona č. 365/2000 Sb., o informačných systémoch verejnej správy. Týmto prístupom sa zabezpečuje jednotný rámec pre rozvoj a prevádzku informačných systémov a služieb eGovernmentu v celej krajine.
 
-Medzi jej hlavné časti patria najmä:
+Medzi jej hlavné časti IKČR patria:
 
 \startitemize
-\item{architektonické principy eGovernmentu a elektronizácie verejnej správy,}
-\item{efektívny rozvoj digitálnej verejnej správy a informačných systémov verejnej správy (ISVS),}
-\item{zásady riadenia ICT vo verejnej správe,}
-\item{základné koncepčné povinnosti pre budovanie, rozvoj a prevádzku ISVS a ich vzájomné prepojenie a pre budovanie spoločných služieb eGovernmentu.}
+\item{\start\bf architektonické principy \stop eGovernmentu a elektronizácie verejnej správy,}
+\item{\start \bf efektívny rozvoj \stop digitálnej verejnej správy a informačných systémov verejnej správy (ISVS),}
+\item{\start\bf zásady \stop riadenia ICT vo verejnej správe,}
+\item{základné koncepčné \start \bf povinnosti \stop pre budovanie, rozvoj a prevádzku ISVS a ich vzájomné prepojenie a pre budovanie spoločných služieb eGovernmentu.}
 \stopitemize
 
-IKČR je základný dokument, ktorý stanovuje ciele ČR v oblasti ISVS a všeobecné princípy obstarávania, tvorby, správy a prevádzky ISVS v ČR. Obsahuje predovšetkým:
+IKČR je základný dokument, ktorý určuje dlhodobé ciele a strategické smerovanie ČR v oblasti informačných systémov a digitálnych služieb verejnej správy a všeobecné princípy obstarávania, tvorby, správy a prevádzky ISVS v ČR. Obsahuje predovšetkým:
 \startitemize
 \item{ciele a podporu oblasti eGovernmentu (zo strany informačných systémov verejnej správy),}
 \item{zásady riadenia útvarov informatiky a riadenie životného cyklu ISVS,}
@@ -307,17 +305,17 @@ IKČR je základný dokument, ktorý stanovuje ciele ČR v oblasti ISVS a všeob
 \stopitemize
 
 \ppkap{Metódy riadenia ICT verejnej správy ČR}
-Súčasťou a kľúčovým predpokladom naplnenia cieľov IKČR je zavedenie efektívnej centrálnej koordinácie riadenia ICT. Zároveň je to aj podpora transformačných iniciatív, ktoré smerujú k digitalizácii VS a plnému digitálnemu governmentu. \uv{Metódy riadenia ICT verejnej správy ČR} (ďalej ako MRICT) je dokument, ktorý stanovuje pravidlá prevádzkovania ICT kapacít, kompetencií štátnych podnikov, riadenia útvarov informatiky, centrálneho koordinovaného riadenia ICT podpory eGovernmentu a podobne. MRICT nadväzuje na zásady riadenia ICT, ktoré sú súčasťou IKČR \scr(Digitální a informační agentura, 2023).
+Súčasťou a kľúčovým predpokladom naplnenia cieľov stanovených v IKČR je zavedenie efektívnej centrálnej koordinácie riadenia ICT. Zároveň je to aj podpora transformačných iniciatív, ktoré smerujú k digitalizácii VS a plnému digitálnemu governmentu. \uv{Metódy riadenia ICT verejnej správy ČR} (ďalej ako MRICT) je dokument, ktorý stanovuje pravidlá prevádzkovania ICT kapacít, kompetencií štátnych podnikov, riadenia útvarov informatiky, centrálneho koordinovaného riadenia ICT podpory eGovernmentu a podobne. MRICT nadväzuje na zásady riadenia ICT, ktoré sú súčasťou IKČR, a predstavuje kľúčový nástroj na zabezpečenie súladu a efektívnosti pri procesoch digitalizácie VS \scr(Digitální a informační agentura, 2023).
 
 \pkap{Katalóg služieb verejnej správy}
-Katalóg služieb VS je súčasťou registru práv a povinností (RPP) a obsahuje údaje o službách VS, úkonoch a dostupných kanáloch. Katalóg služieb VS sa dá vnímať z dvoch pohľadov:
+Katalóg služieb VS je súčasťou registra práv a povinností (RPP) a obsahuje údaje o službách VS, úkonoch a dostupných kanáloch. Katalóg služieb VS sa dá vnímať z dvoch pohľadov:
 
 \startitemize[a]
 \item{ako klientskú aplikáciu, ktorá poskytuje údaje klientom}
 \item{ako úradnícku aplikáciu, ktorá je určená na zber a úpravu údajov}
 \stopitemize
 
-Funkcie katalógu služieb VS sa dajú rozdeliť do 4 kategórií:
+Funkcie katalógu služieb VS možno ozdeliť do štyroch kategórií:
 
 \startitemize
 \item{\start \bf automatizačné \stop – zber dát potrebných na automatizáciu}
@@ -332,12 +330,12 @@ Funkcie katalógu služieb VS sa dajú rozdeliť do 4 kategórií:
 \item{Identifikovať služby VS a popísať ich atribúty v agendách, ktoré ohlasujete.}
 \item{Rozložit služby VS na jednotlivé úkony a popísať ich atribúty.}
 \item{Definovať spôsob, akým dochádza k interakciou medzi OVM a klientom a určit obslužný kanál.}
-\item{Určiť časové rámce a obslužné kanály pre vykonávanie digitálneho úkonu a využívanie digitálnych služieb.}
+\item{Určiť časové rámce a obslužné kanály pre vykonávanie digitálneho úko-nu a využívanie digitálnych služieb.}
 \stopitemize
 
 Vzhľadom na to, že údaje v katalogu služeb VS sú referenčné, je nutné ich udržiavať aktuálne \scr(Digitální a informační agentura, 2023).
 
-V ďalších kapitolách budú objasnené vyššie spomenuté pojmy služba VS a úkon.
+V ďalších kapitolách budú objasnené vyššie spomenuté pojmy služba VS a~úkon.
 
 \ppkap{Služba verejnej správy}
 Služba VS reprezentuje funkciu (činnosť) úradu, ktorá je poskytovaná konkrétnym OVM (úradníkom) konkrétnemu príjemcovi služby podľa príslušného právneho predpisu. Prináša príjemcovi hodnotu - buď vo forme benefitu alebo splnenia zákonnej povinnosti. Ak ide o interakciu medzi OVM a OVM, nepokladá sa to za službu VS. Pri službe VS ide vždy o interakciu medzi OVM a klientom (a opačne). Každá služba sa skladá z minimálne jedného úkonu. \scr(Digitální a informační agentura, 2023).
@@ -358,6 +356,11 @@ Vláda ČR považuje program Digitálne Česko za súbor stratégií, ktoré vyt
 %\pkap[dizajn-system]{Jednotným dizajn manuálom elektronických služieb}
 %haha
 
+\pkap{Integračné platformy (toto ešte dokončím)}
+Úlohou integračných platforiem (alebo integration platform-as-a-service, \zlom iPaaS) je prepojiť informácie z rôznych zdrojov (z aplikácií, procesov, služieb...) a pripraviť tak priestor pre rýchlejšie inovácie a automatizáciu. Množstvo podnikov sa prikláňa k riešeniam iPaaS, aby zjednotili a digitalizovali podnikové operácie a mohli používať pri procesoch moderné technológie a umelú inteligenciu. Táto služba môže pomocou konektorov a API rozhraní pomôcť spoločnostiam centralizovane a automatizovane vytvárať, spravovať a monitorovať integračné toky naprieč systémami. \scr(SAP, 2024)
+
+Medzi existujúce "integračné platformy ako služby" patria napríklad SAP Integration Suite, IBM® App Connect, Workato, platforma EMMA a iné. EMMA je prvým a jedinečným riešením v Českej republike. Jej najväčšou výhodou oproti ostatným je, že je stavaná na integráciu služieb z katalógu služieb verejnej správy.
+
 \pkap{Projekt EMMA}
 EMMA predstavuje jedinečnú integračnú G2B2B platformu a nadväzujúce služby, ktoré sú efektívne, rýchle a \uv{zabudovateľné} do každodenných procesov klientov verejnej správy, hlavne podnikov. Tieto služby sú navrhnuté a poskytované tak, aby sa dali čo najjednoduchšie integrovať do ERP systémov podnikov\footnote{ERP (Enterprise Resource Planning) systém -- interný informačný systém podniku slúžiaci na správu rôznych činností podniku (účtovníctvo, zásobovanie, personalistika...)}. Zároveň by mali tieto služby podporovať podnikové procesy a zaisťovať prostredníctvom zakomponovaných služieb možnosť plniť svoje povinnosti a vymáhať si svoje práva vočí verejnej správe. \scr(Asseco, 2023)
 
@@ -371,26 +374,34 @@ Okrem tohto princípu sa EMMA riadi aj ďalšími procesnými zásadami ustanove
 
 \startitemize
 \item \start\bf Z6 Riadenie výkonnosti a kvality \stop --  meranie výkonnosti a kvality, princípy merateľnosti a spätnej väzby, pravidelné audity
-\item \start\bf Z7 Riadene zodpovednosti za služby a systémy \stop -- každý proces a služba musí mať svojho vlastníka a garanta
-\item  \start\bf Z8 Riadenie ICT služieb \stop IT podpora riadená katalógom ICT služieb pre interné a externé procesy
+\item \start\bf Z7 Riadenie zodpovednosti za služby a systémy \stop -- každý proces a~služba musí mať svojho vlastníka a garanta
+\item  \start\bf Z8 Riadenie ICT služieb \stop -- IT podpora riadená katalógom ICT služieb pre interné a externé procesy
 \item \start\bf Z11 Riadenie prínosov a hodnoty \stop -- rozhodovanie založené na ekonomickej výhodnosti, zahŕňa analýzu nákladov, rizík a prínosov, nutnosť spracovania investičného zámeru
 \item \start\bf Z16 Využívanie otvoreného software a štandardov \stop -- preferencia otvoreného softvéru a štandardov, podpora udržateľnosti, rozvoja a bezpečnosti  \scr(Digitální a informační agentura, 2023)
 \stopitemize
 
-Projekt EMMA môže okrem ekonomických prínosov priniesť aj neekonomické a to ako pre klientov, tak i pre ČR a EÚ. Dajú sa identifikovať napr. reputačný prínos ČR, prínos k riešeniu spoločenských výziev EÚ, rozvoj ľudského potenciálu a pod. Zámer projektu zároveň prispieva k naplneniu cieľov Národnej inovačnej stratégie.
+Projekt EMMA môže okrem ekonomických prínosov priniesť aj neekonomické a to ako pre klientov, tak i pre ČR a EÚ. Dajú sa identifikovať napr. ako reputačný prínos ČR, prínos k riešeniu spoločenských výziev EÚ, rozvoj ľudského potenciálu a pod. Zámer projektu zároveň prispieva k naplneniu cieľov Národnej inovačnej stratégie.
 
 \pkap{Platforma SAMO}
-Názov SAMO vznikol skrátením slov Strategic Asset Management \& Operations system (strategická správa majetku). Vývoj jednotlivých modulov začal v roku 1991. Počas posledných vyše 30-tich rokov vývoja sa firme Asseco podarilo do rôznych riešení zapojiť množstvo skúseností a best practices. Systém SAMO vznikol pôvodne na platforme, ktorá bola primárne určená na geografické informačné systémy. Hlavne to bolo zmýšľané pre spoločnosti prevádzkujúce mestské infraštruktúry, rozvody plynu, vody elektriny, sietí a inej infraštruktúry. Dá sa rozdeliť na 2 zložky - evidenčná a priestorová. Čo sa evidenčnej časti týka, tak umožňuje evidenciu rôznych majetkov spojených s touto infraštruktúrou (napr. trubky) a evidenciu ich popisu, poslednej kontroly, opravy a pod. Okrem tejto časti tam je aj časť priestorová, takže nejaká geometria, mapové informácie a pod. Časom sa tieto 2 zložky rozšírili o ďalšiu - procesnú zložku (napr. hlásenie udalostí, plánovanie údržby a pod.). Vznikajú tak agendy na správu majetku, ktoré sa skladajú zo zoznamu, editačných formulárov, detailov, stavových diagramov a podobne. Keďže každý zákazník má iné požiadavky, SAMO nie je finálny produkt, ale len platforma zložená z rôznych komponent, ktoré sa skladajú podľa požiadavkov zákazníka rýchlo a efektívne. 
 
-Konkurenčná výhoda SAMO vo verejnej správe je to, že SAMO je platforma pre efektívne delivery, nie produkt. Vhodné sú unikátne agendy evidenčného charakteru, ktoré majú nejakú GIS zložku. SAMO umožňuje agilný, iteratívny spôsob delivery projektov. Metadáta a už vyvinuté komponenty sú znovupoužiteľné. Je teda nutné meniť hlavne business zložku jednotlivých systémov (logiku akcií a procesov).
+Platforma SAMO je v súčasnej dobe základom pre evidenciu služieb EMMA. Názov SAMO vznikol skrátením slov Strategic Asset Management \& Operations system, čo v preklade znamená systém pre strategickú správu majetku. Vývoj jednotlivých modulov začal v roku 1991. Počas posledných vyše 30-tich rokov vývoja sa firme Asseco podarilo do rôznych riešení zapojiť množstvo skúseností a best practices. Pôvodne bolo SAMO vyvinuté ako platforma zameraná hlavne na geografické informačné systémy, čo bol ideálny základ najmä pre spoločnosti spravujúce mestskú infraštruktúru a distribučné siete.
 
-Platforma SAMO má 3 produkty:
+Platforma SAMO sa dá konceptuálne rozdeliť na dve hlavné zložky – evidenčnú a priestorovú. Evidenčná časť sa zaoberá evidenciou majetku a jeho charakteristík, ako sú napr. posledné kontroly či opravy. Priestorová zložka obsahuje geometrické údaje, mapové informácie a podobne. Postupne bol systém rozšírený o procesnú zložku, ktorá zahŕňa riadenie procesov ako sú napríklad hlásenie udalostí či plánovanie údržby. Vznikajú tak agendy na správu majetku, ktoré sa skladajú zo zoznamu entít, editačných formulárov, detailov, stavových diagramov a iných prvkov. 
+
+Vzhľadom na to, že každý zákazník má špecifické potreby, SAMO sa neponúka ako finálny produkt, ale len ako flexibilná platforma zložená z rôznych komponent, ktoré sa skladajú podľa individuálnych požiadaviek zákazníka. Toto prispôsobenie a možnosť agilného vývoja projektov je konkurenčnou výhodou SAMO v oblasti verejnej správy. Vďaka modularite a možnosti znovupoužitia existujúcich metadát a komponentov je SAMO vhodné najmä pre unikátne agen-dy evidenčného charakteru, ktoré majú nejakú GIS zložku, pričom GIS zložka ale nie je podmienkou vhodnosti použitia SAMO. Pri implementácii SAMO aplikácie je nutné meniť hlavne business zložku jednotlivých systémov (logiku akcií a procesov).
+
+Platforma SAMO má 3 základné moduly:
 
 \startitemize
-\item \start\bf SAMO EAM \stop (Enterprise Asset Management) --  meranie výkonnosti a kvality, princípy merateľnosti a spätnej väzby, pravidelné audity
-\item \start\bf SAMO AIS \stop (Agendový IS) -- každý proces a služba musí mať svojho vlastníka a garanta
-\item  \start\bf SAMO  \stop IT podpora riadená katalógom ICT služieb pre interné a externé procesy
+\item \start\bf SAMO EAM \stop (Enterprise Asset Management) --  správa podnikového majetku
+\item \start\bf SAMO AIS \stop (Agendový IS) -- procesy verejnej správy
+\item  \start\bf SAMO LIDS/GIS \stop -- geografický informačný systém
 \stopitemize
+
+Platforma SAMO je základom pre široké spektrum aplikácií používaných v~rozličných sektoroch – od priemyslu a energetiky až po verejnú správu a koncepty inteligentných miest. V Českej republike sa na nej zakladajú projekty pre významné inštitúcie, ako sú Český banský úrad, Český rybársky zväz, Agentúra ochrany prírody a krajiny ČR, čo potvrdzuje jej flexibilitu a široké využitie.
+
+
+V kontexte tejto práce je cieľom rozšírenie agendového systému (SAMO AIS) na správu zamestnancov a služieb verejnej správy. SAMO AIS predstavuje špecifický modul na podporu procesov verejnej správy. Zahŕňa zadávanie požiadavkov, vyhodnocovanie workflow, notifikácie, analýzu dát, pridávanie priestorových informácií atď. Tento modul je navrhnutý tak, aby bol kompatibilný s inými systémami verejnej správy, využíval otvorené dáta z rôznych zdrojov (napr. registry, katastre) a zároveň poskytoval informácie podľa potrieb koncových užívateľov. Je vhodný pre miestne, ústredné, ale i federálne orgány akéhokoľvek druhu (od malých obcí až po ministerstvá). Cieľom je vybudovať a udržať efektívny e-government a prinášať hodnotu užívateľom a občanom. \scr(Asseco, 2024b)
 
 \kap{Metodika}
 
@@ -407,7 +418,9 @@ and abstraction of previously embodied and situated knowledge (Zuboff, 1988, ZDR
 \pkap{Popis EMMA}
 \TODO dokončiť poriadne
 
-Platforma EMMA poskytuje služby VS pomocou štandardizovaného API\footnote{API (Application Programme Interface) -- webové rozhranie, ktoré umožňuje komunikáciu medzi dvomi rôznymi aplikáciami}, ktoré je jednoducho integrovateľné do ERP systémov. Podniky môžu využívaním platformy EMMA dosiahnuť zníženie administrátorskej záťaže podnikov. Príkladom služby EMMA je \uv{oznámenie o nástupu zamestnanca}. Pri tejto životnej situácii je podnik povinný informovať viaceré subjekty VS, konkrétne ČSSZ, zdravotné poisťovne a MPSV (v prípade zahraničného zamestnanca). Podrobnejšie to bude popísané v kapitolách nižšie.
+Platforma EMMA poskytuje služby VS pomocou štandardizovaného API
+%\footnote{API (Application Programme Interface) -- webové rozhranie, ktoré umožňuje komunikáciu medzi dvomi rôznymi aplikáciami}
+, ktoré je jednoducho integrovateľné do ERP systémov. Podniky môžu využívaním platformy EMMA dosiahnuť zníženie administrátorskej záťaže podnikov. Príkladom služby EMMA je \uv{oznámenie o nástupu zamestnanca}. Pri tejto životnej situácii je podnik povinný informovať viaceré subjekty VS, konkrétne ČSSZ, zdravotné poisťovne a MPSV (v prípade zahraničného zamestnanca). Podrobnejšie to bude popísané v kapitolách nižšie.
 
 Obsahom platformy EMMA sú:
 
@@ -423,6 +436,17 @@ Obsahom platformy EMMA sú:
 
 \pkap{Popis SAMO}
 Ide o súbor integrovaných softvérových riešení, ktoré sú modulárne zložené do komplexného systému. Platforma SAMO slúži na strategickú správu aktív a činností. Platforma SAMO je založená na koncepte SOA \footnote{SOA -- Servisne orientovaná architektúra (Service Oriented Architecture) -- sada princípov a metodológií, ktorá odporúča stavbu aplikácií zo vzájomne nezávislých komponent}. %Považuje sa za platformu určenú na efektívne poskytovanie, nie za produkt samotný.
+
+
+\ppkap{asi blbost}
+Systém kladie dôraz na integritu dát a procesov. Architektúru tvoria základné vrstvy, ktoré sú na sebe technologicky nezávislé a ich komunikáciu zabezpečujú štandardy popísané API. Sú to tieto vrstvy:
+
+\startitemize
+\item \start\bf prezentačná vrstva \stop -- skupina webových serverov, ktoré poskytujú služby prezentačnej vrstvy pre interných i externých pracovníkov
+\item \start\bf aplikačná vrstva \stop (Agendový IS) -- skupina aplikačných serverov založených na platforme J2EE, na ktorých je implementovaná biznis logika
+\item  \start\bf databázová vrstva \stop -- skupina databázových serverov s požadovanou výkonnosťou zabezpečujúcich služby dátového úložiska pre aplikačnú vrstvu
+\stopitemize
+
 Viditeľná čast SAMO aplikácie sa nazýva SAMO Dynamic Application - klient, ktorý beží v prehliadači (ľahký klient, html5, js aplikácia) a komunikuje so serverovými komponentami. Medzi ne patrí SAMO Gateway (3 úlohy - web. server (poskytuje metadáta), session+auth, proxy), LIDS Application Server (core komponenta, ktorá obsahuje dátové modely, pôvodne GIS AS), Security Server (vnútorný identity management a správa oprávnení), User Service (drží profil prihláseného užívateľa), SAMO Liferay (Content Management System) (viď obrázok). Okrem komponent samotnej SAMO platformy sú do celkovej SAMO aplikácie zapojené aj ďalšie sw - Docker, ElasticSearch (objektová db pre rýchle fulltextové vyhľadávanie), Docker-compose/Kubernetes, databáza (PostgreSQL (+PostGIS), Oracle (+Oracle Spatial)), NGINX (proxy, SSL). Všetko to sú v Jave napísané aplikácia bežiace na serveri, ktoré sú ale púšťané pomocou Dockeru.
 
 Dynamic app sa skladá z niekoľkých hlavných modulov - cockpit (úvodná obrazovka, ktorá zobrazuje úvodní rozcestník), tzv. pages, ktoré obsahujú browse (zoznam), po rozkliknutí sa zobrazí detail (ktorý môže obsahovať okrem hlavičkových dát aj sekcie obsahujúce ďalšie naviazané entity) a po kliku na editačnú tužku sa zobrazí editačný detail (na modifikovanie hlavičkových informácií o entite, avšak nie dát v spomínaných sekciách).
@@ -654,7 +678,15 @@ TODO
 \online{2024-02-09}
 \www{interný dokument}
 \nazev{SAMO Implementation Guide Version 9.4}
-\rok{2024}
+\rok{2024a}
+}
+
+\publX{
+\autorkorp{Asseco Central Europe, a.s.}
+\online{2024-03-03}
+\www{https://www.samo-asseco.com/}
+\nazev{SAMO – Platform for asset management solutions}
+\rok{2024b}
 }
 
 \publX{
@@ -785,6 +817,14 @@ TODO
  \rok{2023}
  \xisbn{978-92-64-85180-1}
  \rozsah{234\stran}
+}
+
+\publX{
+ \autorkorp{SAP}
+ \nazev{What is integration platform as a service (iPaaS)?}
+ \online{2024-03-03}
+ \www{https://www.sap.com/products/technology-platform/integration-suite/what-is-ipaas.html}
+ \rok{©~2024}
 }
 
 \publD{%
