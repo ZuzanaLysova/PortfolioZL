@@ -451,6 +451,11 @@ Viditeľná čast SAMO aplikácie sa nazýva SAMO Dynamic Application - klient, 
 
 Dynamic app sa skladá z niekoľkých hlavných modulov - cockpit (úvodná obrazovka, ktorá zobrazuje úvodní rozcestník), tzv. pages, ktoré obsahujú browse (zoznam), po rozkliknutí sa zobrazí detail (ktorý môže obsahovať okrem hlavičkových dát aj sekcie obsahujúce ďalšie naviazané entity) a po kliku na editačnú tužku sa zobrazí editačný detail (na modifikovanie hlavičkových informácií o entite, avšak nie dát v spomínaných sekciách).
 
+SAMO sa z hľadiska aplikačnej architektúry skladá z aplikačných komponent, ktoré medzi sebou komunikujú cez predom dohodnuté komunikačné kanály založené na otvorených a všeobecne uznávaných štandardoch (hlavne SOAP, REST). Aplikačné komponenty sa skladajú z aplikačných vrstiev (užívateľské rozhranie, biznis logika, integračná vrstva, dátová vrstva a iné. Riešenie je budovaní na princípoch a postupoch servisne orientovanej integrácie, kde jednotlivé zdieľané funkcionality sú vystavené v podobe služieb. Vďaka aplikačnej a technologickej architektúre systému sa aplikačná logika vykonávaná na serveri a klientská aplikačná logika vzájomne neovplyvňujú. Architektúra je zobrazená na \in{obrázku}[obr:samo-koncept-arch].
+
+\obrazekB{obr:samo-koncept-arch}
+{Konceptuálna aplikačná architektúra SAMO (vlastné spracovanie na základe informácií z interných dokumentov firmy Asseco)}{images/samo-konceptualni-aplikacni-architektura.png}{width=30cc}
+
 \TODO prepojenie SAMO a LIDS atd
 
 SAMO používa mikroservice prístup k vývoju softvéru. Každá mikroslužba je zameraná na konkrétnu funkčnosť a môže byť vyvíjaná, nasadená a spravovaná nezávisle od ostatných častí aplikácie. To umožňuje flexibilnejšie škálovanie, rýchlejšie nasadzovanie nových funkcionalít a jednoduchšiu údržbu. SAMO je aplikácia poháňaná metadátami, ktoré obsahujú informácie o vzťahoch medzi časťami  dát, popis užívateľského rozhrania, pravidlá, formuláre a pod. \scr(Asseco, 2023)
@@ -487,9 +492,23 @@ Súborová štruktúra je rozdelená na 2 veľké celky - configuration a projec
 
 Správa uživateľov a skupín. Užívatelia zvyčajne prichádzajú pomocou LDAP od zákazníka. Skupiny určujú práva na feature types (zvyčajne ide o skupinu read, edit a admin, napr. ZAMESTNANCI-read, ZAMESTNANCI-edit, ZAMESTNANCI-admin, no je možné vytvárať aj špeciálne skupiny). Sú určené na to, aby boli užívatelia zaradení do skupiny oprávnení. Okrem toho existuje aj security rola, ktorá určuje napr. práva na dlaždice, tlačítka a pod. (pomocou hasAnyRole). Tieto role sa priradia vybraným skupinám a do skupín sa priradia užívatelia. To zabezpečí, že prihlásený užívateľ má umožnené v aplikácii vidieť a robiť len to, na čo má oprávnenie.
 
-\pkap{EA2LIDS}
+%\pkap{EA2LIDS}
 
 \pkap{AMK}
+Platforma SAMO umožňuje vytvárať evidenčné agendové aplikácie, ktoré sa tvoria pomocou konfiguračných metadát. Do týchto metadát sa ukladajú informácie ako dátový model, štruktúra obrazoviek, formulárov atď. Pre účely urýchlenia implementácie SAMO aplikácií bola vyvinutá sada nástrojov označená ako AMK (Application Modling Kit). AMK je koncept a definovaný spôsob práce, súbor metodík a nástrojov, most, ktorý spája analýzu s implementací. Je určený pre agendové aplikácie, teda aplikácie, kde hlavnú úlohu hrá evedincia artefaktov a workflow nad evidenciou. Zaoberá sa spôsobom predávania informácií medzi analýzou a výrobou v štrukturovanej podobe tak, aby štruktúra vyhovovala analytikovi i implementácii. Logika využitia AMK je na \in{obrázku}[obr:amk].
+
+%\obrazek{obr:amk-situace}
+%{Schéma AMK v praxi (vlastné spracovanie na základe informácií z interných dokumentov firmy Asseco)}{images/amk-situace.png}{width=30cc}
+%
+%\obrazek{obr:amk-situace2}
+%{Schéma AMK v praxi  2 (vlastné spracovanie na základe informácií z interných dokumentov firmy Asseco)}{images/amk-situace2.png}{width=30cc}
+
+\obrazekB{obr:amk}
+{AMK v praxi (vlastné spracovanie na základe informácií z interných dokumentov firmy Asseco)}{images/amk.png}{width=32cc}
+
+V amk-generator zložke sú šablóny podľa ktorých sa geenrujú jednotlivé metadáta. Používa sa na to tool fmpp.
+
+Skladá sa z dvoch hlavných podprojektov, ktorými sú emma-samo-configuration a emma-samo-project
 
 \pkap{Popis metodiky, analýzy a návrhu}
 
@@ -513,6 +532,20 @@ stavebné řízení - obec povoluje schvalovanie stavieb, ale obec môže byť d
 - Jirka ohladom SAMO
 
 \kap{Výsledky}
+
+\pkap{Popis procesov vedúcich k výsledkom}
+\startitemize[n]
+\item{preskúmanie súčasného stavu eGovernmentu a nutných znalostí k vývoju aplikácie určenej pre komunikáciu s verejnou správou}
+\item{analýza súčasného stavu projektu EMMA implementovaného prostredníctvom SAMO aplikácie}
+\item{na základe dohody s firmou rozšírenie existujúcej aplikácie o modul zamestnancov a zapojenie vybraných služieb VS}
+\startitemize[a]
+\item{potrebná analýza a modely (use case, model požiadaviek a pod.)}
+\item{KDM a LDM, ktoré sú potrebné pre generovanie metadát aplikácie}
+\item{návrh agendovej aplikácie a jeho zápis do štrukturovanej podoby kvôli AMK}
+\item{použitie AMK generátoru, ktorý vykoná extrakciu dát z AMK DB a vygeneruje SAMO konfiguračné soubory (metadáta)}
+\item{úprava vygenerovaných metadát do žiadanej podoby, zapojenie aplikačnej logiky}
+\stopitemize
+\stopitemize
 
 \pkap{Model požiadaviek}
 

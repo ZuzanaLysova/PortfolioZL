@@ -51,7 +51,7 @@ if not utilitydata.job then utilitydata.job = { } end
 if not utilitydata.job.pagestates then utilitydata.job.pagestates = { } end
 
 utilitydata.job.pagestates.collected={
- ["float"]={ 12, 13, 14, 15, 16, 16, 33 },
+ ["float"]={ 12, 13, 14, 15, 16, 16, 28, 30, 35 },
 }
 
 if not utilitydata.structures then utilitydata.structures = { } end
@@ -445,7 +445,7 @@ utilitydata.structures.counters.collected={
   { 0 },
  },
  ["figure"]={
-  { 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+  { 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
  },
  ["float"]={
   { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -463,7 +463,8 @@ utilitydata.structures.counters.collected={
   { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
  },
  ["itemgroup:itemize"]={
-  { 0, 0, 0, 0, 0, 4, 3, 4, 4, 3, 2, 4, 4, 3, 5, 3, 0, 0, 5, 3, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+  { 0, 0, 0, 0, 0, 4, 3, 4, 4, 3, 2, 4, 4, 3, 5, 3, 0, 0, 5, 3, 6, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+  { 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
  },
  ["itemgroup:itemize:note"]={
   { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -475,10 +476,10 @@ utilitydata.structures.counters.collected={
   { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
  },
  ["realpage"]={
-  { 42 },
+  { 44 },
  },
  ["subpage"]={
-  { 42 },
+  { 44 },
  },
  ["table"]={
   { 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -487,7 +488,7 @@ utilitydata.structures.counters.collected={
   { 0 },
  },
  ["userpage"]={
-  { 42 },
+  { 44 },
  },
 }
 
@@ -1052,12 +1053,29 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=49,
-  ["numberdata"]=99,
+  ["metadata"]=99,
+  ["numberdata"]=56,
+  ["prefixdata"]=57,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=39,
-   ["realpage"]=27,
+   ["realpage"]=28,
+   ["reference"]="obr:samo-koncept-arch",
+   ["section"]=22,
+   ["view"]="fit",
+  },
+  ["titledata"]={
+   ["list"]="Konceptuálna aplikačná architektúra SAMO (vlastné spracovanie na základe informácií z interných dokumentov firmy Asseco)",
+   ["title"]="\\THESISautoreffont {Konceptuálna aplikačná architektúra SAMO (vlastné spracovanie na základe informácií z interných dokumentov firmy Asseco)}",
+  },
+ },
+ {
+  ["metadata"]=49,
+  ["numberdata"]=100,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=40,
+   ["realpage"]=28,
    ["section"]=23,
   },
   ["titledata"]={
@@ -1067,26 +1085,12 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=49,
-  ["numberdata"]=100,
-  ["references"]={
-   ["block"]="bodypart",
-   ["internal"]=40,
-   ["realpage"]=29,
-   ["section"]=24,
-  },
-  ["titledata"]={
-   ["label"]="section",
-   ["title"]="EA2LIDS",
-  },
- },
- {
-  ["metadata"]=49,
   ["numberdata"]=101,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=41,
-   ["realpage"]=29,
-   ["section"]=25,
+   ["realpage"]=30,
+   ["section"]=24,
   },
   ["titledata"]={
    ["label"]="section",
@@ -1094,13 +1098,30 @@ utilitydata.structures.lists.collected={
   },
  },
  {
+  ["metadata"]=55,
+  ["numberdata"]=60,
+  ["prefixdata"]=57,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=42,
+   ["realpage"]=30,
+   ["reference"]="obr:amk",
+   ["section"]=24,
+   ["view"]="fit",
+  },
+  ["titledata"]={
+   ["list"]="AMK v praxi (vlastné spracovanie na základe informácií z interných dokumentov firmy Asseco)",
+   ["title"]="\\THESISautoreffont {AMK v praxi (vlastné spracovanie na základe informácií z interných dokumentov firmy Asseco)}",
+  },
+ },
+ {
   ["metadata"]=49,
   ["numberdata"]=102,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=42,
-   ["realpage"]=29,
-   ["section"]=26,
+   ["internal"]=43,
+   ["realpage"]=31,
+   ["section"]=25,
   },
   ["titledata"]={
    ["label"]="section",
@@ -1112,9 +1133,9 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=103,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=43,
-   ["realpage"]=30,
-   ["section"]=27,
+   ["internal"]=44,
+   ["realpage"]=32,
+   ["section"]=26,
   },
   ["titledata"]={
    ["label"]="chapter",
@@ -1126,9 +1147,9 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=104,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=44,
-   ["realpage"]=31,
-   ["section"]=28,
+   ["internal"]=45,
+   ["realpage"]=33,
+   ["section"]=27,
   },
   ["titledata"]={
    ["label"]="chapter",
@@ -1140,8 +1161,22 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=105,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=45,
-   ["realpage"]=31,
+   ["internal"]=46,
+   ["realpage"]=33,
+   ["section"]=28,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="Popis procesov vedúcich k výsledkom",
+  },
+ },
+ {
+  ["metadata"]=49,
+  ["numberdata"]=106,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=47,
+   ["realpage"]=33,
    ["section"]=29,
   },
   ["titledata"]={
@@ -1151,11 +1186,11 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=49,
-  ["numberdata"]=106,
+  ["numberdata"]=107,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=46,
-   ["realpage"]=31,
+   ["internal"]=48,
+   ["realpage"]=33,
    ["section"]=30,
   },
   ["titledata"]={
@@ -1165,11 +1200,11 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=49,
-  ["numberdata"]=107,
+  ["numberdata"]=108,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=47,
-   ["realpage"]=31,
+   ["internal"]=49,
+   ["realpage"]=34,
    ["section"]=31,
   },
   ["titledata"]={
@@ -1179,11 +1214,11 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=49,
-  ["numberdata"]=108,
+  ["numberdata"]=109,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=48,
-   ["realpage"]=31,
+   ["internal"]=50,
+   ["realpage"]=34,
    ["section"]=32,
   },
   ["titledata"]={
@@ -1193,11 +1228,11 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=49,
-  ["numberdata"]=109,
+  ["numberdata"]=110,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=49,
-   ["realpage"]=32,
+   ["internal"]=51,
+   ["realpage"]=34,
    ["section"]=33,
   },
   ["titledata"]={
@@ -1207,11 +1242,11 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=49,
-  ["numberdata"]=110,
+  ["numberdata"]=111,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=50,
-   ["realpage"]=32,
+   ["internal"]=52,
+   ["realpage"]=34,
    ["section"]=34,
   },
   ["titledata"]={
@@ -1221,11 +1256,11 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=49,
-  ["numberdata"]=111,
+  ["numberdata"]=112,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=51,
-   ["realpage"]=32,
+   ["internal"]=53,
+   ["realpage"]=34,
    ["section"]=35,
   },
   ["titledata"]={
@@ -1234,27 +1269,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=49,
-  ["numberdata"]=112,
-  ["references"]={
-   ["block"]="bodypart",
-   ["internal"]=53,
-   ["realpage"]=32,
-   ["section"]=36,
-  },
-  ["titledata"]={
-   ["label"]="section",
-   ["title"]="Implementácia vybranej služby",
-  },
- },
- {
   ["metadata"]=69,
   ["numberdata"]=70,
   ["prefixdata"]=57,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=52,
-   ["realpage"]=33,
+   ["internal"]=54,
+   ["realpage"]=35,
    ["reference"]="situacie",
    ["section"]=35,
    ["view"]="fit",
@@ -1268,8 +1289,22 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=113,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=54,
-   ["realpage"]=33,
+   ["internal"]=55,
+   ["realpage"]=35,
+   ["section"]=36,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="Implementácia vybranej služby",
+  },
+ },
+ {
+  ["metadata"]=49,
+  ["numberdata"]=114,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=56,
+   ["realpage"]=36,
    ["section"]=37,
   },
   ["titledata"]={
@@ -1279,11 +1314,11 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=49,
-  ["numberdata"]=114,
+  ["numberdata"]=115,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=55,
-   ["realpage"]=34,
+   ["internal"]=57,
+   ["realpage"]=36,
    ["section"]=38,
   },
   ["titledata"]={
@@ -1293,11 +1328,11 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=45,
-  ["numberdata"]=115,
+  ["numberdata"]=116,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=56,
-   ["realpage"]=35,
+   ["internal"]=58,
+   ["realpage"]=37,
    ["section"]=39,
   },
   ["titledata"]={
@@ -1307,11 +1342,11 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=45,
-  ["numberdata"]=116,
+  ["numberdata"]=117,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=57,
-   ["realpage"]=36,
+   ["internal"]=59,
+   ["realpage"]=38,
    ["section"]=40,
   },
   ["titledata"]={
@@ -1320,12 +1355,12 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=117,
-  ["numberdata"]=118,
+  ["metadata"]=118,
+  ["numberdata"]=119,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=58,
-   ["realpage"]=37,
+   ["internal"]=60,
+   ["realpage"]=39,
    ["section"]=41,
   },
   ["titledata"]={
@@ -1334,11 +1369,11 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=119,
+  ["metadata"]=120,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=59,
-   ["realpage"]=37,
+   ["internal"]=61,
+   ["realpage"]=39,
    ["section"]=41,
   },
   ["userdata"]={
@@ -1346,11 +1381,11 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=120,
+  ["metadata"]=121,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=60,
-   ["realpage"]=39,
+   ["internal"]=62,
+   ["realpage"]=41,
    ["section"]=41,
   },
   ["userdata"]={
@@ -1358,34 +1393,12 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=121,
-  ["references"]={
-   ["block"]="backpart",
-   ["internal"]=62,
-   ["realpage"]=39,
-   ["section"]=42,
-  },
- },
- {
-  ["metadata"]=45,
-  ["numberdata"]=122,
-  ["references"]={
-   ["block"]="backpart",
-   ["internal"]=61,
-   ["realpage"]=39,
-   ["section"]=42,
-  },
-  ["titledata"]={
-   ["title"]="\\headtext {tables}",
-  },
- },
- {
-  ["metadata"]=121,
+  ["metadata"]=122,
   ["references"]={
    ["block"]="backpart",
    ["internal"]=64,
-   ["realpage"]=40,
-   ["section"]=43,
+   ["realpage"]=41,
+   ["section"]=42,
   },
  },
  {
@@ -1394,20 +1407,20 @@ utilitydata.structures.lists.collected={
   ["references"]={
    ["block"]="backpart",
    ["internal"]=63,
-   ["realpage"]=40,
-   ["section"]=43,
+   ["realpage"]=41,
+   ["section"]=42,
   },
   ["titledata"]={
-   ["title"]="\\headtext {figures}",
+   ["title"]="\\headtext {tables}",
   },
  },
  {
-  ["metadata"]=121,
+  ["metadata"]=122,
   ["references"]={
    ["block"]="backpart",
    ["internal"]=66,
-   ["realpage"]=41,
-   ["section"]=44,
+   ["realpage"]=42,
+   ["section"]=43,
   },
  },
  {
@@ -1416,7 +1429,29 @@ utilitydata.structures.lists.collected={
   ["references"]={
    ["block"]="backpart",
    ["internal"]=65,
-   ["realpage"]=41,
+   ["realpage"]=42,
+   ["section"]=43,
+  },
+  ["titledata"]={
+   ["title"]="\\headtext {figures}",
+  },
+ },
+ {
+  ["metadata"]=122,
+  ["references"]={
+   ["block"]="backpart",
+   ["internal"]=68,
+   ["realpage"]=43,
+   ["section"]=44,
+  },
+ },
+ {
+  ["metadata"]=45,
+  ["numberdata"]=125,
+  ["references"]={
+   ["block"]="backpart",
+   ["internal"]=67,
+   ["realpage"]=43,
    ["section"]=44,
   },
   ["titledata"]={
@@ -1424,12 +1459,12 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=125,
-  ["numberdata"]=126,
+  ["metadata"]=126,
+  ["numberdata"]=127,
   ["references"]={
    ["block"]="appendix",
-   ["internal"]=67,
-   ["realpage"]=42,
+   ["internal"]=69,
+   ["realpage"]=44,
    ["section"]=45,
   },
   ["titledata"]={
@@ -1446,295 +1481,309 @@ utilitydata.structures.pages.collected={
  {
   ["block"]="frontpart",
   ["number"]=1,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="frontpart",
   ["number"]=2,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="frontpart",
   ["number"]=3,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="frontpart",
   ["number"]=4,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="frontpart",
   ["number"]=5,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="frontpart",
   ["number"]=6,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="frontpart",
   ["number"]=7,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="frontpart",
   ["number"]=8,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=9,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=10,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=11,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=12,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=13,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=14,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=15,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=16,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=17,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=18,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=19,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=20,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=21,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=22,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=23,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=24,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=25,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=26,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=27,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=28,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=29,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=30,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=31,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=32,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=33,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=34,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=35,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=36,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=37,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["number"]=38,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
-  ["block"]="backpart",
+  ["block"]="bodypart",
   ["number"]=39,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
-  ["block"]="backpart",
+  ["block"]="bodypart",
   ["number"]=40,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="backpart",
   ["number"]=41,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
+  ["state"]="start",
+ },
+ {
+  ["block"]="backpart",
+  ["number"]=42,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
+  ["state"]="start",
+ },
+ {
+  ["block"]="backpart",
+  ["number"]=43,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
  {
   ["block"]="appendix",
-  ["number"]=42,
-  ["numberdata"]=127,
-  ["prefixdata"]=128,
+  ["number"]=44,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
   ["state"]="start",
  },
 }
@@ -1809,6 +1858,10 @@ utilitydata.structures.itemgroups.collected={
   },
   {
    { 6, 0 },
+  },
+  {
+   { 3, 0 },
+   { 5, 0 },
   },
  },
 }
@@ -1887,7 +1940,6 @@ utilitydata.job.packed={
   { 0, 4, 3 },
   { 0, 4, 4 },
   { 0, 4, 5 },
-  { 0, 4, 6 },
   { 0, 5 },
   { 0, 6 },
   { 0, 6, 1 },
@@ -1900,6 +1952,7 @@ utilitydata.job.packed={
   { 0, 6, 8 },
   { 0, 6, 9 },
   { 0, 6, 10 },
+  { 0, 6, 11 },
   { 0, 7 },
   { 0, 8 },
   { 0, 9 },
@@ -2231,6 +2284,13 @@ utilitydata.job.packed={
   {
    ["conversionset"]="number",
    ["numbers"]=97,
+  },
+  {
+   ["catcodes"]=9,
+   ["coding"]="tex",
+   ["kind"]="float",
+   ["level"]=4,
+   ["name"]="figure",
   },
   {
    ["block"]="bodypart",
