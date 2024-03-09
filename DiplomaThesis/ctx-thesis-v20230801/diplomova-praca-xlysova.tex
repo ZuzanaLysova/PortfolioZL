@@ -405,7 +405,13 @@ V kontexte tejto práce je cieľom rozšírenie agendového systému (SAMO AIS) 
 
 \kap{Metodika}
 
-\TODO TODO: všetko ostatné, zatiaľ len pár kapitol a poznámok
+V čase začiatku práce na tejto diplomovej práci už bola časť projektu EMMA hotová, ale aktívny vývoj a vylepšovanie bolo vo firme pozastavené. Stále ale je čo vylepšovať, aby mohla byť EMMA ponúknutá zákazníkom a rozšírená medzi rôzne subjekty.
+
+Informácie používané pri vypracovaní diplomovej práce sú získavané najmä z interných dokumentácií a konzultácií so zamestnancami, ktorí na projekte pracovali. Zároveň je nutné pre lepšie uchopenie témy aj analýza eGovernmentu a procesov spojených s tým v Českej republike a v zahraničí. Dôležité pojmy, ktoré taktiež musia byť pochopené sú napr. služba verejnej správy, katalóg služieb verejnej správy, agendový systém a pod. Zároveň je nutné aj pochopenie fungovania platformy SAMO a pod.
+
+V aktuálnom stave je síce projekt v rámci firmy pozastavený, ale stále existujú požiadavky, ktoré je nutné zapojiť. Jednou z nich je aj rozšírenie o modul zamestnancov. Zároveň je to úprava stávajúceho riešenia, keďže bolo vytvárané pod časovým presom a dátový model a celá aplikácia nie je dotiahnutá k dokonalosti. 
+
+Vývoj z mojej strany ako tvorcu tejto práce prebieha agilnou formou a neustálou konzultáciou so zákazníkom, ktorým je pre mňa v podstate firma Asseco. Na analýzu a návrh je používaný predovšetkým jazyk UML, no bolo nutné použiť aj jazyk Archimate na priblíženie aplikačnej logiky. Modely sú vytvárané pomocou nástroja Enterprise Architect. Tento nástroj je okrem zabudovaných možností rozšírený o špeciálny typ diagramu - LIDS7, pomocou ktorého je vytváraný dátový model. Tento dátový model sa pomocou nástrojov AMK a EA2LIDS použije ako základ pre vyvíjanú aplikáciu a prvý krok implementačnej linky. Na implementáciu, je použitá platforma SAMO. Následne prebehne manuálne testovanie pomocou vytvorených testovacích scenárov.
 
 \TODO
 Poznámka: 
@@ -431,6 +437,10 @@ Obsahom platformy EMMA sú:
 \item{modul rozhrania pre G2B2B,}
 \item{služby API pre integráciu.}
 \stopitemize 
+
+Na obrázku xx je zobrazený model aplikačnej architektúry, ktorý popisuje štruktúru, správanie a interakcií v aplikácii. Bol vytvorený pomocou štandardu Archimate, keďže bol pre tieto účely najvhodnejší. Obsahuje rôzne elementy ako procesy, služby, interakcie, rozhrania a podobne.
+\obrazekB{obr:archimate}
+{Application Layer Diagram (vlastné spracovanie)}{images/archimate.png}{width=32cc}
 
 \TODO EBSI (https://ec.europa.eu/digital-building-blocks/sites/display/EBSI/Home) (https://assecoce.sharepoint.com/:w:/r/teams/EMMAPEGOV-Analza/Shared%20Documents/Anal%C3%BDza/80%20-%20V%C3%BDstupy/Etapa1%20-%20N%C3%A1vrh%20%C5%99e%C5%A1en%C3%AD/E1.4%20Enterprise%20architektura/EMMA_E1_Enterprise_architektura.docx?d=wa8731ee84cc84c9b9e26b2ac55ed06bf&csf=1&web=1&e=DRJrfT)
 
@@ -822,6 +832,17 @@ TODO
 % %\issn{0896-3207}
 %\doi{https://doi.org/10.1063/5.0118820}
 %}
+
+\publD{%
+ \autor{Josey, A. a kol.}
+ \nazev{An Introduction to the ArchiMate® 3.0 Specification}
+ \nazevdok{The Open Group}
+\vyd{W168}
+\nakl{The Open Group}{USA}
+\rok{2016}
+%\www{http://www.enterprise-architecting.com/eaex/EA\%20-\%20An\%20Introduction\%20to\%20Archimate.pdf}
+ \umist{5}{15}
+}
 
 \publW{
 \autor{Kilinger, A.}
