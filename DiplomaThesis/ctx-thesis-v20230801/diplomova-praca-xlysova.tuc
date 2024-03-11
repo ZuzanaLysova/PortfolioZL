@@ -51,7 +51,7 @@ if not utilitydata.job then utilitydata.job = { } end
 if not utilitydata.job.pagestates then utilitydata.job.pagestates = { } end
 
 utilitydata.job.pagestates.collected={
- ["float"]={ 12, 13, 14, 15, 16, 16, 27, 29, 32, 36 },
+ ["float"]={ 12, 13, 14, 15, 16, 16, 27, 29, 32, 35, 36, 36, 38 },
 }
 
 if not utilitydata.structures then utilitydata.structures = { } end
@@ -445,7 +445,7 @@ utilitydata.structures.counters.collected={
   { 0 },
  },
  ["figure"]={
-  { 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+  { 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
  },
  ["float"]={
   { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -476,10 +476,10 @@ utilitydata.structures.counters.collected={
   { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
  },
  ["realpage"]={
-  { 45 },
+  { 47 },
  },
  ["subpage"]={
-  { 45 },
+  { 47 },
  },
  ["table"]={
   { 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -488,7 +488,7 @@ utilitydata.structures.counters.collected={
   { 0 },
  },
  ["userpage"]={
-  { 45 },
+  { 47 },
  },
 }
 
@@ -1206,7 +1206,7 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=107,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=49,
+   ["internal"]=50,
    ["realpage"]=34,
    ["section"]=30,
   },
@@ -1216,12 +1216,63 @@ utilitydata.structures.lists.collected={
   },
  },
  {
+  ["metadata"]=55,
+  ["numberdata"]=56,
+  ["prefixdata"]=57,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=49,
+   ["realpage"]=35,
+   ["reference"]="obr:f-req",
+   ["section"]=29,
+   ["view"]="fit",
+  },
+  ["titledata"]={
+   ["list"]="Model požiadaviek (vlastné spracovanie na základe informácií z interných dokumentov firmy Asseco a analýzy)",
+   ["title"]="\\THESISautoreffont {Model požiadaviek (vlastné spracovanie na základe informácií z interných dokumentov firmy Asseco a analýzy)}",
+  },
+ },
+ {
+  ["metadata"]=55,
+  ["numberdata"]=60,
+  ["prefixdata"]=57,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=51,
+   ["realpage"]=36,
+   ["reference"]="obr:uc1",
+   ["section"]=30,
+   ["view"]="fit",
+  },
+  ["titledata"]={
+   ["list"]="Use case model zo strany správcu (vlastné spracovanie na základe informácií z interných dokumentov firmy Asseco)",
+   ["title"]="\\THESISautoreffont {Use case model zo strany správcu (vlastné spracovanie na základe informácií z interných dokumentov firmy Asseco)}",
+  },
+ },
+ {
+  ["metadata"]=55,
+  ["numberdata"]=66,
+  ["prefixdata"]=57,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=52,
+   ["realpage"]=36,
+   ["reference"]="obr:uc2",
+   ["section"]=30,
+   ["view"]="fit",
+  },
+  ["titledata"]={
+   ["list"]="Use case model zo strany zamestnávateľa (vlastné spracovanie na základe informácií z interných dokumentov firmy Asseco)",
+   ["title"]="\\THESISautoreffont {Use case model zo strany zamestnávateľa (vlastné spracovanie na základe informácií z interných dokumentov firmy Asseco)}",
+  },
+ },
+ {
   ["metadata"]=49,
   ["numberdata"]=108,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=50,
-   ["realpage"]=35,
+   ["internal"]=53,
+   ["realpage"]=37,
    ["section"]=31,
   },
   ["titledata"]={
@@ -1234,8 +1285,8 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=109,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=51,
-   ["realpage"]=35,
+   ["internal"]=54,
+   ["realpage"]=37,
    ["section"]=32,
   },
   ["titledata"]={
@@ -1248,8 +1299,8 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=110,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=52,
-   ["realpage"]=35,
+   ["internal"]=55,
+   ["realpage"]=37,
    ["section"]=33,
   },
   ["titledata"]={
@@ -1262,8 +1313,8 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=111,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=53,
-   ["realpage"]=35,
+   ["internal"]=56,
+   ["realpage"]=37,
    ["section"]=34,
   },
   ["titledata"]={
@@ -1276,8 +1327,8 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=112,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=54,
-   ["realpage"]=35,
+   ["internal"]=57,
+   ["realpage"]=37,
    ["section"]=35,
   },
   ["titledata"]={
@@ -1291,8 +1342,8 @@ utilitydata.structures.lists.collected={
   ["prefixdata"]=57,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=55,
-   ["realpage"]=36,
+   ["internal"]=58,
+   ["realpage"]=38,
    ["reference"]="situacie",
    ["section"]=35,
    ["view"]="fit",
@@ -1306,8 +1357,8 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=113,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=56,
-   ["realpage"]=36,
+   ["internal"]=59,
+   ["realpage"]=38,
    ["section"]=36,
   },
   ["titledata"]={
@@ -1320,8 +1371,8 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=114,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=57,
-   ["realpage"]=37,
+   ["internal"]=60,
+   ["realpage"]=39,
    ["section"]=37,
   },
   ["titledata"]={
@@ -1334,8 +1385,8 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=115,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=58,
-   ["realpage"]=37,
+   ["internal"]=61,
+   ["realpage"]=39,
    ["section"]=38,
   },
   ["titledata"]={
@@ -1348,8 +1399,8 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=116,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=59,
-   ["realpage"]=38,
+   ["internal"]=62,
+   ["realpage"]=40,
    ["section"]=39,
   },
   ["titledata"]={
@@ -1362,8 +1413,8 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=117,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=60,
-   ["realpage"]=39,
+   ["internal"]=63,
+   ["realpage"]=41,
    ["section"]=40,
   },
   ["titledata"]={
@@ -1376,8 +1427,8 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=119,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=61,
-   ["realpage"]=40,
+   ["internal"]=64,
+   ["realpage"]=42,
    ["section"]=41,
   },
   ["titledata"]={
@@ -1389,8 +1440,8 @@ utilitydata.structures.lists.collected={
   ["metadata"]=120,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=62,
-   ["realpage"]=40,
+   ["internal"]=65,
+   ["realpage"]=42,
    ["section"]=41,
   },
   ["userdata"]={
@@ -1401,8 +1452,8 @@ utilitydata.structures.lists.collected={
   ["metadata"]=121,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=63,
-   ["realpage"]=42,
+   ["internal"]=66,
+   ["realpage"]=44,
    ["section"]=41,
   },
   ["userdata"]={
@@ -1413,8 +1464,8 @@ utilitydata.structures.lists.collected={
   ["metadata"]=122,
   ["references"]={
    ["block"]="backpart",
-   ["internal"]=65,
-   ["realpage"]=42,
+   ["internal"]=68,
+   ["realpage"]=44,
    ["section"]=42,
   },
  },
@@ -1423,8 +1474,8 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=123,
   ["references"]={
    ["block"]="backpart",
-   ["internal"]=64,
-   ["realpage"]=42,
+   ["internal"]=67,
+   ["realpage"]=44,
    ["section"]=42,
   },
   ["titledata"]={
@@ -1435,8 +1486,8 @@ utilitydata.structures.lists.collected={
   ["metadata"]=122,
   ["references"]={
    ["block"]="backpart",
-   ["internal"]=67,
-   ["realpage"]=43,
+   ["internal"]=70,
+   ["realpage"]=45,
    ["section"]=43,
   },
  },
@@ -1445,8 +1496,8 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=124,
   ["references"]={
    ["block"]="backpart",
-   ["internal"]=66,
-   ["realpage"]=43,
+   ["internal"]=69,
+   ["realpage"]=45,
    ["section"]=43,
   },
   ["titledata"]={
@@ -1457,8 +1508,8 @@ utilitydata.structures.lists.collected={
   ["metadata"]=122,
   ["references"]={
    ["block"]="backpart",
-   ["internal"]=69,
-   ["realpage"]=44,
+   ["internal"]=72,
+   ["realpage"]=46,
    ["section"]=44,
   },
  },
@@ -1467,8 +1518,8 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=125,
   ["references"]={
    ["block"]="backpart",
-   ["internal"]=68,
-   ["realpage"]=44,
+   ["internal"]=71,
+   ["realpage"]=46,
    ["section"]=44,
   },
   ["titledata"]={
@@ -1480,8 +1531,8 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=127,
   ["references"]={
    ["block"]="appendix",
-   ["internal"]=70,
-   ["realpage"]=45,
+   ["internal"]=73,
+   ["realpage"]=47,
    ["section"]=45,
   },
   ["titledata"]={
@@ -1783,14 +1834,14 @@ utilitydata.structures.pages.collected={
   ["state"]="start",
  },
  {
-  ["block"]="backpart",
+  ["block"]="bodypart",
   ["number"]=42,
   ["numberdata"]=128,
   ["prefixdata"]=129,
   ["state"]="start",
  },
  {
-  ["block"]="backpart",
+  ["block"]="bodypart",
   ["number"]=43,
   ["numberdata"]=128,
   ["prefixdata"]=129,
@@ -1804,8 +1855,22 @@ utilitydata.structures.pages.collected={
   ["state"]="start",
  },
  {
-  ["block"]="appendix",
+  ["block"]="backpart",
   ["number"]=45,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
+  ["state"]="start",
+ },
+ {
+  ["block"]="backpart",
+  ["number"]=46,
+  ["numberdata"]=128,
+  ["prefixdata"]=129,
+  ["state"]="start",
+ },
+ {
+  ["block"]="appendix",
+  ["number"]=47,
   ["numberdata"]=128,
   ["prefixdata"]=129,
   ["state"]="start",
