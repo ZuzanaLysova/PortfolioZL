@@ -403,6 +403,26 @@ Platforma SAMO je základom pre široké spektrum aplikácií používaných v~r
 
 V kontexte tejto práce je cieľom rozšírenie agendového systému (SAMO AIS) na správu zamestnancov a služieb verejnej správy. SAMO AIS predstavuje špecifický modul na podporu procesov verejnej správy. Zahŕňa zadávanie požiadavkov, vyhodnocovanie workflow, notifikácie, analýzu dát, pridávanie priestorových informácií atď. Tento modul je navrhnutý tak, aby bol kompatibilný s inými systémami verejnej správy, využíval otvorené dáta z rôznych zdrojov (napr. registry, katastre) a zároveň poskytoval informácie podľa potrieb koncových užívateľov. Je vhodný pre miestne, ústredné, ale i federálne orgány akéhokoľvek druhu (od malých obcí až po ministerstvá). Cieľom je vybudovať a udržať efektívny e-government a prinášať hodnotu užívateľom a občanom. \scr(Asseco, 2024b)
 
+
+\pkap{Trendy vývoja softwaru}
+
+
+
+\ppkap{Agilný vývoj}
+V rámci tejto práce je použitý agilný prístup k vývoju. Jeho počiatky siahajú do 90-tych rokov 20. storočia. Dovtedy sa používal najmä vodopádový model. Pri vodopáde ide o podrobné zadefinovanie celého projektu, ktoré pozostáva z analýzy požiadaviek, návrhu, implementácie, testovania, nasadenia a prevádzky. Fázy nasledujú za sebou a po ukončení každej fázy je spracovaná dokumentácia a report. Víziou totho prístupu je dostať procesy pod úplnú kontrolu a zamedziť vzniku chýb. Postupom času sa ale ukázalo, že to vo väčšine prípadov nejde takto hladko a veľká časť práce je venovaná práve birokracii. Zlom nastal v neskorých 90tych rokoch, kedy sa začalo k vývoju pristupovať menej striktne a vznikli metodiky. Tento počin sa nazýva aj "The Agile Manifesto".
+
+Agilný prístup je veľmi adaptívny. Jeho hlavnými princípmi sú:
+
+\startitemize
+\item uspokojenie zákazníka, 
+\item prijímanie zmenových požiadaviek,
+\item postupná dodávka software,
+\item úzka spolupráca business zamestnancov a vývojárov.
+\stopitemize
+
+V prvých desiatich rokoch agilu sa predpokladalo, že tento princíp nebude fungovať. Opak sa stal pravdou a agilný vývoj je stále populárnejší.
+\scr(Shore,2022)
+
 \kap{Metodika}
 
 V čase začiatku práce na tejto diplomovej práci už bola časť projektu EMMA hotová, ale aktívny vývoj a vylepšovanie bolo vo firme pozastavené. Stále ale je čo vylepšovať, aby mohla byť EMMA ponúknutá zákazníkom a rozšírená medzi rôzne subjekty.
@@ -412,6 +432,9 @@ Informácie používané pri vypracovaní diplomovej práce sú získavané najm
 V aktuálnom stave je síce projekt v rámci firmy pozastavený, ale stále existujú požiadavky, ktoré je nutné zapojiť. Jednou z nich je aj rozšírenie o modul zamestnancov. Zároveň je to úprava stávajúceho riešenia, keďže bolo vytvárané pod časovým presom a dátový model a celá aplikácia nie je dotiahnutá k dokonalosti. 
 
 Vývoj z mojej strany ako tvorcu tejto práce prebieha agilnou formou a neustálou konzultáciou so zákazníkom, ktorým je pre mňa v podstate firma Asseco. Na analýzu a návrh je používaný predovšetkým jazyk UML, no bolo nutné použiť aj jazyk Archimate na priblíženie aplikačnej logiky. Modely sú vytvárané pomocou nástroja Enterprise Architect. Tento nástroj je okrem zabudovaných možností rozšírený o špeciálny typ diagramu - LIDS7, pomocou ktorého je vytváraný dátový model. Tento dátový model sa pomocou nástrojov AMK a EA2LIDS použije ako základ pre vyvíjanú aplikáciu a prvý krok implementačnej linky. Na implementáciu, je použitá platforma SAMO. Následne prebehne manuálne testovanie pomocou vytvorených testovacích scenárov.
+
+\ppkap{Agilná metodika vývoja}
+Agilná metodika je založená na šprintoch
 
 \TODO
 Poznámka: 
@@ -892,6 +915,18 @@ TODO
  \www{https://www.sap.com/products/technology-platform/integration-suite/what-is-ipaas.html}
  \rok{©~2024}
 }
+
+\publD{%
+ \autorkorp{Shore, J. a kol.}
+ \nazev{The art of agile development}
+ \nazevdok{Theory in practice}
+\nakl{O'Reill}{Boston}
+\vyd{2}
+\rok{2022}
+\isbn{9781492080695}
+ \umist{3}{11}
+}
+
 
 \publD{%
  \autorkorp{United Nations}
