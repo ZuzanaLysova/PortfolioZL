@@ -405,23 +405,18 @@ V kontexte tejto práce je cieľom rozšírenie agendového systému (SAMO AIS) 
 
 
 \pkap{Trendy vývoja softwaru}
+V oblasti vývoja softwaru sa rozlišujú agilné a tzv. tradičné metodiky. V rámci tejto práce je použitý agilný prístup. Jeho počiatky siahajú do 90. rokov 20. storočia. Dovtedy dominoval predovšetkým vodopádový model. Pri vodopáde ide o podrobné zadefinovanie celého projektu, ktoré pozostáva z analýzy požiadaviek, návrhu, implementácie, testovania, nasadenia a prevádzky. Fázy nasledujú za sebou a po ukončení každej fázy je spracovaná dokumentácia a report. Víziou totho prístupu je dostať procesy pod úplnú kontrolu a zamedziť vzniku chýb.Avšak, ukázalo sa, že tento prístup často vedie k zbytočnej byrokracii a nie je taký hladký, ako sa predpokladalo. Prelom nastal koncom 90. rokov, kedy sa začali formovať flexibilnejšie metodológie. Tento počin sa nazýva aj "The Agile Manifesto". \scr(Shore,2022)
 
-
-
-\ppkap{Agilný vývoj}
-V rámci tejto práce je použitý agilný prístup k vývoju. Jeho počiatky siahajú do 90-tych rokov 20. storočia. Dovtedy sa používal najmä vodopádový model. Pri vodopáde ide o podrobné zadefinovanie celého projektu, ktoré pozostáva z analýzy požiadaviek, návrhu, implementácie, testovania, nasadenia a prevádzky. Fázy nasledujú za sebou a po ukončení každej fázy je spracovaná dokumentácia a report. Víziou totho prístupu je dostať procesy pod úplnú kontrolu a zamedziť vzniku chýb. Postupom času sa ale ukázalo, že to vo väčšine prípadov nejde takto hladko a veľká časť práce je venovaná práve birokracii. Zlom nastal v neskorých 90tych rokoch, kedy sa začalo k vývoju pristupovať menej striktne a vznikli metodiky. Tento počin sa nazýva aj "The Agile Manifesto".
-
-Agilný prístup je veľmi adaptívny. Jeho hlavnými princípmi sú:
+Agilný prístup je veľmi adaptívny, s hlavnými princípmi zahŕňajúcimi:
 
 \startitemize
-\item uspokojenie zákazníka, 
-\item prijímanie zmenových požiadaviek,
+\item zameranie na uspokojenie zákazníka, 
+\item otvorenosť voči zmenám požiadaviek,
 \item postupná dodávka software,
-\item úzka spolupráca business zamestnancov a vývojárov.
+\item úzka spolupráca medzi obchodným tímom a vývojármi. \scr(Shore,2022) 
 \stopitemize
 
-V prvých desiatich rokoch agilu sa predpokladalo, že tento princíp nebude fungovať. Opak sa stal pravdou a agilný vývoj je stále populárnejší.
-\scr(Shore,2022)
+V prvom desaťročí po zavedení agilných metodológií panovali pochybnosti o ich efektivite. Napriek tomu sa agilný vývoj ukázal ako úspešný a jeho popularita stále rastie, čo potvrdzuje aj stúpajúci záujem o agilné prístupy pri rôznych typoch projektov, vrátane tých v oblasti eGovernmentu. Dôvodom sú najmä časté zmeny požiadaviek, respektíve nejasné požiadavky. Práve kvôli častým zmenám požiadaviek v takýchto projektoch je agilný prístup čoraz viac uprednostňovaný. Projekty spojené s digitalizáciou a eGovernmentom (ale aj iné) zlyhávajú najmä z dôvodu nedostatočnej komunikácie a nejasných požiadaviek. \scr(Looks, 2021) Aj to je dôvodom výberu agilnej metodiky vývoja pre túto prácu.
 
 \kap{Metodika}
 
@@ -431,10 +426,7 @@ Informácie používané pri vypracovaní diplomovej práce sú získavané najm
 
 V aktuálnom stave je síce projekt v rámci firmy pozastavený, ale stále existujú požiadavky, ktoré je nutné zapojiť. Jednou z nich je aj rozšírenie o modul zamestnancov. Zároveň je to úprava stávajúceho riešenia, keďže bolo vytvárané pod časovým presom a dátový model a celá aplikácia nie je dotiahnutá k dokonalosti. 
 
-Vývoj z mojej strany ako tvorcu tejto práce prebieha agilnou formou a neustálou konzultáciou so zákazníkom, ktorým je pre mňa v podstate firma Asseco. Na analýzu a návrh je používaný predovšetkým jazyk UML, no bolo nutné použiť aj jazyk Archimate na priblíženie aplikačnej logiky. Modely sú vytvárané pomocou nástroja Enterprise Architect. Tento nástroj je okrem zabudovaných možností rozšírený o špeciálny typ diagramu - LIDS7, pomocou ktorého je vytváraný dátový model. Tento dátový model sa pomocou nástrojov AMK a EA2LIDS použije ako základ pre vyvíjanú aplikáciu a prvý krok implementačnej linky. Na implementáciu, je použitá platforma SAMO. Následne prebehne manuálne testovanie pomocou vytvorených testovacích scenárov.
-
-\ppkap{Agilná metodika vývoja}
-Agilná metodika je založená na šprintoch
+Vývoj z mojej strany ako tvorcu tejto práce prebieha agilnou formou a neustálou konzultáciou so zákazníkom, ktorým je pre mňa v podstate firma Asseco. Proces práce bol rozdelený na pomyselné šprinty. Zahŕňajú formálnu časť práce, a teda písanie dokumentácie, analytickú, vývojovú a testovaciu časť. Na analýzu a návrh je používaný predovšetkým jazyk UML, no bolo nutné použiť aj jazyk Archimate na priblíženie aplikačnej logiky. Modely sú vytvárané pomocou nástroja Enterprise Architect. Tento nástroj je okrem zabudovaných možností rozšírený o špeciálny typ diagramu - LIDS7, pomocou ktorého je vytváraný dátový model. Tento dátový model sa pomocou nástrojov AMK a EA2LIDS použije ako základ pre vyvíjanú aplikáciu a prvý krok implementačnej linky. Na implementáciu, je použitá platforma SAMO. Následne prebehne manuálne testovanie pomocou vytvorených testovacích scenárov.
 
 \TODO
 Poznámka: 
@@ -461,7 +453,7 @@ Obsahom platformy EMMA sú:
 \item{služby API pre integráciu.}
 \stopitemize 
 
-Na obrázku xx je zobrazený model aplikačnej architektúry, ktorý popisuje štruktúru, správanie a interakcií v aplikácii. Bol vytvorený pomocou štandardu Archimate, keďže bol pre tieto účely najvhodnejší. Obsahuje rôzne elementy ako procesy, služby, interakcie, rozhrania a podobne.
+Na \in{obrázku}[obr:archimate] je zobrazený model aplikačnej architektúry, ktorý popisuje štruktúru, správanie a interakcií v aplikácii. Bol vytvorený pomocou štandardu Archimate, keďže bol pre tieto účely najvhodnejší. Obsahuje rôzne elementy ako procesy, služby, interakcie, rozhrania a podobne.
 \obrazekB{obr:archimate}
 {Application Layer Diagram (vlastné spracovanie)}{images/archimate.png}{width=32cc}
 
@@ -579,6 +571,82 @@ stavebné řízení - obec povoluje schvalovanie stavieb, ale obec môže byť d
 \item{úprava vygenerovaných metadát do žiadanej podoby, zapojenie aplikačnej logiky}
 \stopitemize
 \stopitemize
+
+\pkap{Popis súčasného stavu EMMA}
+Platforma EMMA zprostředkovává služby veřejné správy podnikatelským subjektům. Na diagramu níže je 
+vlevo zobrazena veřejná správa (ústřední správní úřady, obce a další orgány veřejné správy), které 
+vystavují služby, které slouží jednak pro poskytování údajů a informací (veřejné rejstříky, open data) a 
+jednak na splnění povinností klientů veřejné správy. Pro jednoduchost si lze představit služby ČSSZ, MPSV, 
+VZP a dalších zdravotních pojišťoven, které může podnikatelský subjekt využít pro splnění povinnosti 
+„nahlášení nástupu zaměstnance“. Sice existuje Registr práv a povinností, který obsahuje katalog služeb 
+veřejné správy, jež si klade za cíl zmapovat všechny služby veřejné správy a veřejně poskytovat informace 
+o těchto službách. Nicméně samotné služby jednotlivých úřadů nejsou konsolidované (tedy nemají 
+jednotné API) a nejsou poskytovány prostřednictvím jednotné platformy. To je právě úkol platformy 
+EMMA zprostředkovat tyto služby v jednoduché formě tak, aby byly jednoduše integrovatelné do ERP 
+systémů podnikatelských subjektů. Pro realizaci služeb musí platforma EMMA obsahovat podpůrné 
+komponenty jako je Katalog služeb EMMA, Portál pro přístup klientům, SW komponenty pro 
+zprostředkování služeb (sběrnice, API management, správa oprávnění a další). Platforma EMMA 
+umožňuje zprostředkovávat nejen služby veřejnoprávní, ale i komerční (například zprostředkovat nákup 
+penzijního připojištění svým zaměstnancům). Klienti EMMA (na diagramu níže zobrazeny vpravo), tedy 
+podnikatelské subjekty mohou využít služby EMMA pro jednoduché zapojení do svých ERP systémů a 
+mohou tak snížit ručně vykonávané činnosti pomocí automatizace (workflow) na straně ERP systémů. 
+
+
+\obrazekB{obr:koncept}
+{Enterprise architektúra platformy EMMA  (Asseco, 2023)}{images/koncept.png}{width=32cc}
+
+Jako prostředí pro vývoj během etapy 2 bylo využito cloudové prostředí Azure.
+V rámci Azure jsme využili následující služby poskytované tímto prostředím:
+• Application insights – pro sledování běhu aplikace
+• Smart detector alert rule – detekování anomálií 
+• Azure Cosmos DB – persistentní ukládání dat
+• Key vault – bezpečné ukládání hesel
+• Front Door with Web Application Firewall, CDN – rozhraní pro přístup na internet
+• Log analytics workspace – pro analýzu logů
+• Storage account – systémové uložiště
+• Application Service – aplikační služby pro jednotlivé služby EMMA
+• Blockchain service – služby Blockchain
+
+
+Ďalšia fáza bola o Realizace podpůrných nástrojů pro urychlení implementace realizovaného řešení, Realizace generátoru zdrojových kódů realizovaného řešení. V rámci této etapy jsme realizovali optimalizaci vývojové a implementační linky. Pro realizaci komponenty 
+Katalog služeb jsme finálně využili produkt SAMO. 
+Produkt SAMO, který je základem pro evidenci služeb EMMA, kromě agendového systému přináší i 
+podporu procesního managementu, notifikačního modulu, dokumentového úložiště, reportingu a 
+statistiky, funkce pro publikaci i integrační vrstvu. Tato platforma integruje řešení na okolní systémy. 
+Součástí celkového konceptu řešení je velmi kvalitní wokflow engine a API gateway, což výrazným 
+způsobem zvyšuje flexibilitu systému. Celé řešení si klade za cíl být v maximální míře konfigurovatelné na 
+úrovni parametrů, metadat a šablon. Systém proto nabízí možnost úpravy workflow, definici vlastních 
+datových záznamů, typů dokumentů, možnost tvorby vlastních uživatelských rozšíření, bez nutnosti 
+programování nebo kompletní přizpůsobení designu a struktury navigace. SAMO se z hlediska aplikační 
+architektury skládá z aplikačních komponent, které mezi sebou komunikují přes předem dohodnuté 
+komunikační kanály založené na otevřených a obecně uznávaných standardech (především SOAP a REST). 
+Aplikační komponenty se skládají z aplikačních vrstev (uživatelské rozhraní, byznys logika, integrační a 
+datová vrstva atd.). Řešení je budované na principech a postupech servisně orientované integrace, kde 
+jednotlivé sdílené funkcionality jsou vystaveny v podobě služeb
+
+Jednou z komplikací využití robustního produktu SAMO je samotná komplexnost tohoto systému, která se 
+projevuje složitostí implementace řešení a nutným dlouhým časem pro přípravu všech podpůrných 
+metadat a konfigurací výsledného systému. Z tohoto důvodů jsme se rozhodli optimalizovat 
+implementační linku SAMO tak, aby se zásadním způsobem zjednodušili, zrychlili a celkově zefektivnili 
+implementaci systému s využitím produktu SAMO. Zásadní principy optimalizované implementační linky:
+1. Jedna informace je v rámci implementace konfigurována pouze jednou (odpadá konfigurace 
+jedné informace na různých místech),
+2. Odbourání závislosti na konkrétních technologiích pro implementaci, jako je XML, XSD, REST,
+JSON.
+3. Maximalizace automatizovaných procedur a minimalizace opakované ruční práce. 
+Výsledkem bylo vytvoření optimalizované implementační linky „AMK (Application Modeling Kit)“, která 
+umožňuje efektivní a rychlou implementaci metadat pro produkt SAMO. Optimalizovanou linkou jsme 
+otestovali na komponentě Katalog služeb. Pomocí optimalizované linky jsme dosáhli úspory přibližně 70% 
+času potřebného pro vytvoření metadat pro Katalog služeb EMMA. Optimalizovaná implementační linka 
+je dále využitelná pro implementaci dalších metadatově řízených modulů a celých systémů. 
+
+TODO: 
+https://assecoce.sharepoint.com/:w:/r/teams/EMMAPEGOV-Analza/_layouts/15/Doc.aspx?sourcedoc=%7B21312F3A-AA11-435B-AFEC-3A266062458F%7D&file=EMMA_E2_Metodika%20v%C3%BDvoje.docx&action=default&mobileredirect=true
+
+Služba, ktorá bola implementovaná je "Oznámení nástupu zaměstnace". Na \in{obrázku}[obr:sekv1]
+
+\obrazek{obr:sekv1}
+{Sekvenčný model funkčnosti "Oznámení nástupu zaměstnace" (Asseco, 2023)}{images/SekvEMMA01.png}{width=32cc}
 
 \pkap{Model požiadaviek}
 Na základe analýzy vznikol model požiadaviek (\in{viď obrázok}[obr:f-req]).
@@ -892,14 +960,51 @@ TODO
  \rok{2023}
 }
 
-\publW{
- \autorkorp{Ministerstvo financií Slovenskej republiky}
- \nazev{Informačný systém elektronickej fakturácie - BETA}
- \online{2024-01-29}
- \www{https://web-einvoice-demo.mypaas.vnet.sk/}
- \nazevdok{e-Faktúra}
- \rok{©~2024}
+\publE{
+\autor{Looks, H. a kol.} 
+\nazev{Towards a Process Model for Agile Transformation in E-government Projects}
+\rok{2021}
+\issn{2468-4376}
+\doi{10.29333/jisem/9571}
+\www{https://www.jisem-journal.com/article/towards-a-process-model-for-agile-transformation-in-e-government-projects-9571}
+\online{2024-03-24}
+\nazevdok{Journal of Information Systems Engineering & Management}
+\cast{6(1)}
 }
+
+
+%\publE{
+%\autor{Kisielnicki, J.} \autor{Misiak, A.}
+%\nazev{Effectiveness of Agile Compared to Waterfall Implementation Methods in IT Projects}
+%\rok{2017}
+%\issn{2300-5661}
+%\doi{10.1515/fman-2017-0021}
+%\www{https://sciendo.com/article/10.1515/fman-2017-0021}
+%\online{2023-11-19}
+%\nazevdok{Foundations of Management}
+%\cast{roč. \,9}
+%}
+
+%\publW{
+% \autorkorp{Ministerstvo financií Slovenskej republiky}
+% \nazev{Informačný systém elektronickej fakturácie - BETA}
+% \online{2024-01-29}
+% \www{https://web-einvoice-demo.mypaas.vnet.sk/}
+% \nazevdok{e-Faktúra}
+% \rok{©~2024}
+%}
+
+%\publE{
+%\autor{Mishra, A.} \autor{Alzoubi, Y.} 
+%\nazev{Structured software development versus agile software development: a comparative analysis}
+%\rok{2022}
+%\issn{0975-6809}
+%\doi{10.1007/s13198-023-01958-5}
+%\www{https://www.sciencedirect.com/science/article/pii/S0740624X21000988}
+%\online{2023-11-19}
+%\nazevdok{International Journal of System Assurance Engineering and Management}
+%\cast{roč. 14, č. 4}
+%}
 
 \publA{
  \autor{OECD}

@@ -51,7 +51,7 @@ if not utilitydata.job then utilitydata.job = { } end
 if not utilitydata.job.pagestates then utilitydata.job.pagestates = { } end
 
 utilitydata.job.pagestates.collected={
- ["float"]={ 12, 13, 14, 15, 16, 16, 28, 30, 33, 36, 37, 37, 39, 38, 40 },
+ ["float"]={ 12, 13, 14, 15, 16, 16, 28, 30, 33, 36, 38, 39, 40, 41, 42, 42, 43 },
 }
 
 if not utilitydata.structures then utilitydata.structures = { } end
@@ -403,17 +403,9 @@ utilitydata.structures.sections.collected={
  {
   ["block"]="bodypart",
   ["conversionset"]="default",
-  ["language"]="sk",
-  ["numbers"]=43,
-  ["separatorset"]="default",
-  ["set"]="all",
- },
- {
-  ["block"]="bodypart",
-  ["conversionset"]="default",
   ["hidenumber"]=true,
   ["language"]="sk",
-  ["numbers"]=44,
+  ["numbers"]=43,
   ["separatorset"]="default",
   ["set"]="all",
  },
@@ -449,7 +441,7 @@ utilitydata.structures.sections.collected={
   ["conversionset"]="default",
   ["hidenumber"]=true,
   ["language"]="sk",
-  ["numbers"]=45,
+  ["numbers"]=44,
   ["separatorset"]="default",
   ["set"]="all",
  },
@@ -469,7 +461,7 @@ utilitydata.structures.counters.collected={
   { 0 },
  },
  ["figure"]={
-  { 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 3, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+  { 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 3, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
  },
  ["float"]={
   { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -500,10 +492,10 @@ utilitydata.structures.counters.collected={
   { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
  },
  ["realpage"]={
-  { 49 },
+  { 52 },
  },
  ["subpage"]={
-  { 49 },
+  { 52 },
  },
  ["table"]={
   { 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -512,7 +504,7 @@ utilitydata.structures.counters.collected={
   { 0 },
  },
  ["userpage"]={
-  { 49 },
+  { 52 },
  },
 }
 
@@ -521,8 +513,8 @@ if not utilitydata.structures.lists then utilitydata.structures.lists = { } end
 
 utilitydata.structures.lists.collected={
  {
-  ["metadata"]=46,
-  ["numberdata"]=47,
+  ["metadata"]=45,
+  ["numberdata"]=46,
   ["references"]={
    ["internal"]=1,
    ["realpage"]=7,
@@ -534,8 +526,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=48,
-  ["numberdata"]=49,
+  ["metadata"]=47,
+  ["numberdata"]=48,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=2,
@@ -548,8 +540,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=48,
-  ["numberdata"]=50,
+  ["metadata"]=47,
+  ["numberdata"]=49,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=3,
@@ -562,8 +554,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=48,
-  ["numberdata"]=51,
+  ["metadata"]=47,
+  ["numberdata"]=50,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=4,
@@ -576,8 +568,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=52,
-  ["numberdata"]=53,
+  ["metadata"]=51,
+  ["numberdata"]=52,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=5,
@@ -590,9 +582,9 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=54,
-  ["numberdata"]=56,
-  ["prefixdata"]=57,
+  ["metadata"]=53,
+  ["numberdata"]=55,
+  ["prefixdata"]=56,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=6,
@@ -605,9 +597,9 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=58,
-  ["numberdata"]=59,
-  ["prefixdata"]=60,
+  ["metadata"]=57,
+  ["numberdata"]=58,
+  ["prefixdata"]=59,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=8,
@@ -622,9 +614,9 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=54,
-  ["numberdata"]=62,
-  ["prefixdata"]=57,
+  ["metadata"]=53,
+  ["numberdata"]=61,
+  ["prefixdata"]=56,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=7,
@@ -637,9 +629,9 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=58,
-  ["numberdata"]=63,
-  ["prefixdata"]=60,
+  ["metadata"]=57,
+  ["numberdata"]=62,
+  ["prefixdata"]=59,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=9,
@@ -654,8 +646,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=52,
-  ["numberdata"]=64,
+  ["metadata"]=51,
+  ["numberdata"]=63,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=10,
@@ -668,9 +660,9 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=54,
-  ["numberdata"]=66,
-  ["prefixdata"]=57,
+  ["metadata"]=53,
+  ["numberdata"]=65,
+  ["prefixdata"]=56,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=11,
@@ -683,9 +675,9 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=54,
-  ["numberdata"]=68,
-  ["prefixdata"]=57,
+  ["metadata"]=53,
+  ["numberdata"]=67,
+  ["prefixdata"]=56,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=12,
@@ -698,9 +690,9 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=58,
-  ["numberdata"]=69,
-  ["prefixdata"]=60,
+  ["metadata"]=57,
+  ["numberdata"]=68,
+  ["prefixdata"]=59,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=14,
@@ -715,9 +707,9 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=54,
-  ["numberdata"]=71,
-  ["prefixdata"]=57,
+  ["metadata"]=53,
+  ["numberdata"]=70,
+  ["prefixdata"]=56,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=13,
@@ -730,9 +722,9 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=72,
-  ["numberdata"]=73,
-  ["prefixdata"]=60,
+  ["metadata"]=71,
+  ["numberdata"]=72,
+  ["prefixdata"]=59,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=15,
@@ -746,8 +738,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=52,
-  ["numberdata"]=74,
+  ["metadata"]=51,
+  ["numberdata"]=73,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=16,
@@ -760,9 +752,9 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=58,
-  ["numberdata"]=75,
-  ["prefixdata"]=60,
+  ["metadata"]=57,
+  ["numberdata"]=74,
+  ["prefixdata"]=59,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=17,
@@ -777,9 +769,9 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=72,
-  ["numberdata"]=76,
-  ["prefixdata"]=60,
+  ["metadata"]=71,
+  ["numberdata"]=75,
+  ["prefixdata"]=59,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=18,
@@ -793,8 +785,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=52,
-  ["numberdata"]=77,
+  ["metadata"]=51,
+  ["numberdata"]=76,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=19,
@@ -807,8 +799,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=52,
-  ["numberdata"]=78,
+  ["metadata"]=51,
+  ["numberdata"]=77,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=20,
@@ -821,8 +813,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=79,
-  ["numberdata"]=80,
+  ["metadata"]=78,
+  ["numberdata"]=79,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=21,
@@ -835,8 +827,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=52,
-  ["numberdata"]=81,
+  ["metadata"]=51,
+  ["numberdata"]=80,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=22,
@@ -849,8 +841,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=79,
-  ["numberdata"]=82,
+  ["metadata"]=78,
+  ["numberdata"]=81,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=23,
@@ -863,8 +855,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=52,
-  ["numberdata"]=83,
+  ["metadata"]=51,
+  ["numberdata"]=82,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=24,
@@ -877,8 +869,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=79,
-  ["numberdata"]=84,
+  ["metadata"]=78,
+  ["numberdata"]=83,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=25,
@@ -891,8 +883,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=79,
-  ["numberdata"]=85,
+  ["metadata"]=78,
+  ["numberdata"]=84,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=26,
@@ -905,8 +897,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=52,
-  ["numberdata"]=86,
+  ["metadata"]=51,
+  ["numberdata"]=85,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=27,
@@ -919,8 +911,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=52,
-  ["numberdata"]=87,
+  ["metadata"]=51,
+  ["numberdata"]=86,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=28,
@@ -933,8 +925,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=52,
-  ["numberdata"]=88,
+  ["metadata"]=51,
+  ["numberdata"]=87,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=29,
@@ -947,9 +939,9 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=54,
-  ["numberdata"]=90,
-  ["prefixdata"]=57,
+  ["metadata"]=53,
+  ["numberdata"]=89,
+  ["prefixdata"]=56,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=30,
@@ -962,8 +954,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=52,
-  ["numberdata"]=91,
+  ["metadata"]=51,
+  ["numberdata"]=90,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=31,
@@ -976,8 +968,8 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=52,
-  ["numberdata"]=92,
+  ["metadata"]=51,
+  ["numberdata"]=91,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=32,
@@ -990,27 +982,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=79,
-  ["numberdata"]=93,
+  ["metadata"]=47,
+  ["numberdata"]=92,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=33,
-   ["realpage"]=24,
-   ["section"]=20,
-  },
-  ["titledata"]={
-   ["label"]="subsection",
-   ["title"]="Agilný vývoj",
-  },
- },
- {
-  ["metadata"]=48,
-  ["numberdata"]=94,
-  ["references"]={
-   ["block"]="bodypart",
-   ["internal"]=34,
    ["realpage"]=26,
-   ["section"]=21,
+   ["section"]=20,
   },
   ["titledata"]={
    ["label"]="chapter",
@@ -1018,27 +996,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=79,
-  ["numberdata"]=95,
+  ["metadata"]=51,
+  ["numberdata"]=93,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=35,
-   ["realpage"]=26,
-   ["section"]=22,
-  },
-  ["titledata"]={
-   ["label"]="subsection",
-   ["title"]="Agilná metodika vývoja",
-  },
- },
- {
-  ["metadata"]=52,
-  ["numberdata"]=96,
-  ["references"]={
-   ["block"]="bodypart",
-   ["internal"]=36,
+   ["internal"]=34,
    ["realpage"]=27,
-   ["section"]=23,
+   ["section"]=21,
   },
   ["titledata"]={
    ["label"]="section",
@@ -1046,45 +1010,45 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=54,
-  ["numberdata"]=98,
-  ["prefixdata"]=57,
+  ["metadata"]=53,
+  ["numberdata"]=95,
+  ["prefixdata"]=56,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=37,
+   ["internal"]=35,
    ["order"]=7,
    ["realpage"]=27,
-   ["section"]=23,
+   ["section"]=21,
   },
   ["titledata"]={
    ["title"]="Digital Service Act (Akt o digitálnych službách) -- súbor pravidiel platiacich v celej EÚ, ktorých cieľom je vytvoriť bezpečnejší digitálny priestor, v ktorom budú chránené základné práva všetkých užívateľov digitálnych služieb \\scr (Európska komisia, 2022)",
   },
  },
  {
-  ["metadata"]=54,
-  ["numberdata"]=100,
-  ["prefixdata"]=57,
+  ["metadata"]=53,
+  ["numberdata"]=97,
+  ["prefixdata"]=56,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=38,
+   ["internal"]=36,
    ["order"]=8,
    ["realpage"]=27,
-   ["section"]=23,
+   ["section"]=21,
   },
   ["titledata"]={
    ["title"]="Data Governance Act (Akt o správe dát) -- úsilie zvýšiť dôveru v zdieľanie dát a posilnenie mechanizmov pre zvýšenie dostupnosti dát \\scr (Európska komisia, 2022)",
   },
  },
  {
-  ["metadata"]=58,
-  ["numberdata"]=59,
-  ["prefixdata"]=60,
+  ["metadata"]=57,
+  ["numberdata"]=58,
+  ["prefixdata"]=59,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=39,
+   ["internal"]=37,
    ["realpage"]=28,
    ["reference"]="obr:archimate",
-   ["section"]=23,
+   ["section"]=21,
    ["view"]="fit",
   },
   ["titledata"]={
@@ -1093,13 +1057,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=52,
-  ["numberdata"]=101,
+  ["metadata"]=51,
+  ["numberdata"]=98,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=40,
+   ["internal"]=38,
    ["realpage"]=29,
-   ["section"]=24,
+   ["section"]=22,
   },
   ["titledata"]={
    ["label"]="section",
@@ -1107,13 +1071,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=79,
-  ["numberdata"]=102,
+  ["metadata"]=78,
+  ["numberdata"]=99,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=42,
+   ["internal"]=40,
    ["realpage"]=29,
-   ["section"]=25,
+   ["section"]=23,
   },
   ["titledata"]={
    ["label"]="subsection",
@@ -1121,30 +1085,30 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=54,
-  ["numberdata"]=104,
-  ["prefixdata"]=57,
+  ["metadata"]=53,
+  ["numberdata"]=101,
+  ["prefixdata"]=56,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=41,
+   ["internal"]=39,
    ["order"]=9,
    ["realpage"]=29,
-   ["section"]=24,
+   ["section"]=22,
   },
   ["titledata"]={
    ["title"]="SOA -- Servisne orientovaná architektúra (Service Oriented Architecture) -- sada princípov a metodológií, ktorá odporúča stavbu aplikácií zo vzájomne nezávislých komponent",
   },
  },
  {
-  ["metadata"]=105,
-  ["numberdata"]=63,
-  ["prefixdata"]=60,
+  ["metadata"]=102,
+  ["numberdata"]=62,
+  ["prefixdata"]=59,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=43,
+   ["internal"]=41,
    ["realpage"]=30,
    ["reference"]="obr:samo-koncept-arch",
-   ["section"]=25,
+   ["section"]=23,
    ["view"]="fit",
   },
   ["titledata"]={
@@ -1153,13 +1117,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=52,
-  ["numberdata"]=106,
+  ["metadata"]=51,
+  ["numberdata"]=103,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=44,
+   ["internal"]=42,
    ["realpage"]=31,
-   ["section"]=26,
+   ["section"]=24,
   },
   ["titledata"]={
    ["label"]="section",
@@ -1167,13 +1131,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=52,
-  ["numberdata"]=107,
+  ["metadata"]=51,
+  ["numberdata"]=104,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=45,
+   ["internal"]=43,
    ["realpage"]=33,
-   ["section"]=27,
+   ["section"]=25,
   },
   ["titledata"]={
    ["label"]="section",
@@ -1181,13 +1145,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=52,
-  ["numberdata"]=108,
+  ["metadata"]=51,
+  ["numberdata"]=105,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=47,
+   ["internal"]=45,
    ["realpage"]=33,
-   ["section"]=28,
+   ["section"]=26,
   },
   ["titledata"]={
    ["label"]="section",
@@ -1195,15 +1159,15 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=58,
-  ["numberdata"]=69,
-  ["prefixdata"]=60,
+  ["metadata"]=57,
+  ["numberdata"]=68,
+  ["prefixdata"]=59,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=46,
+   ["internal"]=44,
    ["realpage"]=33,
    ["reference"]="obr:amk",
-   ["section"]=27,
+   ["section"]=25,
    ["view"]="fit",
   },
   ["titledata"]={
@@ -1212,13 +1176,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=48,
-  ["numberdata"]=109,
+  ["metadata"]=47,
+  ["numberdata"]=106,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=48,
+   ["internal"]=46,
    ["realpage"]=34,
-   ["section"]=29,
+   ["section"]=27,
   },
   ["titledata"]={
    ["label"]="chapter",
@@ -1226,13 +1190,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=48,
-  ["numberdata"]=110,
+  ["metadata"]=47,
+  ["numberdata"]=107,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=49,
+   ["internal"]=47,
    ["realpage"]=35,
-   ["section"]=30,
+   ["section"]=28,
   },
   ["titledata"]={
    ["label"]="chapter",
@@ -1240,13 +1204,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=52,
-  ["numberdata"]=111,
+  ["metadata"]=51,
+  ["numberdata"]=108,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=50,
+   ["internal"]=48,
    ["realpage"]=35,
-   ["section"]=31,
+   ["section"]=29,
   },
   ["titledata"]={
    ["label"]="section",
@@ -1254,13 +1218,61 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=52,
-  ["numberdata"]=112,
+  ["metadata"]=51,
+  ["numberdata"]=109,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=49,
+   ["realpage"]=35,
+   ["section"]=30,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="Popis súčasného stavu EMMA",
+  },
+ },
+ {
+  ["metadata"]=57,
+  ["numberdata"]=58,
+  ["prefixdata"]=59,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=50,
+   ["realpage"]=36,
+   ["reference"]="obr:koncept",
+   ["section"]=30,
+   ["view"]="fit",
+  },
+  ["titledata"]={
+   ["list"]="Enterprise architektúra platformy EMMA (Asseco, 2023)",
+   ["title"]="\\THESISautoreffont {Enterprise architektúra platformy EMMA (Asseco, 2023)}",
+  },
+ },
+ {
+  ["metadata"]=57,
+  ["numberdata"]=62,
+  ["prefixdata"]=59,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=51,
-   ["realpage"]=35,
-   ["section"]=32,
+   ["realpage"]=38,
+   ["reference"]="obr:sekv1",
+   ["section"]=30,
+   ["view"]="fit",
+  },
+  ["titledata"]={
+   ["list"]="Sekvenčný model funkčnosti \"Oznámení nástupu zaměstnace\" (Asseco, 2023)",
+   ["title"]="\\THESISautoreffont {Sekvenčný model funkčnosti \"Oznámení nástupu zaměstnace\" (Asseco, 2023)}",
+  },
+ },
+ {
+  ["metadata"]=51,
+  ["numberdata"]=110,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=52,
+   ["realpage"]=38,
+   ["section"]=31,
   },
   ["titledata"]={
    ["label"]="section",
@@ -1268,29 +1280,15 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=52,
-  ["numberdata"]=113,
+  ["metadata"]=57,
+  ["numberdata"]=68,
+  ["prefixdata"]=59,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=53,
-   ["realpage"]=35,
-   ["section"]=33,
-  },
-  ["titledata"]={
-   ["label"]="section",
-   ["title"]="Use case model",
-  },
- },
- {
-  ["metadata"]=58,
-  ["numberdata"]=59,
-  ["prefixdata"]=60,
-  ["references"]={
-   ["block"]="bodypart",
-   ["internal"]=52,
-   ["realpage"]=36,
+   ["realpage"]=39,
    ["reference"]="obr:f-req",
-   ["section"]=32,
+   ["section"]=31,
    ["view"]="fit",
   },
   ["titledata"]={
@@ -1299,15 +1297,43 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=58,
-  ["numberdata"]=63,
-  ["prefixdata"]=60,
+  ["metadata"]=51,
+  ["numberdata"]=111,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=54,
-   ["realpage"]=37,
-   ["reference"]="obr:uc1",
+   ["realpage"]=40,
+   ["section"]=32,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="Use case model",
+  },
+ },
+ {
+  ["metadata"]=51,
+  ["numberdata"]=112,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=57,
+   ["realpage"]=40,
    ["section"]=33,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="Sekvenčný diagram",
+  },
+ },
+ {
+  ["metadata"]=57,
+  ["numberdata"]=74,
+  ["prefixdata"]=59,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=55,
+   ["realpage"]=40,
+   ["reference"]="obr:uc1",
+   ["section"]=32,
    ["view"]="fit",
   },
   ["titledata"]={
@@ -1316,15 +1342,15 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=58,
-  ["numberdata"]=69,
-  ["prefixdata"]=60,
+  ["metadata"]=57,
+  ["numberdata"]=113,
+  ["prefixdata"]=59,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=55,
-   ["realpage"]=37,
+   ["internal"]=56,
+   ["realpage"]=41,
    ["reference"]="obr:uc2",
-   ["section"]=33,
+   ["section"]=32,
    ["view"]="fit",
   },
   ["titledata"]={
@@ -1333,27 +1359,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=52,
+  ["metadata"]=51,
   ["numberdata"]=114,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=56,
-   ["realpage"]=38,
+   ["internal"]=58,
+   ["realpage"]=41,
    ["section"]=34,
-  },
-  ["titledata"]={
-   ["label"]="section",
-   ["title"]="Sekvenčný diagram",
-  },
- },
- {
-  ["metadata"]=52,
-  ["numberdata"]=115,
-  ["references"]={
-   ["block"]="bodypart",
-   ["internal"]=57,
-   ["realpage"]=38,
-   ["section"]=35,
   },
   ["titledata"]={
    ["label"]="section",
@@ -1361,13 +1373,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=52,
-  ["numberdata"]=116,
+  ["metadata"]=51,
+  ["numberdata"]=115,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=58,
-   ["realpage"]=38,
-   ["section"]=36,
+   ["internal"]=59,
+   ["realpage"]=41,
+   ["section"]=35,
   },
   ["titledata"]={
    ["label"]="section",
@@ -1375,32 +1387,29 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=58,
-  ["numberdata"]=117,
-  ["prefixdata"]=60,
+  ["metadata"]=51,
+  ["numberdata"]=116,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=60,
-   ["realpage"]=38,
-   ["reference"]="obr:ldm-zam",
+   ["internal"]=62,
+   ["realpage"]=41,
    ["section"]=36,
-   ["view"]="fit",
   },
   ["titledata"]={
-   ["list"]="Logický dátový model - zamestnávatelia a zamestnanci (vlastné spracovanie)",
-   ["title"]="\\THESISautoreffont {Logický dátový model - zamestnávatelia a zamestnanci (vlastné spracovanie)}",
+   ["label"]="section",
+   ["title"]="Výber služby, ktorá bude implementovaná",
   },
  },
  {
-  ["metadata"]=58,
-  ["numberdata"]=75,
-  ["prefixdata"]=60,
+  ["metadata"]=57,
+  ["numberdata"]=117,
+  ["prefixdata"]=59,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=59,
-   ["realpage"]=39,
+   ["internal"]=60,
+   ["realpage"]=42,
    ["reference"]="obr:ldm-sluzby",
-   ["section"]=36,
+   ["section"]=35,
    ["view"]="fit",
   },
   ["titledata"]={
@@ -1409,43 +1418,32 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=52,
+  ["metadata"]=57,
   ["numberdata"]=118,
+  ["prefixdata"]=59,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=61,
-   ["realpage"]=39,
-   ["section"]=37,
+   ["realpage"]=42,
+   ["reference"]="obr:ldm-zam",
+   ["section"]=35,
+   ["view"]="fit",
   },
   ["titledata"]={
-   ["label"]="section",
-   ["title"]="Výber služby, ktorá bude implementovaná",
+   ["list"]="Logický dátový model - zamestnávatelia a zamestnanci (vlastné spracovanie)",
+   ["title"]="\\THESISautoreffont {Logický dátový model - zamestnávatelia a zamestnanci (vlastné spracovanie)}",
   },
  },
  {
-  ["metadata"]=52,
-  ["numberdata"]=119,
+  ["metadata"]=71,
+  ["numberdata"]=72,
+  ["prefixdata"]=59,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=62,
-   ["realpage"]=39,
-   ["section"]=38,
-  },
-  ["titledata"]={
-   ["label"]="section",
-   ["title"]="Charakteristika vybraných služieb verejnej správy",
-  },
- },
- {
-  ["metadata"]=72,
-  ["numberdata"]=73,
-  ["prefixdata"]=60,
-  ["references"]={
-   ["block"]="bodypart",
-   ["internal"]=63,
-   ["realpage"]=40,
+   ["internal"]=64,
+   ["realpage"]=43,
    ["reference"]="situacie",
-   ["section"]=38,
+   ["section"]=37,
    ["view"]="fit",
   },
   ["titledata"]={
@@ -1453,13 +1451,27 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=52,
+  ["metadata"]=51,
+  ["numberdata"]=119,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=63,
+   ["realpage"]=43,
+   ["section"]=37,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="Charakteristika vybraných služieb verejnej správy",
+  },
+ },
+ {
+  ["metadata"]=51,
   ["numberdata"]=120,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=64,
-   ["realpage"]=40,
-   ["section"]=39,
+   ["internal"]=65,
+   ["realpage"]=44,
+   ["section"]=38,
   },
   ["titledata"]={
    ["label"]="section",
@@ -1467,13 +1479,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=52,
+  ["metadata"]=51,
   ["numberdata"]=121,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=65,
-   ["realpage"]=41,
-   ["section"]=40,
+   ["internal"]=66,
+   ["realpage"]=44,
+   ["section"]=39,
   },
   ["titledata"]={
    ["label"]="section",
@@ -1481,13 +1493,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=52,
+  ["metadata"]=51,
   ["numberdata"]=122,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=66,
-   ["realpage"]=41,
-   ["section"]=41,
+   ["internal"]=67,
+   ["realpage"]=44,
+   ["section"]=40,
   },
   ["titledata"]={
    ["label"]="section",
@@ -1495,13 +1507,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=48,
+  ["metadata"]=47,
   ["numberdata"]=123,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=67,
-   ["realpage"]=42,
-   ["section"]=42,
+   ["internal"]=68,
+   ["realpage"]=45,
+   ["section"]=41,
   },
   ["titledata"]={
    ["label"]="chapter",
@@ -1509,13 +1521,13 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=48,
+  ["metadata"]=47,
   ["numberdata"]=124,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=68,
-   ["realpage"]=43,
-   ["section"]=43,
+   ["internal"]=69,
+   ["realpage"]=46,
+   ["section"]=42,
   },
   ["titledata"]={
    ["label"]="chapter",
@@ -1527,9 +1539,9 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=126,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=69,
-   ["realpage"]=44,
-   ["section"]=44,
+   ["internal"]=70,
+   ["realpage"]=47,
+   ["section"]=43,
   },
   ["titledata"]={
    ["label"]="chapter",
@@ -1540,9 +1552,9 @@ utilitydata.structures.lists.collected={
   ["metadata"]=127,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=70,
-   ["realpage"]=44,
-   ["section"]=44,
+   ["internal"]=71,
+   ["realpage"]=47,
+   ["section"]=43,
   },
   ["userdata"]={
    ["second"]="Literatúra",
@@ -1552,9 +1564,9 @@ utilitydata.structures.lists.collected={
   ["metadata"]=128,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=71,
-   ["realpage"]=46,
-   ["section"]=44,
+   ["internal"]=72,
+   ["realpage"]=49,
+   ["section"]=43,
   },
   ["userdata"]={
    ["command"]="\\blank [big]",
@@ -1564,19 +1576,19 @@ utilitydata.structures.lists.collected={
   ["metadata"]=129,
   ["references"]={
    ["block"]="backpart",
-   ["internal"]=73,
-   ["realpage"]=46,
-   ["section"]=45,
+   ["internal"]=74,
+   ["realpage"]=49,
+   ["section"]=44,
   },
  },
  {
-  ["metadata"]=48,
+  ["metadata"]=47,
   ["numberdata"]=130,
   ["references"]={
    ["block"]="backpart",
-   ["internal"]=72,
-   ["realpage"]=46,
-   ["section"]=45,
+   ["internal"]=73,
+   ["realpage"]=49,
+   ["section"]=44,
   },
   ["titledata"]={
    ["title"]="\\headtext {tables}",
@@ -1586,19 +1598,19 @@ utilitydata.structures.lists.collected={
   ["metadata"]=129,
   ["references"]={
    ["block"]="backpart",
-   ["internal"]=75,
-   ["realpage"]=47,
-   ["section"]=46,
+   ["internal"]=76,
+   ["realpage"]=50,
+   ["section"]=45,
   },
  },
  {
-  ["metadata"]=48,
+  ["metadata"]=47,
   ["numberdata"]=131,
   ["references"]={
    ["block"]="backpart",
-   ["internal"]=74,
-   ["realpage"]=47,
-   ["section"]=46,
+   ["internal"]=75,
+   ["realpage"]=50,
+   ["section"]=45,
   },
   ["titledata"]={
    ["title"]="\\headtext {figures}",
@@ -1608,19 +1620,19 @@ utilitydata.structures.lists.collected={
   ["metadata"]=129,
   ["references"]={
    ["block"]="backpart",
-   ["internal"]=77,
-   ["realpage"]=48,
-   ["section"]=47,
+   ["internal"]=78,
+   ["realpage"]=51,
+   ["section"]=46,
   },
  },
  {
-  ["metadata"]=48,
+  ["metadata"]=47,
   ["numberdata"]=132,
   ["references"]={
    ["block"]="backpart",
-   ["internal"]=76,
-   ["realpage"]=48,
-   ["section"]=47,
+   ["internal"]=77,
+   ["realpage"]=51,
+   ["section"]=46,
   },
   ["titledata"]={
    ["title"]="\\headtext {abbreviations}",
@@ -1631,9 +1643,9 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=134,
   ["references"]={
    ["block"]="appendix",
-   ["internal"]=78,
-   ["realpage"]=49,
-   ["section"]=48,
+   ["internal"]=79,
+   ["realpage"]=52,
+   ["section"]=47,
   },
   ["titledata"]={
    ["label"]="appendix",
@@ -1962,29 +1974,50 @@ utilitydata.structures.pages.collected={
   ["state"]="start",
  },
  {
-  ["block"]="backpart",
+  ["block"]="bodypart",
   ["number"]=46,
   ["numberdata"]=135,
   ["prefixdata"]=136,
   ["state"]="start",
  },
  {
-  ["block"]="backpart",
+  ["block"]="bodypart",
   ["number"]=47,
   ["numberdata"]=135,
   ["prefixdata"]=136,
   ["state"]="start",
  },
  {
-  ["block"]="backpart",
+  ["block"]="bodypart",
   ["number"]=48,
   ["numberdata"]=135,
   ["prefixdata"]=136,
   ["state"]="start",
  },
  {
-  ["block"]="appendix",
+  ["block"]="backpart",
   ["number"]=49,
+  ["numberdata"]=135,
+  ["prefixdata"]=136,
+  ["state"]="start",
+ },
+ {
+  ["block"]="backpart",
+  ["number"]=50,
+  ["numberdata"]=135,
+  ["prefixdata"]=136,
+  ["state"]="start",
+ },
+ {
+  ["block"]="backpart",
+  ["number"]=51,
+  ["numberdata"]=135,
+  ["prefixdata"]=136,
+  ["state"]="start",
+ },
+ {
+  ["block"]="appendix",
+  ["number"]=52,
   ["numberdata"]=135,
   ["prefixdata"]=136,
   ["state"]="start",
@@ -2140,9 +2173,7 @@ utilitydata.job.packed={
   { 0, 3, 10 },
   { 0, 3, 11 },
   { 0, 3, 12 },
-  { 0, 3, 12, 1 },
   { 0, 4 },
-  { 0, 4, 0, 1 },
   { 0, 4, 1 },
   { 0, 4, 2 },
   { 0, 4, 2, 1 },
@@ -2162,6 +2193,7 @@ utilitydata.job.packed={
   { 0, 6, 9 },
   { 0, 6, 10 },
   { 0, 6, 11 },
+  { 0, 6, 12 },
   { 0, 7 },
   { 0, 8 },
   { 0, 9 },
@@ -2179,7 +2211,7 @@ utilitydata.job.packed={
    ["conversionset"]="default",
    ["hidenumber"]=true,
    ["language"]="sk",
-   ["numbers"]=45,
+   ["numbers"]=44,
    ["separatorset"]="default",
    ["set"]="all",
   },
@@ -2240,7 +2272,7 @@ utilitydata.job.packed={
   { 1 },
   {
    ["conversionset"]="number",
-   ["numbers"]=55,
+   ["numbers"]=54,
   },
   {
    ["connector"]=".",
@@ -2258,7 +2290,7 @@ utilitydata.job.packed={
    ["conversionset"]="subfloats",
    ["counter"]="figure",
    ["level"]=1,
-   ["numbers"]=55,
+   ["numbers"]=54,
   },
   {
    ["connector"]=".",
@@ -2268,13 +2300,13 @@ utilitydata.job.packed={
   { 2 },
   {
    ["conversionset"]="number",
-   ["numbers"]=61,
+   ["numbers"]=60,
   },
   {
    ["conversionset"]="subfloats",
    ["counter"]="figure",
    ["level"]=1,
-   ["numbers"]=61,
+   ["numbers"]=60,
   },
   {
    ["block"]="bodypart",
@@ -2287,23 +2319,23 @@ utilitydata.job.packed={
   { 3 },
   {
    ["conversionset"]="number",
-   ["numbers"]=65,
+   ["numbers"]=64,
   },
   { 4 },
   {
    ["conversionset"]="number",
-   ["numbers"]=67,
+   ["numbers"]=66,
   },
   {
    ["conversionset"]="subfloats",
    ["counter"]="figure",
    ["level"]=1,
-   ["numbers"]=65,
+   ["numbers"]=64,
   },
   { 5 },
   {
    ["conversionset"]="number",
-   ["numbers"]=70,
+   ["numbers"]=69,
   },
   {
    ["catcodes"]=9,
@@ -2316,7 +2348,7 @@ utilitydata.job.packed={
    ["conversionset"]="subfloats",
    ["counter"]="table",
    ["level"]=1,
-   ["numbers"]=55,
+   ["numbers"]=54,
   },
   {
    ["block"]="bodypart",
@@ -2330,13 +2362,13 @@ utilitydata.job.packed={
    ["conversionset"]="subfloats",
    ["counter"]="figure",
    ["level"]=1,
-   ["numbers"]=67,
+   ["numbers"]=66,
   },
   {
    ["conversionset"]="subfloats",
    ["counter"]="table",
    ["level"]=1,
-   ["numbers"]=61,
+   ["numbers"]=60,
   },
   {
    ["block"]="bodypart",
@@ -2437,7 +2469,7 @@ utilitydata.job.packed={
   { 6 },
   {
    ["conversionset"]="number",
-   ["numbers"]=89,
+   ["numbers"]=88,
   },
   {
    ["block"]="bodypart",
@@ -2471,6 +2503,16 @@ utilitydata.job.packed={
    ["separatorset"]="default",
    ["set"]="all",
   },
+  { 7 },
+  {
+   ["conversionset"]="number",
+   ["numbers"]=94,
+  },
+  { 8 },
+  {
+   ["conversionset"]="number",
+   ["numbers"]=96,
+  },
   {
    ["block"]="bodypart",
    ["conversionset"]="default",
@@ -2487,15 +2529,17 @@ utilitydata.job.packed={
    ["separatorset"]="default",
    ["set"]="all",
   },
-  { 7 },
+  { 9 },
   {
    ["conversionset"]="number",
-   ["numbers"]=97,
+   ["numbers"]=100,
   },
-  { 8 },
   {
-   ["conversionset"]="number",
-   ["numbers"]=99,
+   ["catcodes"]=9,
+   ["coding"]="tex",
+   ["kind"]="float",
+   ["level"]=4,
+   ["name"]="figure",
   },
   {
    ["block"]="bodypart",
@@ -2512,18 +2556,6 @@ utilitydata.job.packed={
    ["numbers"]=25,
    ["separatorset"]="default",
    ["set"]="all",
-  },
-  { 9 },
-  {
-   ["conversionset"]="number",
-   ["numbers"]=103,
-  },
-  {
-   ["catcodes"]=9,
-   ["coding"]="tex",
-   ["kind"]="float",
-   ["level"]=4,
-   ["name"]="figure",
   },
   {
    ["block"]="bodypart",
@@ -2590,6 +2622,12 @@ utilitydata.job.packed={
    ["set"]="all",
   },
   {
+   ["conversionset"]="subfloats",
+   ["counter"]="figure",
+   ["level"]=1,
+   ["numbers"]=69,
+  },
+  {
    ["block"]="bodypart",
    ["conversionset"]="default",
    ["language"]="sk",
@@ -2617,7 +2655,13 @@ utilitydata.job.packed={
    ["conversionset"]="subfloats",
    ["counter"]="figure",
    ["level"]=1,
-   ["numbers"]=70,
+   ["numbers"]=88,
+  },
+  {
+   ["conversionset"]="subfloats",
+   ["counter"]="figure",
+   ["level"]=1,
+   ["numbers"]=94,
   },
   {
    ["block"]="bodypart",
@@ -2668,14 +2712,6 @@ utilitydata.job.packed={
    ["set"]="all",
   },
   {
-   ["block"]="bodypart",
-   ["conversionset"]="default",
-   ["language"]="sk",
-   ["numbers"]=43,
-   ["separatorset"]="default",
-   ["set"]="all",
-  },
-  {
    ["catcodes"]=9,
    ["coding"]="tex",
    ["increment"]="yes",
@@ -2688,7 +2724,7 @@ utilitydata.job.packed={
    ["conversionset"]="default",
    ["hidenumber"]=true,
    ["language"]="sk",
-   ["numbers"]=44,
+   ["numbers"]=43,
    ["separatorset"]="default",
    ["set"]="all",
   },
@@ -2749,7 +2785,7 @@ utilitydata.job.packed={
    ["conversionset"]="default",
    ["hidenumber"]=true,
    ["language"]="sk",
-   ["numbers"]=45,
+   ["numbers"]=44,
    ["separatorset"]="default",
    ["set"]="all",
   },
