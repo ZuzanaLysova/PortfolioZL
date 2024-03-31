@@ -483,7 +483,9 @@ SAMO sa z hľadiska aplikačnej architektúry skladá z aplikačných komponent,
 
 \TODO prepojenie SAMO a LIDS atd
 
-SAMO používa mikroservice prístup k vývoju softvéru. Každá mikroslužba je zameraná na konkrétnu funkčnosť a môže byť vyvíjaná, nasadená a spravovaná nezávisle od ostatných častí aplikácie. To umožňuje flexibilnejšie škálovanie, rýchlejšie nasadzovanie nových funkcionalít a jednoduchšiu údržbu. SAMO je aplikácia poháňaná metadátami, ktoré obsahujú informácie o vzťahoch medzi časťami  dát, popis užívateľského rozhrania, pravidlá, formuláre a pod. \scr(Asseco, 2023)
+SAMO používa mikroservice prístup k vývoju softvéru. Každá mikroslužba je zameraná na konkrétnu funkčnosť a môže byť vyvíjaná, nasadená a spravovaná nezávisle od ostatných častí aplikácie. To umožňuje flexibilnejšie škálovanie, rýchlejšie nasadzovanie nových funkcionalít a jednoduchšiu údržbu. SAMO je aplikácia poháňaná metadátami, ktoré obsahujú informácie o vzťahoch medzi časťami  dát, popis užívateľského rozhrania, pravidlá, formuláre a pod. \scr(Asseco, 2023) 
+
+\TODO Skladá sa z dvoch hlavných podprojektov, ktorými sú emma-samo-configuration a emma-samo-project
 
 \pkap{LIDS}
 
@@ -517,9 +519,18 @@ Súborová štruktúra je rozdelená na 2 veľké celky - configuration a projec
 
 Správa uživateľov a skupín. Užívatelia zvyčajne prichádzajú pomocou LDAP od zákazníka. Skupiny určujú práva na feature types (zvyčajne ide o skupinu read, edit a admin, napr. ZAMESTNANCI-read, ZAMESTNANCI-edit, ZAMESTNANCI-admin, no je možné vytvárať aj špeciálne skupiny). Sú určené na to, aby boli užívatelia zaradení do skupiny oprávnení. Okrem toho existuje aj security rola, ktorá určuje napr. práva na dlaždice, tlačítka a pod. (pomocou hasAnyRole). Tieto role sa priradia vybraným skupinám a do skupín sa priradia užívatelia. To zabezpečí, že prihlásený užívateľ má umožnené v aplikácii vidieť a robiť len to, na čo má oprávnenie.
 
-%\pkap{EA2LIDS}
+\pkap{Nástroj EA2LIDS}
+Nástroj EA2LIDS je vlastný nástroj firmy Asseco, ktorý slúži na generovanie dátového modelu (model.xml) z modelu v Enterprise Architect. Je to tzv. Model Driven Generation Technology (MDG). MDG technológie umožňujú rozširovať funkcionalitu programu Enterprise Architect (ďalej ako EA) prostredníctvom špeciálnych rozšírení \scr(Sparx, 2024). Existuje množstvo komerčných MDG technológií, ale je možné aj použitie vlastnej, ako je to aj v prípade EA2LIDS. Okrem existujúcich modelov v EA je možnosť rozšírenia základných štruktúr napríklad o tzv. tagged values, stereotypes, profiles, design patterns a podobne. 
 
-\pkap{AMK}
+V prípade EA2LIDS sa pracuje so špeciálnym typom diagramu - LIDS7 a toolboxu v EA (viď \in{obrázok}[obr:special-ea]). Pre správne využitie a funkčnosť nástroja je potreba dbať na správnosť modelov - správne vybrané stereotypy, nadefinované dátové typy, správna menná konvencia, tagy atď. Výsledkom je validný model.xml (zjednodušená schéma fungovania je zobrazená na \in{obrázku}[obr:ea2lids]).
+
+\obrazekB{obr:special-ea}
+{Špeciálny toolbox a diagram v nástroji Enterprise architect (vlastné spracovanie)}{images/special-ea.png}{width=32cc}
+
+\obrazekB{obr:ea2lids}
+{EA2LIDS v praxi (vlastné spracovanie)}{images/ea2lids.png}{width=32cc}
+
+\pkap{Nástroj AMK}
 Platforma SAMO umožňuje vytvárať evidenčné agendové aplikácie, ktoré sa tvoria pomocou konfiguračných metadát. Do týchto metadát sa ukladajú informácie ako dátový model, štruktúra obrazoviek, formulárov atď. Pre účely urýchlenia implementácie SAMO aplikácií bola vyvinutá sada nástrojov označená ako AMK (Application Modling Kit). AMK je koncept a definovaný spôsob práce, súbor metodík a nástrojov, most, ktorý spája analýzu s implementací. Je určený pre agendové aplikácie, teda aplikácie, kde hlavnú úlohu hrá evedincia artefaktov a workflow nad evidenciou. Zaoberá sa spôsobom predávania informácií medzi analýzou a výrobou v štrukturovanej podobe tak, aby štruktúra vyhovovala analytikovi i implementácii. Logika využitia AMK je na \in{obrázku}[obr:amk].
 
 %\obrazek{obr:amk-situace}
@@ -531,9 +542,7 @@ Platforma SAMO umožňuje vytvárať evidenčné agendové aplikácie, ktoré sa
 \obrazekB{obr:amk}
 {AMK v praxi (vlastné spracovanie na základe informácií z interných dokumentov firmy Asseco)}{images/amk.png}{width=32cc}
 
-V amk-generator zložke sú šablóny podľa ktorých sa geenrujú jednotlivé metadáta. Používa sa na to tool fmpp.
-
-Skladá sa z dvoch hlavných podprojektov, ktorými sú emma-samo-configuration a emma-samo-project
+V amk-generator zložke sú šablóny podľa ktorých sa generujú jednotlivé metadáta. Používa sa na to tool fmpp.
 
 \pkap{Popis metodiky, analýzy a návrhu}
 
@@ -683,10 +692,16 @@ TODO
 \pkap{Logický dátový model pre SAMO}
 
 \obrazekB{obr:ldm-sluzby}
-{Logický dátový model - služby a katalóg služieb (vlastné spracovanie)}{images/ldm-sluzby.png}{width=32cc}
+{Logický dátový model - služby a katalóg služieb (vlastné spracovanie podľa aktuálneho riešenia)}{images/ldm-sluzby.png}{width=32cc}
 
 \obrazekB{obr:ldm-zam}
 {Logický dátový model - zamestnávatelia a zamestnanci (vlastné spracovanie)}{images/ldm-zam.png}{width=32cc}
+
+\pkap{EA2LIDS}
+V momente, keď je hotový dátový model sa pomocou nástroja EA2LIDS vytvorí model.xml, ktorý je základom pre fungovanie SAMO aplikácie. 
+
+\pkap{AMK}
+Akonáhle model.xml prejde úpravami a je správny, spustí sa skript AMK a vytvoria sa potrebné metadátové súbory. 
 
 \pkap{Výber služby, ktorá bude implementovaná}
 \pkap{Charakteristika vybraných služieb verejnej správy}
@@ -1033,6 +1048,15 @@ TODO
 \rok{2022}
 \isbn{9781492080695}
  \umist{3}{11}
+}
+
+\publW{
+ \autorkorp{Sparx Systems}
+ \nazev{Model Driven Generation (MDG) Technologies}
+ \online{2024-03-31}
+ \www{https://sparxsystems.com/resources/mdg_tech/}
+ \nazevdok{Sparx Systems}
+ \rok{©~2000 - 2024}
 }
 
 
