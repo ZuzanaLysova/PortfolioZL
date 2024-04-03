@@ -455,7 +455,7 @@ Obsahom platformy EMMA sú:
 
 Na \in{obrázku}[obr:archimate] je zobrazený model aplikačnej architektúry, ktorý popisuje štruktúru, správanie a interakcií v aplikácii. Bol vytvorený pomocou štandardu Archimate, keďže bol pre tieto účely najvhodnejší. Obsahuje rôzne elementy ako procesy, služby, interakcie, rozhrania a podobne.
 \obrazekB{obr:archimate}
-{Application Layer Diagram (vlastné spracovanie)}{images/archimate.png}{width=32cc}
+{EMMA - Application Layer Diagram (vlastné spracovanie)}{images/archimate.png}{width=32cc}
 
 \TODO EBSI (https://ec.europa.eu/digital-building-blocks/sites/display/EBSI/Home) (https://assecoce.sharepoint.com/:w:/r/teams/EMMAPEGOV-Analza/Shared%20Documents/Anal%C3%BDza/80%20-%20V%C3%BDstupy/Etapa1%20-%20N%C3%A1vrh%20%C5%99e%C5%A1en%C3%AD/E1.4%20Enterprise%20architektura/EMMA_E1_Enterprise_architektura.docx?d=wa8731ee84cc84c9b9e26b2ac55ed06bf&csf=1&web=1&e=DRJrfT)
 
@@ -531,18 +531,18 @@ V prípade EA2LIDS sa pracuje so špeciálnym typom diagramu - LIDS7 a toolboxu 
 {EA2LIDS v praxi (vlastné spracovanie)}{images/ea2lids.png}{width=32cc}
 
 \pkap{Nástroj AMK}
-Platforma SAMO umožňuje vytvárať evidenčné agendové aplikácie, ktoré sa tvoria pomocou konfiguračných metadát. Do týchto metadát sa ukladajú informácie ako dátový model, štruktúra obrazoviek, formulárov atď. Pre účely urýchlenia implementácie SAMO aplikácií bola vyvinutá sada nástrojov označená ako AMK (Application Modling Kit). AMK je koncept a definovaný spôsob práce, súbor metodík a nástrojov, most, ktorý spája analýzu s implementací. Je určený pre agendové aplikácie, teda aplikácie, kde hlavnú úlohu hrá evedincia artefaktov a workflow nad evidenciou. Zaoberá sa spôsobom predávania informácií medzi analýzou a výrobou v štrukturovanej podobe tak, aby štruktúra vyhovovala analytikovi i implementácii. Logika využitia AMK je na \in{obrázku}[obr:amk].
+Platforma SAMO umožňuje vytvárať evidenčné agendové aplikácie, ktoré sa tvoria pomocou konfiguračných metadát. Do týchto metadát sa ukladajú informácie ako dátový model, štruktúra obrazoviek, formulárov atď. Pre účely urýchlenia implementácie SAMO aplikácií bola vyvinutá sada nástrojov označená ako AMK (Application Modling Kit). AMK je koncept a definovaný spôsob práce, súbor metodík a nástrojov, most, ktorý spája analýzu s implementací. Je určený pre agendové aplikácie, teda aplikácie, kde hlavnú úlohu hrá evedincia artefaktov a workflow nad evidenciou. Zaoberá sa spôsobom predávania informácií medzi analýzou a výrobou v štrukturovanej podobe tak, aby štruktúra vyhovovala analytikovi i implementácii. Logika využitia AMK je na \in{obrázku}[obr:amk]. AMK možno popísať ako koncept a definovaný spôsob práce, súbor metodík, most spájajúci analýzu s implementáciou. Na \in{obrázku}[obr:amk-archi] je zobrazený model aplikačnej architektúry AMK.
 
-%\obrazek{obr:amk-situace}
-%{Schéma AMK v praxi (vlastné spracovanie na základe informácií z interných dokumentov firmy Asseco)}{images/amk-situace.png}{width=30cc}
-%
-%\obrazek{obr:amk-situace2}
-%{Schéma AMK v praxi  2 (vlastné spracovanie na základe informácií z interných dokumentov firmy Asseco)}{images/amk-situace2.png}{width=30cc}
+Na generovanie potrebných súborov SAMO aplikácie (tzv. metadát) sa využíva nástroj FMPP (FreeMarker-based file PreProcessor). Ide o nástroj na predspracovanie textu, ktorý umožňuje dynamické generovanie obsahu pomocou šablón FreeMarker. Je schopný rekurzívne spracovať adresáre a podporuje generovanie statických webových stránok, zdrojového kódu, konfiguračných súborov a podobne. Dokáže integrovať s dátovými zdrojmi ako CSV, XML a JSON.\scr (FMPP, 2018)
 
 \obrazekB{obr:amk}
 {AMK v praxi (vlastné spracovanie na základe informácií z interných dokumentov firmy Asseco)}{images/amk.png}{width=32cc}
 
-V amk-generator zložke sú šablóny podľa ktorých sa generujú jednotlivé metadáta. Používa sa na to tool fmpp.
+\obrazek{obr:amk-archi}
+{AMK - Časť aplikačnej logiky (vlastné spracovanie)}{images/amk-archi.png}{width=32cc}
+%
+%\obrazek{obr:amk-situace2}
+%{Schéma AMK v praxi  2 (vlastné spracovanie na základe informácií z interných dokumentov firmy Asseco)}{images/amk-situace2.png}{width=30cc}
 
 \pkap{Popis metodiky, analýzy a návrhu}
 
@@ -660,7 +660,7 @@ Služba, ktorá bola implementovaná je "Oznámení nástupu zaměstnace". Na \i
 \pkap{Model požiadaviek}
 Na základe analýzy vznikol model požiadaviek (\in{viď obrázok}[obr:f-req]).
 
-\obrazekB{obr:f-req}
+\obrazek{obr:f-req}
 {Model požiadaviek (vlastné spracovanie na základe informácií z interných dokumentov firmy Asseco a analýzy)}{images/f_req.png}{width=30cc}
 
 \TODO
@@ -932,6 +932,16 @@ TODO
  \nazevdok{Shaping Europe’s digital future}
  \rok{2022}
 }
+
+\publW{
+ \autorkorp{FreeMarker}
+ \nazev{FMPP - FreeMarker-based file PreProcessor}
+ \online{2024-03-31}
+ \www{https://fmpp.sourceforge.net/index.html}
+ \nazevdok{Source Forge}
+ \rok{2018}
+}
+
 
 %\publA{
 %\autor{OECD}

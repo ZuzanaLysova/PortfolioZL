@@ -51,7 +51,7 @@ if not utilitydata.job then utilitydata.job = { } end
 if not utilitydata.job.pagestates then utilitydata.job.pagestates = { } end
 
 utilitydata.job.pagestates.collected={
- ["float"]={ 12, 13, 14, 15, 16, 16, 28, 30, 33, 34, 34, 38, 40, 41, 42, 43, 44, 46, 47 },
+ ["float"]={ 12, 13, 14, 15, 16, 16, 28, 30, 33, 34, 35, 35, 38, 40, 41, 42, 43, 44, 46, 47 },
 }
 
 if not utilitydata.structures then utilitydata.structures = { } end
@@ -485,7 +485,7 @@ utilitydata.structures.counters.collected={
   { 0 },
  },
  ["figure"]={
-  { 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 5, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+  { 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 6, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
  },
  ["float"]={
   { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -1076,8 +1076,8 @@ utilitydata.structures.lists.collected={
    ["view"]="fit",
   },
   ["titledata"]={
-   ["list"]="Application Layer Diagram (vlastné spracovanie)",
-   ["title"]="\\THESISautoreffont {Application Layer Diagram (vlastné spracovanie)}",
+   ["list"]="EMMA - Application Layer Diagram (vlastné spracovanie)",
+   ["title"]="\\THESISautoreffont {EMMA - Application Layer Diagram (vlastné spracovanie)}",
   },
  },
  {
@@ -1217,13 +1217,27 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=60,
+  ["metadata"]=54,
   ["numberdata"]=109,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=49,
+   ["realpage"]=35,
+   ["section"]=27,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="Popis metodiky, analýzy a návrhu",
+  },
+ },
+ {
+  ["metadata"]=60,
+  ["numberdata"]=110,
   ["prefixdata"]=62,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=47,
-   ["realpage"]=34,
+   ["realpage"]=35,
    ["reference"]="obr:amk",
    ["section"]=26,
    ["view"]="fit",
@@ -1234,25 +1248,28 @@ utilitydata.structures.lists.collected={
   },
  },
  {
-  ["metadata"]=54,
-  ["numberdata"]=110,
+  ["metadata"]=60,
+  ["numberdata"]=111,
+  ["prefixdata"]=62,
   ["references"]={
    ["block"]="bodypart",
    ["internal"]=48,
    ["realpage"]=35,
-   ["section"]=27,
+   ["reference"]="obr:amk-archi",
+   ["section"]=26,
+   ["view"]="fit",
   },
   ["titledata"]={
-   ["label"]="section",
-   ["title"]="Popis metodiky, analýzy a návrhu",
+   ["list"]="AMK - Časť aplikačnej logiky (vlastné spracovanie)",
+   ["title"]="\\THESISautoreffont {AMK - Časť aplikačnej logiky (vlastné spracovanie)}",
   },
  },
  {
   ["metadata"]=50,
-  ["numberdata"]=111,
+  ["numberdata"]=112,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=49,
+   ["internal"]=50,
    ["realpage"]=36,
    ["section"]=28,
   },
@@ -1263,10 +1280,10 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=50,
-  ["numberdata"]=112,
+  ["numberdata"]=113,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=50,
+   ["internal"]=51,
    ["realpage"]=37,
    ["section"]=29,
   },
@@ -1277,10 +1294,10 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=54,
-  ["numberdata"]=113,
+  ["numberdata"]=114,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=51,
+   ["internal"]=52,
    ["realpage"]=37,
    ["section"]=30,
   },
@@ -1291,10 +1308,10 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=54,
-  ["numberdata"]=114,
+  ["numberdata"]=115,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=52,
+   ["internal"]=53,
    ["realpage"]=37,
    ["section"]=31,
   },
@@ -1309,7 +1326,7 @@ utilitydata.structures.lists.collected={
   ["prefixdata"]=62,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=53,
+   ["internal"]=54,
    ["realpage"]=38,
    ["reference"]="obr:koncept",
    ["section"]=31,
@@ -1326,7 +1343,7 @@ utilitydata.structures.lists.collected={
   ["prefixdata"]=62,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=54,
+   ["internal"]=55,
    ["realpage"]=40,
    ["reference"]="obr:sekv1",
    ["section"]=31,
@@ -1339,10 +1356,10 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=54,
-  ["numberdata"]=115,
+  ["numberdata"]=116,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=55,
+   ["internal"]=56,
    ["realpage"]=40,
    ["section"]=32,
   },
@@ -1357,7 +1374,7 @@ utilitydata.structures.lists.collected={
   ["prefixdata"]=62,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=56,
+   ["internal"]=57,
    ["realpage"]=41,
    ["reference"]="obr:f-req",
    ["section"]=32,
@@ -1370,10 +1387,10 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=54,
-  ["numberdata"]=116,
+  ["numberdata"]=117,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=57,
+   ["internal"]=58,
    ["realpage"]=42,
    ["section"]=33,
   },
@@ -1384,10 +1401,10 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=54,
-  ["numberdata"]=117,
+  ["numberdata"]=118,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=60,
+   ["internal"]=61,
    ["realpage"]=42,
    ["section"]=34,
   },
@@ -1402,7 +1419,7 @@ utilitydata.structures.lists.collected={
   ["prefixdata"]=62,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=58,
+   ["internal"]=59,
    ["realpage"]=42,
    ["reference"]="obr:uc1",
    ["section"]=33,
@@ -1415,11 +1432,11 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=60,
-  ["numberdata"]=109,
+  ["numberdata"]=110,
   ["prefixdata"]=62,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=59,
+   ["internal"]=60,
    ["realpage"]=43,
    ["reference"]="obr:uc2",
    ["section"]=33,
@@ -1432,10 +1449,10 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=54,
-  ["numberdata"]=118,
+  ["numberdata"]=119,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=61,
+   ["internal"]=62,
    ["realpage"]=43,
    ["section"]=35,
   },
@@ -1446,10 +1463,10 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=54,
-  ["numberdata"]=119,
+  ["numberdata"]=120,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=62,
+   ["internal"]=63,
    ["realpage"]=43,
    ["section"]=36,
   },
@@ -1460,10 +1477,10 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=54,
-  ["numberdata"]=120,
+  ["numberdata"]=121,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=65,
+   ["internal"]=66,
    ["realpage"]=43,
    ["section"]=37,
   },
@@ -1474,11 +1491,11 @@ utilitydata.structures.lists.collected={
  },
  {
   ["metadata"]=60,
-  ["numberdata"]=121,
+  ["numberdata"]=111,
   ["prefixdata"]=62,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=63,
+   ["internal"]=64,
    ["realpage"]=44,
    ["reference"]="obr:ldm-sluzby",
    ["section"]=36,
@@ -1494,7 +1511,7 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=122,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=66,
+   ["internal"]=67,
    ["realpage"]=44,
    ["section"]=38,
   },
@@ -1508,7 +1525,7 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=123,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=67,
+   ["internal"]=68,
    ["realpage"]=44,
    ["section"]=39,
   },
@@ -1522,7 +1539,7 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=124,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=68,
+   ["internal"]=69,
    ["realpage"]=45,
    ["section"]=40,
   },
@@ -1536,7 +1553,7 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=125,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=70,
+   ["internal"]=71,
    ["realpage"]=45,
    ["section"]=41,
   },
@@ -1550,7 +1567,7 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=126,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=71,
+   ["internal"]=72,
    ["realpage"]=45,
    ["section"]=42,
   },
@@ -1564,7 +1581,7 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=127,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=72,
+   ["internal"]=73,
    ["realpage"]=45,
    ["section"]=43,
   },
@@ -1579,7 +1596,7 @@ utilitydata.structures.lists.collected={
   ["prefixdata"]=62,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=64,
+   ["internal"]=65,
    ["realpage"]=46,
    ["reference"]="obr:ldm-zam",
    ["section"]=36,
@@ -1596,7 +1613,7 @@ utilitydata.structures.lists.collected={
   ["prefixdata"]=62,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=69,
+   ["internal"]=70,
    ["realpage"]=47,
    ["reference"]="situacie",
    ["section"]=40,
@@ -1611,7 +1628,7 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=129,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=73,
+   ["internal"]=74,
    ["realpage"]=48,
    ["section"]=44,
   },
@@ -1625,7 +1642,7 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=130,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=74,
+   ["internal"]=75,
    ["realpage"]=49,
    ["section"]=45,
   },
@@ -1639,7 +1656,7 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=132,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=75,
+   ["internal"]=76,
    ["realpage"]=50,
    ["section"]=46,
   },
@@ -1652,7 +1669,7 @@ utilitydata.structures.lists.collected={
   ["metadata"]=133,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=76,
+   ["internal"]=77,
    ["realpage"]=50,
    ["section"]=46,
   },
@@ -1664,7 +1681,7 @@ utilitydata.structures.lists.collected={
   ["metadata"]=134,
   ["references"]={
    ["block"]="bodypart",
-   ["internal"]=77,
+   ["internal"]=78,
    ["realpage"]=52,
    ["section"]=46,
   },
@@ -1676,7 +1693,7 @@ utilitydata.structures.lists.collected={
   ["metadata"]=135,
   ["references"]={
    ["block"]="backpart",
-   ["internal"]=79,
+   ["internal"]=80,
    ["realpage"]=52,
    ["section"]=47,
   },
@@ -1686,7 +1703,7 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=136,
   ["references"]={
    ["block"]="backpart",
-   ["internal"]=78,
+   ["internal"]=79,
    ["realpage"]=52,
    ["section"]=47,
   },
@@ -1698,7 +1715,7 @@ utilitydata.structures.lists.collected={
   ["metadata"]=135,
   ["references"]={
    ["block"]="backpart",
-   ["internal"]=81,
+   ["internal"]=82,
    ["realpage"]=53,
    ["section"]=48,
   },
@@ -1708,7 +1725,7 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=137,
   ["references"]={
    ["block"]="backpart",
-   ["internal"]=80,
+   ["internal"]=81,
    ["realpage"]=53,
    ["section"]=48,
   },
@@ -1720,7 +1737,7 @@ utilitydata.structures.lists.collected={
   ["metadata"]=135,
   ["references"]={
    ["block"]="backpart",
-   ["internal"]=83,
+   ["internal"]=84,
    ["realpage"]=54,
    ["section"]=49,
   },
@@ -1730,7 +1747,7 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=138,
   ["references"]={
    ["block"]="backpart",
-   ["internal"]=82,
+   ["internal"]=83,
    ["realpage"]=54,
    ["section"]=49,
   },
@@ -1743,7 +1760,7 @@ utilitydata.structures.lists.collected={
   ["numberdata"]=140,
   ["references"]={
    ["block"]="appendix",
-   ["internal"]=84,
+   ["internal"]=85,
    ["realpage"]=55,
    ["section"]=50,
   },
@@ -2690,18 +2707,24 @@ utilitydata.job.packed={
    ["set"]="all",
   },
   {
-   ["conversionset"]="subfloats",
-   ["counter"]="figure",
-   ["level"]=1,
-   ["numbers"]=72,
-  },
-  {
    ["block"]="bodypart",
    ["conversionset"]="default",
    ["language"]="sk",
    ["numbers"]=27,
    ["separatorset"]="default",
    ["set"]="all",
+  },
+  {
+   ["conversionset"]="subfloats",
+   ["counter"]="figure",
+   ["level"]=1,
+   ["numbers"]=72,
+  },
+  {
+   ["conversionset"]="subfloats",
+   ["counter"]="figure",
+   ["level"]=1,
+   ["numbers"]=91,
   },
   {
    ["block"]="bodypart",
@@ -2782,12 +2805,6 @@ utilitydata.job.packed={
    ["numbers"]=37,
    ["separatorset"]="default",
    ["set"]="all",
-  },
-  {
-   ["conversionset"]="subfloats",
-   ["counter"]="figure",
-   ["level"]=1,
-   ["numbers"]=91,
   },
   {
    ["block"]="bodypart",
