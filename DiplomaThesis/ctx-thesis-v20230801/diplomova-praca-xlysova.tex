@@ -603,12 +603,12 @@ Hlavnou stavebnou jednotkou LIDS metadát sú tzv. feature types. Ide v podstate
 Tieto metadáta sú uložené, prenášané a spravované vo forme nasledujúcich XML dokumentov:
 
 \startitemize
-\item{\start \bf model.xml \stop - hlavný metadátový súbor, v ktorom sú uložené informácie o tzv. feature types (entita SAMO systému), ich atribútoch, číselníkoch a pod.}
-\item{\start \bf presentation.xml \stop - definuje predvolenú symboliku projektu a pod.}
+\item{\start \bf model.xml \stop -- hlavný metadátový súbor, v ktorom sú uložené informácie o tzv. feature types (entita SAMO systému), ich atribútoch, číselníkoch a pod.}
+\item{\start \bf presentation.xml \stop -- definuje predvolenú symboliku projektu a pod.}
 %\item{\start \bf thematization.xml \stop - definuje dynamickú symboliku prvkov (na základe štandardu OpenGIS Symbology Encoding)}
-\item{\start \bf tool.xml \stop - definuje panely nástrojov špecifických pre projekt}
-\item{\start \bf resource.xml \stop - definuje napr. štýly čiar, symboly, fonty, ikony a pod.}
-\item{\start \bf option.xml \stop - definuje voliteľné funkcie systému ako napr. kopírovanie prvkov, derivovanie atribútov, zobraziteľné atribúty...}
+\item{\start \bf tool.xml \stop -- definuje panely nástrojov špecifických pre projekt}
+\item{\start \bf resource.xml \stop -- definuje napr. štýly čiar, symboly, fonty, ikony a pod.}
+\item{\start \bf option.xml \stop -- definuje voliteľné funkcie systému ako napr. kopírovanie prvkov, derivovanie atribútov, zobraziteľné atribúty...}
 \stopitemize 
 
 Okrem týchto hlavných XML súborov existuje aj množstvo ďalších. Všetky spomínané súbory majú pevne danú štruktúru popísanú v súboroch typu XSD (XML Schema Definiton). 
@@ -735,84 +735,131 @@ K výslednému produktu tejto práce viedlo viacero krokov. V nasledujúcom zozn
 
 
 \pkap{Model požiadaviek}
-Na základe analýzy vznikol model požiadaviek (\in{viď obrázok}[obr:f-req]).
+Na základe analýzy vznikol model požiadaviek (\in{viď obrázok}[obr:f-req]). Nachádza sa tam 15 požiadaviek, pričom táto práca je zameraná najmä na rozšírenie aplikácie o požiadavku modulu zamestnancov. To ale obnáša aj ostatné požiadavky ako napríklad správa oprávnení, prihlasovanie, registrácia, notifikácie a podobne.
 
-\obrazekP{obr:f-req}
-{Model požiadaviek (vlastné spracovanie na základe informácií z interných dokumentov firmy Asseco a analýzy)}{images/f_req.png}{width=28cc}
+\obrazek{obr:f-req}
+{Model požiadaviek (vlastné spracovanie na základe informácií z interných dokumentov firmy Asseco a analýzy)}{images/f_req.png}{width=26cc}
 
 
 \pkap{Use case model}
-Na nasledujúcich obrázkoch možno vidieť model prípadov užitia.
+Use case diagram alebo diagram prípadov použitia sa používa na zobrazenie funkčnosti systému alebo jeho časti. Zároveň znázorňuje funkčné požiadavky a ich interakcie s externými agentmi, tzv. aktérmi \scr(GeeksForGeeks, 2024).
+
+V modeloch sú používaní štyria aktéri:
+
+\startitemize
+\item{systém}
+\item{správca systému -- administrátor na strane sprostredkovateľa}
+\item{zamestnávateľ -- administrátor na strane klienta}
+\item{poverený zamestnanec -- zamestnanec s prístupom do systému (účtovník, personalista...)}
+\stopitemize 
+
+Prvý model (\in{obrázok}[obr:uc1]) zobrazuje prípady použitia zo strany administrátora systému.  Správca systému je schopný zadávať nových zamestnávateľov (klientov) do systému a zakladať im užívateľské kontá. Ďalej má umožnenú správu služieb a oprávnení, reporting a personalizáciu.
 
 \obrazekH{obr:uc1}
-{Use case model zo strany správcu (vlastné spracovanie na základe informácií z interných dokumentov firmy Asseco)}{images/UC Správca.png}{width=30cc}
+{Use case model zo strany správcu (vlastné spracovanie)}{images/UC Správca.png}{width=32cc}
+
+Model na \in{obrázku}[obr:uc3] je ukážkou jednoduchého procesu založenia zamestnávateľa do SAMO EMMA. Akonáhle je vytvorený administrátorský účet klienta, môže do systému registrovať ďalších poverených zamestnancov.
+
+\obrazekH{obr:uc3}
+{Use case model registrácie povereného zamestnanca (vlastné spracovanie)}{images/UC registrácia.png}{width=32cc}
 
 \obrazekH{obr:uc2}
-{Use case model zo strany zamestnávateľa (vlastné spracovanie na základe informácií z interných dokumentov firmy Asseco)}{images/UC Zamestnávateľ.png}{width=30cc}
+{Use case model zo strany povereného zamestnanca (vlastné spracovanie)}{images/UC-Zamestnanec.png}{width=32cc}
+
+Na poslednom use case (\in{obrázku}[obr:uc2]) modeli sú zobrazené use casy z pohľadu povereného zamestnanca. Pôjde o zamestnanca, ktorý má prístup do systému pod prihlasovacími údajmi. Ďalej má umožnenú správu zamestnancov a vykonávanie procesných úkonov spojených so službami verejnej správy. Zároveň je mu umožnené aj spravovať číselníky špecifické pre vybraného klienta.
+
+Všetky funkcie povereného zamestnanca sú umožnené aj zamestnávateľovi (administrátorovi).
 
 
-\pkap{Sekvenčný diagram}
+\pkap{Diagram aktivít}
+Diagram aktivít slúži na zobrazenie toku činností v systéme a popisuje use case. Hlavné činnosti, ktorými sa zaoberá tento projekt sú vyobrazené na diagrame na \in{obrázku}[obr:activity].
 
+\obrazekH{obr:activity}
+{Diagram aktivít (vlastné spracovanie)}{images/Activity.png}{width=32cc}
+
+Obsahuje päť rôznych rolí vstupujúcich do procesov. Začína sa to založením a registráciou zamestnávateľa administrátorom systému. Tento zamestnávateľ následne založí a zaregistruje poverených zamestnancov do systému. Tento proces bude dôležitý viacmenej len v počiatočnej fáze používania systému. 
+
+Rutinnejšia, respektíve častejšie opakovaná činnosť je až na strane povereného zamestnanca, ktorý má na starosti správu zamestnancov, ako i zadávanie nového zamestnanca do systému. Pri zakladaní zamestnanca sa automaticky založí aj entita žiadosť a vyvolá sa proces služby "Oznámení o nástupu zaměstnance".
+
+V poslednej časti je zjednodušene zobrazená inštitúcia verejnej správy, ktorá bude s údajmi žiadosti pracovať.
 
 
 \pkap{Konceptuálny dátový model}
+Konceptuálny dátový model predstavuje pri modelovaní SAMO aplikácie prvý krok k vybudovaniu finálneho dátového modelu. Ide o zjednodušenú ukážku existujúcich entít a väzieb medzi nimi. KDM projektu je na \in{obrázku}[obr:kdm]
 
+\obrazekH{obr:kdm}
+{Konceptuálny dátový model - temp (vlastné spracovanie)}{images/kdm.png}{width=32cc}
 
 \pkap{Logický dátový model pre SAMO}
+Logický dátový model je vytváraný pomocou extenzie LIDS7 (spomínaný v~kapitole 4.3). Zobrazuje feature types (SAMO entity), atribúty a vzťahy medzi jednotlivými feature typami a odkazy na číselníky.
+
+Na prvom modeli (\in{obrázok}[obr:ldm-sluzby]) je namodelovaný súčasný stav aplikácie SAMO EMMA. Ide primárne o správu katalógu služieb. Tejto časti sa praktická časť projektu venuje len okrajovo.
 
 \obrazekH{obr:ldm-sluzby}
 {Logický dátový model - služby a katalóg služieb (vlastné spracovanie podľa aktuálneho riešenia)}{images/ldm-sluzby.png}{width=32cc}
 
+Časť aplikácie, ktorou sa zaoberá táto práca je rozdelená kvôli prehľadnosti do dvoch modelov. Prvý z nich (\in{obrázok}[obr:ldm-os]) sa zaoberá správou osôb, ich kontaktov a adries. Druhá časť (\in{obrázok}[obr:ldm-zam]) je venovaná oblasti zamestnania, to znamená evidencii zamestnancov, zamestnávateľov a žiadostí.
+
 \obrazekH{obr:ldm-os}
 {Logický dátový model - osoby, adresy a spojenia (vlastné spracovanie)}{images/LDMos.png}{width=32cc}
 
-\obrazek{obr:ldm-zam}
+\obrazekH{obr:ldm-zam}
 {Logický dátový model - zamestnávatelia a zamestnanci (vlastné spracovanie)}{images/LDMz.png}{width=32cc}
 
-\pkap{EA2LIDS}
-V momente, keď je hotový dátový model sa pomocou nástroja EA2LIDS vytvorí model.xml, ktorý je základom pre fungovanie SAMO aplikácie. 
+\pkap{Stavové diagramy}
+Stavový diagram popisuje životný cyklus entity. Ukazuje jednotlivé stavy a možné medzistavové prechody.
 
-\pkap{AMK}
-Akonáhle model.xml prejde úpravami a je správny, spustí sa skript AMK a vytvoria sa potrebné metadátové súbory. 
+V rámci tejto práce sa menia stavy dvom entitám -- zamestnanec a žiadosť. Tieto stavové diagramy sú na \in{obrázkoch}[obr:zamestnanec-stav][obr:zadost-stav]
+
+\obrazekH{obr:zamestnanec-stav}
+{Stavový diagram entity zamestnanec}{images/stav1.png}{width=28cc} 
+
+
+\obrazekH{obr:zadost-stav}
+{Stavový diagram entity žiadosť}{images/stav2.png}{width=28cc} 
 
 \pkap{Dizajn aplikácie}
-Farebná paleta a obrázok na úvodnej obrazovke boli predom určená firmou Asseco.
+Farebná paleta a obrázok na úvodnej obrazovke boli predom určené projektovým tímom firmy Asseco.
 
-Čo sa farebnej palety týka, primárnou farbou je modrá a sekundárne farby sú odtiene šedej (viď \in{obrázok}[obr:color]). Jednotlivé dlaždice agend môžu mať na sebe ešte farebný prúžok, ktorý je možno farebne prispôsobovať podľa požiadaviek zákazníka a nemusí rešpektovať farebnú paletu.
+Čo sa farebnej palety týka, primárnou farbou je modrá a sekundárne farby sú odtiene šedej (viď \in{obrázok}[obr:color]). Jednotlivé dlaždice agend môžu mať na sebe ešte farebný prúžok, ktorý je možno farebne prispôsobovať podľa požiadaviek zákazníka a nemusí rešpektovať farebnú paletu (viď dlaždice v spodnej časti \in{obrázku}[obr:dlazdice]).
 
-\obrazek{obr:color}
+\obrazekH{obr:color}
 {Farebná paleta}{images/color.png}{width=30cc} 
 
-Pri vytváraní ikoniek a obrázkov bolo dbané na štandardy a best practices firmy Asseco. Ako možno vidieť na \in{obrázku}[obr:dlazdice], existujú 2 rôzne typy dlaždíc. Jedna z nich je úvodná, pod ňou sa skrývajú ďalšie dlaždice. Na týchto dlaždiciach sa nachádzajú obrázky reprezentujúce danú agendu, oblasť. Druhá úroveň dlaždíc už odkazuje priamo na zoznam, tzv. browse. Tieto dlaždice obsahujú názov, ikonku danej entity a počet záznamov skrývajúcich sa pod danou dlaždicou. 
+Pri vytváraní ikoniek a obrázkov bolo dbané na štandardy a best practices firmy Asseco. Ako možno vidieť na \in{obrázku}[obr:dlazdice], existujú 2 rôzne typy dlaždíc. 
+
+Jednou z typov dlaždíc je úvodná, pod ktorou sa skrývajú ďalšie dlaždice. Na týchto dlaždiciach sa nachádzajú obrázky reprezentujúce danú agendu, oblasť. 
+
+Druhá úroveň dlaždíc už odkazuje priamo na zoznam, tzv. browse. Tieto dlaždice obsahujú názov, ikonku danej entity a počet záznamov skrývajúcich sa pod danou dlaždicou. 
 
 Dlaždicové obrázky mali svoje pravidlá použitých farieb a hrúbky čiary 3 px. Ich úlohou je čo najviac vystihovať danú agendu. Ukladané sú vo formáte png. 
 
-Ikony sú taktiež prispôsobované a ukladané vo formáte svg bez použitia výplne alebo farby čiary, aby bola ich farba plne prispôsobiteľná v aplikácii. 
+Ikony sú taktiež prispôsobované tomu, čo reprezentujú. Sú ukladané vo formáte svg bez použitia výplne alebo farby čiary, aby bola ich farba plne prispôsobiteľná v aplikácii.
 
-Všetky dizajnové prvky sú kreslené pomocou nástroja Figma. Boli vytvorené/upravované tak, aby to malo nejaký jednotný vizuálny štýl. 
+Všetky dizajnové prvky sú kreslené pomocou nástroja Figma. Boli vytvorené/upravované tak, aby mala celá aplikácia jednotný vizuálny štýl. 
 
 \obrazek{obr:dlazdice}
 {Dlaždice}{images/exist-obrazovky/dlazdice.png}{width=30cc} 
 
-Aplikácie budované na platforme majú nejakú predom danú štruktúru.  Úvod-ná obrazovka je vždy jednoduchá login-page. V prípade SAMO EMMA to vyzerá tak, ako je na \in{obrázku}[obr:login]. Obrázok v pozadí je vybraný firmou Asseco.
+Čo sa týka štruktúry aplikácie, SAMO aplikácie majú danú nasledujúcu štruktúru.  Úvodná obrazovka je vždy jednoduchá login-page. V prípade SAMO EMMA to vyzerá tak, ako je na \in{obrázku}[obr:login]. Obrázok v pozadí je vybraný firmou.
 
 \obrazekH{obr:login}
 {Obrazovka - login}{images/exist-obrazovky/0-login.png}{width=32cc} 
 
 Po prihlásení sa užívateľ dostane na úvodný rozcestník, tzv. dashboard (\in{obrázok}[obr:dashboard1]). Dashboard môže byť rôzne logicky delený do dlaždíc. Pod každou dlaždicou sa nachádza ďalšia úroveň a to dlaždice s ikonou a počtom entít v danej agende (\in{obrázok}[obr:dashboard2]). Tieto dlaždice už vedú na samotný zoznam entít, tzv. browse (\in{obrázok}[obr:browse]).
 
-\obrazek{obr:dashboard1}
+\obrazekH{obr:dashboard1}
 {Obrazovka -- prvá úroveň dlaždíc}{images/exist-obrazovky/dlazdice1.png}{width=32cc} 
 
-\obrazek{obr:dashboard2}
+\obrazekH{obr:dashboard2}
 {Obrazovka -- druhá úroveň dlaždíc}{images/exist-obrazovky/dlazdice2.png}{width=32cc} 
 
-\obrazek{obr:browse}
+\obrazekH{obr:browse}
 {Obrazovka -- browse a detail}{images/exist-obrazovky/browse.png}{width=32cc} 
 
 V browse je užívateľovi umožnené vytvárať nové záznamy, prezerať si detaily záznamov (viď pravá časť \in{obrázku}[obr:browse], poprípade ich editovať (viď \in{obrázok}[obr:edit]). V aplikácii je na každej úrovni v ľavej časti sekundárna navigácia.
 
-\obrazek{obr:edit}
+\obrazekH{obr:edit}
 {Obrazovka -- editačný formulár}{images/exist-obrazovky/edit.png}{width=32cc} 
 
 %\pkap{Výber služby, ktorá bude implementovaná}
@@ -895,9 +942,11 @@ V browse je užívateľovi umožnené vytvárať nové záznamy, prezerať si de
 %TODO
 
 \pkap{Implementácia}
-Po dôkladnej analýze a návrhu prichádza fáza implementácie. Vzhľadom na to, že je používaná agilná metodika, navrhnuté modely sa môžu meniť.
+Po dôkladnej analýze a návrhu prichádza fáza implementácie. Prvým krokom je inštalácia lokálneho prostredia. To zahŕňa naklonovanie potrebných repozitárov -- configuration a project. Následne je nutná registrácia balíčkov a samotná inštalácia projektu z env zložky projektu. Po úspešnej inštalácii je možné aplikáciu lokálne spustiť pomocou nástroja Localtron.
 
-Prvá fáza implementácie spočíva vo vytvorení validného model.xml, a teda zadefinovaní všetkých potrebných feature typov, atribútov, vzťahov. Následne sa spúšťa amk_generate.bat, ktorý vytvorý základné metadátové súbory ako napr. dashboard, základné pages, detaily, editačné formuláre atď.
+Po inštalácii lokálneho prostredia a kontrole správnosti logického dátového modelu v EA, sa môže pomocou nástroja EA2LIDS vygenerovať model.xml, ktorý je základom pre fungovanie SAMO aplikácie. 
+
+Akonáhle model.xml prejde úpravami a je správny a kompletný, spustí sa skript AMK a vytvoria sa potrebné metadátové súbory ako napr. dashboard, základné pages, detaily, editačné formuláre atď. Vzhľadom na to, že je používaná agilná metodika, navrhnuté modely sa môžu meniť.
 
 Finálna podoba úvodnej obrazovky (cockpitu) je na \in{obrázku}[obr:dashboard1]. Je to rozdelené do sekcií "Zaměstnání", "Hlavní činnosti" a "Ostatní". Rozdelenie do sekcií a vzhľad obrázkov dlaždíc je odsúhlasený zákazníkom (firmou Asseco).
 
@@ -918,9 +967,6 @@ Dôležitou súčasťou systému je evidencia zamestnancov. Pod dlaždicou \zlom
 Pri naberaní nových zamestnancov budú v stave "nový" a budú práve pod touto dlaždicou. Prehľadnejšie tak bude vidieť, ktorí zamestnanci už majú toto oznámenie hotové alebo nie. V momente, keď sa podarí úspešne nahlásiť nástup zamestnanca, prepne sa do stavu "řádný" a presunie sa pod dlaždicu zamestnanci. 
 
 V prípade výpovede zamestnanca prepne zodpovedný pracovník tohto zamestnanca do stavu "výpověď" a bude možné na ňom previesť akciu o ukončení pracovného pomeru vzhľadom k úradom. Stavový diagram je na \in{obrázku}[obr:zamestnanec-stav]
-
-\obrazek{obr:zamestnanec-stav}
-{Stavový diagram entity zamestnanec}{images/stav1.png}{width=30cc} 
 
 Pod dlaždicou zamestnávateľa sú informácie o konkrétnej firme, ktorá je zákazníkom produktu SAMO EMMA. Obsahuje všetky potrebné atribúty nutné pre komunikáciu s verejnou správou.
 
@@ -1099,6 +1145,14 @@ TODO
  \www{https://fmpp.sourceforge.net/index.html}
  \nazevdok{Source Forge}
  \rok{2018}
+}
+
+\publX{
+ \online{2024-04-17}
+ \autor{GeeksForGeeks}
+ \nazev{Unified Modeling Language (UML) Diagrams}
+ \www{https://www.geeksforgeeks.org/unified-modeling-language-uml-introduction/}
+ \rok{2024}
 }
 
 
