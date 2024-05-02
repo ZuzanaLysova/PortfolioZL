@@ -1,0 +1,36 @@
+﻿id;kod;popis
+1;1;první pracovní poměr
+2;2;druhý pracovní poměr u téhož zaměstnavatele
+3;3;třetí pracovní poměr u téhož zaměstnavatele
+4;4;čtvrtý pracovní poměr u téhož zaměstnavatele
+5;5;pátý pracovní poměr u téhož zaměstnavatele
+6;6;šestý pracovní poměr u téhož zaměstnavatele
+7;7;sedmý pracovní poměr u téhož zaměstnavatele
+8;8;osmý pracovní poměr u téhož zaměstnavatele
+9;9;devátý pracovní poměr u téhož zaměstnavatele
+10;A;dohoda o pracovní činnosti
+11;B;druhá dohoda o pracovní činnosti u téhož zaměstnavatele
+12;C;třetí dohoda o pracovní činnosti u téhož zaměstnavatele
+13;D;čtvrtá dohoda o pracovní činnosti u téhož zaměstnavatele
+14;E;pátá dohoda o pracovní činnosti u téhož zaměstnavatele
+15;F;šestá dohoda o pracovní činnosti u téhož zaměstnavatele
+16;G;sedmá dohoda o pracovní činnosti u téhož zaměstnavatele
+17;H;osmá dohoda o pracovní činnosti u téhož zaměstnavatele
+18;I;devátá dohoda o pracovní činnosti u téhož zaměstnavatele
+19;J;desátá dohoda o pracovní činnosti u téhož zaměstnavatele
+20;K;dobrovolný pracovník pečovatelské služby
+21;L;domácký zaměstnanec
+22;M;osoby pečující a osoby v evidenci ve zvláštních případech (§ 47i zák. č. 359/1999 Sb.)
+23;N;smluvní zaměstnanec
+24;O;člen družstva
+25;P;prokuristé
+26;Q;členové kolektivních orgánů právnických osob
+27;R;likvidátoři
+28;S;společník
+29;T;první dohoda o provedení práce u téhož zaměstnavatele
+30;U;druhá dohoda o provedení práce u téhož zaměstnavatele
+31;V;třetí dohoda o provedení práce u téhož zaměstnavatele
+32;W;čtvrtá dohoda o provedení práce u téhož zaměstnavatele
+33;X;pátá dohoda o provedení práce u téhož zaměstnavatele
+34;Y;šestá dohoda o provedení práce u téhož zaměstnavatele
+35;Z;sedmá dohoda o provedení práce u téhož zaměstnavatele
