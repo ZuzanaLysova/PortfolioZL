@@ -38,6 +38,8 @@ Cieľom tejto diplomovej práce je analýza súčasných procesov verejnej sprá
 \kap{Súčasný stav}
 V dnešnej dobe sa digitalizácia verejnej správy stala častou témou rôznych diskusií. Je to najmä preto, že predstavuje cestu k efektívnejšiemu, účinnejšiemu a transparentnejšiemu poskytovaniu služieb naprieč rozličnými odvetviami. \zlom V~tomto dynamickom kontexte sľubuje digitalizácia transformáciu tradičných modelov služieb na modely, ktoré sú viac prispôsobené súčasným potrebám občanov a~inštitúcií. \scr(Andersson, 2022)
 
+Medzi hlavné výhody digitalizácie verejnej správy patrí zvýšenie efektivity práce, kvality služieb, spoľahlivosti a dôvery, a to vo vzťahu občana a verejnej správa i vládnych inštitúcií medzi sebou \scr(Terlizzi, 2021).
+
 Pre správne chápanie fungovania eGovernmentu v Českej republike (i vo svete) je nutné pochopenie základných pojmov a koncepcií, ktoré sú popísané v nasledujúcich kapitolách.
 
 \pkap{Architektura eGovernmentu ČR}
@@ -138,7 +140,7 @@ Vláda ČR považuje program Digitálne Česko za súbor stratégií, ktoré vyt
 
 
 \pkap{Postavenie Českej republiky v oblasti digitalizácie}
-Existuje viacero spôsobov hodnotenia a merania úrovne rozvinutosti krajín v oblasti digitalizácie a rozvoja eGovernmentu. Patrí medzi ne napríklad \start \it Index digitálnej ekonomiky a spoločnosti, Index rozvoja eGovernmentu, eGovernment Benchmark \stop a iné \scr(Winkler, 2024). Tieto nástroje umožňujú detailnejšie pochopenie postupov, ktoré krajiny implementujú na podporu eGovernmentu a identifikáciu oblastí, v~ktorých je potrebné zlepšenie.
+Existuje viacero spôsobov hodnotenia a merania úrovne rozvinutosti krajín v oblasti digitalizácie a rozvoja eGovernmentu. Patrí medzi ne napríklad \start \it Index digitálnej ekonomiky a spoločnosti, Index rozvoja eGovernmentu, eGovernment Benchmark \stop a iné \scr(Terlizzi, 2021). Tieto nástroje umožňujú detailnejšie pochopenie postupov, ktoré krajiny implementujú na podporu eGovernmentu a identifikáciu oblastí, v~ktorých je potrebné zlepšenie.
 
 V nasledujúcich kapitolách sú v~skratke popísané spomínané prieskumy a ich posledné výsledky. Analýza výsledkov umožní lepšie pochopiť súčasný stav na národnej aj medzinárodnej úrovni.
 
@@ -709,22 +711,23 @@ Aplikácia je nasadená v cloudovom prostredí Azure. Testovanie aplikácie preb
 %- Jirka ohladom SAMO
 
 \kap{Výsledky}
+Výsledky sú realizované podľa princípov metodiky popísaných v kapitole 4 Metodika. Na začiatku spracovania je potrebné definovanie problému a dôkladná analýza. Nasledujúce časti podrobne opisujú postup od úvodnej analýzy až po testovanie implementovaných riešení. Teoretické základy a poznatky pre vytvorenie tejto práce sú obsiahnuté v kapitole 3 Súčasný stav.
 
-K výslednému produktu tejto práce viedlo viacero krokov. V nasledujúcom zozname sú v skratke zadefinované:
-\startitemize[n]
-\item{preskúmanie súčasného stavu eGovernmentu a nutných znalostí k vývoju aplikácie určenej pre komunikáciu s verejnou správou}
-\item{analýza súčasného stavu projektu EMMA implementovaného prostredníctvom SAMO aplikácie}
-\item{pochopenie fungovania platformy SAMO a jeho technologického zázemia}
-\item{na základe dohody s firmou rozšírenie existujúcej aplikácie o modul zamestnancov a zapojenie vybraných služieb VS}
-\startitemize[a]
-\item{potrebná analýza a modely (use case, model požiadaviek a pod.)}
-\item{KDM a LDM, ktoré sú potrebné pre generovanie metadát aplikácie}
-\item{návrh agendovej aplikácie a jeho zápis do štrukturovanej podoby kvôli AMK}
-\item{použitie AMK generátoru, ktorý vykoná extrakciu dát z AMK DB a vygeneruje SAMO konfiguračné soubory (metadáta)}
-\item{úprava vygenerovaných metadát do žiadanej podoby, zapojenie aplikačnej logiky}
-\stopitemize
-\item{vytvorenie testovacích scenárov}
-\stopitemize
+%K výslednému produktu tejto práce viedlo viacero krokov. V nasledujúcom zozname sú v skratke zadefinované:
+%\startitemize[n]
+%\item{preskúmanie súčasného stavu eGovernmentu a nutných znalostí k vývoju aplikácie určenej pre komunikáciu s verejnou správou}
+%\item{analýza súčasného stavu projektu EMMA implementovaného prostredníctvom SAMO aplikácie}
+%\item{pochopenie fungovania platformy SAMO a jeho technologického zázemia}
+%\item{na základe dohody s firmou rozšírenie existujúcej aplikácie o modul zamestnancov a zapojenie vybraných služieb VS}
+%\startitemize[a]
+%\item{potrebná analýza a modely (use case, model požiadaviek a pod.)}
+%\item{KDM a LDM, ktoré sú potrebné pre generovanie metadát aplikácie}
+%\item{návrh agendovej aplikácie a jeho zápis do štrukturovanej podoby kvôli AMK}
+%\item{použitie AMK generátoru, ktorý vykoná extrakciu dát z AMK DB a vygeneruje SAMO konfiguračné soubory (metadáta)}
+%\item{úprava vygenerovaných metadát do žiadanej podoby, zapojenie aplikačnej logiky}
+%\stopitemize
+%\item{vytvorenie testovacích scenárov}
+%\stopitemize
 
 %\pkap{Popis súčasného stavu EMMA}
 %Platforma EMMA bude sprostredkovávať služby verejnej správy podnikateľským subjektom. V aktuálnom stave nemá zákazníka a je pokladaná za "výskumný projekt".
@@ -753,9 +756,12 @@ K výslednému produktu tejto práce viedlo viacero krokov. V nasledujúcom zozn
 %Čo sa týka výzoru aplikácie, pôvodné obrázky a ikony boli prebraté z iného projektu, a tak neboli úplne adekvátne a bolo nutné ich upraviť/vytvoriť nové.
 
 \pkap{Analýza}
+Proces analýzy je neoddeliteľnou súčasťou každého projektu a zohráva kľúčovú rolu v jeho úspešnom realizovaní. Analýza pomáha identifikovať požiadavky, zvyšuje efektivitu vývoja a umožňuje hľadať najvhodnejšie riešenia v~súlade s potrebami a cieľmi organizácie a zákazníka. (Tradinos, 2023)
+
+V nasledujúcich podkapitolách sa nachádzajú rôzne modely v jazyku UML, ktoré približujú požiadavky, prípady použitia a dátovú štruktúru aplikácie.
 
 \ppkap{Model požiadaviek}
-Na základe analýzy vznikol model požiadaviek (\in{viď obrázok}[obr:f-req]). Nachádza sa tam 15 požiadaviek, pričom táto práca je zameraná najmä na rozšírenie aplikácie o požiadavku modulu zamestnancov. To ale obnáša aj ostatné požiadavky ako napríklad správa oprávnení, prihlasovanie, registrácia, notifikácie a podobne.
+Na základe analýzy vznikol model požiadaviek (\in{viď obrázok}[obr:f-req] v časti Prílohy). Nachádza sa tam 15 požiadaviek, pričom táto práca je zameraná najmä na rozšírenie aplikácie o požiadavku modulu zamestnancov. To ale obnáša aj ostatné požiadavky ako napríklad správa oprávnení, prihlasovanie, registrácia, notifikácie a podobne.
 
 
 \ppkap{Use case model}
@@ -776,17 +782,15 @@ Prvý model (\in{obrázok}[obr:uc1]) zobrazuje prípady použitia zo strany admi
 \obrazekH{obr:uc1}
 {Use case model zo strany správcu (vlastné spracovanie)}{images/UC Správca.png}{width=32cc}
 
-Model na \in{obrázku}[obr:uc3] je ukážkou jednoduchého procesu založenia zamestnávateľa do SAMO EMMA. Akonáhle je vytvorený administrátorský účet klienta, môže do systému registrovať ďalších poverených zamestnancov.
-
-\obrazekH{obr:uc3}
-{Use case model registrácie povereného zamestnanca (vlastné spracovanie)}{images/UC registrácia.png}{width=32cc}
+%\obrazekH{obr:uc3}
+%{Use case model registrácie povereného zamestnanca (vlastné spracovanie)}{images/UC registrácia.png}{width=32cc}
 
 \obrazekH{obr:uc2}
 {Use case model zo strany povereného zamestnanca (vlastné spracovanie)}{images/UC-Zamestnanec.png}{width=32cc}
 
-Na poslednom use case (\in{obrázku}[obr:uc2]) modeli sú zobrazené use casy z pohľadu povereného zamestnanca. Pôjde o zamestnanca, ktorý má prístup do systému pod prihlasovacími údajmi. Ďalej má umožnenú správu zamestnancov a vykonávanie procesných úkonov spojených so službami verejnej správy. Zároveň je mu umožnené aj spravovať číselníky špecifické pre vybraného klienta.
+Na druhom use case (\in{obrázku}[obr:uc2]) modeli sú zobrazené use casy z pohľadu povereného zamestnanca a zamestnávateľa. Obaja aktéri majú prístup do systému pod prihlasovacími údajmi. Ďalej majú umožnenú správu zamestnancov a vykonávanie procesných úkonov spojených so službami verejnej správy. Zároveň je im umožnené aj spravovať číselníky špecifické pre vybraného klienta.
 
-Všetky funkcie povereného zamestnanca sú umožnené aj zamestnávateľovi (administrátorovi na strane klienta).
+Use case týkajúci sa len zamestnávateľa je proces založenia zamestnávateľa do SAMO EMMA. Akonáhle je vytvorený administrátorský účet klienta (správcom systému), môže do systému registrovať ďalších poverených zamestnancov.
 
 Vybrané use casy a ich scenáre sú podrobnejšie popísané pomocou diagramov aktivít v nasledujúcej kapitole.
 
@@ -794,9 +798,11 @@ Vybrané use casy a ich scenáre sú podrobnejšie popísané pomocou diagramov 
 \ppkap{Diagram aktivít}
 Diagram aktivít slúži na zobrazenie toku činností v systéme a popisuje use case a jednotlivé use case scenáre.
 
-Diagramy aktivít hlavných činností, ktorými sa zaoberá tento projekt sú vyobrazené v časti Prílohy na \in{obrázkoch}[obr:acti3] až \in[obr:acti-overeni]. Slovný popis jednotlivých aktivít je v nasledujúcich odstavcoch.
+Diagramy aktivít hlavných činností, ktorými sa zaoberá tento projekt sú vyobrazené v časti Prílohy na \in{obrázkoch}[obr:acti3] až \in[obr:acti-overeni]. Slovný popis jednotlivých aktivít sa nachádza v nasledujúcich odstavcoch.
 
-\blank
+Na formuláciu slovného popisu bola použitá umelá inteligencia, konkrétne ChatGPT 4. Vygenerovaný text bol následne mierne upravený.
+
+\zlom
 \start
 \setupindenting[no]
 \start \bf Prihlásiť sa do systému\stop
@@ -875,7 +881,7 @@ Posledné entity sa týkajú kontaktných údajov a adries fyzických a právnic
 {Konceptuálny dátový model - temp (vlastné spracovanie)}{images/kdm.png}{width=32cc}
 
 \zlom
-\pkap{Logický dátový model pre SAMO}
+\ppkap{Logický dátový model pre SAMO}
 Logický dátový model je vytváraný pomocou extenzie LIDS7 (spomínaný v~kapitole 3.8.1). Zobrazuje feature types (SAMO entity), atribúty a vzťahy medzi jednotlivými feature typami a odkazy na číselníky.
 
 Na prvom modeli (\in{obrázok}[obr:ldm-sluzby]) je namodelovaný súčasný stav aplikácie SAMO EMMA. Ide primárne o správu katalógu služieb. Tejto časti sa praktická časť projektu venuje len okrajovo.
@@ -908,7 +914,10 @@ V nasledujúcich podkapitolách sú popísané vybrané číselníky, entity a i
 Všetky tabuľkách v časti Prílohy (konkrétne Príloha D) sú popísané jednotlivé atribúty všetkých feature typov, ich dátové typy a väzby.
 
 \blank
+\start
+\setupindenting[no]
 \start\bf Číselníky\stop
+\stop
 
 Pre správne fungovanie a validnosť údajov je potrebné vytvoriť a naplniť číselníky. Vzhľadom na to, že v aplikácii sa bude komunikovať s verejnou správou, kde musia získavať presné údaje, textové polia pri vyplňovaní niektorých údajov nestačia. 
 
@@ -925,7 +934,10 @@ Keďže okrem komunikácie s VS systém slúži aj na samotnú evidenciu zamestn
 Okrem spomínaných číselníkov existuje aj špeciálny číselník cl_anoNe, ktorý sa používa na vyjadrenie boolean hodnoty v SAMO aplikáciách. 
 
 \blank
+\start
+\setupindenting[no]
 \start\bf Osoba \stop
+\stop
 
 Feature type osoba je abstraktná entita, ktorá je rodičom dvoch ďalších entít, fyzickej a právnickej osoby. 
 
@@ -945,24 +957,36 @@ Odvodenie derivovaných atribútov fyzickej osoby: % je v úsekoch kódu na \in{
 \stopitemize
 
 \blank
+\start
+\setupindenting[no]
 \start\bf Spojenie \stop
+\stop
 
 Táto entita slúži na ukladanie kontaktov osoby. Je naviazaná na právnickú i fyzickú osobu a umožňuje ukladať kontakty ako email, telefónne číslo, dátová schránka a podobne. Osoba môže mať práve jedno spojenie označené ako primárne.
 
 \blank
+\start
+\setupindenting[no]
 \start\bf Adresa \stop
+\stop
 
 Entita adresa slúži na ukladanie adries osôb. Je, podobne ako spojenie, naviazaná na právnickú i fyzickú osobu. Využíva viacero číselníkov, ktoré boli plnené pomocou dát z RÚIAN-u. Adresa môže byť trvalá a korešpondenčná. Osoby môžu mať práve 2 platné adresy -- jednu korešpondenčnú a jednu trvalú.
 
 Okrem osôb je adresa naviazaná aj na adresné miesto. Táto entita by mala zmysel, ak by bol systém napojený na databázu RÚIAN, kedy by bral realtime dáta o adresných miestach z tohto registru.
 
 \blank
+\start
+\setupindenting[no]
 \start\bf Zamestnanec \stop
+\stop
 
 Ďalšou entitou je entita zamestnanec. Táto entita je naviazaná na zamestnávateľa a na fyzickú osobu. Slúži na evidenciu údajov o zamestnaní, ktoré sú relevantné pre zamestnávateľa alebo úrady.
 
 \blank
+\start
+\setupindenting[no]
 \start\bf Zamestnávateľ \stop
+\stop
 
 Poslednou vybranou entitou je entita zamestnávateľ. Táto entita je naviazaná na spomínaného zamestnanca a právnickú osobu. Slúži na evidenciu údajov o zamestnávateľovi, ktoré sú potrebné pre komunikáciu s VS.
 
@@ -970,7 +994,10 @@ Poslednou vybranou entitou je entita zamestnávateľ. Táto entita je naviazaná
 Stavový diagram popisuje životný cyklus entity. Ukazuje jednotlivé stavy a možné medzistavové prechody. V rámci tejto práce sa môžu meniť stavy dvom entitám -- zamestnanec a žiadosť. Stavové diagramy sú na \in{obrázkoch}[obr:zamestnanec-stav] a \in[obr:zadost-stav].
 
 \blank
+\start
+\setupindenting[no]
 \start\bf Zamestnanec \stop
+\stop
 
 Zamestnanec môže nadobudnúť štyri rôzne stavy. Sú to stavy "nový", "řádný", "výpověď" a "ukončený".
 
@@ -983,7 +1010,10 @@ Posledným stavom je stav "ukončený", do ktorého sa entita dostáva po ubehnu
 O stave zamestnancov hovorí číselníkový atribút cl_stavZamestnance. Číselník bol naplnený ručne pomocou jednoduchého SQL príkazu.
 
 \blank
+\start
+\setupindenting[no]
 \start\bf Žiadosť \stop
+\stop
 
 Druhou stavovou entitou je entita žiadosť. Táto entita môže nadobudnúť tri rôzne stavy, a to "neoveřeno", "chyba" a "ověřeno". 
 
@@ -1001,8 +1031,10 @@ Je to riadené pomocou číselníkových atribútov rôznych orgánov, napr. cl_
 
 
 \obrazekH{obr:zadost-stav}
-{Stavový diagram entity žiadosť (vlastné spracovanie)}{images/stav2.png}{width=30cc} 
+{Stavový diagram entity žiadosť (vlastné spracovanie)}{images/stav2.png}{width=28cc} 
 
+
+\zlom
 \pkap{Návrh a dizajn}
 Farebná paleta a obrázok na úvodnej obrazovke boli predom určené projektovým tímom firmy Asseco.
 
@@ -1011,9 +1043,9 @@ Farebná paleta a obrázok na úvodnej obrazovke boli predom určené projektov�
 \obrazekH{obr:color}
 {Farebná paleta (vlastné spracovanie pomocou coolors.co)}{images/color.png}{width=30cc} 
 
-Pri vytváraní ikoniek a obrázkov bolo dbané na štandardy a best practices firmy Asseco. Ako možno vidieť na \in{obrázku}[obr:dlazdice], existujú 2 rôzne typy dlaždíc. 
+Pri vytváraní ikoniek a obrázkov bolo dbané na štandardy a best practices firmy Asseco. Ikony sú navrhnuté v súlade s pravidlami Google Material Design. 
 
-Jednou z typov dlaždíc je úvodná, pod ktorou sa skrývajú ďalšie dlaždice. Na týchto dlaždiciach sa nachádzajú obrázky reprezentujúce danú agendu, oblasť. 
+Ako možno vidieť na \in{obrázku}[obr:dlazdice], existujú 2 rôzne typy dlaždíc. Jednou z typov dlaždíc je úvodná, pod ktorou sa skrývajú ďalšie dlaždice. Na týchto dlaždiciach sa nachádzajú obrázky reprezentujúce danú agendu, oblasť. 
 
 Druhá úroveň dlaždíc už odkazuje priamo na zoznam, tzv. browse. Tieto dlaždice obsahujú názov, ikonku danej entity a počet záznamov skrývajúcich sa pod danou dlaždicou. 
 
@@ -1028,30 +1060,9 @@ Všetky dizajnové prvky sú kreslené pomocou nástroja Figma. Boli vytvorené/
 
 Čo sa týka štruktúry aplikácie, SAMO aplikácie majú danú nasledujúcu štruktúru.  Úvodná obrazovka je vždy jednoduchá login-page. V prípade SAMO EMMA to vyzerá tak, ako je na \in{obrázku}[obr:login]. Obrázok v pozadí je vybraný firmou.
 
-\obrazekH{obr:login}
-{Obrazovka - login (vlastné spracovanie)}{images/exist-obrazovky/0-login.png}{width=32cc} 
-
-Nasledujúce prvky aplikácie sú zobrazené pomocou drátených modelov vyttvorených v nástroji Figma. Tieto modely slúžia ako vzor pre finálny vzhľad aplikácie.
+Nasledujúce prvky aplikácie sú zobrazené pomocou drátených modelov vytvorených v nástroji Figma. Drátené modely sa nachádzajú v časi Prílohy. Tieto modely slúžia ako vzor pre finálny vzhľad aplikácie.
 
 Po prihlásení sa užívateľ dostane na úvodný rozcestník, tzv. dashboard (\in{obrázok}[obr:drat-dashboard]). Dashboard môže byť rôzne logicky delený do dlaždíc. Pod každou dlaždicou sa nachádza ďalšia úroveň a to dlaždice s ikonou a počtom entít v danej agende (\in{obrázok}[obr:drat-dashboard2]). Tieto dlaždice už vedú na samotný zoznam entít, tzv. browse (\in{obrázok}[obr:drat-browse-detail]).
-
-\obrazekH{obr:drat-dashboard}
-{Drátený model úvodnej obrazovky -- dashboardu (vlastné spracovanie)}{images/wire/cockpit.png}{width=32cc}
-
-\obrazekH{obr:drat-dashboard2}
-{Drátený model druhej úrovne dlaždíc (vlastné spracovanie)}{images/wire/dlazdice2.png}{width=32cc}
-
-\obrazekH{obr:drat-browse-detail}
-{Drátený model zoznamu entít a ich detailu (vlastné spracovanie)}{images/wire/browse-detail.png}{width=32cc}
-
-\obrazekH{obr:drat-spravacl}
-{Drátený model správy číselníkov -- zoznam editovateľných číselníkov (vlastné spracovanie)}{images/wire/sprava-cl.png}{width=32cc}
-
-\obrazekH{obr:drat-konkretnycl}
-{Drátený model správy číselníkov -- konkrétny číselník (vlastné spracovanie)}{images/wire/konkretny-cl.png}{width=32cc}
-
-\obrazekH{obr:drat-edit}
-{Drátený model klasického editačného formulára (vľavo) a steppera (vpravo) (vlastné spracovanie)}{images/wire/edit.png}{width=32cc}
 
 
 %\obrazekH{obr:drat-edit}
@@ -1073,6 +1084,7 @@ V browse je užívateľovi umožnené vytvárať nové záznamy pomocou formulá
 
 Okrem týchto drátených modelov je tu aj drátený model modulu na správu číselníkov. Na \in{obrázku}[obr:drat-spravacl] je vidieť rôzne číselníky, ktoré možno upravovať. Na obrazovku, ktorá je na \in{obrázku}[obr:drat-konkretnycl] sa dostane užívateľ výberom jedného z číselníkov. Sú tam zobrazené konkrétne záznamy v danom číselníku s možnosťou editácie a pridávania novej hodnoty.
 
+\blank
 Pre lepšie priblíženie štruktúry aplikácie je na \in{obrázku}[obr:site-map] zobrazený hierarchicky usporiadaný zoznam všetkých stránok, takzvaná mapa webu alebo sitemap.
 
 \obrazekH{obr:site-map}
@@ -1168,12 +1180,13 @@ Po inštalácii lokálneho prostredia a kontrole správnosti logického dátové
 
 Akonáhle model.xml prejde úpravami a je správny a kompletný, spustí sa skript AMK a vytvoria sa potrebné metadátové súbory ako napr. dashboard, základné pages, detaily, editačné formuláre atď. Vzhľadom na to, že je používaná agilná metodika, navrhnuté modely sa môžu meniť.
 
-Vygenerované súbory sa nachádzajú v adresári emma-gen a pri prípadnom ďalšom generovaní sa prepíšu opäť podľa xml modelu. Preto je nutné akékoľvek zmeny v súboroch zaznamenávať v adresári emma-int. Týmito zmenami sú myslené rôzne validačné kontroly, zmeny defaultných formulárov a detailov a podobne.
-
-V nasledujúcich kapitolách sú rozobrané jednotlivé komponenty aplikácie.
+Vygenerované súbory sa nachádzajú v adresári emma-gen a pri prípadnom ďalšom generovaní sa prepíšu opäť podľa xml modelu. Preto je nutné akékoľvek zmeny v súboroch zaznamenávať v súboroch adresára emma-int. Týmito zmenami sú myslené rôzne validačné kontroly, zmeny defaultných formulárov a detailov a podobne. V nasledujúcich kapitolách sú rozobrané jednotlivé komponenty aplikácie.
 
 \ppkap{Vzhľad a štruktúra}
-Finálna podoba úvodnej obrazovky (cockpitu) je na \in{obrázku}[obr:fin-dashboard]. Je to rozdelené do sekcií "Zaměstnání", "Hlavní činnosti" a "Ostatní". Rozdelenie do sekcií a vzhľad obrázkov dlaždíc je odsúhlasený zákazníkom (firmou Asseco).
+Prvou obrazovkou, ktorú užívateľ uvidí je login page (viď \in{obrázok}[obr:login]). Po prihlásení sa dostane na úvodnú obrazovku, tzv. cockpit. Finálna podoba cockpitu je na \in{obrázku}[obr:fin-dashboard]. Je to rozdelené do sekcií "Zaměstnání", "Hlavní činnosti" a "Ostatní". Rozdelenie do sekcií a vzhľad obrázkov dlaždíc je odsúhlasený zákazníkom (firmou Asseco).
+
+\obrazekH{obr:login}
+{Obrazovka - login (vlastné spracovanie)}{images/exist-obrazovky/0-login.png}{width=32cc} 
 
 \obrazekH{obr:fin-dashboard}
 {Úvodná obrazovka -- dashboard (vlastné spracovanie)}{images/fin/dashboard.png}{width=32cc}
@@ -1342,155 +1355,9 @@ Aplikácia SAMO EMMA je dostupná len pomocou VPN vybranej firmy, v prípade tej
 
 Testovanie aplikácie prebieha pomocou manuálnych testov. Je to štandardný proces testovania SAMO aplikácií v rámci spoločnosti Asseco, CE. 
 
-Proces, ktorý potrebuje byť dôkladne otestovaný je proces založenia zamestnanca a oznámenie o jeho nástupe. Testovanie prebieha pomocou testovacieho scenára popísaného nižšie.
+Testovanie softvéru je dôležitou fázou projektov a prináša niekoľko dôležitých výhod. Pomocou testovania sa overuje, či aplikácia funguje podľa očakávaní. Prínosom testovania je aj identifikácia chýb a nedostatkov v raných fázach vývoja, čo znižuje náklady na ich neskoršie opravy. Okrem toho znižuje riziká súvisiace s kvalitou, bezpečnosťou a výkonom softvéru. \scr(IEEE,2024)
 
-Testovacie scenáre vybraných use casov sú v nasledujúcich podkapitolách.
-
-\ppkap{Prihlásiť sa do systému}
-Cieľ testovania: Overenie funkčnosti prihlasovacieho procesu systému, vrátane overenia správneho aj nesprávneho zadania prihlasovacích údajov. Zabezpečiť, že chybové hlášky sú zrozumiteľné a informatívne. Overiť správnosť presmerovania na hlavnú stránku po úspešnom prihlásení.
-
-\blank
-Testovací postup pre základnú cestu:
-
-\startitemize[n]
-\item{Otvorenie prihlasovacej stránky: Spustenie prihlasovacej stránky systému.}
-\item{Zadanie prihlasovacích údajov: Zadajte správne meno a heslo pre testovací účet.}
-\item{Overenie prihlasovacích údajov systémom: Systém overí zadané údaje na ich správnosť.}
-\item{Prihlásenie a presmerovanie: Po úspešnom overení systém prihlási užívateľa a presmeruje ho na hlavnú stránku.}
-\stopitemize
-
-Očakávaný výsledok pre základnú cestu: Užívateľ je úspešne prihlásený a presmerovaný na hlavnú stránku systému.
-
-
-\blank
-Testovací postup pre alternatívnu cestu:
-
-\startitemize[n]
-\item{Otvorenie prihlasovacej stránky: Spustenie prihlasovacej stránky systému.}
-\item{Zadanie nesprávnych údajov: Zadajte nesprávne meno alebo heslo.}
-\item{Overenie prihlasovacích údajov systémom: Systém overí zadané údaje a identifikuje ich ako nesprávne.}
-\item{Zobrazenie chybovej hlášky: Systém zobrazí hlášku o nesprávnych prihlasovacích údajoch.}
-\stopitemize
-
-Očakávaný výsledok pre alternatívnu cestu: Systém informuje užívateľa o nesprávnom zadaní údajov a nedovolí prístup do systému.
-
-\ppkap{Registrovať sa do systému}
-
-Cieľ testovania: Overenie procesu registrácie zamestnanca do systému vrátane overenia správneho vyplnenia a odosielania registračných údajov, ako aj ošetrenie nesprávneho vyplnenia údajov. Kontrolovať správnosť chybových hlášok. Zabezpečiť, že emaily sú správne formátované a obsahujú všetky potrebné informácie. Overiť, že linky na aktiváciu a prihlásenie fungujú správne.
-
-\blank
-Testovací postup pre základnú cestu:
-
-\startitemize[n]
-\item{Žiadosť o registráciu: Zamestnanec zadá žiadosť o registráciu.}
-\item{Odoslanie registračného emailu: Systém automaticky odošle registračný email na emailovú adresu zamestnanca.}
-\item{Aktivácia linku v emaili: Zamestnanec klikne na odkaz v emaili, čím potvrdí svoju identitu.}
-\item{Vyplnenie registračného formulára: Na otvorenej registračnej stránke zamestnanec vyplní všetky požadované údaje vrátane mena, priezviska a aktivačného kódu.}
-\item{Overenie údajov systémom: Systém overí správnosť zadaných údajov a aktivačného kódu.}
-\item{Overenie jedinečnosti emailu: Systém skontroluje, či je zadaný email unikátny.}
-\item{Súhlas so spracovaním údajov: Zamestnanec vyjadrí súhlas so spracovaním osobných údajov podľa GDPR.}
-\item{Overenie registrácie: Systém overí všetky zadanie a potvrdí registráciu.}
-\item{Odoslanie potvrdzujúceho emailu: Systém odošle zamestnancovi potvrdzujúci email s odkazom na prihlásenie.}
-\stopitemize
-
-Očakávaný výsledok pre základnú cestu: Registrácia prebehne úspešne bez chýb, zamestnanec dostane potvrdzujúci email a je schopný sa prihlásiť do systému.
-
-\blank
-Testovací postup pre alternatívnu cestu:
-
-\startitemize[n]
-\item{Vyplnenie registračného formulára s chybami: Zamestnanec vyplní registračný formulár s chybami (nesprávne údaje).}
-\item{Odoslanie formulára: Zamestnanec odosle formulár.}
-\item{Zobrazenie chybových hlášok: Systém zistí chyby v údajoch a zobrazí relevantné chybové hlášky.}
-\stopitemize
-
-Očakávaný výsledok pre alternatívnu cestu: Systém informuje zamestnanca o nesprávne vyplnených údajoch, registrácia nie je dokončená a zamestnanec musí opraviť chyby.
-
-\ppkap{Vytvoriť žiadosť o registráciu povereného zamestnanca}
-
-Cieľ testovania: Overenie procesu vytvorenia žiadosti o registráciu povereného zamestnanca, vrátane správnosti a úplnosti zadaných údajov a zaslanie autorizačného emailu. Zabezpečiť, že chybové hlášky sú jasné a informujúce. Overiť, že email je správne odoslaný iba pri správnom vytvorení žiadosti. Skontrolovať správnosť odkazov a tokenov v autorizačnom emaili.
-
-\blank
-Testovací postup pre základnú cestu:
-
-\startitemize[n]
-\item{Vytvorenie fyzickej osoby: Administrátor vytvorí fyzické osoby pre zodpovedného zamestnanca.}
-\item{Zobrazenie detailov osoby: Systém zobrazí detailné informácie o vybranej osobe.}
-\item{Vytvorenie záznamu spojenia: Administrátor vytvorí nový záznam spojenia, ktorý bude označený ako primárne.}
-\item{Uloženie primárneho emailu: Systém uloží primárny email osoby.}
-\item{Spustenie akcie na vytvorenie žiadosti: Administrátor spustí akciu "Žiadosť o vytvorenie registrácie" na detailoch osoby.}
-\item{Odoslanie autorizačného emailu: Systém odosiela email s autentizačným tokenom a odkazom na registráciu.}
-\stopitemize
-
-Očakávaný výsledok pre základnú cestu: Žiadosť o registráciu je úspešne vytvorená a autorizačný email s potrebnými údajmi a odkazom na registráciu je odoslaný na primárny email zamestnanca.
-
-\blank
-Testovací postup pre alternatívnu cestu:
-
-\startitemize[n]
-\item{Chybné vytvorenie spojenia: Administrátor nezadá email alebo zadá nesprávne údaje pri vytváraní spojenia.}
-\item{Spustenie akcie na vytvorenie žiadosti: Administrátor pokúsi spustiť akciu "Žiadosť o vytvorenie registrácie" aj napriek chybe.}
-\item{Zobrazenie chybového hlásenia: Systém detekuje chybu a zobrazí chybové hlásenie "U vybranej osoby není uveden email jako primární spojení".}
-\stopitemize
-
-Očakávaný výsledok pre alternatívnu cestu: Systém zobrazí chybové hlásenie a administrátor bude vyzvaný k oprave údajov pred opätovným pokusom o vytvorenie žiadosti.
-
-\ppkap{Zadať nového zamestnanca do systému}
-
-Cieľ testu: Overiť, že systém umožňuje správne zadanie nového zamestnanca vrátane overenia údajov a pridelenia unikátneho identifikátora (UUID).
-
-\blank
-Testovací postup:
-
-\startitemize[n]
-\item{Prihlásenie do systému: Prihláste sa do systému s používateľským menom a heslom, ktoré majú potrebné autorizačné práva.}
-\item{Navigácia do sekcie pre pridanie nového zamestnanca: Prejdite na sekciu na pridávanie nových zamestnancov a kliknite na tlačidlo pridania nového zamestnanca ("+").}
-\item{Vyplnenie údajov zamestnanca: Vyplňte formulár s osobnými údajmi nového zamestnanca, vrátane mena, priezviska, kontaktov, adresy a ďalších relevantných informácií.}
-\item{Odoslanie údajov na overenie: Kliknite na tlačidlo "vytvoriť" a počkajte na systémovú validáciu údajov.}
-\item{Overte, či systém správne zvaliduje údaje. Pri neúplných alebo nesprávnych údajoch očakávajte upozornenie s možnosťou ich opravy.}
-\item{Overenie výsledku validácie: Ak sú údaje kompletné a správne, systém by mal predvyplniť údaje o žiadosti a vytvoriť záznam pre zamestnanca.}
-\item{Priradenie UUID: Skontrolujte, či systém automaticky generuje a priraďuje UUID novej žiadosti (cez debug mód).}
-\item{Úspešné uloženie a notifikácia: Overte, že na konci procesu systém vracia potvrdenie o úspešnom pridaní zamestnanca.}
-\stopitemize
-
-Očakávaný výsledok: Nový zamestnanec je úspešne pridaný do systému s priradeným unikátnym identifikátorom a všetky zadané údaje sú správne uložené a overené.
-
-
-\ppkap{Registrovať nástup zamestnanca}
-
-Cieľ testu: Overiť, že systém správne overuje a registruje nástup nového zamestnanca na základe poskytnutých údajov.
-
-\blank
-Testovací postup:
-
-\startitemize[n]
-\item{Prihlásenie do systému: Prihláste sa do systému s používateľským menom a heslom, ktoré majú potrebné oprávnenia.}
-\item{Založenie nového zamestnanca a žiadosti: Zadajte údaje nového zamestnanca a súčasne založte novú žiadosť o nástup zamestnanca.}
-\item{Overenie žiadosti: Prejdite na detail žiadosti, kde sa zobrazí tlačítko "overiť žiadosť".}
-\item{Kliknite na tlačítko "overiť žiadosť" a sledujte, ako systém overuje informácie.}
-\item{Spustenie validácie údajov: Skontrolujte, či systém spustí funkciu overenia údajov (napr. CtlVysledekZaregistrujNastupZamestnanca s UUID žiadosti).}
-\item{Overte, že systém validuje údaje a vracia odpovede podľa správnosti údajov.}
-\item{Kontrola výsledku: Skontrolujte, aký výsledok (úspešná registrácia alebo chybová hláška) systém vracia po pokuse o registráciu.}
-\item{Očakáva sa, že pri správne zadaných údajoch dostanete potvrdenie o úspešnom overení a registrácii.}
-\stopitemize
-
-Očakávaný výsledok: Systém by mal úspešne overiť a zaregistrovať nástup nového zamestnanca s príslušným UUID, pričom by mali byť správne zobrazené všetky relevantné informácie o žiadosti a jej overení.
-
-
-%\obrazekH{obr:test-prihl}
-%{Test case na use case prihlásenia (vlastné spracovanie)}
-%{images/TestPrihlasenie.png}
-%{width=30cc} 
-%
-%\obrazekH{obr:test-reg1}
-%{Test case na use case registrácie (vlastné spracovanie)}
-%{images/TestRegistracia.png}
-%{width=30cc} 
-%
-%\obrazekH{obr:test-reg2}
-%{Test case na use case žiadosti o registráciu (vlastné spracovanie)}
-%{images/TestRegistracia_zadost.png}
-%{width=30cc} 
+Manuálne testovanie prebieha pomocou testovacích scenárov. Scenáre sú vytvorené podľa štandardov firmy Asseco. Sú popísané tabuľkami s tromi stĺpcami -- krok, akcia a očakávaný výsledok. Všetky tabuľky sa nachádzajú v časti Prílohy, konkrétne tabuľky \in[tab:test1] až \in[tab:test6].
 
 \kap{Diskusia a záver}
 
@@ -1688,6 +1555,15 @@ TODO
  \rok{2024}
 }
 
+\publW{
+ \autorkorp{IEEE}
+ \nazev{The Importance of Software Testing}
+\podnazev{Unveiling the Significance and Strategies of Comprehensive Software Testing}
+ \online{2024-05-08}
+ \www{https://www.computer.org/resources/importance-of-software-testing}
+ \nazevdok{IEEE COMPUTER SOCIETY}
+ \rok{2024}
+}
 
 %\publA{
 %\autor{OECD}
@@ -1833,6 +1709,15 @@ TODO
 \cast{16(1)}
 }
 
+\publW{
+ \autorkorp{Tradinos}
+ \nazev{The Importance of System Analysis in Software Development}
+ \online{2024-05-08}
+ \www{https://www.linkedin.com/pulse/importance-system-analysis-software-development-tradinos/}
+ \nazevdok{Linkedin}
+ \rok{2023}
+}
+
 \publD{%
  \autorkorp{United Nations}
  \nazev{E-Government Survey 2022}
@@ -1934,22 +1819,22 @@ TODO
 \kap{Diagramy aktivít}
 
 \obrazekH{obr:acti3}
-{Diagram aktivít pre use case Prihlásiť sa do systému (vlastné spracovanie)}{images/ActivityPrihlasenie.png}{width=30cc}
+{Diagram aktivít pre UC Prihlásiť sa do systému (vlastné spracovanie)}{images/ActivityPrihlasenie.png}{width=30cc}
 
 \obrazekH{obr:acti1}
-{Diagram aktivít pre use case Vytvoriť žiadosť o registráciu povereného zamestnanca (vlastné spracovanie)}{images/ActivityRegistracia_zadost.png}{width=30cc}
+{Diagram aktivít pre UC Vytvoriť žiadosť o registráciu povereného zamestnanca (vlastné spracovanie)}{images/ActivityRegistracia_zadost.png}{width=30cc}
 
 \obrazekH{obr:acti2}
-{Diagram aktivít pre use case Registrovať sa do systému (vlastné spracovanie)}{images/ActivityRegistracia.png}{width=30cc}
+{Diagram aktivít pre UC Registrovať sa do systému (vlastné spracovanie)}{images/ActivityRegistracia.png}{width=30cc}
 
 \obrazekH{obr:acti-cl}
-{Diagram aktivít pre use case Spravovať číselníky (vlastné spracovanie)}{images/ActivityCl.png}{width=30cc}
+{Diagram aktivít pre UC Spravovať číselníky (vlastné spracovanie)}{images/ActivityCl.png}{width=30cc}
 
 \obrazekH{obr:acti-nastup}
-{Diagram aktivít pre use case Zadať nového zamestnanca do systému (vlastné spracovanie)}{images/ActivityNastup.png}{width=30cc}
+{Diagram aktivít pre UC Zadať nového zamestnanca do systému (vlastné spracovanie)}{images/ActivityNastup.png}{width=30cc}
 
 \obrazekH{obr:acti-overeni}
-{Diagram aktivít pre use case Registrovať nástup zamestnanca (vlastné spracovanie)}{images/ActivityOvereni.png}{width=30cc}
+{Diagram aktivít pre UC Registrovať nástup zamestnanca (vlastné spracovanie)}{images/ActivityOvereni.png}{width=30cc}
 
 
 \kap{Entity, atribúty a väzby}
@@ -2819,30 +2704,426 @@ TODO
 }
 
 
-%\kap{Drátené modely}
-%
-%\obrazekH{obr:drat-dashboard}
-%{Drátený model úvodnej obrazovky -- dashboardu (vlastné spracovanie)}{images/wire/cockpit.png}{width=32cc}
-%
-%\obrazekH{obr:drat-dlazdice2}
-%{Drátený model druhej úrovne dlaždíc (vlastné spracovanie)}{images/wire/dlazdice2.png}{width=32cc}
-%
-%\obrazekH{obr:drat-browse-detail}
-%{Drátený model zoznamu entít a ich detailu (vlastné spracovanie)}{images/wire/browse-detail.png}{width=32cc}
-%
-%\obrazekH{obr:drat-spravacl}
-%{Drátený model správy číselníkov -- zoznam editovateľných číselníkov (vlastné spracovanie)}{images/wire/sprava-cl.png}{width=32cc}
-%
-%\obrazekH{obr:drat-konkretnycl}
-%{Drátený model správy číselníkov -- konkrétny číselník (vlastné spracovanie)}{images/wire/konkretny-cl.png}{width=32cc}
-%
-%\obrazekH{obr:drat-edit}
-%{Drátený model editačného formulára typu samo-entity-properties-form (vlastné spracovanie)}{images/wire/edit-detail.png}{width=25cc}
-%
-%\obrazekH{obr:drat-stepper}
-%{Drátený model editačného formulára typu samo-entity-properties-form (vlastné spracovanie)}{images/wire/stepper.png}{width=25cc}
+\kap{Drátené modely}
 
+\obrazekH{obr:drat-dashboard}
+{Drátený model dashboardu (vlastné spracovanie)}{images/wire/cockpit.png}{width=32cc}
+
+\obrazekH{obr:drat-dashboard2}
+{Drátený model druhej úrovne dlaždíc (vlastné spracovanie)}{images/wire/dlazdice2.png}{width=32cc}
+
+\obrazekH{obr:drat-browse-detail}
+{Drátený model zoznamu entít a ich detailu (vlastné spracovanie)}{images/wire/browse-detail.png}{width=32cc}
+
+\obrazekH{obr:drat-spravacl}
+{Drátený model správy číselníkov -- zoznam editovateľných číselníkov (vlastné spracovanie)}{images/wire/sprava-cl.png}{width=32cc}
+
+\obrazekH{obr:drat-konkretnycl}
+{Drátený model správy číselníkov -- konkrétny číselník (vlastné spracovanie)}{images/wire/konkretny-cl.png}{width=32cc}
+
+\obrazekH{obr:drat-edit}
+{Drátený model klasického editačného formulára (vľavo) a steppera (vpravo) (vlastné spracovanie)}{images/wire/edit.png}{width=32cc}
+
+
+\kap{Testovacie scenáre}
 % ...
+\setupTABLE[frame=on]
+\setupTABLE[row][first][background=color, backgroundcolor=lightgray, style=bold]
+\setupTABLE[column][1][width=3cc]
+\setupTABLE[column][2][width=15cc]
+\setupTABLE[column][3][width=14cc]
+\setupTABLE[r][each][align={middle,lohi}]
+\Tabulka{tab:test1}{Testovací scenár pre UC Prihlásiť sa do systému (vlastné spracovanie)}{
+\bTABLE
+  \bTR
+    \bTH Krok \eTH
+    \bTH Akcia \eTH
+    \bTH Očakávaný výsledok \eTH
+  \eTR
+  \bTR
+    \bTD 1 \eTD
+    \bTD Otvorte prihlasovaciu stránku. \eTD
+    \bTD Zobrazí sa prihlasovacia stránka s políčkami login a heslo. \eTD
+  \eTR
+   \bTR
+    \bTD 2a \eTD
+    \bTD Zadajte správne meno a heslo. \eTD
+    \bTD Systém užívateľa prihlási a zobrazí sa dashboard. \eTD
+  \eTR  
+   \bTR
+    \bTD 2b \eTD
+    \bTD Zadajte nesprávne meno alebo heslo. \eTD
+    \bTD Systém zobrazí chybovú hlášku a užívateľa neprihlási. \eTD
+  \eTR  
+\eTABLE
+}
+
+
+\setupTABLE[frame=on]
+\setupTABLE[row][first][background=color, backgroundcolor=lightgray, style=bold]
+\setupTABLE[column][1][width=3cc]
+\setupTABLE[column][2][width=15cc]
+\setupTABLE[column][3][width=14cc]
+\setupTABLE[r][each][align={middle,lohi}]
+\Tabulka{tab:test2}{Testovací scenár pre UC Vytvoriť žiadosť o registráciu povereného zamestnanca (vlastné spracovanie)}{
+\bTABLE
+  \bTR
+    \bTH Krok \eTH
+    \bTH Akcia \eTH
+    \bTH Očakávaný výsledok \eTH
+  \eTR
+  \bTR
+    \bTD 1 \eTD
+    \bTD Prihláste sa do systému. \eTD
+    \bTD Zobrazí sa úvodný rozcestník -- dashboard. \eTD
+  \eTR
+  \bTR
+    \bTD 2 \eTD
+    \bTD Kliknite na dlaždicu SPRÁVA OSOB. \eTD
+    \bTD Zobrazí sa rozcestník pre modul "SPRÁVA OSOB". \eTD
+  \eTR
+   \bTR
+    \bTD 3 \eTD
+    \bTD Kliknite na "Fyzické osoby". \eTD
+    \bTD Zobrazí sa zoznam FO. \eTD
+  \eTR  
+   \bTR
+    \bTD 4a_1 \eTD
+    \bTD Vyberte neregistrovanú osobu, ktorá má vyplnený primárny email. \eTD
+    \bTD Zobrazí sa detail osoby s tlačidlami v hornej časti. \eTD
+  \eTR  
+ \bTR
+    \bTD 4a_2 \eTD
+    \bTD Kliknite na 3 bodky v pravom hornom rohu detailu a na tlačidlo "Žádost o vytvoření registrace". \eTD
+    \bTD Spustí sa registrácia a registrovanej osobe príde email s aktivačným kľúčom a odkazom na dokončenie registrácie. \eTD
+  \eTR  
+   \bTR
+    \bTD 4b_1 \eTD
+    \bTD Vyberte neregistrovanú osobu, ktorá nemá vyplnený primárny email.  \eTD
+    \bTD Zobrazí sa detail osoby s tlačidlami v hornej časti. \eTD
+\eTR  
+   \bTR
+    \bTD 4b_2 \eTD
+    \bTD Kliknite na 3 bodky v pravom hornom rohu detailu a na tlačidlo "Žádost o vytvoření registrace".  \eTD
+    \bTD Zobrazí sa chybová hláška "U vybrané osoby není uveden email jako primární spojení". \eTD
+\eTR
+   \bTR
+    \bTD 4c_1 \eTD
+    \bTD Vyberte už zaregistrovanú osobu a kliknite na ňu. \eTD
+    \bTD Zobrazí sa detail osoby s tlačidlami v hornej časti. \eTD
+  \eTR  
+   \bTR
+    \bTD 4c_2 \eTD
+    \bTD Kliknite na 3 bodky v pravom hornom rohu detailu a na tlačidlo "Žádost o vytvoření registrace". \eTD
+    \bTD Zobrazí sa chybová hláška "U vybrané osoby již byla provedena aktivace účtu" \eTD
+  \eTR
+\eTABLE
+}
+
+
+\setupTABLE[frame=on]
+\setupTABLE[row][first][background=color, backgroundcolor=lightgray, style=bold]
+\setupTABLE[column][1][width=3cc]
+\setupTABLE[column][2][width=15cc]
+\setupTABLE[column][3][width=14cc]
+\setupTABLE[r][each][align={middle,lohi}]
+\Tabulka{tab:test3}{Testovací scenár pre UC Registrovať sa do systému (vlastné spracovanie)}{
+\bTABLE
+  \bTR
+    \bTH Krok \eTH
+    \bTH Akcia \eTH
+    \bTH Očakávaný výsledok \eTH
+  \eTR
+  \bTR
+    \bTD 1 \eTD
+    \bTD Kliknite na odkaz v registračnom emaili. \eTD
+    \bTD Zobrazí sa registračná stránka. \eTD
+  \eTR
+  \bTR
+    \bTD 2 \eTD
+    \bTD Vložte správne meno a priezvisko. \eTD
+    \bTD Umožní sa prechod na ďalší krok. \eTD
+  \eTR
+   \bTR
+    \bTD 3a \eTD
+    \bTD Vložte správny aktivačný kľúč z emailu. \eTD
+    \bTD Overenie prebehne v poriadku a umožní sa prechod na ďalší krok. \eTD
+  \eTR  
+   \bTR
+    \bTD 3b \eTD
+    \bTD Vložte nesprávny aktivačný kľúč z emailu. \eTD
+    \bTD Zobrazí sa chybová hláška "Zadaným údajům neodpovídá žádná aktivace. Prosím o kontrolu kombinace jméno, příjmení a aktivačního klíče". \eTD
+  \eTR  
+ \bTR
+    \bTD 4a \eTD
+    \bTD Zadajte jedinečný login, dostatočne silné heslo a heslo zopakujte dva krát. \eTD
+    \bTD Umožní sa prechod na ďalší krok. \eTD
+  \eTR  
+   \bTR
+    \bTD 4b \eTD
+    \bTD Zadajte login, ktorý už v systéme existuje.  \eTD
+    \bTD Zobrazí sa chybová hláška "Uživatelské jméno již existuje, zvolte si jiné". \eTD
+\eTR  
+ \bTR
+    \bTD 4c \eTD
+    \bTD Zadajte nedostatočné heslo.  \eTD
+    \bTD Zobrazí sa chybová hláška "Heslo musí mít minimalně 8 znaků a musí obsahovat velká, malá písmena a číselný znak.  Diakritika a speciální znaky jsou zakázané". \eTD
+\eTR  
+   \bTR
+    \bTD 4d \eTD
+    \bTD Zadajte dva krát iné heslo.  \eTD
+    \bTD Zobrazí sa chybová hláška "Hesla musí být totožná". \eTD
+\eTR
+   \bTR
+    \bTD 5a \eTD
+    \bTD Zaškrtnite súhlas s GDPR. \eTD
+    \bTD Umožní sa dokončenie registrácie. \eTD
+  \eTR  
+   \bTR
+    \bTD 5b \eTD
+    \bTD Nezaškrtnite súhlas s GDPR. \eTD
+    \bTD Dokončenie registrácie nie je možné. \eTD
+  \eTR
+   \bTR
+    \bTD 6 \eTD
+    \bTD Kliknite na tlačidlo "dokončit". \eTD
+    \bTD Zobrazí sa hláška o úspešnej registrácii a osobe príde email s odkazom na prihlásenie. \eTD
+  \eTR
+\eTABLE
+}
+
+
+\setupTABLE[frame=on]
+\setupTABLE[row][first][background=color, backgroundcolor=lightgray, style=bold]
+\setupTABLE[column][1][width=3cc]
+\setupTABLE[column][2][width=15cc]
+\setupTABLE[column][3][width=14cc]
+\setupTABLE[r][each][align={middle,lohi}]
+\Tabulka{tab:test4}{Testovací scenár pre UC Spravovať číselníky (vlastné spracovanie)}{
+\bTABLE
+  \bTR
+    \bTH Krok \eTH
+    \bTH Akcia \eTH
+    \bTH Očakávaný výsledok \eTH
+  \eTR
+   \bTR
+    \bTD 1 \eTD
+    \bTD Prihláste sa do systému. \eTD
+    \bTD Zobrazí sa úvodný rozcestník -- dashboard. \eTD
+  \eTR
+  \bTR
+    \bTD 2 \eTD
+    \bTD Kliknite na dlaždicu SPRÁVA ČÍSELNÍKŮ. \eTD
+    \bTD Zobrazí sa rozcestník pre modul "SPRÁVA ČÍSELNÍKŮ". \eTD
+  \eTR
+   \bTR
+    \bTD 3 \eTD
+    \bTD Kliknite na oblasť, ktorú chcete spravovať. \eTD
+    \bTD Zobrazí sa zoznam konfigurovateľných číselníkov. \eTD
+  \eTR  
+   \bTR
+    \bTD 4 \eTD
+    \bTD Kliknite na číselník, ktorý chcete editovať. \eTD
+    \bTD Zobrazí sa zoznam hodnôt v číselníku. \eTD
+  \eTR  
+   \bTR
+    \bTD 5a_1 \eTD
+    \bTD Vytvorte nový záznam pomocou "+". \eTD
+    \bTD Zobrazí sa editačný formulár na vytvorenie nového záznamu číselníka. \eTD
+  \eTR   
+ \bTR
+    \bTD 5a_2a \eTD
+    \bTD Vyplňte všetky povinné údaje. \eTD
+    \bTD Umožní sa vytvorenie záznamu. \eTD
+  \eTR  
+ \bTR
+    \bTD 5a_2b \eTD
+    \bTD Nevyplňte všetky povinné údaje. \eTD
+    \bTD Neumožní sa vytvorenie záznamu. \eTD
+  \eTR  
+   \bTR
+    \bTD 5b_1 \eTD
+    \bTD Editujte existujúcu hodnotu pomocou editačnej ceruzky pri každom stĺpci.  \eTD
+    \bTD Zobrazí sa editačné políčko na editáciu konkrétnej hodnoty. \eTD
+\eTR  
+ \bTR
+    \bTD 5b_2 \eTD
+    \bTD Uložte hodnotu pomocou fajky.  \eTD
+    \bTD Záznam v číselníku sa upraví. \eTD
+\eTR    
+   \bTR
+    \bTD 6 \eTD
+    \bTD Nájdite výskyt číselníka v aplikácii v nejakom editačnom formulári.  \eTD
+    \bTD Ponúknuté sú len všetky existujúce a validné záznamy. \eTD
+\eTR
+\eTABLE
+}
+
+
+\setupTABLE[frame=on]
+\setupTABLE[row][first][background=color, backgroundcolor=lightgray, style=bold]
+\setupTABLE[column][1][width=3cc]
+\setupTABLE[column][2][width=15cc]
+\setupTABLE[column][3][width=14cc]
+\setupTABLE[r][each][align={middle,lohi}]
+\Tabulka{tab:test5}{Testovací scenár pre UC Zadať nového zamestnanca do systému (vlastné spracovanie)}{
+\bTABLE
+  \bTR
+    \bTH Krok \eTH
+    \bTH Akcia \eTH
+    \bTH Očakávaný výsledok \eTH
+  \eTR
+   \bTR
+    \bTD 1 \eTD
+    \bTD Prihláste sa do systému. \eTD
+    \bTD Zobrazí sa úvodný rozcestník -- dashboard. \eTD
+  \eTR
+  \bTR
+    \bTD 2 \eTD
+    \bTD Kliknite na dlaždicu ZAMĚSTNANCI. \eTD
+    \bTD Zobrazí sa rozcestník pre modul "ZAMĚSTNANCI". \eTD
+  \eTR
+   \bTR
+    \bTD 3 \eTD
+    \bTD Kliknite na "Noví zaměstnanci". \eTD
+    \bTD Zobrazí sa zoznam zamestnancov v stave "nový". \eTD
+  \eTR  
+   \bTR
+    \bTD 4 \eTD
+    \bTD Vytvorte nového zamestnanca kliknutím na plus. \eTD
+    \bTD Zobrazí sa stepper na vytvorenie zamestnanca. \eTD
+  \eTR  
+   \bTR
+    \bTD 5a \eTD
+    \bTD Vyplňte správne a kompletne údaje prvého kroku. \eTD
+    \bTD Nezobrazuje sa žiadna chyba možno prejsť na druhý krok. \eTD
+  \eTR   
+   \bTR
+    \bTD 5b \eTD
+    \bTD Neyplňte nejaký povinný údaj. \eTD
+    \bTD Zobrazí sa hláška "Povinné pole" a neumožní sa prechod na druhý krok. \eTD
+  \eTR
+   \bTR
+    \bTD 5c \eTD
+    \bTD Vyplňte nesprávne rodné číslo - príliš krátke/dlhé alebo s použitím písmen. \eTD
+    \bTD Zobrazí sa hláška "Je nutno zadat platné rodné číslo". \eTD
+  \eTR
+\bTR
+    \bTD 5d \eTD
+    \bTD Vyplňte nesprávne rodné číslo - nedeliteľné 11. \eTD
+    \bTD Zobrazí sa hláška "Rodné číslo musí být dělitelné 11.". \eTD
+  \eTR
+\bTR
+    \bTD 5e \eTD
+    \bTD Vyplňte nesprávne rodné číslo - nesprávny dátum v rodnom čísle. \eTD
+    \bTD Zobrazí sa hláška "Datum v rodném čísle je nesprávný". \eTD
+  \eTR
+ \bTR
+    \bTD 6a \eTD
+    \bTD Vyplňte email v správnom formáte. \eTD
+    \bTD Nezobrazuje sa žiadna chyba možno prejsť na tretí krok. \eTD
+  \eTR  
+\bTR
+    \bTD 6b \eTD
+    \bTD Vyplňte email v nesprávnom formáte. \eTD
+    \bTD Zobrazí sa hláška "Zadejte email ve správném formátu (např. jsmith@example.com)". \eTD
+  \eTR 
+ \bTR
+    \bTD 7a \eTD
+    \bTD Vyplňte telefónne číslo v správnom formáte. \eTD
+    \bTD Nezobrazuje sa žiadna chyba možno prejsť na tretí krok. \eTD
+  \eTR  
+\bTR
+    \bTD 7b \eTD
+    \bTD Vyplňte  telefónne číslo v nesprávnom formáte. \eTD
+    \bTD Zobrazí sa hláška "Neplatné telefónne číslo. Zadajte číslo vo formáte +420XXXXXXXXX alebo +421XXXXXXXXX (nebo bez předvolby)". \eTD
+  \eTR 
+\eTABLE
+}
+
+
+\setupTABLE[frame=on]
+\setupTABLE[row][first][background=color, backgroundcolor=lightgray, style=bold]
+\setupTABLE[column][1][width=3cc]
+\setupTABLE[column][2][width=15cc]
+\setupTABLE[column][3][width=14cc]
+\setupTABLE[r][each][align={middle,lohi}]
+\Tabulka{tab:test5}{Testovací scenár pre UC Zadať nového zamestnanca do systému -- pokračovanie (vlastné spracovanie)}{
+\bTABLE
+  \bTR
+    \bTH Krok \eTH
+    \bTH Akcia \eTH
+    \bTH Očakávaný výsledok \eTH
+  \eTR
+ \bTR
+    \bTD 8a \eTD
+    \bTD Vyplňte dátovú schránku v správnom formáte. \eTD
+    \bTD Nezobrazuje sa žiadna chyba možno prejsť na tretí krok. \eTD
+  \eTR  
+\bTR
+    \bTD 8b \eTD
+    \bTD Vyplňte dátovú schránku v nesprávnom formáte. \eTD
+    \bTD Zobrazí sa hláška "Zadejte platné ID datové schránky.". \eTD
+  \eTR  
+\bTR
+    \bTD 9a \eTD
+    \bTD Vyplňte všetky povinné údaje adresy.  \eTD
+    \bTD Nezobrazuje sa žiadna chyba možno prejsť na štvrtý krok. \eTD
+\eTR    
+   \bTR
+    \bTD 9b \eTD
+    \bTD Neyplňte nejaký povinný údaj. \eTD
+    \bTD Zobrazí sa hláška "Povinné pole" a neumožní sa prechod na štvrtý krok. \eTD
+  \eTR
+   \bTR
+    \bTD 10 \eTD
+    \bTD Vyplňte správne a kompletne údaje o zamestnaní  \eTD
+    \bTD Nezobrazuje sa žiadna chyba možno prejsť na piaty krok. \eTD
+\eTR
+\bTR
+    \bTD 11 \eTD
+    \bTD Skontrolujte úplnosť a správnosť predvyplnenia údajov piateho kroku.  \eTD
+    \bTD Zobrazia sa údaje žiadosti a sú vyplnené a needitovateľné. \eTD
+\eTR
+\bTR
+    \bTD 12 \eTD
+    \bTD Kliknite na tlačidlo "vytvoriť".  \eTD
+    \bTD Vytvorí sa zamestnanec, jeho spojenie, adresa a žiadosť. \eTD
+\eTR
+\eTABLE
+}
+
+
+\setupTABLE[frame=on]
+\setupTABLE[row][first][background=color, backgroundcolor=lightgray, style=bold]
+\setupTABLE[column][1][width=3cc]
+\setupTABLE[column][2][width=15cc]
+\setupTABLE[column][3][width=14cc]
+\setupTABLE[r][each][align={middle,lohi}]
+\Tabulka{tab:test6}{Testovací scenár pre UC Registrovať nástup zamestnanca (vlastné spracovanie)}{
+\bTABLE
+  \bTR
+    \bTH Krok \eTH
+    \bTH Akcia \eTH
+    \bTH Očakávaný výsledok \eTH
+  \eTR
+   \bTR
+    \bTD 1 \eTD
+    \bTD Po úspešnom založení zamestnanca kliknite na vytvorenú žiadosť na jeho detaile v sekcii Žiadosti. \eTD
+    \bTD Zobrazí sa detail žiadosti s tlačidlom "Ověř stav žádosti". \eTD
+  \eTR
+\bTR
+    \bTD 2a \eTD
+    \bTD Kliknite na tlačidlo "Ověř stav žádosti" pre správne vytvoreného zamestnanca. \eTD
+    \bTD Po chvíľke nastane zmena stavu žiadosti na OVĚŘENO vzhľadom k ZP aj ČSSZ. \eTD
+  \eTR  
+\bTR
+    \bTD 2a \eTD
+    \bTD Kliknite na tlačidlo "Ověř stav žádosti" pre zamestnanca s nesprávnymi údajmi. \eTD
+    \bTD Po chvíľke nastane zmena stavu žiadosti na CHYBA vzhľadom k ZP a/alebo ČSSZ. \eTD
+  \eTR    
+\eTABLE
+}
 
 
 \stopappendices
