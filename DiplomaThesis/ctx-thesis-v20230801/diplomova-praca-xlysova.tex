@@ -1,7 +1,8 @@
 %
 \usemodule[ctx-thesis-v0.991]
 \usemodule[bib.sty-v2.78]
-
+\setupinteraction[state=start, color=blue]
+\overfullrule=3cc
 \setupthesis[sk,mendelu,pef,none][ % jazyk,univerzita,fakulta,ústav/katedra/pracoviště ; language,university,faculty,department
   type={dp},                 % bp,dp,pp,zp,sp,pr,pt aj./etc.
   authorname={Zuzana},	     % jméno
@@ -14,8 +15,8 @@
   keywords={SAMO, EMMA, digitálna verejná správa, správa zamestnancov, softwarová platforma, digitálna integrácia},    %
   keywordsen={SAMO, EMMA, eGovernment, analysis, employee management, software platform, digital integration}, %
 acknowledgement={Ďakujem firme Asseco Central Europe, a.s. za možnosť rozvíjať projekt EMMA v rámci diplomovej práce. Veľká vďaka patrí rodine a priateľom za nekonečnú podporu, kolegom za konzultácie a vedúcej práce za pripomienky a pomoc.},	           % poděkování
-  abstract={Táto diplomová práca sa zameriava na analýzu, návrh a implementáciu prezentačnej vrstvy softwarovej platformy EMMA, ktorá je súčasťou firmy Asseco Central Europe, a.s. Práca sa podrobne venuje vývoju a integrácii nových modulov v rámci platformy SAMO, ktorá slúži na efektívnejšiu administráciu a správu zamestnancov v digitálnom prostredí. Výsledky projektu ukazujú, že integrácia nových modulov do platformy SAMO môže výrazne zlepšiť procesy zamestnancov a zvýšiť celkovú efektivitu správy digitálnych služieb v rámci firmy.},		                           % český abstrakt
-  abstracten={This master´s thesis focuses on the analysis, design, and implementation of the presentation layer of the EMMA software platform, part of Asseco Central Europe, a.s. The work delves into the development and integration of new modules within the SAMO platform, which facilitates more efficient administration and management of employees in a digital environment. The results demonstrate that integrating new modules into the SAMO platform can significantly improve employee processes and enhance the overall efficiency of digital service management within the company.},		                   % anglický abstrakt
+  abstract={Táto diplomová práca sa zameriava na analýzu, návrh a implementáciu softwarovej platformy firmy Asseco Central Europe, a.s. Ide o platformu EMMA, ktorej cieľom je integrácia služieb verejnej správy do systémov firiem. Práca podrobne analyzuje súčasný stav eGovernmentu v Českej republike aj zahraničí. Výstupom práce je dôkladná analýza, návrh a následná implementácia prezentačnej vrstvy platformy EMMA, ktorá je realizovaná pomocou platformy SAMO. Konkrétne sa práca zaoberá najmä modulom zamestnancov s cieľom zjednodušenia a optimalizácie.},		                           % český abstrakt
+  abstracten={This thesis focuses on the analysis, design, and implementation of the EMMA software platform for Asseco Central Europe, a.s. The aim of the platform is to integrate public administration services into corporate systems. The work thoroughly analyzes the current state of eGovernment in the Czech Republic and internationally. The output of the thesis is a detailed analysis, design, and subsequent implementation of the presentation layer of the EMMA platform, which is realized using the SAMO platform. Specifically, the thesis primarily addresses the employee module with the goal of simplification and optimization.},		                   % anglický abstrakt
   location={Brno,Brne},	   % místo vydání (za čárkou 6. pád) ; location (second parameter is not necessary for English)
 %  year={2021},		   % rok odevzdání práce (automaticky aktuální rok) ; year, the default is the current year
 %  thesisassignmentform={img/file001.png,img/file002.png},  % seznam souborů se skenem zadání práce; file is thesis assignment
@@ -24,19 +25,32 @@ acknowledgement={Ďakujem firme Asseco Central Europe, a.s. za možnosť rozvíj
 \startthesis
 \startbodymatter
 
-\kap{Úvod}
-V súčasnosti je množstvo zamestnancov zahltených rutinnými administratívnymi úkonmi. Firma Asseco Central Europe, a.s. prišla s nápadom vytvoriť integračnú platformu s pracovným názvom EMMA, ktorá by mala tieto úkony minimalizovať. Projekt je v štádiu riešenia a aktuálne existuje zjednodušená implementácia služby "nástup zamestnanca do zamestnania", ktorá je v katalógu služieb VS. Tento katalóg služieb verejnej správy ČR obsahuje v dnešnej dobe takmer 8 tisíc služieb a vyše 34 tisíc úkonov.  Tieto služby a úkony sa týkajú bezmála 400 agend a ohlasuje ich približne 30 rôznych ohlasovateľov (ministerstvá, úrady a pod.). Väčšinu týchto úkonov je možné previesť online, prostredníctvom dátovej schránky. 
+\kap{Úvod a cieľ}
+V súčasnosti je množstvo zamestnancov zahltených rutinnými administratívnymi úkonmi. Firma Asseco Central Europe, a.s. prišla s nápadom vytvoriť integračnú platformu s pracovným názvom EMMA, ktorá by mala tieto úkony minimalizovať. Projekt je v štádiu riešenia a aktuálne existuje zjednodušená implementácia služby \uv{nástup zamestnanca do zamestnania}, ktorá je v katalógu služieb VS. 
 
-Projekt EMMA je riešením, ktoré umožni integráciu služieb VS do informačných systémov firiem a spojenie viacerých služieb verejnej správy. Už spomínaný príklad nástupu zamestnanca do zamestnania umožňuje pomocou jedného formuláru (poprípade tlačítka) nahlásiť túto udalosť príslušným úradom - Českej správe sociálneho zabezpečenia a zdravotnej poisťovni. Prvotným zámerom je integrácia služieb VS, no do budúcna sa plánuje rozšíriť to aj o služby komerčnej sféry, napr. poistenie auta. 
+Katalóg služieb verejnej správy Českej republiky obsahuje v dnešnej dobe takmer 8 tisíc služieb a vyše 34 tisíc úkonov.  Tieto služby a úkony sa týkajú bezmála 400 agend a ohlasuje ich približne 30 rôznych ohlasovateľov (ministerstvá, úrady a pod.). Väčšinu týchto úkonov je možné previesť online, prostredníctvom dátovej schránky. 
 
-\TODO
-TODO niekde ku koncu - VÝHODY A NEVÝHODY EMMA - napr. zamestnanci...
+Projekt EMMA je riešením, ktoré umožni integráciu služieb VS do informačných systémov firiem a spojenie viacerých služieb verejnej správy. Už spomínaný príklad nástupu zamestnanca do zamestnania umožňuje pomocou jedného formuláru (poprípade tlačítka) nahlásiť túto udalosť príslušným úradom -- Českej správe sociálneho zabezpečenia a zdravotnej poisťovni.
 
-\kap{Cieľ}
-Cieľom tejto diplomovej práce je analýza súčasných procesov verejnej správy a úrovne digitalizácie v Českej republike. Práca sa zameriava na rozbor existujúceho stavu projektu EMMA, ktorý zahŕňa služby verejnej správy, a identifikovať potenciálne oblasti na jeho rozšírenie. Kľúčovým prvkom je analyzovať a~následne rozšíriť stávajúce rozhranie projektu, vyvinuté na platforme SAMO, o~nový modul zamestnancov. 
+Prvotným zámerom projektu EMMA je integrácia služieb VS, no do budúcna sa plánuje rozšíriť to aj o služby komerčnej sféry, napr. poistenie auta. 
+
+V rámci tejto diplomovej práce je cieľom navrhnúť a implementovať účinné rozšírenie platformy EMMA na základe detailnej analýzy. V súlade s požiadavkami spoločnosti Asseco Central Europe, a.s. je hlavným cieľom rozšírenie prezentačnej vrstvy platformy s dôrazom na modul zamestnancov. Prezentačná vrstva je implementovaná pomocou platformy SAMO.
+
+Prvým krokom bude dôkladná analýza súčasného stavu eGovernmentu\zlom a G2B2B služieb v Českej republike a vo svete. Táto analýza umožní získať hlbšie porozumenie možností rozvoja platformy EMMA. Zároveň bude súčasťou práce i analýza existujúceho stavu projektu EMMA, ktorý je v období začiatku tejto práce už rozpracovaný.
+
+Ďalej bude práca zameraná na vypracovanie analýzy a analytických modelov pomocou modelovacieho jazyka UML, ktorý poskytne vizuálny a štruktúrovaný prehľad procesov a ich interakcií. 
+
+Zároveň s analýzou bude kľúčové aj spracovanie návrhu vhodného riešenia. Výstupy budú slúžiť ako základ pre ďalšiu fázu práce, ktorá zahŕňa implementáciu vybraných rozšírení platformy.
+
+V ďalšej fáze bude práca zameraná na samotnú implementáciu v súlade s architektúrou a princípmi platformy EMMA a SAMO. Tento proces zahrnie programovanie funkcionality, integráciu s existujúcimi komponentmi a testovanie implementovaných procesov podľa štandardov firmy Asseco CE.
+
+Záverečná fáza práce zahrnie testovanie implementovaného riešenia pomocou pripravených testovacích scenárov.
+
+Výstupom práce bude funkčné rozšírenie platformy SAMO EMMA, ktoré bude nielen odpovedať na aktuálne potreby trhu, ale aj poskytovať pevný základ pre ďalší rozvoj a inovácie v oblasti digitalizácie procesov. Diplomová práca tak prinesie hmatateľný prínos pre firmu Asseco Central Europe, a.s. a pre širšie spektrum jej klientov, ktorí sa spoliehajú na efektívne digitálne riešenia.
+
 
 \kap{Súčasný stav}
-V dnešnej dobe sa digitalizácia verejnej správy stala častou témou rôznych diskusií. Je to najmä preto, že predstavuje cestu k efektívnejšiemu, účinnejšiemu a transparentnejšiemu poskytovaniu služieb naprieč rozličnými odvetviami. \zlom V~tomto dynamickom kontexte sľubuje digitalizácia transformáciu tradičných modelov služieb na modely, ktoré sú viac prispôsobené súčasným potrebám občanov a~inštitúcií. \scr(Andersson, 2022)
+V dnešnej dobe sa digitalizácia verejnej správy stala častou témou rôznych diskusií. Je to najmä preto, že predstavuje cestu k efektívnejšiemu, účinnejšiemu a transparentnejšiemu poskytovaniu služieb naprieč rozličnými odvetviami.\zlom V~tomto dynamickom kontexte sľubuje digitalizácia transformáciu tradičných modelov služieb na modely, ktoré sú viac prispôsobené súčasným potrebám občanov a~inštitúcií. \scr(Andersson, 2022)
 
 Medzi hlavné výhody digitalizácie verejnej správy patrí zvýšenie efektivity práce, kvality služieb, spoľahlivosti a dôvery, a to vo vzťahu občana a verejnej správa i vládnych inštitúcií medzi sebou \scr(Terlizzi, 2021).
 
@@ -47,18 +61,18 @@ Termín eGovernment,  ktorý sa v tejto práci opakovane objavuje, označuje poj
 
 Táto infraštruktúra realizuje sadu služieb informačných technológií (ICT služieb), ktoré sú zdieľané, dôveryhodné, prepojené, bezpečné, automatizované, efektívne a ľahko používateľné pre užívateľov. 
 
-Služby eGovernmentu sú určené občanom, firmám, podnikateľom i úradníkom. Synonymami pojmu eGovernment sú "digitálny government" alebo "digitálna verejná správa" \scr(Digitální a informační agentura, 2023).
+Služby eGovernmentu sú určené občanom, firmám, podnikateľom i úradníkom. Synonymami pojmu eGovernment sú \uv{digitálny government} alebo \uv{digitálna verejná správa} \scr(Digitální a informační agentura, 2023).
 
 Digitálna verejná správa používa rôzne poskytnuté a dostupné informácie, ktoré automatizovane spracuváva s cieľom obmedziť, respektíve znížt množstvo podania a objemu informácií zo straný užívateľov služieb VS.
 
 Hlavným poslaním eGovernmentu je: \citat{Poskytovať klientom verejnej správy jednoduché a efektívne služby, ktoré im uľahčia dosiahnutie ich práv a nárokov, ako aj plnenie ich povinností a záväzkov vo vzťahu k verejnej správe.} \scr(Digitální a informační agentura, 2023)
 
-Vízia eGovernmentu v ČR do konca horizontu Informačnej koncepcie ČR (viac popísaná v kapitole 3.2 Informační koncepce ČR) je: \citat{Česká republika je jednou z popredných krajín v užívateľskej prívetivosti verejnej správy vďaka svojmu klientsky orientovanému prístupu, modernému dizajnu úradných procesov a efektívnemu využívaniu digitálnych a nedigitálnych technológií.} \scr(Digitální a informační agentura, 2023)
+Vízia eGovernmentu v ČR do konca horizontu Informačnej koncepcie ČR (viac popísaná v kapitole 2.2 Informační koncepce ČR) je: \citat{Česká republika je jednou z popredných krajín v užívateľskej prívetivosti verejnej správy vďaka svojmu klientsky orientovanému prístupu, modernému dizajnu úradných procesov a efektívnemu využívaniu digitálnych a nedigitálnych technológií.} \scr(Digitální a informační agentura, 2023)
 
-\pkap{Informační koncepce ČR}
+\pkap[kap:ikcr]{Informační koncepce ČR}
 Informační koncepce ČR (ďalej ako IKČR) rozpracováva vyššie spomenutú víziu do rôznych cieľov, ktoré realizujú jednotlivé orgány VS. Predstavuje komplexný plán na rozvoj informačných systémov verejnej správy, ktorý je prispôsobený potrebám a cieľom štátu.
 
-To, či ciele boli naplnené alebo nie ukazuje stav plnenia zadefinovaných cieľov a pozícia v rebríčkoch ako je napríklad DESI (rozobraté v kapitole 3.5.1 Index digitálnej ekonomiky a spoločnosti).
+To, či ciele boli naplnené alebo nie ukazuje stav plnenia zadefinovaných cieľov a pozícia v rebríčkoch ako je napríklad DESI (rozobraté v kapitole 2.5.1 Index digitálnej ekonomiky a spoločnosti).
 
 Všetky povinné subjekty podľa zákona  č. 365/2000 Sb., o informačných systémoch, majú povinnosť viesť vlastné informačné koncepcie a vždy ich musia uviesť do súladu s Informačnou koncepciou ČR. Je to prakticky koncepcia rozvoja informačných systémov verejnej správy, ktorú spracováva Ministerstvo vnútra a schvaľuje vláda. Je vypracovaná na základe ustanovenia § 5a, Zákona č. 365/2000 Sb., o informačných systémoch verejnej správy. Týmto prístupom sa zabezpečuje jednotný rámec pre rozvoj a prevádzku informačných systémov a služieb eGovernmentu v celej krajine.
 
@@ -66,10 +80,10 @@ Všetky povinné subjekty podľa zákona  č. 365/2000 Sb., o informačných sys
 Medzi hlavné časti IKČR patria:
 
 \startitemize
-\item{\start\bf architektonické principy \stop eGovernmentu a elektronizácie verejnej správy,}
+\item{\start\bf architektonické principy \stop eGovernmentu a elektronizácie VS,}
 \item{\start \bf efektívny rozvoj \stop digitálnej verejnej správy a informačných systémov verejnej správy (ISVS),}
 \item{\start\bf zásady \stop riadenia ICT vo verejnej správe,}
-\item{základné koncepčné \start \bf povinnosti \stop pre budovanie, rozvoj a prevádzku ISVS a ich vzájomné prepojenie a pre budovanie spoločných služieb eGovernmentu.}
+\item{základné koncepčné \start \bf povinnosti \stop pre budovanie, rozvoj a prevádzku\zlom ISVS a ich vzájomné prepojenie a pre budovanie spoločných služieb eGovernmentu.}
 \stopitemize
 
 IKČR je základný dokument, ktorý určuje dlhodobé ciele a strategické smerovanie ČR v oblasti informačných systémov a digitálnych služieb verejnej správy a všeobecné princípy obstarávania, tvorby, správy a prevádzky ISVS v ČR. Obsahuje predovšetkým:
@@ -100,8 +114,8 @@ Funkcie katalógu služieb VS možno ozdeliť do štyroch kategórií:
 \startitemize
 \item{\start \bf automatizačné \stop – zber dát potrebných na automatizáciu}
 \item{\start \bf informačné \stop – poskytovanie prehľadu o existujícich službách VS a spôsobu ich spracovania}
-\item{\start \bf publikačné \stop – poskytovanie informácií, ktoré sú potrebné na korektné zobrazovanie služieb VS na portáloch VS (kategórie, radenie...)}
-\item{\start \bf riadiace \stop – riadenie poskytovania a dodávky služieb VS (tvorba plánu digitalizácie, zodpovednosť za služby...)}
+\item{\start \bf publikačné \stop – poskytovanie informácií, ktoré sú potrebné na korektné zobrazovanie služieb VS na portáloch VS (kategórie, radenie\dots)}
+\item{\start \bf riadiace \stop – riadenie poskytovania a dodávky služieb VS (tvorba plánu digitalizácie, zodpovednosť za služby\dots)}
 \stopitemize
 
 Časti katalógu služieb VS sú služby vykonávané z úradnej moci, ale taktiež aj služby, ktoré iniciuje klient (subjekt práva). 
@@ -129,7 +143,7 @@ Obsahom katalógu služieb VS sú služby a úkony. V Českej republike je to v 
 \pkap{Digitální Česko}
 Táto kapitola je venovaná iniciatíve Digitálne Česko. Ide o ucelenú víziu, ktorá je realizovaná na základe niekoľých koncepcií, plánov a stratégií, ktoré sú v súlade s potrebami ČR a politikou EÚ.
 
-Projekt Digitálne Česko pokrýva 3 základné piliere:
+Projekt Digitálne Česko pokrýva tri základné piliere:
 \startitemize
 \item{\start \bf Česko v digitální Evropě \stop -- vládna koncepcia zameriavajúca sa na jednotný digitálny trh v Európe} 
 \item{\start \bf Digitální ekonomika a společnost \stop -- strategický dokument, ktorého cieľom je koordinácia agend z oblastí digitálnej ekonomiky a spoločnosti naprieč verejnou správou, hospodárstvom, sociálnou či akademickou sférou (súvisí aj s kap. 3.5.1)}
@@ -142,7 +156,7 @@ Vláda ČR považuje program Digitálne Česko za súbor stratégií, ktoré vyt
 \pkap{Postavenie Českej republiky v oblasti digitalizácie}
 Existuje viacero spôsobov hodnotenia a merania úrovne rozvinutosti krajín v oblasti digitalizácie a rozvoja eGovernmentu. Patrí medzi ne napríklad \start \it Index digitálnej ekonomiky a spoločnosti, Index rozvoja eGovernmentu, eGovernment Benchmark \stop a iné \scr(Terlizzi, 2021). Tieto nástroje umožňujú detailnejšie pochopenie postupov, ktoré krajiny implementujú na podporu eGovernmentu a identifikáciu oblastí, v~ktorých je potrebné zlepšenie.
 
-V nasledujúcich kapitolách sú v~skratke popísané spomínané prieskumy a ich posledné výsledky. Analýza výsledkov umožní lepšie pochopiť súčasný stav na národnej aj medzinárodnej úrovni.
+V nasledujúcich kapitolách sú v~skratke popísané spomínané prieskumy\zlom a~ich posledné výsledky. Analýza výsledkov umožní lepšie pochopiť súčasný stav na národnej aj medzinárodnej úrovni.
 
 \ppkap{Index digitálnej ekonomiky a spoločnosti}
 Európska komisia sleduje a monitoruje pokrok členských štátov v digitálnej oblasti od roku 2014 a každý rok zverejňuje informácie o indexe digitálnej ekonomiky a spoločnosti (Digital Economy and Society Index, DESI). Tento index zoraďuje štáty podľa úrovne digitalizácie a zároveň posudzuje ich relatívny pokrok za uplynulých päť rokov vzhľadom na ich počiatočnú situáciu.
@@ -153,23 +167,23 @@ Oblasti, ktoré skúma DESI sú:
 \startitemize
 \item{\start\bf ľudský kapitál\stop -- internetové znalosti používateľov, pokročilé znalosti ľudí v IT oblasti}
 \item{\start\bf konektivita\stop -- využitie a pokrytie internetového pripojenia a~jeho ceny}
-\item{\start\bf integrácia digitálnych technológií \stop -- digitálne technológie pre firmy (cloud, umelá inteligencia...), e-commerce \footnote{e-commerce -- obchodné činnosti prevádzané na internete a pomocou ďalších elektronických prostriedkov}}
+\item{\start\bf integrácia digitálnych technológií \stop -- digitálne technológie pre firmy (cloud, umelá inteligencia\dots), e-commerce \footnote{e-commerce -- obchodné činnosti prevádzané na internete a pomocou ďalších elektronických prostriedkov}}
 \item{\start\bf digitálne verejné služby \stop -- eGovernment, otvorené dáta \footnote{otvorené data (open data, vládne dáta) -- informácie verejného sektoru, ktoré sú bezplatne dostupné na akékoľvek účely}}
 \stopitemize 
 
-Európska komisia spolu s Radou prejednávajú rozhodnutie o politickom programe \start\it "Cesta k digitálnej dekáde" \stop, ktorý stanovuje ciele na úrovni Európskej únie, dosiahnuteľné do roku 2030. Cieľom je zaistiť to, aby bola digitálna transformácia komplexná a udržateľná a aby prebehla vo všetkých odvetviach hospodárstva. Dosiahnutie cieľa programu závisí na všetkých členských krajinách a na ich spoločnom úsilí \scr(Európska komisia - Metodika, 2022).
+Európska komisia spolu s Radou prejednávajú rozhodnutie o politickom\zlom programe \start\it \uv{Cesta k digitálnej dekáde} \stop, ktorý stanovuje ciele na úrovni Európskej únie, dosiahnuteľné do roku 2030. Cieľom je zaistiť to, aby bola digitálna transformácia komplexná a udržateľná a aby prebehla vo všetkých odvetviach hospodárstva. Dosiahnutie cieľa programu závisí na všetkých členských krajinách a na ich spoločnom úsilí \scr(Európska komisia -- Metodika, 2022).
 
 \obrazekH{obr:DESI}
-{Index digitálnej ekonomiky a spoločnosti 2022 (Európska komisia - Česko, 2022)}{images/DESI.png}{width=30cc}
+{Index digitálnej ekonomiky a spoločnosti 2022 (Európska komisia -- Česko, 2022)}{images/DESI.png}{width=30cc}
 
 \obrazekH{obr:DESI2}
-{Index DESI 2022 - relatívne výsledky v jednotlivých oblastiach (Európska komisia - Česko, 2022)}{images/DESI2.png}{width=30cc}
+{Index DESI 2022 -- relatívne výsledky v jednotlivých oblastiach (Európska komisia -- Česko, 2022)}{images/DESI2.png}{width=30cc}
 
-Česká republika je podľa výsledkov DESI za rok 2022 na 19. mieste (z 27 členských štátov) (viď \in{obrázok}[obr:DESI]). V porovnaní s rokom 2021 sa Česká republika zlepšila v oblasti digitálnych verejných služieb a konektivite. Zhoršila sa v integrácii digitálnych technológií.
+Česká republika je podľa výsledkov DESI za rok 2022 na 19. mieste (z 27 členských štátov) (viď \in{obrázok}[obr:DESI]). V porovnaní s rokom 2021 sa Česká republika zlepšila v oblasti digitálnych verejných služieb a konektivite. Zhoršila sa v~integrácii digitálnych technológií.
 
-Možným pozitívom a príležitosťou je, že za digitalizáciu verejnej správy v Českej republike je od roku 2007 prvýkrát zodpovedná konkrétna osoba, miestopredseda Ivan Bartoš. ČR pokračuje v implementácii stratégie "Digitálne Česko" z roku 2018 (aktualizovanej v roku 2020) \scr(Európska komisia - Česko, 2022).
+Možným pozitívom a príležitosťou je, že za digitalizáciu verejnej správy v~ČR je od roku 2007 prvýkrát zodpovedná konkrétna osoba, miestopredseda Ivan Bartoš. ČR pokračuje v implementácii stratégie \uv{Digitálne Česko} z roku 2018 (aktualizovanej v roku 2020) \scr(Európska komisia -- Česko, 2022).
 
-Na grafe z \in{obrázku}[obr:DESI2] možno vidieť okrem pozície ČR aj výsledky všetkých ostatných krajín vrátane lídrov v hodnotení -- Fínsko a tesne za ním Dánsko. Graf na \in{obrázku}[obr:DESI2] ukazuje porovnanie jednotlivých oblastí indexu DESI s priemernými výsledkami krajín EU-27. \scr(Európska komisia - Česko, 2022)
+Na grafe z \in{obrázku}[obr:DESI2] možno vidieť okrem pozície ČR aj výsledky všetkých ostatných krajín vrátane lídrov v hodnotení -- Fínsko a tesne za ním Dánsko. Graf na \in{obrázku}[obr:DESI2] ukazuje porovnanie jednotlivých oblastí indexu DESI s~priemernými výsledkami krajín EU-27. \scr(Európska komisia -- Česko, 2022)
 
 \ppkap{Index rozvoja eGovernmentu}
 Ďalším významným prieskumom je hodnotenie eGovernmentu vykonávané Organizáciou Spojených Národov (OSN), ktoré poskytuje hodnotenie eGovernmentu  naprieč všetkými 193 členskými štátmi. Tento prieskum hodnotí krajiny na základe Indexu rozvoja e-governmentu (E-Government Development Index, EGDI), ktorý je kombináciou primárnych dát (zbieraných a vlastnených OSN) a sekundárnych dát (získaných od iných agentúr) \scr(United Nations, 2024).
@@ -183,7 +197,7 @@ EGDI sa získava váženým priemerom troch indexov, ktoré sa týkajú týchto 
 \item{\start\bf ľudský kapitál \stop \footnote{Human Capital Index (HCI)} -- hodnotí vzdelanie a úroveň zručností obyvateľstva krajiny, s dôrazom na faktory ako miera gramotnosti, zapojenie do vzdelávania a dostupnosť kvalifikovaných odborníkov v oblasti ICT} % informačných a komunikačných technológií}
 \stopitemize 
 
-Na základe hodnôt indexov EGDI je možné členské štáty OSN rozčleniť do štyroch kategórií: krajiny s veľmi vysokým indexom (0,75--1,00), krajiny s vysokým indexom (0,50--0,75), krajiny so stredným indexom (0,25--0,50) a krajiny s nízkym indexom (0,00--0,25).
+Na základe hodnôt indexov EGDI je možné členské štáty OSN rozčleniť do štyroch kategórií: krajiny s veľmi vysokým indexom (0,75\az1,00), krajiny s vysokým indexom (0,50\az0,75), krajiny so stredným indexom (0,25\az0,50) a krajiny s~nízkym indexom (0,00\az0,25).
 
 Podľa najnovšieho prieskumu z roku 2022 spadá do veľmi vysokého indexu 60 krajín (31~\%), do vysokého 73 (38~\%), do stredného 53 (27,5~\%) a 7 krajín (3,5~\%) má nízky index rozvoja eGovernmentu.
 
@@ -278,7 +292,7 @@ Prieskum eGovernment Benchmark sa zameriava na tieto štyri kľúčové oblasti:
 \item{\start\bf cezhraničné služby \stop -- jednoduchosť používania služieb VS pre občanov zo zahraničia a mechanizmy podpory a spätnej väzby pre takýchto občanov}
 \stopitemize 
 
-Na základe týchto štyroch oblastí získavajú krajiny tzv. "skóre eGovernment vyspelosti", ktorého škála sa pohybuje na stupnici od 0 do 100. Vedúcimi krajinami boli podľa posledného prieskumu z roku 2022 Malta a Estónsko. Česká republika dosiahla 22. miesto \scr(van der Linden, 2022). 
+Na základe týchto štyroch oblastí získavajú krajiny tzv.\,\uv{skóre eGovernment vyspelosti}, ktorého škála sa pohybuje na stupnici od 0 do 100. Vedúcimi krajinami boli podľa posledného prieskumu z roku 2022 Malta a Estónsko. Česká republika dosiahla 22. miesto \scr(van der Linden, 2022). 
 
 
 \setupTABLE[frame=on]
@@ -349,7 +363,7 @@ Analýza Indexu digitálnej ekonomiky a spoločnosti (DESI), Indexu rozvoja eGov
 
 V kontexte susedných krajín si ale ČR vedie pomerne dobre. Severské krajiny a vyspelé členské štáty EÚ vynikajú v inováciách a ponúkaní efektívnych a užívateľsky prívetivých digitálnych služieb. Tento fakt môže ČR použiť ako model pre zlepšovanie svojich digitálnych služieb. Významná je tiež potreba zamerania sa na cezhraničné digitálne služby, kde ČR môže opäť čerpať z príkladov zo zahraničia.
 
-Aktuálne sa ČR nachádza v strednej časti hodnotiacich rebríčkov digitalizácie, avšak iniciatíva "Digitálne Česko" (bližšie popísaná v kapitole 3.4 Digitální Česko) má potenciál posunúť ČR na prednejšie pozície v týchto prieskumoch. Predstavuje sľubný krok smerom k zlepšeniu výkonnosti Českej republiky v digitálnom prostredí, zvýšeniu jej konkurencieschopnosti a zlepšeniu poskytovania digitálnych služieb občanom.
+Aktuálne sa ČR nachádza v strednej časti hodnotiacich rebríčkov digitalizácie, avšak iniciatíva \uv{Digitálne Česko} (bližšie popísaná v kapitole 2.4 Digitální Česko) má potenciál posunúť ČR na prednejšie pozície v týchto prieskumoch. Predstavuje sľubný krok smerom k zlepšeniu výkonnosti Českej republiky v~digitálnom prostredí, zvýšeniu jej konkurencieschopnosti a zlepšeniu poskytovania digitálnych služieb občanom.
 
 Projekt EMMA, ako aj jeho integrácia do systémov ERP firiem, či sprostredkovanie prostredníctvom platformy SAMO, predstavuje významný krok vpred v rámci digitalizácie českého eGovernmentu. Zameranie na digitálne verejné služby a integráciu digitálnych technológií by mohlo, v prípade preniknutia platformy EMMA na trh, viesť k posunu Česka na vyššie pozície v spomínaných rebríčkoch.
 
@@ -389,15 +403,15 @@ Projekt EMMA, ako aj jeho integrácia do systémov ERP firiem, či sprostredkova
 %haha
 
 \pkap{Projekt EMMA}
-EMMA predstavuje jedinečnú integračnú G2B2B platformu a nadväzujúce služby, ktoré sú efektívne, rýchle a \uv{zabudovateľné} do každodenných procesov klientov verejnej správy, hlavne podnikov. Tieto služby sú navrhnuté a poskytované tak, aby sa dali čo najjednoduchšie integrovať do ERP systémov podnikov\footnote{ERP (Enterprise Resource Planning) systém -- interný informačný systém podniku slúžiaci na správu rôznych činností podniku (účtovníctvo, zásobovanie, personalistika...)}. Zároveň by mali tieto služby podporovať podnikové procesy a zaisťovať prostredníctvom zakomponovaných služieb možnosť plniť svoje povinnosti a vymáhať si svoje práva vočí verejnej správe. \scr(Asseco, 2023)
+EMMA predstavuje jedinečnú integračnú G2B2B platformu a nadväzujúce služby, ktoré sú efektívne, rýchle a \uv{zabudovateľné} do každodenných procesov klientov verejnej správy, hlavne podnikov. Tieto služby sú navrhnuté a poskytované tak, aby sa dali čo najjednoduchšie integrovať do ERP systémov podnikov\footnote{ERP (Enterprise Resource Planning) systém -- interný informačný systém podniku slúžiaci na správu rôznych činností podniku (účtovníctvo, zásobovanie, personalistika\dots)}. Zároveň by mali tieto služby podporovať podnikové procesy a zaisťovať prostredníctvom zakomponovaných služieb možnosť plniť svoje povinnosti a~vymáhať si svoje práva vočí verejnej správe. \scr(Asseco, 2023)
 
-Úlohou integračných platforiem (alebo integration platform-as-a-service, \zlom iPaaS) je prepojiť informácie z rôznych zdrojov (z aplikácií, procesov, služieb...) a pripraviť tak priestor pre rýchlejšie inovácie a automatizáciu. Množstvo podnikov sa prikláňa k riešeniam iPaaS, aby zjednotili a digitalizovali podnikové operácie a mohli používať pri procesoch moderné technológie a umelú inteligenciu. Táto služba môže pomocou konektorov a API rozhraní pomôcť spoločnostiam centralizovane a automatizovane vytvárať, spravovať a monitorovať integračné toky naprieč systémami. \scr(SAP, 2024)
+Úlohou integračných platforiem (alebo integration platform-as-a-service,\zlom iPaaS) je prepojiť informácie z rôznych zdrojov (z aplikácií, procesov, služieb\dots) a pripraviť tak priestor pre rýchlejšie inovácie a automatizáciu. Množstvo podnikov sa prikláňa k riešeniam iPaaS, aby zjednotili a digitalizovali podnikové operácie a mohli používať pri procesoch moderné technológie a umelú inteligenciu. Táto služba môže pomocou konektorov a API rozhraní pomôcť spoločnostiam centralizovane a automatizovane vytvárať, spravovať a monitorovať integračné toky naprieč systémami. \scr(SAP, 2024)
 
-Medzi existujúce "integračné platformy ako služby" patria napríklad SAP Integration Suite, IBM® App Connect, Workato a iné.
+Medzi existujúce \uv{integračné platformy ako služby} patria napríklad SAP Integration Suite, IBM® App Connect, Workato a iné.
 
 EMMA je prvým a jedinečným riešením v Českej republike. Jej najväčšou výhodou oproti ostatným je, že je stavaná na integráciu služieb z katalógu služieb verejnej správy.
 
-Hlavným cieľom projektu EMMA je vybudovanie EMMA ako súhrn služieb a riešení v oblasti podpory komunikácie komerčného sektoru s verejnou správou a začlenenie do informačných systémov firiem (ERP/FM/CRM systémy).
+Hlavným cieľom projektu EMMA je vybudovanie EMMA ako súhrn služieb a~riešení v oblasti podpory komunikácie komerčného sektoru s verejnou správou a začlenenie do informačných systémov firiem (ERP/FM/CRM systémy).
 
 Cieľovými skupinami sú najmä skupiny, ktoré potrebujú informačne podporiť komunikáciu subjektov s verejnou správou hlavne v opakujúcich sa, rutinných činnostiach.  Ide hlavne o činnosti spojené s vykazovaním, ohlasovaním (za zamestnancov alebo klietov). 
 
@@ -411,7 +425,7 @@ Medzi konkrétnych cieľových užívateľov patria napríklad personalisti, ú�
 \item{zákazníci, ktorí zvažujú zmenu/upgrade používaného ERP systému.}
 \stopitemize
 
-Projekt nadväzuje na Architektonický princíp č. 11: eGovernment jako platforma (Embedded eGovernment) uvedený v IKČR. Architektonické princípy IKČR sú spomenuté v kapitole 3.2. V skratke princíp č. 11 hovorí o tom, že procesy a služby verejnej správy aj s potrebnými technickými nástrojmi musia byť navrhnuté tak, aby organizácie mohli tieto služby jednoducho integrovať do svojich ICT systémov, čo im uľahčí plnenie povinností a využívanie práv voči verejnej správe \scr(Digitální a informační agentura, 2023).
+Projekt nadväzuje na Architektonický princíp č. 11: eGovernment jako platforma (Embedded eGovernment) uvedený v IKČR. Architektonické princípy IKČR sú spomenuté v kapitole 2.2. V skratke princíp č. 11 hovorí o tom, že procesy a služby verejnej správy aj s potrebnými technickými nástrojmi musia byť navrhnuté tak, aby organizácie mohli tieto služby jednoducho integrovať do svojich ICT systémov, čo im uľahčí plnenie povinností a využívanie práv voči verejnej správe \scr(Digitální a informační agentura, 2023).
 
 Okrem tohto princípu sa EMMA riadi aj ďalšími procesnými zásadami ustanovenými v IKČR, napr. Z6 Riadenie výkonnosti a kvality, Z7 Riadenie zodpovednosti za služby a systémy, Z11 Riadenie prínosov a hodnoty a ďalšie.
 
@@ -434,7 +448,7 @@ Dá sa povedať, že ide o G2B platformu na sprostredkovanie a zaistenie vložit
 Príkladom služby EMMA je \uv{oznámenie o nástupu zamestnanca}. Pri tejto životnej situácii je podnik povinný informovať viaceré subjekty VS, konkrétne ČSSZ, zdravotné poisťovne a MPSV (v prípade zahraničného zamestnanca). Bližšie je tento proces popísaný na \in{obrázku}[obr:sekv1].
 
 \obrazekH{obr:sekv1}
-{Sekvenčný model funkčnosti "Oznámení nástupu zaměstnace" (Asseco, 2023)}{images/SekvEMMA01.png}{width=32cc}
+{Sekvenčný model funkčnosti Oznámení nástupu zaměstnace" (Asseco, 2023)}{images/SekvEMMA01.png}{width=32cc}
 
 Obsahom platformy EMMA sú:
 
@@ -483,14 +497,14 @@ Platforma SAMO je základom pre široké spektrum aplikácií používaných v~r
 
 V kontexte tejto práce je cieľom rozšírenie agendového systému (SAMO AIS) na správu zamestnancov a služieb verejnej správy.
 
-SAMO AIS predstavuje špecifický modul na podporu procesov verejnej správy. Zahŕňa zadávanie požiadavkov, vyhodnocovanie workflow, notifikácie, analýzu dát, pridávanie priestorových informácií atď. Tento modul je navrhnutý tak, aby bol kompatibilný s inými systémami verejnej správy, využíval otvorené dáta z rôznych zdrojov (napr. registry, katastre) a zároveň poskytoval informácie podľa potrieb koncových užívateľov. Je vhodný pre miestne, ústredné, ale i federálne orgány akéhokoľvek druhu (od malých obcí až po ministerstvá). Cieľom je vybudovať a udržať efektívny eGovernment a prinášať hodnotu užívateľom a občanom. \scr(Asseco, 2024b)
+SAMO AIS predstavuje špecifický modul na podporu procesov verejnej sprá\-vy. Zahŕňa zadávanie požiadavkov, vyhodnocovanie workflow, notifikácie, analýzu dát, pridávanie priestorových informácií atď. Tento modul je navrhnutý tak, aby bol kompatibilný s inými systémami verejnej správy, využíval otvorené dáta z~rôznych zdrojov (napr. registry, katastre) a zároveň poskytoval informácie podľa potrieb koncových užívateľov. Je vhodný pre miestne, ústredné, ale i federálne orgány akéhokoľvek druhu (od malých obcí až po ministerstvá). Cieľom je vybudovať a udržať efektívny eGovernment a prinášať hodnotu užívateľom a občanom. \scr(Asseco, 2024b)
 
 Platforma SAMO je založená na modulárnej architektúre integrovaných softvérových riešení. Vychádza z princípov SOA (Servisne orientovaná architektúra), čo znamená, že je navrhnutá pre efektívnu vzájomnú spoluprácu nezávislých komponent. % \footnote{SOA -- Servisne orientovaná architektúra (Service Oriented Architecture) -- sada princípov a metodológií, ktorá odporúča stavbu aplikácií zo vzájomne nezávislých komponent}. %Považuje sa za platformu určenú na efektívne poskytovanie, nie za produkt samotný.
 
 SAMO používa mikroservice prístup k vývoju softvéru. Každá mikroslužba je zameraná na konkrétnu funkčnosť a môže byť vyvíjaná, nasadená a spravovaná nezávisle od ostatných častí aplikácie. To umožňuje flexibilnejšie škálovanie, rýchlejšie nasadzovanie nových funkcionalít a jednoduchšiu údržbu. %SAMO je aplikácia poháňaná metadátami, ktoré obsahujú informácie o vzťahoch medzi časťami  dát, popis užívateľského rozhrania, pravidlá, formuláre a pod. \scr(Asseco, 2023) 
 
 \blank
-Systém kladie dôraz na integritu dát a procesov. Architektúru tvoria základné vrstvy, ktoré sú na sebe technologicky nezávislé a ich komunikáciu zabezpečujú štandardy popísané API. Ide o tieto vrstvy:
+Systém kladie dôraz na integritu dát a procesov. Architektúru tvoria základ\-né vrstvy, ktoré sú na sebe technologicky nezávislé a ich komunikáciu zabezpečujú štandardy popísané API. Ide o tieto vrstvy:
 
 \startitemize[n]
 \item \start\bf prezentačná vrstva \stop -- skupina webových serverov, ktoré poskytujú služby prezentačnej vrstvy pre interných i externých pracovníkov
@@ -498,7 +512,7 @@ Systém kladie dôraz na integritu dát a procesov. Architektúru tvoria základ
 \item  \start\bf databázová vrstva \stop -- skupina databázových serverov s požadovanou výkonnosťou zabezpečujúcich služby dátového úložiska pre aplikačnú vrstvu
 \stopitemize
 
-Aplikačný interface, SAMO API Gateway, umožňuje definovať špecifické služby podľa účelu použitia. Na základe konfigurácie sú vytvárané kompozitné služby, ktoré minimalizujú klient-server volania. Technológie API Gateway obsahujú aj autentizačnú a autorizačnú vrstvu, ktorá zaisťuje riadenie prístupu k službám a dátam, ktoré služby poskytujú.
+Aplikačný interface, SAMO API Gateway, umožňuje definovať špecifické služby podľa účelu použitia. Na základe konfigurácie sú vytvárané kompozitné služby, ktoré minimalizujú klient\ip server volania. Technológie API Gateway obsahujú aj autentizačnú a autorizačnú vrstvu, ktorá zaisťuje riadenie prístupu k~službám a dátam, ktoré služby poskytujú.
 
 Dáta sú spravované systémom SAMO. Aplikačná vrstva sprostredkovává prístup do relačnej databázy a často vyhľadávané dáta sú uložené redundantne aj v dokumentovej databáze ElasticSearch. 
 
@@ -514,7 +528,7 @@ Súborová štruktúra je rozdelená na 2 väčšie celky -- configuration a pro
 {Konceptuálna aplikačná architektúra SAMO (Asseco, 2023)}{images/samo-konceptualni-aplikacni-architektura.png}{width=32cc}
 
 \ppkap{Aplikačná architektúra}
-SAMO sa z hľadiska aplikačnej architektúry skladá z aplikačných komponent, ktoré medzi sebou komunikujú cez predom dohodnuté komunikačné kanály založené na otvorených a všeobecne uznávaných štandardoch (hlavne SOAP, REST). Aplikačné komponenty sa skladajú z aplikačných vrstiev (užívateľské rozhranie, biznis logika, integračná vrstva, dátová vrstva a iné).
+SAMO sa z hľadiska aplikačnej architektúry skladá z aplikačných komponent, ktoré medzi sebou komunikujú cez predom dohodnuté komunikačné kanály založené na otvorených a všeobecne uznávaných štandardoch (hlavne\zlom REST, SOAP). Aplikačné komponenty sa skladajú z aplikačných vrstiev (užívateľské rozhranie, biznis logika, integračná vrstva, dátová vrstva a iné).
 
 Riešenie je budované na princípoch a postupoch servisne orientovanej integrácie, kde jednotlivé zdieľané funkcionality sú vystavené v podobe služieb. Vďaka aplikačnej a technologickej architektúre systému sa aplikačná logika vykonávaná na serveri a klientská aplikačná logika vzájomne neovplyvňujú. Architektúra je zobrazená na \in{obrázku}[obr:samo-koncept-arch].
 
@@ -529,9 +543,9 @@ Aplikačná logika systému je písaná v jazyku JavaScript a využíva bohatú 
 \ppkap{SAMO Dynamic Application}
 Klientská čast, SAMO Dynamic Application, je ľahký webový klient, ktorý komunikuje so serverovými komponentami ako SAMO Gateway, LIDS Application Server a Security Server a pod. V rámci celkového riešenia SAMO sú zapojené aj ďalšie technológie ako Docker, ElasticSearch, PostgreSQL a NGINX, čo zvyšuje efektivitu a flexibilitu systému.
 
-Dynamic app sa skladá z niekoľkých hlavných modulov. Medzi ne patrí tzv. cockpit, ktorý predstavuje úvodnú obrazovku, úvodný rozcestník. Ďalšou komponentou sú tzv. pages, ktoré obsahujú zoznamy entít. Tieto zoznamy sú označované ako browse. 
+Dynamic app sa skladá z niekoľkých hlavných modulov. Medzi ne patrí takzvaný cockpit, ktorý predstavuje úvodnú obrazovku, úvodný rozcestník. Ďalšou komponentou sú tzv.\,pages, ktoré obsahujú zoznamy entít. Tieto zoznamy sú označované ako browse. 
 
-Po rozkliknutí entity z browse sa zobrazí detail, ktorý môže obsahovať okrem hlavičkových dát aj sekcie obsahujúce ďalšie naviazané entity. Na detailoch je možnosť editácie prostredníctvom editačného detailu,  ktorý je poslednou hlavnou komponentou DA. Umožňuje modifikovanie hlavičkových informácií o entite, avšak nie dát v spomínaných sekciách. Vizuálne zobrazenie komponent je v kapitole 5.4.1.
+Po rozkliknutí entity z browse sa zobrazí detail, ktorý môže obsahovať okrem hlavičkových dát aj sekcie obsahujúce ďalšie naviazané entity. Na detailoch je možnosť editácie prostredníctvom editačného detailu,  ktorý je poslednou hlavnou komponentou DA. Umožňuje modifikovanie hlavičkových informácií o entite, avšak nie dát v spomínaných sekciách. Vizuálne zobrazenie komponent je v kapitole 4.3.1.
 
 %\TODO Skladá sa z dvoch hlavných podprojektov, ktorými sú emma-samo-configuration a emma-samo-project
 
@@ -541,19 +555,19 @@ LIDS časť systému SAMO je oveľa väčšia ako spomínaná SAMO Gateway. Riad
 
 LIDS aplikačný server je kontrolovaný metadátami, s ktorými pracujú jednotlivé časti systému. 
 
-Hlavnou stavebnou jednotkou LIDS metadát sú tzv. feature types. Ide v podstate o nejaký typ objektu reálneho sveta (napr. ft\_osoba, ft\_adresa, ft\_zamestnanec...). Feature type definuje atribúty objektu, môže definovať aj geometriu, symboliku a iné vlastnosti.
+Hlavnou stavebnou jednotkou LIDS metadát sú tzv.\,feature types. Ide v podstate o nejaký typ objektu reálneho sveta (napr. ft\_osoba, ft\_adresa, ft\_zamestnanec\dots). Feature type definuje atribúty objektu, môže definovať aj geometriu, symboliku a iné vlastnosti.
 
-Ďalšou časťou LIDS AS je tzv. feature. Ten je inštanciou feature typu, a teda je to reprezentácia objektu reálneho sveta. Feature nesie informácie o tom, aký je to feature type, sémantické atribúty (id, name, type), jeho miesto v databáze (tzv. databázový kontajner), poprípade symboliku a typ geometrie.
+Ďalšou časťou LIDS AS je tzv\, feature. Ten je inštanciou feature typu, a teda je to reprezentácia objektu reálneho sveta. Feature nesie informácie o tom, aký je to feature type, sémantické atribúty (id, name, type), jeho miesto v databáze (tzv.\,databázový kontajner), poprípade symboliku a typ geometrie.
 
-Tieto metadáta sú uložené, prenášané a spravované vo forme niekoľkých XML dokumentov, pričom najdôležitejší je dokument s názvom model.xml. Všetky tieto XML dokumenty majú pevne danú štruktúru popísanú v súboroch typu XSD (XML Schema Definiton). \scr(Asseco, 2024a)
+Tieto metadáta sú uložené, prenášané a spravované vo forme niekoľkých XML dokumentov, pričom najdôležitejší je dokument s názvom model.xml. Všet\-ky tieto XML dokumenty majú pevne danú štruktúru popísanú v súboroch typu XSD (XML Schema Definiton). \scr(Asseco, 2024a)
 
 %\startitemize
-%\item{\start \bf model.xml \stop -- hlavný metadátový súbor, v ktorom sú uložené informácie o tzv. feature types (entita SAMO systému), ich atribútoch, číselníkoch a pod.}
+%\item{\start \bf model.xml \stop -- hlavný metadátový súbor, v ktorom sú uložené informácie o tzv.\,feature types (entita SAMO systému), ich atribútoch, číselníkoch a pod.}
 %\item{\start \bf presentation.xml \stop -- definuje predvolenú symboliku projektu a pod.}
 %%\item{\start \bf thematization.xml \stop - definuje dynamickú symboliku prvkov (na základe štandardu OpenGIS Symbology Encoding)}
 %\item{\start \bf tool.xml \stop -- definuje panely nástrojov špecifických pre projekt}
 %\item{\start \bf resource.xml \stop -- definuje napr. štýly čiar, symboly, fonty, ikony a pod.}
-%\item{\start \bf option.xml \stop -- definuje voliteľné funkcie systému ako napr. kopírovanie prvkov, derivovanie atribútov, zobraziteľné atribúty...}
+%\item{\start \bf option.xml \stop -- definuje voliteľné funkcie systému ako napr. kopírovanie prvkov, derivovanie atribútov, zobraziteľné atribúty\dots}
 %\stopitemize 
 %
 %Okrem týchto hlavných XML súborov existuje aj množstvo ďalších. Všetky spomínané súbory majú pevne danú štruktúru popísanú v súboroch typu XSD (XML Schema Definiton). 
@@ -564,14 +578,14 @@ LIDS dokáže na základe validného model.xml modifikovať databázu (vytvára�
 
 V administrátorskej konzoli existuje aj GUI, ktoré prehľadne zobrazuje všetky feature types, názov kontajneru (db tabuľky) daného ft, atribúty, väzby, stavový diagram (workflow, ak existuje), akcie (operácie, metódie, funkcie) a podobne. 
 
-Okrem dátovej časti (model.xml) obsahuje LIDS-ová časť aj aplikačnú logiku. Ide o niekoľko javascript a json súborov definujúcich stavy, akcie nad entitov a celková potrebná logika správania danej entity.
+Okrem dátovej časti (model.xml) obsahuje LIDS-ová časť aj aplikačnú logiku. Ide o niekoľko javascript a json súborov definujúcich stavy, akcie nad entitov a~celková potrebná logika správania danej entity.
 
 %Poslednou vrstvou je security vrstva, ktorá určuje prístupy k feature typom, atribútom, akciám alebo k riadkom browsu (napr. na základne lokality). Buď je to na základe security číselníku alebo druhá možnosť je nastavenie ownershipu (vlastníctva) na vybrané záznamy (napr. pri žiadostiach na základe funkcí a pod.). 
 
 \ppkap{Security Server}
 Na správu identifikačných údajov uživateľov SAMO je používaný systém Security Server. Prístup do správcovskej aplikácie je umožnený prostredníctvom webového rozhrania. Security Manager je aplikácia určená na definíciu užívateľov vrátane ich prístupových oprávnení. 
 
-Aplikácia je štruktúrovaná do niekoľkých funkčných oblastí, vrátane správy užívateľov, ich rolí a oprávnení. SAMO Security Server využíva tzv. Role Based Access Control (RBAC) mechanizmus. Tento mechanizmus umožňuje to, že každý užívateľ pristupuje k systému v definovanej role. Ku každej roli je možné nastaviť ľubovoľný počet oprávnení a užívateľ môže byť uvedený i vo viacerých rolách. Konečné oprávnenie je vyhodnocované ako zjednotenie všetkých oprávnení. \scr(Asseco, 2024a)
+Aplikácia je štruktúrovaná do niekoľkých funkčných oblastí, vrátane správy užívateľov, ich rolí a oprávnení. SAMO Security Server využíva tzv.\,Role Based Access Control (RBAC) mechanizmus. Tento mechanizmus umožňuje to, že každý užívateľ pristupuje k systému v definovanej role. Ku každej roli je možné nastaviť ľubovoľný počet oprávnení a užívateľ môže byť uvedený i vo viacerých rolách. Konečné oprávnenie je vyhodnocované ako zjednotenie všetkých oprávnení. \scr(Asseco, 2024a)
 
 Security rola určuje napr. práva na dlaždice, tlačítka a pod. Tieto role sa priradia vybraným skupinám a do skupín sa priradia užívatelia. To zabezpečí, že prihlásený užívateľ má umožnené v aplikácii vidieť a robiť len to, na čo má oprávnenie.
 
@@ -581,15 +595,15 @@ Užívatelia zvyčajne prichádzajú pomocou LDAP od zákazníka. Security skupi
 
 \pkap{Nástroje na optimalizáciu práce so SAMO}
 \ppkap{EA2LIDS}
-Nástroj EA2LIDS je vlastný nástroj firmy Asseco, ktorý slúži na generovanie dátového modelu (model.xml) z modelu v Enterprise Architect. Je to tzv. Model Driven Generation Technology (MDG). 
+Nástroj EA2LIDS je vlastný nástroj firmy Asseco, ktorý slúži na generovanie dátového modelu (model.xml) z modelu v Enterprise Architect. Je to tzv.\,Model Driven Generation Technology (MDG). 
 
 MDG technológie umožňujú rozširovať funkcionalitu programu Enterprise Architect (ďalej ako EA) prostredníctvom špeciálnych rozšírení \scr(Sparx, 2024). 
 
-Existuje množstvo komerčných MDG technológií, ale je možné aj použitie vlastnej, ako je to aj v prípade EA2LIDS. Okrem existujúcich modelov v EA je možnosť rozšírenia základných štruktúr napríklad o tzv. tagged values, stereotypes, profiles, design patterns a podobne. 
+Existuje množstvo komerčných MDG technológií, ale je možné aj použitie vlastnej, ako je to aj v prípade EA2LIDS. Okrem existujúcich modelov v EA je možnosť rozšírenia základných štruktúr napríklad o tzv.\,tagged values, stereotypes, profiles, design patterns a podobne. 
 
 V prípade EA2LIDS sa pracuje so špeciálnym typom diagramu nazývaným LIDS7 a príslušiacim toolboxom v EA (viď \in{obrázok}[obr:special-ea]). Pre správne využitie a funkčnosť nástroja je potreba dbať na správnosť modelov -- správne vybrané stereotypy, nadefinované dátové typy, správna menná konvencia, tagy atď. 
 
-Po dokončení modelu je možnosť generovať súbor formátu xml. Po kontrole a prípadných ručných úpravách je výsledkom validný model.xml (zjednodušená schéma fungovania je zobrazená na \in{obrázku}[obr:ea2lids]). Tento model potom používa nástroj popísaný v nasledujúcej kapitole, AMK.
+Po dokončení modelu je možnosť generovať súbor formátu XML. Po kontrole a prípadných ručných úpravách je výsledkom validný model.xml (zjednodušená schéma fungovania je zobrazená na \in{obrázku}[obr:ea2lids]). Tento model potom používa nástroj popísaný v nasledujúcej kapitole, AMK.
 
 \obrazekH{obr:special-ea}
 {Špeciálny toolbox a diagram v nástroji Enterprise architect (vlastné spracovanie)}{images/special-ea.png}{width=32cc}
@@ -606,19 +620,19 @@ AMK je určený pre agendové aplikácie, teda aplikácie, kde hlavnú úlohu hr
 
 Logika využitia AMK je na \in{obrázku}[obr:amk]. AMK možno popísať ako most spájajúci analýzu s implementáciou. Na \in{obrázku}[obr:amk-archi] je zobrazený model aplikačnej architektúry AMK.
 
-Na generovanie potrebných súborov SAMO aplikácie (tzv. metadát) sa využíva nástroj FMPP (FreeMarker-based file PreProcessor). Ide o nástroj na predspracovanie textu, ktorý umožňuje dynamické generovanie obsahu pomocou šablón FreeMarker. Je schopný rekurzívne spracovať adresáre a podporuje generovanie statických webových stránok, zdrojového kódu, konfiguračných súborov a podobne. Dokáže integrovať s dátovými zdrojmi ako súbory typu CSV, XML alebo JSON. \scr(FMPP, 2018)
+Na generovanie potrebných súborov SAMO aplikácie (tzv.\,metadát) sa využíva nástroj FMPP (FreeMarker-based file PreProcessor). Ide o nástroj na predspracovanie textu, ktorý umožňuje dynamické generovanie obsahu pomocou šablón FreeMarker. Je schopný rekurzívne spracovať adresáre a podporuje generovanie statických webových stránok, zdrojového kódu, konfiguračných súborov a podobne. Dokáže integrovať s dátovými zdrojmi ako súbory typu CSV, XML alebo JSON. \scr(FMPP, 2018)
 
 \obrazekH{obr:amk}
 {AMK v praxi (vlastné spracovanie na základe informácií z interných dokumentov firmy Asseco)}{images/amk.png}{width=32cc}
 
 \obrazekH{obr:amk-archi}
-{AMK - Časť aplikačnej logiky (vlastné spracovanie)}{images/amk-archi.png}{width=32cc}
+{AMK -- Časť aplikačnej logiky (vlastné spracovanie)}{images/amk-archi.png}{width=32cc}
 
 \zlom
 \pkap{Súčasný stav projektu}
 V čase začiatku práce na tejto diplomovej práci už bola časť projektu EMMA hotová, ale  jeho ďalší aktívny vývoj a optimalizácia boli v spoločnosti dočasne odložené. Stále ale je množstvo príležitostí na vylepšovanie, ktoré by umožnili jeho komerčnú ponuku zákazníkom a rozšírenie medzi rozličné subjekty. Dôvodom pozastavenia je najmä prioritizácia iných projektov.
 
-Cieľom platformy EMMA je sprostredkovávať služby verejnej správy podnikateľským subjektom. V aktuálnom stave nemá zákazníka a je pokladaná za "výskumný projekt".
+Cieľom platformy EMMA je sprostredkovávať služby verejnej správy podnikateľským subjektom. V aktuálnom stave nemá zákazníka a je pokladaná za \uv{výskumný projekt}.
 
 Na diagrame nižšie (\in{obrázok}[obr:koncept]) je zobrazená enterprise architektúra platformy. V ľavej časti sú ilustrované orgány verejnej správy (úrady, obce a pod.), ktoré vystavujú služby umožňujúce prístup k údajom a informáciám, a tiež slúžia na splnenie povinností klientov verejnej správy.
 
@@ -632,11 +646,11 @@ Aktuálne je EMMA nasadená na cloudovom prostredí Azure. Konkrétne sú využ�
 
 Na demonštráciu fungovania platformy potenciálnym zákazníkom sa používa aplikácia založená na platforme SAMO. Aj EMMA aj SAMO sú platformy spoločnosti Asseco. SAMO je základom pre evidenciu služieb EMMA.
 
-Pôvodným zámerom bola len správa katalógu služieb verejnej správy, ohlasovateľov, poskytovateľov a podobne. Časom sa to ale začalo rozširovať a vznikol modul "Žádosti" a konkrétne "Ohlášení nástupu zaměstnance". V súčasnom stave to spočíva vo vyplnení jednoduchého formulára s textovými, prípadne číselnými údajmi, ktorý sa vyplní potrebnými údajmi pre ČSSZ a ZP. Údaje sa týkajú zamestnanca, zamestnania aj zamestnávateľa. Následne sa pomocou API služieb odošle na príslušné úrady a overí sa.
+Pôvodným zámerom bola len správa katalógu služieb verejnej správy, ohlasovateľov, poskytovateľov a podobne. Časom sa to ale začalo rozširovať a vznikol modul \uv{Žádosti} a konkrétne \uv{Ohlášení nástupu zaměstnance}. V súčasnom stave to spočíva vo vyplnení jednoduchého formulára s textovými, prípadne číselnými údajmi, ktorý sa vyplní potrebnými údajmi pre ČSSZ a ZP. Údaje sa týkajú zamestnanca, zamestnania aj zamestnávateľa. Následne sa pomocou API služieb odošle na príslušné úrady a overí sa.
 
 Tento proces nedostatočný najmä kvôli nedostatku validácií. Všetky položky, ktoré sa do žiadosti vypĺňajú sú len textové položky, čo môže viesť k rôznym chybám pri spracovaní žiadosti. Zároveň tam nie sú vytvorené ani používané žiadne číselníky, ktoré by vedeli výrazne uľahčiť vypĺňanie formulárov a žiadostí a predišlo by sa spomínaným chybám.
 
-Požiadavkom firmy Asseco je to, aby bolo možné spravovať prostredníctvom SAMO EMMA zamestnancov, osoby a vybrané číselníky. To umožní jednoduchú prácu s potenciálnymi ďalšími službami EMMA.  Tieto procesy výrazne zefektívnia a zjednodušia úkony smerované k verejnej správe. Dôsledkom bude, že komunikácia s úradmi bude prebiehať takzvane "na jeden klik".
+Požiadavkom firmy Asseco je to, aby bolo možné spravovať prostredníctvom SAMO EMMA zamestnancov, osoby a vybrané číselníky. To umožní jednoduchú prácu s potenciálnymi ďalšími službami EMMA.  Tieto procesy výrazne zefektívnia a zjednodušia úkony smerované k verejnej správe. Dôsledkom bude, že komunikácia s úradmi bude prebiehať takzvane \uv{na jeden klik}.
 
 Ďalším nedostatkom stávajúcej aplikácie je jej grafická stránka, konkrétne obrázky a ikony, ktoré boli prevzaté z iného projektu. Ukázali sa však ako nedostatočne reprezentatívne a adekvátne. Je teda nutné ich upraviť alebo vytvoriť úplne nové, aby lepšie vyhovovali potrebám a kontextu tejto aplikácie.
 
@@ -646,18 +660,18 @@ Požiadavkom firmy Asseco je to, aby bolo možné spravovať prostredníctvom SA
 
 \kap{Metodika}
 
-Informácie používané pri vypracovaní diplomovej práce sú získavané najmä z interných dokumentácií a konzultácií so zamestnancami zapojenými do projektu. Pre hlbšie pochopenie témy je potrebná aj analýza eGovernmentu a súvisiacich procesov v Českej republike a v zahraničí. Existuje aj množstvo kľúčových pojmov, ktoré taktiež musia byť pochopené, napr. služba verejnej správy, katalóg služieb verejnej správy, agendový systém a pod. Tieto časti sú popísané v kapitole 3 Súčasný stav.
+Informácie používané pri vypracovaní diplomovej práce sú získavané najmä z interných dokumentácií a konzultácií so zamestnancami zapojenými do projektu. Pre hlbšie pochopenie témy je potrebná aj analýza eGovernmentu a súvisiacich procesov v Českej republike a v zahraničí. Existuje aj množstvo kľúčových pojmov, ktoré taktiež musia byť pochopené, napr. služba verejnej správy, katalóg služieb verejnej správy, agendový systém a pod. Tieto časti sú popísané v kapitole 2 Súčasný stav.
 
 Používaná literatúra pochádza z dôveryhodných zdrojov, ktoré sú dostupné na Google Scholar alebo Web of Science. Zároveň sú používané aj rôzne dokumenty zverejnené národnými a nadnárodnými inštitúciami. Na overovanie a dopĺňanie niektorých informácií bola používaná pre uľahčenie práce umelá inteligencia.
 %Na analýzu a tvorbu diagramov je používaný program Enterprise architect. Dizajnové prvky sú vytvárané v nástroji Figma. Hlavnou používanou technológiou je platforma SAMO a používaný databázový systém je PostgreSQL. 
 
-V aktuálnom stave je síce projekt v rámci firmy pozastavený, ale stále existujú požiadavky a ciele, ktoré je nutné zapojiť. Po konzultáciách s vedením projektu vrámci spoločnosti Asseco je vybraté rozšírenie existujúcej aplikácie najmä o modul zamestnancov. Zároveň sa predpokladá aj úprava existujúceho riešenia, keďže pôvodné riešenie vykazuje nedostatky v dátovom modeli a celkovej implementácii, ktoré je potrebné poupraviť a vylepšiť. Tieto nedostatky sú popísané v kapitole 3.9 Súčasný stav projektu.
+V aktuálnom stave je síce projekt v rámci firmy pozastavený, ale stále existujú požiadavky a ciele, ktoré je nutné zapojiť. Po konzultáciách s vedením projektu vrámci spoločnosti Asseco je vybraté rozšírenie existujúcej aplikácie najmä o modul zamestnancov. Zároveň sa predpokladá aj úprava existujúceho riešenia, keďže pôvodné riešenie vykazuje nedostatky v dátovom modeli a celkovej implementácii, ktoré je potrebné poupraviť a vylepšiť. Tieto nedostatky sú popísané v kapitole 2.9 Súčasný stav projektu.
 
-Pri tvorbe tohto projektu je uprednostňovaná agilná metodológia a pravidelné konzultácie so "zákazníkom", ktorým je v tomto prípade firma Asseco. Konzultácie prebiehali spočiatku na mesačnej báze, neskôr boli častejšie. Práca je rozdelená do viacerých pomyselných šprintov, zahrňujúcich všetky aspekty projektu -- od formálnej dokumentácie, cez analýzu, vývoj, až po testovanie.
+Pri tvorbe tohto projektu je uprednostňovaná agilná metodológia a pravidelné konzultácie so \uv{zákazníkom}, ktorým je v tomto prípade firma Asseco. Konzultácie prebiehali spočiatku na mesačnej báze, neskôr boli častejšie. Práca je rozdelená do viacerých pomyselných šprintov, zahrňujúcich všetky aspekty projektu -- od formálnej dokumentácie, cez analýzu, vývoj, až po testovanie.
 
 Počiatky agilnej metodiky siahajú do 90. rokov 20. storočia. Dovtedy dominoval predovšetkým vodopádový model.
 
-Pri vodopáde ide o podrobné zadefinovanie celého projektu, ktoré pozostáva z analýzy požiadaviek, návrhu, implementácie, testovania, nasadenia a prevádzky. Fázy nasledujú za sebou a po ukončení každej fázy je spracovaná dokumentácia a report. Víziou totho prístupu je dostať procesy pod úplnú kontrolu a zamedziť vzniku chýb. Avšak, ukázalo sa, že tento prístup často vedie k zbytočnej byrokracii a nie je taký hladký, ako sa predpokladalo. Prelom nastal koncom 90. rokov, kedy sa začali formovať flexibilnejšie metodológie. Tento počin sa nazýva aj "The Agile Manifesto". \scr(Shore,2022)
+Pri vodopáde ide o podrobné zadefinovanie celého projektu, ktoré pozostáva z analýzy požiadaviek, návrhu, implementácie, testovania, nasadenia a prevádzky. Fázy nasledujú za sebou a po ukončení každej fázy je spracovaná dokumentácia a report. Víziou totho prístupu je dostať procesy pod úplnú kontrolu a~zamedziť vzniku chýb. Avšak, ukázalo sa, že tento prístup často vedie k zbytočnej byrokracii a nie je taký hladký, ako sa predpokladalo. Prelom nastal koncom 90. rokov, kedy sa začali formovať flexibilnejšie metodológie. Tento počin sa nazýva aj \uv{The Agile Manifesto}. \scr(Shore,2022)
 
 \blank
 Agilný prístup je veľmi adaptívny, s hlavnými princípmi zahŕňajúcimi:
@@ -673,11 +687,11 @@ V prvom desaťročí po zavedení agilných metodológií panovali pochybnosti o
 
 Projekty spojené s digitalizáciou a eGovernmentom (ale aj iné) zlyhávajú najmä z dôvodu nedostatočnej komunikácie a nejasných požiadaviek. \scr(Looks, 2021) Aj to je dôvodom výberu agilnej metodiky vývoja pre túto prácu.
 
-Na analýzu a návrh je používaný predovšetkým jazyk UML, avšak pre detailnejšie zobrazenie aplikačnej logiky bolo nutné využiť aj jazyk ArchiMate. Modely sú vytvárané pomocou nástroja Enterprise Architect. Tento nástroj je okrem zabudovaných možností rozšírený o špeciálny typ diagramu - LIDS7, pomocou ktorého je vytváraný dátový model. Tento dátový model sa pomocou nástrojov EA2LIDS a AMK použije ako základ pre vyvíjanú aplikáciu a prvý krok implementačnej linky. 
+Na analýzu a návrh je používaný predovšetkým jazyk UML, avšak pre detailnejšie zobrazenie aplikačnej logiky bolo nutné využiť aj jazyk ArchiMate. Modely sú vytvárané pomocou nástroja Enterprise Architect. Tento nástroj je okrem zabudovaných možností rozšírený o špeciálny typ diagramu -- LIDS7, pomocou ktorého je vytváraný dátový model. Tento dátový model sa pomocou nástrojov EA2LIDS a AMK použije ako základ pre vyvíjanú aplikáciu a prvý krok implementačnej linky. 
 
 Grafické prvky a návrhy aplikácie sú vytvárané v nástrojoch Figma a Canva.
 
-Na implementáciu je použitá platforma SAMO. Teoretické základy a praktické porozumenie implementácie platformy SAMO, špecifického "frameworku" firmy Asseco, sú podrobnejšie rozpracované v kapitole 3.7 Platforma SAMO. Písanie kódu prebieha pomocou nástroja Visual Studio Code.
+Na implementáciu je použitá platforma SAMO. Teoretické základy a praktické porozumenie implementácie platformy SAMO, špecifického \uv{frameworku} firmy Asseco, sú podrobnejšie rozpracované v kapitole 2.7 Platforma SAMO. Písanie kódu prebieha pomocou nástroja Visual Studio Code.
 
 Čo sa týka databázového systému, aplikácia využíva PostgreSQL. Ako databázové GUI je používaný software DBeaver.
 
@@ -711,7 +725,7 @@ Aplikácia je nasadená v cloudovom prostredí Azure. Testovanie aplikácie preb
 %- Jirka ohladom SAMO
 
 \kap{Výsledky}
-Výsledky sú realizované podľa princípov metodiky popísaných v kapitole 4 Metodika. Na začiatku spracovania je potrebné definovanie problému a dôkladná analýza. Nasledujúce časti podrobne opisujú postup od úvodnej analýzy až po testovanie implementovaných riešení. Teoretické základy a poznatky pre vytvorenie tejto práce sú obsiahnuté v kapitole 3 Súčasný stav.
+Výsledky sú realizované podľa princípov metodiky popísaných v kapitole 3 Metodika. Na začiatku spracovania je potrebné definovanie problému a dôkladná analýza. Nasledujúce časti podrobne opisujú postup od úvodnej analýzy až po testovanie implementovaných riešení. Teoretické základy a poznatky pre vytvorenie tejto práce sú obsiahnuté v kapitole 2 Súčasný stav.
 
 %K výslednému produktu tejto práce viedlo viacero krokov. V nasledujúcom zozname sú v skratke zadefinované:
 %\startitemize[n]
@@ -765,7 +779,7 @@ Na základe analýzy vznikol model požiadaviek (\in{viď obrázok}[obr:f-req] v
 
 
 \ppkap{Use case model}
-Use case diagram alebo diagram prípadov použitia sa používa na zobrazenie funkčnosti systému alebo jeho časti. Zároveň znázorňuje funkčné požiadavky a ich interakcie s externými agentmi, tzv. aktérmi \scr(GeeksForGeeks, 2024).
+Use case diagram alebo diagram prípadov použitia sa používa na zobrazenie funkčnosti systému alebo jeho časti. Zároveň znázorňuje funkčné požiadavky a ich interakcie s externými agentmi, tzv.\,aktérmi \scr(GeeksForGeeks, 2024).
 
 \blank
 V modeloch sú používaní štyria aktéri:
@@ -774,7 +788,7 @@ V modeloch sú používaní štyria aktéri:
 \item{systém}
 \item{správca systému -- administrátor na strane sprostredkovateľa}
 \item{zamestnávateľ -- administrátor na strane klienta}
-\item{poverený zamestnanec -- zamestnanec s prístupom do systému (účtovník, personalista...)}
+\item{poverený zamestnanec -- zamestnanec s prístupom do systému (účtovník, personalista\dots)}
 \stopitemize 
 
 Prvý model (\in{obrázok}[obr:uc1]) zobrazuje prípady použitia zo strany administrátora systému.  Správca systému je schopný zadávať nových zamestnávateľov (klientov) do systému a zakladať im užívateľské kontá. Ďalej má umožnenú správu služieb a oprávnení, reporting a personalizáciu.
@@ -819,7 +833,7 @@ V prvej popisovanej aktivite (\in{obrázok}[obr:acti3]) ide o proces prihláseni
 
 Ďalší diagram (\in{obrázok}[obr:acti1]) zobrazuje proces vytvorenia žiadosti o registráciu povereného zamestnanca z pohľadu zamestnávateľa. Proces začína tým, že zamestnávateľ vytvorí fyzickú osobu pre zodpovedného zamestnanca. Systém potom zobrazí detail tejto fyzickej osoby. 
 
-Následne zamestnávateľ vytvorí nový záznam spojenia (kontaktu), kde zadá email a označí spojenie ako primárne. Systém uloží primárny email osoby (derivovaný atribút). Ak je spojenie vytvorené správne, zamestnávateľ spustí akciu "Žiadosť o vytvorenie registrácie" na detaile osoby. Systém skontroluje, či má osoba vyplnený primárny email. Ak áno, proces pokračuje a systém odošle osobe email s aktivačným kódom a odkazom na registráciu. Ak osoba nemá vyplnený primárny email, systém vypíše chybovú hlášku: "U vybranej osoby nie je uvedený email ako primárne spojenie".
+Následne zamestnávateľ vytvorí nový záznam spojenia (kontaktu), kde zadá email a označí spojenie ako primárne. Systém uloží primárny email osoby (derivovaný atribút). Ak je spojenie vytvorené správne, zamestnávateľ spustí akciu \uv{Žiadosť o vytvorenie registrácie} na detaile osoby. Systém skontroluje, či má osoba vyplnený primárny email. Ak áno, proces pokračuje a systém odošle osobe email s aktivačným kódom a odkazom na registráciu. Ak osoba nemá vyplnený primárny email, systém vypíše chybovú hlášku: \uv{U vybranej osoby nie je uvedený email ako primárne spojenie}.
 
 Aktivita sa končí buď chybovou hláškou alebo úspešným odoslaním emailu registrovanému zamestnancovi.
 
@@ -832,11 +846,11 @@ Aktivita sa končí buď chybovou hláškou alebo úspešným odoslaním emailu 
 
 Tento diagram (\in{obrázok}[obr:acti2]) popisuje proces samotnej registrácie z pohľadu zamestnanca. Proces začína vyhotovením žiadosti o registráciu povereného zamestnanca popísaným v predchádzajúcej sekcii. Po úspešnom zaslaní registračného emailu sa začína samotná aktivita registrácie.
 
-Zamestnanec klikne na odkaz v emaili, čím otvorí registračnú stránku. Na tejto stránke zamestnanec zadá požadované údaje: meno, priezvisko, a aktivačný kód (ktorý mu bol vygenerovaný v predchádzajúcej aktivite). Systém overí správnosť všetkých údajov, a ak je kombinácia meno-priezvisko-aktivačný kód správ-na, zamestnanec pokračuje na ďalší krok registrácie. Ak systém zistí, že kombinácia nie je správna, vypíše chybovú hlášku.
+Zamestnanec klikne na odkaz v emaili, čím otvorí registračnú stránku. Na tejto stránke zamestnanec zadá požadované údaje: meno, priezvisko, a aktivač\-ný kód (ktorý mu bol vygenerovaný v predchádzajúcej aktivite). Systém overí\zlom správnosť všetkých údajov, a ak je kombinácia meno-priezvisko-aktivačný kód správ-na, zamestnanec pokračuje na ďalší krok registrácie. Ak systém zistí, že kombinácia nie je správna, vypíše chybovú hlášku.
 
 Po správnom zadání všetkých údajov druhého kroku, a teda login a dva krát zopakované dostatočne silné heslo, systém overí jedinečnosť loginu, dostatočnosť a správnosť hesla. Ak údaje spĺňajú kritériá, poverený zamestnanec prechádza na tretí krok registrácie -- potvrdenie súhlasu s GDPR. Systém nakoniec overí zaškrtnutie tohto súhlasu.
 
-Po kliknutí na tlačidlo "dokončiť" systém uloží údaje o úspešnej registrácii a odošle užívateľovi potvrdzovací email o úspešnej registrácii spolu s odkazom na prihlásenie. Týmto sa aktivita končí.
+Po kliknutí na tlačidlo \uv{dokončiť} systém uloží údaje o úspešnej registrácii a odošle užívateľovi potvrdzovací email o úspešnej registrácii spolu s odkazom na prihlásenie. Týmto sa aktivita končí.
 
 \blank
 \start
@@ -844,9 +858,9 @@ Po kliknutí na tlačidlo "dokončiť" systém uloží údaje o úspešnej regis
 \start\bf Zadať nového zamestnanca do systému\stop
 \stop
 
-Aktivita zadania nového zamestnanca (\in{obrázok}[obr:acti-nastup]) začína, keď poverený zamestnanec prejde na sekciu nových zamestnancov a klikne na tlačidlo pridať, označené symbolom "+". Systém následne otvorí päťkrokový formulár na pridanie nového zamestnanca. Poverený zamestnanec vyplní osobné údaje, kontaktné informácie, adresu a údaje o zamestnaní. Po vyplnení formuláru, systém validuje správnosť a úplnosť zadaných údajov.
+Aktivita zadania nového zamestnanca (\in{obrázok}[obr:acti-nastup]) začína, keď poverený zamestnanec prejde na sekciu nových zamestnancov a klikne na tlačidlo pridať, označené symbolom \uv{+}. Systém následne otvorí päťkrokový formulár na pridanie nového zamestnanca. Poverený zamestnanec vyplní osobné údaje, kontaktné informácie, adresu a údaje o zamestnaní. Po vyplnení formuláru, systém validuje správnosť a úplnosť zadaných údajov.
 
-Ak údaje nie sú správne alebo úplné, systém vypíše upozornenia na chyby. Ak sú údaje správne a úplné, zamestnanec klikne na tlačidlo "vytvoriť". Systém potom vytvorí príslušného zamestnanca a jeho spojenie, adresu a žiadosť typu "oznámenie o nástupe zamestnanca". Nakoniec, systém spustí funkciu "zaregistrujNastupZamestnance", ktorá žiadosti pridelí unikátny identifikátor (UUID). Proces sa končí úspešným pridáním zamestnanca a jeho naviazaných entít.
+Ak údaje nie sú správne alebo úplné, systém vypíše upozornenia na chyby. Ak sú údaje správne a úplné, zamestnanec klikne na tlačidlo \uv{vytvoriť}. Systém potom vytvorí príslušného zamestnanca a jeho spojenie, adresu a žiadosť typu \uv{oznámenie o nástupe zamestnanca}. Nakoniec, systém spustí funkciu \uv{zaregistrujNastupZamestnance}, ktorá žiadosti pridelí unikátny identifikátor (UUID). Proces sa končí úspešným pridáním zamestnanca a jeho naviazaných entít.
 
 \blank
 \start
@@ -854,27 +868,27 @@ Ak údaje nie sú správne alebo úplné, systém vypíše upozornenia na chyby.
 \start\bf  Registrovať nástup zamestnanca\stop
 \stop
 
-Proces, ktorý je na \in{obrázku}[obr:acti-overeni] nasleduje po úspešnej aktivite popísanej v predchádzajúcom odstavci, a teda tým, že autorizovaný zamestnanec založí nového zamestnanca a súčasne s tým aj novú žiadosť. Po založení nového zamestnanca a žiadosti, systém zobrazí detail žiadosti spolu s tlačítkom "overiť žiadosť". Autorizovaný zamestnanec následne klikne na toto tlačítko na overenie žiadosti. 
+Proces, ktorý je na \in{obrázku}[obr:acti-overeni] nasleduje po úspešnej aktivite popísanej v predchádzajúcom odstavci, a teda tým, že autorizovaný zamestnanec založí nového zamestnanca a súčasne s tým aj novú žiadosť. Po založení nového zamestnanca a žiadosti, systém zobrazí detail žiadosti spolu s tlačítkom \uv{overiť žiadosť}. Autorizovaný zamestnanec následne klikne na toto tlačítko na overenie žiadosti. 
 
-Systém potom spustí funkciu s názvom "ctiVysledekZaregistrujNastupZamestnance" s parametrom UUID žiadosti. Táto funkcia vykoná procesy potrebné na overenie žiadosti na príslušních orgánoch a vráti výsledok, ktorý môže byť buď úspešné overenie, alebo chyba. To sa prejaví prepnutím stavových atribútov žiadosti. 
+Systém potom spustí funkciu s názvom \uv{ctiVysledekZaregistrujNastupZamestnance} s parametrom UUID žiadosti. Táto funkcia vykoná procesy potrebné na overenie žiadosti na príslušních orgánoch a vráti výsledok, ktorý môže byť buď úspešné overenie, alebo chyba. To sa prejaví prepnutím stavových atribútov žiadosti. 
 
 Fungovanie funkcií zaregistrujNastupZamestnance a CtiVysledekZaregistrujNastupZamestnance je detailnejšie zobrazené na sekvenčnom diagrame na \in{obrázku}[obr:sekv1]
 
 
 \ppkap{Konceptuálny dátový model}
-Konceptuálny dátový model predstavuje pri modelovaní SAMO aplikácie prvý krok k vybudovaniu finálneho dátového modelu. Ide o zjednodušenú ukážku existujúcich entít a väzieb medzi nimi. KDM projektu je na \in{obrázku}[obr:kdm]. Nachádza sa v ňom 10 entít.
+Konceptuálny dátový model predstavuje pri modelovaní SAMO aplikácie prvý krok k vybudovaniu finálneho dátového modelu. Ide o zjednodušenú ukáž\-ku existujúcich entít a väzieb medzi nimi. KDM projektu je na \in{obrázku}[obr:kdm]. Nachádza sa v ňom desať entít.
 
 Prvou entitou je nadriadená entita žiadosť, ktorá môže mať niekoľko potomkov, na základe typu žiadosti. Aktuálne má len jedného potomka, a to žiadosť týkajúca sa nástupu zamestnanca do zamestnania. 
 
-Každá žiadosť musí mať väzbu na zamestnanca a zamestnávateľa, pričom násobnosť je 1:N smerom k žiadosti.
+Každá žiadosť musí mať väzbu na zamestnanca a zamestnávateľa, pričom násobnosť je 1\,:\,N smerom k žiadosti.
 
-Entita zamestnanec predstavuje fyzickú osobu zamestnanú u nejakého zamestnávateľa. To vysvetľujú väzby zamestnávateľ-zamestnanec (1:N) a fyzická osoba-zamestnávateľ (1:N). 
+Entita zamestnanec predstavuje fyzickú osobu zamestnanú u nejakého zamestnávateľa. To vysvetľujú väzby zamestnávateľ\ip zamestnanec (1\,:\,N) a fyzická osoba\ip zamestnávateľ (1\,:\,N). 
 
 Zamestnávateľ môže mať N zamestnancov a je naviazaný na práve jednu právnickú osobu. 
 
 Právnická i fyzická osoba majú nad sebou abstraktnú entitu osoba. Dalo by sa to do budúcna rozšíriť o ďalšie typy osôb, ako je podnikajúca fyzická osoba, OVM a podobne. 
 
-Posledné entity sa týkajú kontaktných údajov a adries fyzických a právnických osôb. Medzi osobami a spojením/adresou je väzba 1:N, čo znamená, že každá osoba môže mať v systéme viacero spojení a adries, ale každé spojenie a~adresa patria práve jednej osobe.
+Posledné entity sa týkajú kontaktných údajov a adries fyzických a právnických osôb. Medzi osobami a spojením/adresou je väzba 1\,:\,N, čo znamená, že každá osoba môže mať v systéme viacero spojení a adries, ale každé spojenie a~adresa patria práve jednej osobe.
 
 
 \obrazekH{obr:kdm}
@@ -887,7 +901,7 @@ Logický dátový model je vytváraný pomocou extenzie LIDS7 (spomínaný v~kap
 Na prvom modeli (\in{obrázok}[obr:ldm-sluzby]) je namodelovaný súčasný stav aplikácie SAMO EMMA. Ide primárne o správu katalógu služieb. Tejto časti sa praktická časť projektu venuje len okrajovo.
 
 \obrazekH{obr:ldm-sluzby}
-{Logický dátový model - služby a katalóg služieb (vlastné spracovanie podľa aktuálneho riešenia)}{images/ldm-sluzby.png}{width=32cc}
+{Logický dátový model -- služby a katalóg služieb (vlastné spracovanie podľa aktuálneho riešenia)}{images/ldm-sluzby.png}{width=32cc}
 
 Časť aplikácie, ktorou sa zaoberá táto práca je rozdelená kvôli prehľadnosti do dvoch modelov. Prvý z nich (\in{obrázok}[obr:ldm-os]) sa zaoberá správou osôb, ich kontaktov a adries. Druhá časť (\in{obrázok}[obr:ldm-zam]) je venovaná oblasti zamestnania, to znamená evidencii zamestnancov, zamestnávateľov a žiadostí.
 
@@ -921,7 +935,7 @@ Všetky tabuľkách v časti Prílohy (konkrétne Príloha D) sú popísané jed
 
 Pre správne fungovanie a validnosť údajov je potrebné vytvoriť a naplniť číselníky. Vzhľadom na to, že v aplikácii sa bude komunikovať s verejnou správou, kde musia získavať presné údaje, textové polia pri vyplňovaní niektorých údajov nestačia. 
 
-Číselníky, ktoré boli novo vytvorené a naplnené sú napríklad cl\_zdravotniPojistovna, cl\_druhCinnosti. Tieto číselníky sú naplnené podľa verejných číselníkov Českej správy sociálního zabezpečení \scr(ČSSZ - Číselníky, 2024). Tým sa zaistí, že údaje v žiadostiach budú správne. 
+Číselníky, ktoré boli novo vytvorené a naplnené sú napríklad cl\_zdravotniPojistovna, cl\_druhCinnosti. Tieto číselníky sú naplnené podľa verejných číselníkov Českej správy sociálního zabezpečení \scr(ČSSZ -- Číselníky, 2024). Tým sa zaistí, že údaje v žiadostiach budú správne. 
 
 Ďalšími číselníkmi sú číselníky týkajúce sa adries, nateraz len českých adries. Konkrétne štát, kraj, okres, obec, časť obce, ulice a psč. Týmto sa predíde zadávaniu neplatných adries. Tieto údaje boli získané z čiselníkov vyšších a nižších územných celkov z RÚIAN-u \scr(RÚIAN, 2024).
 
@@ -929,7 +943,7 @@ Pre správne fungovanie a validnosť údajov je potrebné vytvoriť a naplniť �
 
 Bola nutná aj úprava číselníka cl\_pohlavi, kedže v ňom chýbal stĺpec "kod", ktorý je potrebný v žiadostiach VS. Bol naplnený jednoduchým SQL skriptom do podoby 1-Žena-Z, 2-Muž-M, 3-Neurčeno-N.
 
-Keďže okrem komunikácie s VS systém slúži aj na samotnú evidenciu zamestnancov, boli doplnené aj rôzne číselníky spojené priamo so zamestnaním. Ide o~číselníky konfigurovateľné priamo v aplikácii, keďže každá firma to môže mať rozdielne. Medzi tieto číselníky patrí cl\_divize, cl\_typUvazku, cl\_pozice. Konfigurácia prebieha prostredníctvom modulu "Správa číselníků".
+Keďže okrem komunikácie s VS systém slúži aj na samotnú evidenciu zamestnancov, boli doplnené aj rôzne číselníky spojené priamo so zamestnaním. Ide o~číselníky konfigurovateľné priamo v aplikácii, keďže každá firma to môže mať rozdielne. Medzi tieto číselníky patrí cl\_divize, cl\_typUvazku, cl\_pozice. Konfigurácia prebieha prostredníctvom modulu \uv{Správa číselníků}.
 
 Okrem spomínaných číselníkov existuje aj špeciálny číselník cl_anoNe, ktorý sa používa na vyjadrenie boolean hodnoty v SAMO aplikáciách. 
 
@@ -953,7 +967,7 @@ Odvodenie derivovaných atribútov fyzickej osoby: % je v úsekoch kódu na \in{
 \startitemize
 \item {\start\bf PRIMARNIMAIL \stop -- na základe väzby as_fyzickaOsoba_spojeni sa doplní atribút at_spojeni_email (ak také spojenie existuje a je označené ako primárne)}
 \item {\start\bf UPLNEJMENOOSOBY \stop -- reťazec, ktorý vznikne spojením dvoch atribútov FO, "prijmeni + ' ' + jmeno"}
-\item {\start\bf VEK \stop -- vypočíta sa pomocou preddefinovanej databázovej funkcie \zlom date_part('year', age(at_fyzickaOsoba_datumNarozeni)) }
+\item {\start\bf VEK \stop -- vypočíta sa pomocou preddefinovanej databázovej funkcie\zlom date_part('year', age(at_fyzickaOsoba_datumNarozeni)) }
 \stopitemize
 
 \blank
@@ -962,7 +976,7 @@ Odvodenie derivovaných atribútov fyzickej osoby: % je v úsekoch kódu na \in{
 \start\bf Spojenie \stop
 \stop
 
-Táto entita slúži na ukladanie kontaktov osoby. Je naviazaná na právnickú i fyzickú osobu a umožňuje ukladať kontakty ako email, telefónne číslo, dátová schránka a podobne. Osoba môže mať práve jedno spojenie označené ako primárne.
+Táto entita slúži na ukladanie kontaktov osoby. Je naviazaná na právnickú i~fyzickú osobu a umožňuje ukladať kontakty ako email, telefónne číslo, dátová schránka a podobne. Osoba môže mať práve jedno spojenie označené ako primárne.
 
 \blank
 \start
@@ -970,7 +984,7 @@ Táto entita slúži na ukladanie kontaktov osoby. Je naviazaná na právnickú 
 \start\bf Adresa \stop
 \stop
 
-Entita adresa slúži na ukladanie adries osôb. Je, podobne ako spojenie, naviazaná na právnickú i fyzickú osobu. Využíva viacero číselníkov, ktoré boli plnené pomocou dát z RÚIAN-u. Adresa môže byť trvalá a korešpondenčná. Osoby môžu mať práve 2 platné adresy -- jednu korešpondenčnú a jednu trvalú.
+Entita adresa slúži na ukladanie adries osôb. Je, podobne ako spojenie, naviazaná na právnickú i~fyzickú osobu. Využíva viacero číselníkov, ktoré boli plnené pomocou dát z RÚIAN-u. Adresa môže byť trvalá a korešpondenčná. Osoby môžu mať práve 2 platné adresy -- jednu korešpondenčnú a jednu trvalú.
 
 Okrem osôb je adresa naviazaná aj na adresné miesto. Táto entita by mala zmysel, ak by bol systém napojený na databázu RÚIAN, kedy by bral realtime dáta o adresných miestach z tohto registru.
 
@@ -980,7 +994,7 @@ Okrem osôb je adresa naviazaná aj na adresné miesto. Táto entita by mala zmy
 \start\bf Zamestnanec \stop
 \stop
 
-Ďalšou entitou je entita zamestnanec. Táto entita je naviazaná na zamestnávateľa a na fyzickú osobu. Slúži na evidenciu údajov o zamestnaní, ktoré sú relevantné pre zamestnávateľa alebo úrady.
+Ďalšou entitou je entita zamestnanec. Táto entita je naviazaná na zamestnávateľa a na fyzickú osobu. Slúži na evidenciu údajov o~zamestnaní, ktoré sú relevantné pre zamestnávateľa alebo úrady.
 
 \blank
 \start
@@ -988,10 +1002,10 @@ Okrem osôb je adresa naviazaná aj na adresné miesto. Táto entita by mala zmy
 \start\bf Zamestnávateľ \stop
 \stop
 
-Poslednou vybranou entitou je entita zamestnávateľ. Táto entita je naviazaná na spomínaného zamestnanca a právnickú osobu. Slúži na evidenciu údajov o zamestnávateľovi, ktoré sú potrebné pre komunikáciu s VS.
+Poslednou vybranou entitou je entita zamestnávateľ. Táto entita je naviazaná na spomínaného zamestnanca a právnickú osobu. Slúži na evidenciu údajov o~zamestnávateľovi, ktoré sú potrebné pre komunikáciu s VS.
 
 \ppkap{Stavové diagramy}
-Stavový diagram popisuje životný cyklus entity. Ukazuje jednotlivé stavy a možné medzistavové prechody. V rámci tejto práce sa môžu meniť stavy dvom entitám -- zamestnanec a žiadosť. Stavové diagramy sú na \in{obrázkoch}[obr:zamestnanec-stav] a \in[obr:zadost-stav].
+Stavový diagram popisuje životný cyklus entity. Ukazuje jednotlivé stavy a~možné medzistavové prechody. V rámci tejto práce sa môžu meniť stavy dvom entitám -- zamestnanec a žiadosť. Stavové diagramy sú na \in{obrázkoch}[obr:zamestnanec-stav] a \in[obr:zadost-stav].
 
 \blank
 \start
@@ -1045,11 +1059,11 @@ Farebná paleta a obrázok na úvodnej obrazovke boli predom určené projektov�
 
 Pri vytváraní ikoniek a obrázkov bolo dbané na štandardy a best practices firmy Asseco. Ikony sú navrhnuté v súlade s pravidlami Google Material Design. 
 
-Ako možno vidieť na \in{obrázku}[obr:dlazdice], existujú 2 rôzne typy dlaždíc. Jednou z typov dlaždíc je úvodná, pod ktorou sa skrývajú ďalšie dlaždice. Na týchto dlaždiciach sa nachádzajú obrázky reprezentujúce danú agendu, oblasť. 
+Ako možno vidieť na \in{obrázku}[obr:dlazdice], existujú dva rôzne typy dlaždíc. Jednou z typov dlaždíc je úvodná, pod ktorou sa skrývajú ďalšie dlaždice. Na týchto dlaždiciach sa nachádzajú obrázky reprezentujúce danú agendu, oblasť. 
 
-Druhá úroveň dlaždíc už odkazuje priamo na zoznam, tzv. browse. Tieto dlaždice obsahujú názov, ikonku danej entity a počet záznamov skrývajúcich sa pod danou dlaždicou. 
+Druhá úroveň dlaždíc už odkazuje priamo na zoznam, tzv.\,browse. Tieto dlaždice obsahujú názov, ikonku danej entity a počet záznamov skrývajúcich sa pod danou dlaždicou. 
 
-Dlaždicové obrázky mali svoje pravidlá použitých farieb a hrúbky čiary 3 px. Ich úlohou je čo najviac vystihovať danú agendu. Ukladané sú vo formáte png. 
+Dlaždicové obrázky mali svoje pravidlá použitých farieb a hrúbky čiary 3~px. Ich úlohou je čo najviac vystihovať danú agendu. Ukladané sú vo formáte png. 
 
 Ikony sú taktiež prispôsobované tomu, čo reprezentujú. Sú ukladané vo formáte svg bez použitia výplne alebo farby čiary, aby bola ich farba plne prispôsobiteľná v aplikácii.
 
@@ -1062,7 +1076,7 @@ Všetky dizajnové prvky sú kreslené pomocou nástroja Figma. Boli vytvorené/
 
 Nasledujúce prvky aplikácie sú zobrazené pomocou drátených modelov vytvorených v nástroji Figma. Drátené modely sa nachádzajú v časi Prílohy. Tieto modely slúžia ako vzor pre finálny vzhľad aplikácie.
 
-Po prihlásení sa užívateľ dostane na úvodný rozcestník, tzv. dashboard (\in{obrázok}[obr:drat-dashboard]). Dashboard môže byť rôzne logicky delený do dlaždíc. Pod každou dlaždicou sa nachádza ďalšia úroveň a to dlaždice s ikonou a počtom entít v danej agende (\in{obrázok}[obr:drat-dashboard2]). Tieto dlaždice už vedú na samotný zoznam entít, tzv. browse (\in{obrázok}[obr:drat-browse-detail]).
+Po prihlásení sa užívateľ dostane na úvodný rozcestník, tzv.\,dashboard (\in{obrázok}[obr:drat-dashboard]). Dashboard môže byť rôzne logicky delený do dlaždíc. Pod každou dlaždicou sa nachádza ďalšia úroveň a to dlaždice s ikonou a počtom entít v danej agende (\in{obrázok}[obr:drat-dashboard2]). Tieto dlaždice už vedú na samotný zoznam entít, tzv.\,browse (\in{obrázok}[obr:drat-browse-detail]).
 
 
 %\obrazekH{obr:drat-edit}
@@ -1082,7 +1096,7 @@ Po prihlásení sa užívateľ dostane na úvodný rozcestník, tzv. dashboard (
 
 V browse je užívateľovi umožnené vytvárať nové záznamy pomocou formulára ako je na \in{obrázku}[obr:drat-edit], poprípade [obr:drat-stepper]. Zároveň je možné prezerať si detaily záznamov (viď pravá časť \in{obrázku}[obr:drat-browse-detail], poprípade ich editovať (podobnými formulármi ako pri vytváraní). V aplikácii je na každej úrovni v ľavej časti sekundárna navigácia.
 
-Okrem týchto drátených modelov je tu aj drátený model modulu na správu číselníkov. Na \in{obrázku}[obr:drat-spravacl] je vidieť rôzne číselníky, ktoré možno upravovať. Na obrazovku, ktorá je na \in{obrázku}[obr:drat-konkretnycl] sa dostane užívateľ výberom jedného z číselníkov. Sú tam zobrazené konkrétne záznamy v danom číselníku s možnosťou editácie a pridávania novej hodnoty.
+Okrem týchto drátených modelov je tu aj drátený model modulu na správu číselníkov. Na \in{obrázku}[obr:drat-spravacl] je vidieť rôzne číselníky, ktoré možno upravovať. Na obrazovku, ktorá je na \in{obrázku}[obr:drat-konkretnycl] sa dostane užívateľ výberom jedného z~číselníkov. Sú tam zobrazené konkrétne záznamy v danom číselníku s možnosťou editácie a pridávania novej hodnoty.
 
 \blank
 Pre lepšie priblíženie štruktúry aplikácie je na \in{obrázku}[obr:site-map] zobrazený hierarchicky usporiadaný zoznam všetkých stránok, takzvaná mapa webu alebo sitemap.
@@ -1183,7 +1197,7 @@ Akonáhle model.xml prejde úpravami a je správny a kompletný, spustí sa skri
 Vygenerované súbory sa nachádzajú v adresári emma-gen a pri prípadnom ďalšom generovaní sa prepíšu opäť podľa xml modelu. Preto je nutné akékoľvek zmeny v súboroch zaznamenávať v súboroch adresára emma-int. Týmito zmenami sú myslené rôzne validačné kontroly, zmeny defaultných formulárov a detailov a podobne. V nasledujúcich kapitolách sú rozobrané jednotlivé komponenty aplikácie.
 
 \ppkap{Vzhľad a štruktúra}
-Prvou obrazovkou, ktorú užívateľ uvidí je login page (viď \in{obrázok}[obr:login]). Po prihlásení sa dostane na úvodnú obrazovku, tzv. cockpit. Finálna podoba cockpitu je na \in{obrázku}[obr:fin-dashboard]. Je to rozdelené do sekcií "Zaměstnání", "Hlavní činnosti" a "Ostatní". Rozdelenie do sekcií a vzhľad obrázkov dlaždíc je odsúhlasený zákazníkom (firmou Asseco).
+Prvou obrazovkou, ktorú užívateľ uvidí je login page (viď \in{obrázok}[obr:login]). Po prihlásení sa dostane na úvodnú obrazovku, tzv.\,cockpit. Finálna podoba cockpitu je na \in{obrázku}[obr:fin-dashboard]. Je to rozdelené do sekcií "Zaměstnání", "Hlavní činnosti" a "Ostatní". Rozdelenie do sekcií a vzhľad obrázkov dlaždíc je odsúhlasený zákazníkom (firmou Asseco).
 
 \obrazekH{obr:login}
 {Obrazovka - login (vlastné spracovanie)}{images/exist-obrazovky/0-login.png}{width=32cc} 
@@ -1201,14 +1215,14 @@ Posledná sekcia je určená na ďalšie agendy systému, ako je napríklad spr�
 
 Pod dlaždicou Žádosti sa aktuálne nachádza len jedna dlaždica, a to Ohlášení nástupu zaměstnance. Pri ďalšom rozvoji aplikácie tu pribudnú ďalšie žiadosti spojené s verejnou správou, napríklad hromadné oznámenie zamestnancov, odchod zamestnanca, služby spojené so zamestnávaním osôb so zdravotným postihnutím a podobne.
 
-Po kliku na dlaždicu Ohlášení nástupu zaměstnance sa zobrazí zoznam všetkých žiadostí prihláseného zamestnávateľa. so základnými informáciami, konkrétne Jméno, Příjmení, Datum vytvoření, Stav žádosti ČSSZ a Stav žádosti Zdravotní pojišťovna. Pri rozkliknutí detailu sa zobrazia ďalšie informácie o žiadosti. Ukážka obrazovky je na \in{obrázku}[obr:zadosti-screen]. Je možné vytvoriť novú žiadosť pomocou plus v hornej časti. Formulár obsahuje všetky údaje k úspešnému oznámeniu a neobsahuje žiadne číselníky ani validácie. Tento formulár ale vznikol ešte pred začatím tejto práce a do budúcna sa bude žiadosť vytvárať cez dlaždicu "Noví zaměstnanci". Tento proces je popísaný nižšie, v časti Zamestnanci.
+Po kliku na dlaždicu Ohlášení nástupu zaměstnance sa zobrazí zoznam všetkých žiadostí prihláseného zamestnávateľa. so základnými informáciami, konkrétne Jméno, Příjmení, Datum vytvoření, Stav žádosti ČSSZ a Stav žádosti Zdravotní pojišťovna. Pri rozkliknutí detailu sa zobrazia ďalšie informácie o žiadosti. Ukážka obrazovky je na \in{obrázku}[obr:zadosti-screen]. Je možné vytvoriť novú žiadosť pomocou plus v hornej časti. Formulár obsahuje všetky údaje k úspešnému oznámeniu a neobsahuje žiadne číselníky ani validácie. Tento formulár ale vznikol ešte pred začatím tejto práce a do budúcna sa bude žiadosť vytvárať cez dlaždicu \uv{Noví zaměstnanci}. Tento proces je popísaný nižšie, v časti Zamestnanci.
 
 \obrazekH{obr:zadosti-screen}
 {Obrazovka -- žiadosti (vlastné spracovanie)}{images/screen-neovereno.png}{width=32cc}
 
 \ppkap{Zamestnanci}
 
-Dôležitou súčasťou systému a hlavným cieľom tejto práce je modul pre evidenciu zamestnancov. Pod dlaždicou ZAMĚSTNANCI je to ešte ďalej rozdelené na zamestnancov a nových zamestnancov. Je to z dôvodu nutnosti splnenia niekoľkých úkonov na nových zamestnancoch, napr. už spomínaná služba "Oznámení o nástupu zaměstnance". Filtrovanie sa deje na základe atribútu cl_stavZamestnance.
+Dôležitou súčasťou systému a hlavným cieľom tejto práce je modul pre evidenciu zamestnancov. Pod dlaždicou ZAMĚSTNANCI je to ešte ďalej rozdelené na zamestnancov a nových zamestnancov. Je to z dôvodu nutnosti splnenia niekoľkých úkonov na nových zamestnancoch, napr. už spomínaná služba \uv{Oznámení o nástupu zaměstnance}. Filtrovanie sa deje na základe atribútu cl_stavZamestnance.
 
 Pri naberaní nových zamestnancov budú v stave "nový" a budú práve pod touto dlaždicou. Prehľadnejšie tak bude vidieť, ktorí zamestnanci už majú toto oznámenie hotové alebo nie. V momente, keď sa podarí úspešne nahlásiť nástup zamestnanca, prepne sa do stavu "řádný" a presunie sa pod dlaždicu zamestnanci.
 
@@ -1221,18 +1235,16 @@ V prípade výpovede zamestnanca prepne zodpovedný pracovník tohto zamestnanca
 \obrazekH{obr:zam-b-d}
 {Zamestnanci -- browse a detail (vlastné spracovanie)}{images/zamestnanci-browse-detail.png}{width=32cc} 
 
-Dlaždica nových zamestnancov taktiež umožňuje zakladať nových zamestnancov. Celý proces je zobrazený aj v diagrame aktivít na \in{obrázku}[obr:activity]. 
+Dlaždica nových zamestnancov taktiež umožňuje zakladať nových zamestnancov. Celý proces je zobrazený aj v diagrame aktivít na \in{obrázku}[obr:acti-nastup]. 
 
-Ako bolo spomenuté aj v kapitole 5.3, v  SAMO existujú 2 typy editačných formulárov. Prvým z nich je klasický editačný formulár, ktorý založí práve 1 entitu. Tento typ sa používa napríklad na žiadostiach, kedy sa po vyplnení formulára založí entita ft\_zadost, ktorá obsahuje vyplnené atribúty. Pri tomto type formuláru nie je potreba žiadna business logika (žiaden javascript) a všetko sa deje na úrovni metadát. 
-
-Komponenta jednoduchého formulára "samo-entity-properties-form" bude podrobnejšie popísaná v kapitole 5.9.5 Zamestnávatelia.
+Ako bolo spomenuté aj v kapitole 4.2, v  SAMO existujú dva typy editačných formulárov. Prvým z nich je klasický editačný formulár, ktorý založí práve jednu entitu. Tento typ sa používa napríklad na žiadostiach, kedy sa po vyplnení formulára založí entita ft\_zadost, ktorá obsahuje vyplnené atribúty. Pri tomto type formuláru nie je potreba žiadna business logika (žiaden javascript) a všetko sa deje na úrovni metadát. 
 
 Druhý typ formulára je akčný editačný formulár, ktorý dokáže založiť viacero entít naraz, poprípade vykonať ďalšie akcie. Pri tomto type formuláru je nutné použiť aj aplikačnú logiku, ktorá sa píše pomocou Javascriptu. 
 
-V prípade zamestnancov bola použitá komponenta "samo-stepper-module". Stepper organizuje vstupy do viacerých postupných krokov. Každý krok môže pozostávať z viacerých sekcií, ktoré sú reprezentované vybranými webovými modulmi a entitami. V nasledujúcich odstavcoch si rozoberieme jednotlivé kroky steppera zapojeného na zamestnancoch.
+V prípade zamestnancov bola použitá komponenta "samo-stepper-module". Stepper organizuje vstupy do viacerých postupných krokov. Každý krok môže pozostávať z viacerých sekcií, ktoré sú reprezentované vybranými webovými modulmi a entitami. V nasledujúcich odstavcoch si rozoberieme jednotlivé kro\-ky steppera zapojeného na zamestnancoch.
 
 \blank
-V prvom kroku má zodpovedný zamestnanec, ktorý zakladá nového zamestnanca 2 možnosti -- zakladá úplne novú osobu, ktorá v systéme ešte nijak nefiguruje (\in{obrázok}[obr:step1]) alebo zakladá zamestnanca z  fyzickej osoby, ktorá už v systéme bola založená (\in{obrázok}[obr:step1b]).
+V prvom kroku má zodpovedný zamestnanec, ktorý zakladá nového zamestnanca 2 možnosti -- zakladá úplne novú osobu, ktorá v systéme ešte nijak nefiguruje (\in{obrázok}[obr:step1]) alebo zakladá zamestnanca z fyzickej osoby, ktorá už v~systéme bola založená (\in{obrázok}[obr:step1b]).
 
 \obrazekH{obr:step1}
 {Založenie zamestnanca krok~1 -- zakladanie novej osoby (vlastné spracovanie)}
@@ -1244,7 +1256,7 @@ V prvom kroku má zodpovedný zamestnanec, ktorý zakladá nového zamestnanca 2
 {images/stepper/step1b.png}
 {width=24cc} 
 
-Krok číslo 2 slúži na vyplnenie kontaktných údajov zamestnanca. Ako email sa predvyplní štandardný email, ktorý je zvyklosťou firmy, napríklad meno.priezvisko@firma.cz, ak nejaká zvyklosť u firmy existuje. Vo formulári sa zobrazia aj veľké písmená a diakritika, no ukladací skript to uloží ako validný email (malé písmená a bez diakritiky). Táto informácia je aj v zátvorke pri labeli emailu (viď \in{obrázok}[obr:step2]).
+Krok číslo 2 slúži na vyplnenie kontaktných údajov zamestnanca. Ako email sa predvyplní štandardný email, ktorý je zvyklosťou firmy, napr. meno.priezvisko@firma.cz, ak nejaká zvyklosť u firmy existuje. Vo formulári sa zobrazia aj veľké písmená a diakritika, no ukladací skript to uloží ako validný email (malé písmená a bez diakritiky). Táto informácia je aj v zátvorke pri labeli emailu (viď \in{obrázok}[obr:step2]).
 
 \obrazekH{obr:step2}
 {Založenie zamestnanca krok~2 -- zadanie kontaktných údajov (vlastné spracovanie)}
@@ -1265,7 +1277,7 @@ V treťom kroku sa zadáva adresa zamestnanca, ktorá sa uloží zamestnancovi a
 {images/stepper/step4.png}
 {width=24cc} 
 
-Posledný, piaty krok slúži ako zhrnutie všetkých údajov žiadosti typu "oznámenie o nástupe zamestnanca". Všetky údaje sa predvypĺňajú na základe predchádzajúcich krokov. Všetky políčka sú neaktívne (disabled) a slúžia len pre kontrolu. V prípade, že niečo nesedí, je nutné upraviť dáta v niektorom z predchádzajúcich krokov steppera. Piaty krok je na \in{obrázku}[obr:step5].
+Posledný, piaty krok slúži ako zhrnutie všetkých údajov žiadosti typu \uv{oznámenie o nástupe zamestnanca}. Všetky údaje sa predvypĺňajú na základe predchádzajúcich krokov. Všetky políčka sú neaktívne (disabled) a slúžia len pre kontrolu. V prípade, že niečo nesedí, je nutné upraviť dáta v niektorom z predchádzajúcich krokov steppera. Piaty krok je na \in{obrázku}[obr:step5].
 
 
 \obrazekH{obr:step5}
@@ -1273,7 +1285,7 @@ Posledný, piaty krok slúži ako zhrnutie všetkých údajov žiadosti typu "oz
 {images/stepper/step5.png}
 {width=24cc} 
 
-Po kliknutí na "vytvoriť" sa vytvoria 4 entity -- zamestnanec, spojenie, adresa a žiadosť. Zároveň sa spustí proces, ktorý odošle hlásenie o nástupe zamestnanca na ČSSZ a ZP. Tento proces je event trigger, ktorý sa spustí pri vytvorení entity žiadosť. Tento trigger upraví dáta žiadosti do požadovaného formátu, ktorý je vstupom POST requestu zaregistrujNastupZamestnance.
+Po kliknutí na \uv{vytvoriť} sa vytvoria 4 entity -- zamestnanec, spojenie, adresa a žiadosť. Zároveň sa spustí proces, ktorý odošle hlásenie o nástupe zamestnanca na ČSSZ a ZP. Tento proces je event trigger, ktorý sa spustí pri vytvorení entity žiadosť. Tento trigger upraví dáta žiadosti do požadovaného formátu, ktorý je vstupom POST requestu zaregistrujNastupZamestnance.
 
 Testovanie requestov je možné aj pomocou existujúceho Soap UI. Aplikačne sa všetky vyplnené údaje formulára musia zvalidovať a upraviť, aby nenastávali chyby. Zoznam vybraných nutných validácií a úprav:
 
@@ -1299,7 +1311,7 @@ Testovanie requestov je možné aj pomocou existujúceho Soap UI. Aplikačne sa 
 
 Pri správnych hodnotách a dátových typoch je žiadosť úspešne založená (viď \in{obrázok}[obr:zadost-pred]) a je možné prejsť na nasledujúci krok a to overenie žiadosti. Táto akcia sa spúšťa tlačidlom na detaile žiadosti, na ktorú je možné sa dostať z dlaždice alebo z detailu zamestnanca. 
 
-Kliknutím na tlačidlo "Ověř stav žádosti" sa spustí akcia CtiVysledekZaregistrujNastupZamestnance. Ide o GET metódu, ktorá má vstupný parameter UUID žiadosti a vracia 2 objekty -- stavCSSZ a stavZP. Na základe výsledku tejto akcie sa menia atribúty žiadosti cl_stavZadostiCssz a cl_stavZadostiZp, poprípade chybové stavy (viď \in{obrázok}[obr:zadost-po]).
+Kliknutím na tlačidlo \uv{Ověř stav žádosti} sa spustí akcia CtiVysledekZaregistrujNastupZamestnance. Ide o GET metódu, ktorá má vstupný parameter UUID žiadosti a vracia 2 objekty -- stavCSSZ a stavZP. Na základe výsledku tejto akcie sa menia atribúty žiadosti cl_stavZadostiCssz a cl_stavZadostiZp, poprípade chybové stavy (viď \in{obrázok}[obr:zadost-po]).
 
 \obrazekH{obr:zadost-pred}
 {Časť detailu založenej žiadosti (vlastné spracovanie)}
@@ -1339,13 +1351,13 @@ Dlaždice zamestnávateľov a osôb sú najmä evidenčného charakteru. Pod zam
 
 \pkap{Zabezpečenie a bezpečnosť}
 
-Aplikácia obsahuje citlivé údaje o zamestnancoch a musí spĺňať prísne právne požiadavky na ochranu osobných údajov. Tieto zákony sú navrhnuté na ochranu súkromia jednotlivcov a zaisťovanie zodpovedného zaobchádzania s ich osobnými informáciami.
+Aplikácia obsahuje citlivé údaje o zamestnancoch a musí spĺňať prísne práv\-ne požiadavky na ochranu osobných údajov. Tieto zákony sú navrhnuté na ochranu súkromia jednotlivcov a zaisťovanie zodpovedného zaobchádzania\zlom s ich osobnými informáciami.
 
 Najdôležitejší právny predpis v rámci EÚ je Všeobecné nariadenie o ochrane údajov (GDPR). GDPR vyžaduje, aby organizácie mali právny základ pre spracúvanie osobných údajov, poskytli transparentnosť o tom, ako sa údaje používajú, a zabezpečili práva subjektov údajov, ako je právo na prístup, opravu a vymazanie ich osobných údajov.
 
 Zamestnanci a osoby, ktoré sa do systému dostanú musia so zákonom GDPR súhlasiť, čo sa spravidla deje pri podpise zmluvy. Keďže je systém plný rôznych citlivých údajov, je nutné ho mať dostatočne zabezpečený.
 
-Aplikácia SAMO EMMA je dostupná len pomocou VPN vybranej firmy, v prípade tejto práce pod VPN firmy Asseco, CE. Tento bezpečnostný mechanizmus chráni citlivé firemné údaje pred neoprávneným prístupom tým, že vytvára bezpečný "tunel" medzi zariadením používateľa a firemnou sieťou. VPN používa kombináciu šifrovacích protokolov a autentizačných metód.
+Aplikácia SAMO EMMA je dostupná len pomocou VPN vybranej firmy, v~prípade tejto práce pod VPN firmy Asseco, CE. Tento bezpečnostný mechanizmus chráni citlivé firemné údaje pred neoprávneným prístupom tým, že vytvára bezpečný \uv{tunel} medzi zariadením používateľa a firemnou sieťou. VPN používa kombináciu šifrovacích protokolov a autentizačných metód.
 
 Ďalším krokom zabezpečenia je užívateľské meno a heslo, ktoré musí spĺňať určité podmienky. Konkrétne heslo musí mať minimalně 8 znakov a musí obsahovať veľké, malé písmená a číselný znak. Diakritika a špeciálne znaky sú zakázané. Práve vďaka zabezpečeniu pomocou VPN nie je systém zabezpečený certifikátom alebo inou, bezpečnejšou metódou, ale len menom a heslom.
 
@@ -1360,10 +1372,39 @@ Testovanie softvéru je dôležitou fázou projektov a prináša niekoľko dôle
 Manuálne testovanie prebieha pomocou testovacích scenárov. Scenáre sú vytvorené podľa štandardov firmy Asseco. Sú popísané tabuľkami s tromi stĺpcami -- krok, akcia a očakávaný výsledok. Všetky tabuľky sa nachádzajú v časti Prílohy, konkrétne tabuľky \in[tab:test1] až \in[tab:test6].
 
 \kap{Diskusia a záver}
+\pkap{Zhrnutie výsledkov}
+V tejto práci bola dôkladne analyzovaná súčasná situácia eGovernmentu v~Česku a na medzinárodnej úrovni. Boli odhalené nedostatky a ukázali sa možnosti rozvoja. Hlavnými výzvami, ktorým ČR čelí v oblasti digitalizácie sú spojené s konektivitou, integráciou digitálnych technológií a poskytovaním digitálnych verejných služieb.
 
-\TODO
-TODO
+Keďže je projekt EMMA stále vo fáze vývoja, zatiaľ je ťažké určiť dopad a prínos tohto projektu pre český eGovernment a spoločnosť. Je ale možné konštatovať, že platforma EMMA má v sebe obrovský potenciál a môže byť výrazným krokom vpred v oblasti digitalizácie. 
 
+Či už ide o samotnú platformu EMMA alebo jej použitie na platforme SAMO, projekt dokáže pomôcť firme Asseco Central Europe, a.s. zlepšiť svoju pozíciu na trhu. 
+
+Hlavným modulom vyvíjaným v rámci tejto práce bol modul zamestnancov v SAMO. To výrazne uľahčí a zefektívni prezentáciu služieb EMMA potenciálnym zákazníkom a zvýši atraktivitu ako platformy EMMA, tak aj platformy SAMO. 
+
+Všetky poznatky a produkty tejto práce môžu slúžiť na zlepšenie pozície na trhu a zvýšenie konkurencieschopnosti firmy Asseco a zlepšenie procesov digitalizácie v ČR.
+
+\pkap{Možné vylepšenia}
+V rámci ďalšieho rozvoja existuje množstvo oblastí, ktoré by sa dali vylepšiť.
+
+Čo sa týka platformy EMMA, existuje veľké množstvo služieb verejnej sprá\-vy, ktoré by sa dali navrhnúť a implementovať podobne ako služba \uv{nástup zamestnanca}. Tým sa zväčší rozsah projektu a zároveň jeho atraktivita na trhu. Príkladom služieb môže byť napríklad opačný proces, a teda ukončenie pomeru zamestnanca, hromadné oznámenie zamestnávateľa, služby spojené so zamestnávaním zdravotne ťažko postihnutých zamestnancov a podobne. Následne je možné a aj plánované rozšíriť služby EMMA aj o služby komerčného sektoru.
+
+Je pomerne náročné prezentovať projekt bez prezentačnej vrstvy, a preto je modul zamestnancov a ďalšie moduly v SAMO dôležitá súčasť projektu. Po vytvorení ďalších služieb EMMA by bolo možné jednoduchšie zaujať potenciálnych zákazníkov. 
+
+Platforma SAMO ponúka množstvo možností na rozšírenie, ako napríklad reporty, generovanie dokumentov pomocou údajov zo systému, rozšírenie o ďalšie moduly potrebné k správe zamestnancov a podobne.
+
+
+\pkap{Záver}
+Na základe predom definovaného cieľa práce boli prevedené všetky kroky k~jeho naplneniu. Hlavným cieľom bolo rozšírenie stávajúceho riešenia projektu EMMA podľa požiadaviek firmy Asseco Central Europe, a.s. a zadania práce.
+
+Súčasťou týchto krokov bola dôkladná literárna rešerš. V rámci tejto rešerše bola vykonaná analýza súčasného stavu eGovernmentu na základe vybraných prieskumov. Zároveň boli popísané základné pojmy a procesy spojené s digitalizáciou a digitálnymi službami. V poslednej časti bol analyzovaný súčasný stav projektu EMMA a teoretický základ technológií používaných v rámci tejto práce.
+
+Následne nasledovala fáza analýzy a návrhu. V rámci tejto fázy boli vytvorené modely pomocou jazyka UML, ktoré graficky ilustrovali žiadané funkcionality neskôr implementovaného riešenia. Na základe analýzy bol vytvorený návrh pomocou drátených modelov.
+
+Po analýze a návrhu sa prešlo na fázu implementácie. Šlo o rozšírenie aplikácie SAMO EMMA. Implementácia prebiehala pomocou platformy SAMO, interného \uv{frameworku} spoločnosti Asseco, CE. 
+
+Posledným krokom bolo testovanie implementovaného riešenia. Testovanie prebehlo pomocou pripravených testovacích scenárov. 
+
+Všetky procesy prevedené v rámci tejto práce boli v súlade s metodikou. Výsledkom je funkčný modul zamestnancov a ďalšie doplnkové moduly v SAMO EMMA, ktoré sú napojené na služby EMMA, konkrétne na službu Oznámení nástupu zaměstnace.
 %%%%%%%%%%%%%%%%%%%%%%%%% \def\refname{}
 
 \bbib
@@ -1451,7 +1492,7 @@ TODO
 }
 
 \publX{
- \online{2024-04-20}
+ \online{\zlom2024-04-20}
  \autor{Česká správa sociálního zabezpečení}
  \nazev{Číselníky}
  \www{https://www.cssz.cz/ciselniky}
@@ -1701,7 +1742,7 @@ TODO
 \autor{Terlizzi, A.} 
 \nazev{The Digitalization of the Public Sector: A Systematic Literature Review}
 \rok{2021}
-\issn{ 1722-1137}
+\xissn{ 1722-1137}
 \doi{10.1483/100372}
 \www{https://www.researchgate.net/publication/351069477_The_Digitalization_of_the_Public_Sector_A_Systematic_Literature_Review}
 \online{2024-05-04}
@@ -1736,7 +1777,7 @@ TODO
  \online{2024-03-01}
  \www{https://digitalnicesko.gov.cz/vize/}
  \nazevdok{Digitální Česko}
- \rok{©~2024}
+ \rok{\zlom©~2024}
 }
 
 %\publE{
@@ -2183,22 +2224,22 @@ TODO
   \bTR
     \bTD as_osoba_spojeni \eTD
     \bTD osoba -> spojeni \eTD
-    \bTD 1:N \eTD
+    \bTD 1\,:\,N \eTD
   \eTR
    \bTR
     \bTD as_osoba_zamestnavatel \eTD
     \bTD osoba -> zamestnavatel \eTD
-    \bTD 1:N \eTD
+    \bTD 1\,:\,N \eTD
   \eTR  
   \bTR
     \bTD as_osoba_adresa \eTD
     \bTD osoba -> adresa \eTD
-     \bTD 1:N \eTD
+     \bTD 1\,:\,N \eTD
   \eTR  
   \bTR
     \bTD as_osoba_zadost \eTD
     \bTD osoba -> zadost \eTD
-    \bTD 1:N \eTD
+    \bTD 1\,:\,N \eTD
   \eTR
 \eTABLE
 }
@@ -2312,12 +2353,12 @@ TODO
   \bTR
     \bTD as_pravnickaOsoba_spojeni \eTD
     \bTD pravnickaOsoba -> spojeni \eTD
-    \bTD 1:N \eTD
+    \bTD 1\,:\,N \eTD
   \eTR
    \bTR
     \bTD as_fyzickaOsoba_spojeni \eTD
     \bTD fyzickaOsoba -> spojeni \eTD
-    \bTD 1:N \eTD
+    \bTD 1\,:\,N \eTD
   \eTR  
 \eTABLE
 }
@@ -2473,17 +2514,17 @@ TODO
   \bTR
     \bTD as_adresniMisto_adresa \eTD
     \bTD adresniMisto -> adresa \eTD
-    \bTD 1:N \eTD
+    \bTD 1\,:\,N \eTD
   \eTR
   \bTR
     \bTD as_pravnickaOsoba_adresa \eTD
     \bTD pravnickaOsoba -> adresa \eTD
-    \bTD 1:N \eTD
+    \bTD 1\,:\,N \eTD
   \eTR
    \bTR
     \bTD as_fyzickaOsoba_adresa \eTD
     \bTD fyzickaOsoba -> adresa \eTD
-    \bTD 1:N \eTD
+    \bTD 1\,:\,N \eTD
   \eTR  
 \eTABLE
 }
@@ -2617,12 +2658,12 @@ TODO
   \bTR
     \bTD as_zamestnavatel_zamestnanec \eTD
     \bTD zamestnavatel -> zamestnanec \eTD
-    \bTD 1:N \eTD
+    \bTD 1\,:\,N \eTD
   \eTR
    \bTR
     \bTD as_fyzickaOsoba_zamestnanec \eTD
     \bTD fyzickaOsoba -> zamestnanec \eTD
-    \bTD 1:N \eTD
+    \bTD 1\,:\,N \eTD
   \eTR  
 \eTABLE
 }
@@ -2693,12 +2734,12 @@ TODO
   \bTR
     \bTD as_zamestnavatel_zamestnanec \eTD
     \bTD zamestnavatel -> zamestnanec \eTD
-    \bTD 1:N \eTD
+    \bTD 1\,:\,N \eTD
   \eTR
    \bTR
     \bTD as_pravnickaOsoba_zamestnavatel \eTD
     \bTD pravnickaOsoba -> zamestnavatel \eTD
-    \bTD 1:N \eTD
+    \bTD 1\,:\,N \eTD
   \eTR  
 \eTABLE
 }
@@ -2726,6 +2767,7 @@ TODO
 
 
 \kap{Testovacie scenáre}
+
 % ...
 \setupTABLE[frame=on]
 \setupTABLE[row][first][background=color, backgroundcolor=lightgray, style=bold]
@@ -2759,6 +2801,7 @@ TODO
 }
 
 
+\page
 \setupTABLE[frame=on]
 \setupTABLE[row][first][background=color, backgroundcolor=lightgray, style=bold]
 \setupTABLE[column][1][width=3cc]
@@ -2821,6 +2864,7 @@ TODO
 }
 
 
+\page
 \setupTABLE[frame=on]
 \setupTABLE[row][first][background=color, backgroundcolor=lightgray, style=bold]
 \setupTABLE[column][1][width=3cc]
@@ -2893,6 +2937,7 @@ TODO
 }
 
 
+\page
 \setupTABLE[frame=on]
 \setupTABLE[row][first][background=color, backgroundcolor=lightgray, style=bold]
 \setupTABLE[column][1][width=3cc]
@@ -2960,12 +3005,149 @@ TODO
 }
 
 
+%\setupTABLE[frame=on]
+%\setupTABLE[row][first][background=color, backgroundcolor=lightgray, style=bold]
+%\setupTABLE[column][1][width=3cc]
+%\setupTABLE[column][2][width=15cc]
+%\setupTABLE[column][3][width=14cc]
+%\setupTABLE[r][each][align={middle,lohi}]
+%\Tabulka{tab:test5}{Testovací scenár pre UC Zadať nového zamestnanca do systému (vlastné spracovanie)}{
+%\bTABLE
+%  \bTR
+%    \bTH Krok \eTH
+%    \bTH Akcia \eTH
+%    \bTH Očakávaný výsledok \eTH
+%  \eTR
+%   \bTR
+%    \bTD 1 \eTD
+%    \bTD Prihláste sa do systému. \eTD
+%    \bTD Zobrazí sa úvodný rozcestník -- dashboard. \eTD
+%  \eTR
+%  \bTR
+%    \bTD 2 \eTD
+%    \bTD Kliknite na dlaždicu ZAMĚSTNANCI. \eTD
+%    \bTD Zobrazí sa rozcestník pre modul "ZAMĚSTNANCI". \eTD
+%  \eTR
+%   \bTR
+%    \bTD 3 \eTD
+%    \bTD Kliknite na "Noví zaměstnanci". \eTD
+%    \bTD Zobrazí sa zoznam zamestnancov v stave "nový". \eTD
+%  \eTR  
+%   \bTR
+%    \bTD 4 \eTD
+%    \bTD Vytvorte nového zamestnanca kliknutím na plus. \eTD
+%    \bTD Zobrazí sa stepper na vytvorenie zamestnanca. \eTD
+%  \eTR  
+%   \bTR
+%    \bTD 5a \eTD
+%    \bTD Vyplňte správne a kompletne údaje prvého kroku. \eTD
+%    \bTD Nezobrazuje sa žiadna chyba možno prejsť na druhý krok. \eTD
+%  \eTR   
+%   \bTR
+%    \bTD 5b \eTD
+%    \bTD Neyplňte nejaký povinný údaj. \eTD
+%    \bTD Zobrazí sa hláška "Povinné pole" a neumožní sa prechod na druhý krok. \eTD
+%  \eTR
+%   \bTR
+%    \bTD 5c \eTD
+%    \bTD Vyplňte nesprávne rodné číslo - príliš krátke/dlhé alebo s použitím písmen. \eTD
+%    \bTD Zobrazí sa hláška "Je nutno zadat platné rodné číslo". \eTD
+%  \eTR
+%\bTR
+%    \bTD 5d \eTD
+%    \bTD Vyplňte nesprávne rodné číslo - nedeliteľné 11. \eTD
+%    \bTD Zobrazí sa hláška "Rodné číslo musí být dělitelné 11.". \eTD
+%  \eTR
+%\bTR
+%    \bTD 5e \eTD
+%    \bTD Vyplňte nesprávne rodné číslo - nesprávny dátum v rodnom čísle. \eTD
+%    \bTD Zobrazí sa hláška "Datum v rodném čísle je nesprávný". \eTD
+%  \eTR
+% \bTR
+%    \bTD 6a \eTD
+%    \bTD Vyplňte email v správnom formáte. \eTD
+%    \bTD Nezobrazuje sa žiadna chyba možno prejsť na tretí krok. \eTD
+%  \eTR  
+%\bTR
+%    \bTD 6b \eTD
+%    \bTD Vyplňte email v nesprávnom formáte. \eTD
+%    \bTD Zobrazí sa hláška "Zadejte email ve správném formátu (např. jsmith@example.com)". \eTD
+%  \eTR 
+% \bTR
+%    \bTD 7a \eTD
+%    \bTD Vyplňte telefónne číslo v správnom formáte. \eTD
+%    \bTD Nezobrazuje sa žiadna chyba možno prejsť na tretí krok. \eTD
+%  \eTR  
+%\bTR
+%    \bTD 7b \eTD
+%    \bTD Vyplňte  telefónne číslo v nesprávnom formáte. \eTD
+%    \bTD Zobrazí sa hláška "Neplatné telefónne číslo. Zadajte číslo vo formáte +420XXXXXXXXX alebo +421XXXXXXXXX (nebo bez předvolby)". \eTD
+%  \eTR 
+%\eTABLE
+%}
+%
+%
+%\setupTABLE[frame=on]
+%\setupTABLE[row][first][background=color, backgroundcolor=lightgray, style=bold]
+%\setupTABLE[column][1][width=3cc]
+%\setupTABLE[column][2][width=15cc]
+%\setupTABLE[column][3][width=14cc]
+%\setupTABLE[r][each][align={middle,lohi}]
+%\Tabulka{tab:test5}{Testovací scenár pre UC Zadať nového zamestnanca do systému -- pokračovanie (vlastné spracovanie)}{
+%\bTABLE
+%  \bTR
+%    \bTH Krok \eTH
+%    \bTH Akcia \eTH
+%    \bTH Očakávaný výsledok \eTH
+%  \eTR
+% \bTR
+%    \bTD 8a \eTD
+%    \bTD Vyplňte dátovú schránku v správnom formáte. \eTD
+%    \bTD Nezobrazuje sa žiadna chyba možno prejsť na tretí krok. \eTD
+%  \eTR  
+%\bTR
+%    \bTD 8b \eTD
+%    \bTD Vyplňte dátovú schránku v nesprávnom formáte. \eTD
+%    \bTD Zobrazí sa hláška "Zadejte platné ID datové schránky.". \eTD
+%  \eTR  
+%\bTR
+%    \bTD 9a \eTD
+%    \bTD Vyplňte všetky povinné údaje adresy.  \eTD
+%    \bTD Nezobrazuje sa žiadna chyba možno prejsť na štvrtý krok. \eTD
+%\eTR    
+%   \bTR
+%    \bTD 9b \eTD
+%    \bTD Neyplňte nejaký povinný údaj. \eTD
+%    \bTD Zobrazí sa hláška "Povinné pole" a neumožní sa prechod na štvrtý krok. \eTD
+%  \eTR
+%   \bTR
+%    \bTD 10 \eTD
+%    \bTD Vyplňte správne a kompletne údaje o zamestnaní  \eTD
+%    \bTD Nezobrazuje sa žiadna chyba možno prejsť na piaty krok. \eTD
+%\eTR
+%\bTR
+%    \bTD 11 \eTD
+%    \bTD Skontrolujte úplnosť a správnosť predvyplnenia údajov piateho kroku.  \eTD
+%    \bTD Zobrazia sa údaje žiadosti a sú vyplnené a needitovateľné. \eTD
+%\eTR
+%\bTR
+%    \bTD 12 \eTD
+%    \bTD Kliknite na tlačidlo "vytvoriť".  \eTD
+%    \bTD Vytvorí sa zamestnanec, jeho spojenie, adresa a žiadosť. \eTD
+%\eTR
+%\eTABLE
+%}
+
+
+\page
 \setupTABLE[frame=on]
 \setupTABLE[row][first][background=color, backgroundcolor=lightgray, style=bold]
 \setupTABLE[column][1][width=3cc]
 \setupTABLE[column][2][width=15cc]
 \setupTABLE[column][3][width=14cc]
 \setupTABLE[r][each][align={middle,lohi}]
+\setupfloatsplitting [conversion=continued]
+\setupfloat[table][default={top,split}]
 \Tabulka{tab:test5}{Testovací scenár pre UC Zadať nového zamestnanca do systému (vlastné spracovanie)}{
 \bTABLE
   \bTR
@@ -3005,17 +3187,17 @@ TODO
   \eTR
    \bTR
     \bTD 5c \eTD
-    \bTD Vyplňte nesprávne rodné číslo - príliš krátke/dlhé alebo s použitím písmen. \eTD
+    \bTD Vyplňte nesprávne rodné číslo -- príliš krátke/dlhé alebo s použitím písmen. \eTD
     \bTD Zobrazí sa hláška "Je nutno zadat platné rodné číslo". \eTD
   \eTR
 \bTR
     \bTD 5d \eTD
-    \bTD Vyplňte nesprávne rodné číslo - nedeliteľné 11. \eTD
+    \bTD Vyplňte nesprávne rodné číslo -- nedeliteľné 11. \eTD
     \bTD Zobrazí sa hláška "Rodné číslo musí být dělitelné 11.". \eTD
   \eTR
 \bTR
     \bTD 5e \eTD
-    \bTD Vyplňte nesprávne rodné číslo - nesprávny dátum v rodnom čísle. \eTD
+    \bTD Vyplňte nesprávne rodné číslo -- nesprávny dátum v rodnom čísle. \eTD
     \bTD Zobrazí sa hláška "Datum v rodném čísle je nesprávný". \eTD
   \eTR
  \bTR
@@ -3038,23 +3220,6 @@ TODO
     \bTD Vyplňte  telefónne číslo v nesprávnom formáte. \eTD
     \bTD Zobrazí sa hláška "Neplatné telefónne číslo. Zadajte číslo vo formáte +420XXXXXXXXX alebo +421XXXXXXXXX (nebo bez předvolby)". \eTD
   \eTR 
-\eTABLE
-}
-
-
-\setupTABLE[frame=on]
-\setupTABLE[row][first][background=color, backgroundcolor=lightgray, style=bold]
-\setupTABLE[column][1][width=3cc]
-\setupTABLE[column][2][width=15cc]
-\setupTABLE[column][3][width=14cc]
-\setupTABLE[r][each][align={middle,lohi}]
-\Tabulka{tab:test5}{Testovací scenár pre UC Zadať nového zamestnanca do systému -- pokračovanie (vlastné spracovanie)}{
-\bTABLE
-  \bTR
-    \bTH Krok \eTH
-    \bTH Akcia \eTH
-    \bTH Očakávaný výsledok \eTH
-  \eTR
  \bTR
     \bTD 8a \eTD
     \bTD Vyplňte dátovú schránku v správnom formáte. \eTD
@@ -3094,6 +3259,7 @@ TODO
 }
 
 
+\page
 \setupTABLE[frame=on]
 \setupTABLE[row][first][background=color, backgroundcolor=lightgray, style=bold]
 \setupTABLE[column][1][width=3cc]
